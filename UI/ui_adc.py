@@ -1,0 +1,281 @@
+from Enums.enum_adc import ADCECU1, ADCECU2
+from Enums.enum_msg import MessageID, MsgMode, SrcDest
+from messages import unpackMessage
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QHeaderView, QTableWidgetItem
+from UI.ui_custom_widgets import Painter
+from UI.ui_styling import Colours
+
+
+class UIADC:
+    """
+    Class for the ADC table. Handles initialisation, styling, population, and updates for the ADC table in the UI.
+    """
+
+    def __init__(self, main_window):
+        """
+        Initialises the ADC class.
+
+        Args:
+            main_window: Reference to the main window, used for accessing UI elements.
+        """
+        self.main_window = main_window
+        self.main_window.ui.resetADCButton.clicked.connect(self.resetADCTable)
+        self.main_window.ui.alterADCButton.clicked.connect(self.alterADCTable)
+
+        self.adc_resolution_bits = 12
+        self.adc_raw_saturated_percent = 85
+
+        # Set up custom painter for all columns.
+        delegate = Painter()
+        self.main_window.ui.adcTable.setItemDelegate(delegate)
+
+        self.setStyleSheetUIADC()
+        self.populateADCTable()
+
+
+    def setStyleSheetUIADC(self):
+        """
+        Sets the style sheet for the UIADC items.
+        Only doing additional stuff to items here that would not work in QTCreator.
+        """
+        # Adjust the header and column widths.
+        header = self.main_window.ui.adcTable.horizontalHeader()
+        header.setSectionResizeMode(0, QHeaderView.Fixed)
+        header.setSectionResizeMode(1, QHeaderView.Stretch)
+        header.setSectionResizeMode(2, QHeaderView.Fixed)
+        header.setSectionResizeMode(3, QHeaderView.Fixed)
+        header.setSectionResizeMode(4, QHeaderView.Fixed)
+        header.setFixedHeight(20)
+
+        self.main_window.ui.adcTable.setColumnWidth(0, 45)
+        self.main_window.ui.adcTable.setColumnWidth(2, 50)
+        self.main_window.ui.adcTable.setColumnWidth(3, 40)
+        self.main_window.ui.adcTable.setColumnWidth(4, 55)
+
+        # Disable the built-in grid, will customise with the delegate class.
+        self.main_window.ui.adcTable.setShowGrid(False)
+
+        # Refine the style sheet. Focusing really on the header.
+        self.main_window.ui.adcTable.setStyleSheet("""
+        QTableWidget {
+            border: 2px solid black;            /* Border of the table */
+            background: #E6E2BE;                /* Background colour of table */
+        }
+        QHeaderView::section {
+            background-color: #A0BEF4;          /* Background colour of the header */
+            border: none;                       /* Border of the header */
+            border-right: 1px solid black;      /* Right border of the header. Splits columns visually */
+            border-bottom: 2px solid black;     /* Bottom border of the header */
+            color: black;                       /* Text colour of the header */
+            font-weight: normal;                /* Font weight of the header text */
+        }
+        QHeaderView::section:last {
+            border-right: none;                 /* Remove the right border from the last header section. This is because of an overlap with the table widget border */
+        }
+        """)
+
+
+    def populateADCTable(self):
+        """
+        Populates the ADC table with the ADC enums.
+        """
+        self.main_window.ui.adcTable.setRowCount(len(ADCECU1) + len(ADCECU2))
+        row = 0
+
+        # Setup row for each channel.
+        for adc_group, colour, prefix in [(ADCECU1, Colours.ECU1_ID, "ECU1"), (ADCECU2, Colours.ECU2_ID, "ECU2")]:
+            for adc_count, channel in enumerate(adc_group):
+                self.main_window.ui.adcTable.setRowHeight(row, 14)
+                pin_id = f"{prefix}-{adc_count}"
+
+                # Column 0: Pin ID
+                column_0 = QTableWidgetItem(pin_id)
+                column_0.setFlags(Qt.ItemIsEnabled)
+                column_0.setForeground(colour)
+                column_0.setBackground(Colours.DEFAULT)
+                column_0.setTextAlignment(Qt.AlignLeft)
+                self.main_window.ui.adcTable.setItem(row, 0, column_0)
+
+                # Column 1: Channel Name
+                column_1 = QTableWidgetItem(channel.name)
+                column_1.setFlags(Qt.ItemIsEnabled)
+                column_1.setForeground(Colours.BLACK)
+                column_1.setBackground(Colours.DEFAULT)
+                column_1.setTextAlignment(Qt.AlignLeft)
+                self.main_window.ui.adcTable.setItem(row, 1, column_1)
+
+                # Column 2: Scaled Value
+                column_2 = QTableWidgetItem("")
+                column_2.setFlags(Qt.ItemIsEnabled)
+                column_2.setForeground(Colours.BLACK)
+                column_2.setBackground(Colours.DEFAULT)
+                column_2.setTextAlignment(Qt.AlignCenter)
+                self.main_window.ui.adcTable.setItem(row, 2, column_2)
+
+                # Column 3: Raw Value
+                column_3 = QTableWidgetItem("")
+                column_3.setFlags(Qt.ItemIsEnabled)
+                column_3.setForeground(Colours.BLACK)
+                column_3.setBackground(Colours.DEFAULT)
+                column_3.setTextAlignment(Qt.AlignCenter)
+                self.main_window.ui.adcTable.setItem(row, 3, column_3)
+
+                # Column 4: Alter Value
+                column_4 = QTableWidgetItem("")
+                column_4.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsEditable)
+                column_4.setForeground(Colours.BLACK)
+                column_4.setBackground(Colours.DEFAULT)
+                # Note: Alignment for editable column 4 is handled by the delegate or default behaviour.
+                self.main_window.ui.adcTable.setItem(row, 4, column_4)
+
+                row += 1
+
+        # Resize the table to the content.
+        self.resizeADCTableToContent()
+
+
+    def resizeADCTableToContent(self):
+        """
+        Resizes the default table size (in UI file) to the total number of rows. Moves the bottom frame and the buttons to positions based on the new table size.
+        """
+        # Table height.
+        table_row_count = self.main_window.ui.adcTable.rowCount()
+        table_row_height = self.main_window.ui.adcTable.rowHeight(0)
+        table_header_height = self.main_window.ui.adcTable.horizontalHeader().height()
+        table_frame_width = self.main_window.ui.adcTable.frameWidth()
+        table_total_height = table_header_height + (table_row_count * table_row_height) + (2 * table_frame_width)
+        self.main_window.ui.adcTable.setFixedHeight(table_total_height)
+
+        # Define gaps.
+        padding_gap = 16
+
+        # Total group box height is the sum of the table height, padding gap.
+        group_box_height = self.main_window.ui.adcTable.y() + table_total_height + padding_gap
+
+        # Set new group box height.
+        self.main_window.ui.adcTable.parent().setFixedHeight(group_box_height)
+
+
+    def resetADCTable(self):
+        """
+        Resets the ADC table. The user has requested to reset the table from any altered state.
+        """
+        self.clearAlteredData()
+        # Reset alter on both boards.
+        msgID = MessageID.METRICS_RESET_ADC_ALTER
+        for dest in [SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2]:
+            self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
+
+
+    def clearAlteredData(self):
+        """
+        Will clear any altered values under that column in the ADC table.
+        """
+        for row in range(self.main_window.ui.adcTable.rowCount()):
+            # Reset alter column (column 4) to default.
+            alter_column = self.main_window.ui.adcTable.item(row, 4)
+            alter_column.setText("")
+            alter_column.setTextAlignment(Qt.AlignCenter)
+            alter_column.setForeground(Colours.BLACK) # Delegate will paint the cell text with this colour.
+            alter_column.setBackground(Colours.DEFAULT) # Delegate will paint the cell background with this colour.
+
+
+    def alterADCTable(self):
+        """
+        Alters the ADC table. The user has requested to alter one or more values in the table.
+        """
+        self.overrideADC(len(ADCECU1), SrcDest.SRC_DEST_ECU1, 0)
+        self.overrideADC(len(ADCECU2), SrcDest.SRC_DEST_ECU2, len(ADCECU1))
+        self.clearAlteredData() # This option may be disabled at times in future, but for now, once the button is clicked, clear the column.
+
+
+    def overrideADC(self, adc_count, dest, offset):
+        """
+        Overrides the ADC channels for specified destination. Altering any channels affects the raw value only, not the scaled.
+
+        Args:
+            adc_count:  Total number of channels to enumerate.
+            dest:       The destination of those channels to change.
+            offset:     Row number offset to start capturing data from.
+        """
+        data = [0] * adc_count
+        for i in range(adc_count):
+            row_num = i + offset
+            altered_row = self.main_window.ui.adcTable.item(row_num, 4).text()
+
+            # Assume row/channel is not being altered. For channels where we are not altering, their default value should be 0xFFFF so the ECU knows not to change them.
+            value = 0xFFFF
+
+            # Has this row been altered?
+            if len(altered_row) > 0:
+                try:
+                    # Convert string to int.
+                    value = int(altered_row)
+                except ValueError:
+                    value = 0xFFFF  # If conversion fails, default it.
+
+                # Check value is within raw value range.
+                if value >= 0 and value < (2 ** self.adc_resolution_bits):
+                    data[i] = value
+                else:
+                    # Value not accepted range, default it.
+                    value = 0xFFFF
+
+            data[i] = value
+
+        self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
+
+
+    def updateADCTable(self, msg):
+        """
+        Updates the ADC table with its new values.
+
+        Args:
+            msg: ADC payload.
+        """
+        try:
+            data_valid = False
+            # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
+            if MsgMode(msg[5]) == MsgMode.OUT:
+                header, adcPayload = unpackMessage("I30H", msg)
+
+                source = header[2]
+                num_channels = adcPayload[0]
+                data = adcPayload[1:] # Skip 1st index which is count.
+                data_valid = True
+            else:
+                return
+
+            if data_valid:
+                # Check the channel count matches the expected number of channels per source.
+                if num_channels != len(ADCECU1) and SrcDest(source) == SrcDest.SRC_DEST_ECU1:
+                    print(f"ECU1 ADC Count Mismatch. Enum Count = {len(ADCECU1)}. Actual Count = {num_channels}")
+                    return
+                elif num_channels != len(ADCECU2) and SrcDest(source) == SrcDest.SRC_DEST_ECU2:
+                    print(f"ECU2 ADC Count Mismatch. Enum Count = {len(ADCECU2)}. Actual Count = {num_channels}")
+                    return
+
+                # The ECU2 offset starts from the end of the ECU1 channels.
+                offset = 0 if SrcDest(source) == SrcDest.SRC_DEST_ECU1 else len(ADCECU1)
+
+                for i in range(num_channels):
+                    raw_value = data[i * 2] # Raw value is the first element of the pair.
+                    scaled_value = data[(i * 2) + 1] # Scaled value is the second element of the pair.
+
+                    row = offset + i
+
+                    # Populate scaled data.
+                    scaled_column = self.main_window.ui.adcTable.item(row, 2)
+                    scaled_column.setText(f"{scaled_value / 1000:.2f}")
+
+                    # Populate raw data.
+                    raw_column = self.main_window.ui.adcTable.item(row, 3)
+                    raw_column.setText(str(raw_value))
+
+                    # Check if the raw value is close to saturation and set the background colour accordingly.
+                    bg_colour = Colours.SATURATED_RAW if (raw_value >= (2 ** self.adc_resolution_bits) * (self.adc_raw_saturated_percent / 100)) else Colours.DEFAULT
+                    raw_column.setBackground(bg_colour)
+
+        except Exception as e:
+            print(f"E1: {__file__}: {e}")

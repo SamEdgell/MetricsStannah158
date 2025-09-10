@@ -1,0 +1,3088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1867</width>
+    <height>1008</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Metrics</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #BABABA;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="navigationFrame">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>11</y>
+      <width>355</width>
+      <height>986</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <italic>false</italic>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#navigationFrame{    
+	border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QGroupBox" name="UICommsBox">
+     <property name="geometry">
+      <rect>
+       <x>17</x>
+       <y>816</y>
+       <width>321</width>
+       <height>154</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+    margin-top: 0px; /* Moves the entire group box and border down */
+}
+</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QRadioButton" name="autoSerialButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+      </property>
+      <property name="text">
+       <string>Auto</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">autoManualCommsButtonGroup</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="manualSerialButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+      </property>
+      <property name="text">
+       <string>Manual</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">autoManualCommsButtonGroup</string>
+      </attribute>
+     </widget>
+     <widget class="QComboBox" name="comPortBox">
+      <property name="geometry">
+       <rect>
+        <x>84</x>
+        <y>10</y>
+        <width>75</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox{
+    color: #000000; /* Text color */
+    background-color: #FFFFFF; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+	outline: none; /* Remove focus outline */
+}
+
+QComboBox QAbstractItemView {
+	color: #000000; /* Text color for drop-down items */
+	background-color: #FFFFFF; /* Background color for drop-down items */
+}
+
+QComboBox::drop-down{
+	border: 0px;
+}
+
+QComboBox::down-arrow{
+	image: none;
+}</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="serialConnectButton">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>10</y>
+        <width>143</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #FFA2A7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Select Manual</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="rxByteLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>67</x>
+        <y>80</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    color: #000000; /* Text color */
+    background-color: #FFFFFF; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rxLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>79</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+    color: #000000; /* Text color */
+	background: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>Received</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txLabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>80</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{
+    color: #000000; /* Text color */
+	background: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>Transmitted</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="txByteLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>80</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    color: #000000; /* Text color */
+    background-color: #FFFFFF; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="statusLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>40</y>
+        <width>143</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    color: #000000; /* Text color */
+    background-color: #FFA2A7; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Not Connected</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="topLine">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>301</width>
+        <height>2</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+    background-color: #000000; /* Solid black line */
+    max-height: 2px;          /* Restrict height to 1px */
+    min-height: 2px;          /* Ensure it stays 1px tall */
+    border: none;             /* Remove any borders */
+}</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="authenticateLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>197</x>
+        <y>120</y>
+        <width>113</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    color: #000000; /* Text color */
+    background-color: #FFE200; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Not Required</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="bottomLine">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>301</width>
+        <height>2</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+    background-color: #000000; /* Solid black line */
+    max-height: 2px;          /* Restrict height to 1px */
+    min-height: 2px;          /* Ensure it stays 1px tall */
+    border: none;             /* Remove any borders */
+}</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="heartbeatLED">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>120</y>
+        <width>77</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+      </property>
+      <property name="text">
+       <string>Heartbeat</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="authenticateButton">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>120</y>
+        <width>89</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+      </property>
+      <property name="text">
+       <string>Authenticate</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="baudRateBox">
+      <property name="geometry">
+       <rect>
+        <x>84</x>
+        <y>40</y>
+        <width>75</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox{
+    color: #000000; /* Text color */
+    background-color: #FFFFFF; /* Background color */
+    border: 1px solid black; /* Thin black solid border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Adds space around the text */
+    padding-top: 3px; /* Adjusts the padding at the top */
+    padding-bottom: 3px; /* Adjusts the padding at the bottom */
+    line-height: 20px; /* Ensures proper vertical alignment of text */
+	outline: none; /* Remove focus outline */
+}
+
+QComboBox QAbstractItemView {
+	color: #000000; /* Text color for drop-down items */
+	background-color: #FFFFFF; /* Background color for drop-down items */
+}
+
+QComboBox::drop-down{
+	border: 0px;
+}
+
+QComboBox::down-arrow{
+	image: none;
+}</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="ADCIOPageButton">
+     <property name="geometry">
+      <rect>
+       <x>19</x>
+       <y>117</y>
+       <width>68</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>10</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #FFA2A7;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>ADC/IO</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="imageFrame">
+     <property name="geometry">
+      <rect>
+       <x>19</x>
+       <y>18</y>
+       <width>317</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#imageFrame{
+    background-color: #FFFFFF;
+	border: 2px solid black; /* Border for the group box */
+    border-radius: 10px; /* Rounded corners for the border */
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testButton1">
+     <property name="geometry">
+      <rect>
+       <x>34</x>
+       <y>470</y>
+       <width>54</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>7</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test 
+ Button 1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testButton3">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>470</y>
+       <width>54</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>7</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test 
+ Button 3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testButton5">
+     <property name="geometry">
+      <rect>
+       <x>266</x>
+       <y>470</y>
+       <width>54</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>7</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test 
+ Button 5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testButton4">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>470</y>
+       <width>54</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>7</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test 
+ Button 4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="testButton2">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>470</y>
+       <width>54</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>7</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 1px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Test 
+ Button 2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="colourPalettePageButton">
+     <property name="geometry">
+      <rect>
+       <x>102</x>
+       <y>117</y>
+       <width>68</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Verdana</family>
+       <pointsize>10</pointsize>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #FFA2A7;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+     </property>
+     <property name="text">
+      <string>Colour
+Palette</string>
+     </property>
+    </widget>
+    <widget class="Line" name="topLine_2">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>181</y>
+       <width>317</width>
+       <height>2</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame {
+    background-color: #000000; /* Solid black line */
+    max-height: 2px;          /* Restrict height to 1px */
+    min-height: 2px;          /* Ensure it stays 1px tall */
+    border: none;             /* Remove any borders */
+}</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="enableDemoModeButton">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>440</y>
+       <width>139</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+     </property>
+     <property name="text">
+      <string>Enable Demo Mode</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>381</x>
+      <y>11</y>
+      <width>823</width>
+      <height>825</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QStackedWidget{    
+	border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="ADCIOPage">
+     <widget class="QGroupBox" name="ADCBox">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>17</y>
+        <width>382</width>
+        <height>399</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+	background-color: #F2C46F;
+}
+
+QGroupBox::title{
+	color: black;
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0px 10px;
+	top: 15px;
+}</string>
+      </property>
+      <property name="title">
+       <string>ADC</string>
+      </property>
+      <widget class="QTableWidget" name="adcTable">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>50</y>
+         <width>346</width>
+         <height>332</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="cursor" stdset="0">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::ClickFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget {
+    border: 2px solid black;
+	background: #E6E2BE;
+}
+
+QHeaderView::section {
+    background-color: #A0BEF4;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+	color: black;
+}</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll">
+        <bool>false</bool>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::EditTrigger::AnyKeyPressed|QAbstractItemView::EditTrigger::CurrentChanged|QAbstractItemView::EditTrigger::DoubleClicked</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>70</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>14</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>14</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ECU-ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Channel</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Scaled</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Raw</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Alter Raw</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="resetADCButton">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>15</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="alterADCButton">
+       <property name="geometry">
+        <rect>
+         <x>313</x>
+         <y>15</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Alter</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="inputsBox">
+      <property name="geometry">
+       <rect>
+        <x>415</x>
+        <y>17</y>
+        <width>387</width>
+        <height>527</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+	background-color: #F2C46F;
+}
+
+QGroupBox::title{
+	color: black;
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0px 10px;
+	top: 15px;
+}</string>
+      </property>
+      <property name="title">
+       <string>GPIO Inputs</string>
+      </property>
+      <widget class="QTableWidget" name="inputsTable">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>50</y>
+         <width>351</width>
+         <height>460</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="cursor" stdset="0">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget {
+    border: 2px solid black;
+	background: #E6E2BE;
+}
+
+QHeaderView::section {
+    background-color: #A0BEF4;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+	color: black;
+}</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll">
+        <bool>false</bool>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::EditTrigger::SelectedClicked</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>88</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>14</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>14</number>
+       </attribute>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ECU-ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Input</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>State</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Alter</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="alterInputsButton">
+       <property name="geometry">
+        <rect>
+         <x>318</x>
+         <y>14</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Alter</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="resetInputsButton">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>14</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <zorder>alterInputsButton</zorder>
+      <zorder>resetInputsButton</zorder>
+      <zorder>inputsTable</zorder>
+     </widget>
+     <widget class="QGroupBox" name="outputsBox">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>430</y>
+        <width>382</width>
+        <height>305</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+	background-color: #F2C46F;
+}
+
+QGroupBox::title{
+	color: black;
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0px 10px;
+	top: 15px;
+}</string>
+      </property>
+      <property name="title">
+       <string>GPIO Outputs</string>
+      </property>
+      <widget class="QTableWidget" name="outputsTable">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>50</y>
+         <width>346</width>
+         <height>230</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="cursor" stdset="0">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget {
+    border: 2px solid black;
+	background: #E6E2BE;
+}
+
+QHeaderView::section {
+    background-color: #A0BEF4;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+	color: black;
+}</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll">
+        <bool>false</bool>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::EditTrigger::SelectedClicked</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>88</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>14</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>14</number>
+       </attribute>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ECU-ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Output</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>State</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Alter</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="resetOutputsButton">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>14</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="alterOutputsButton">
+       <property name="geometry">
+        <rect>
+         <x>313</x>
+         <y>14</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+       </property>
+       <property name="text">
+        <string>Alter</string>
+       </property>
+      </widget>
+     </widget>
+     <zorder>ADCBox</zorder>
+     <zorder>outputsBox</zorder>
+     <zorder>inputsBox</zorder>
+    </widget>
+    <widget class="QWidget" name="colourPalettePage">
+     <widget class="QTextEdit" name="colourPaletteLog">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>15</y>
+        <width>784</width>
+        <height>299</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 1px; /* Smallest rounded corners for the border */
+    background-color: #E6E2BE; /* Yellowish-beige background color */
+    padding-top: 1px; /* Add padding to the top */
+    padding-bottom: 1px; /* Add padding to the bottom */
+    padding-right: 1px; /* Add padding to the right to move the scrollbar inward */
+	color: black;
+}
+
+QScrollBar:vertical {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+}
+
+QScrollBar::handle:vertical {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-height: 20px; /* Minimum height of the handle */
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:vertical:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: #FFFFFF; /* Match the background color of the QTextBrowser */
+    height: 0px; /* Height set to 0 to hide the add-line and sub-line */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* No background for the up-arrow and down-arrow */
+    height: 0px; /* Height set to 0 to hide the up-arrow and down-arrow */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Consolas'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="fgColourBox">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>337</y>
+        <width>164</width>
+        <height>248</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #000000;
+    margin-top: 25px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+	subcontrol-position: top-center;
+    top: -5px;
+    background-color: transparent;
+    text-align: center; /* Force text to be centered */
+    width: 100%; /* Make title span the full width */
+	color: black;
+}</string>
+      </property>
+      <property name="title">
+       <string>Foreground</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <widget class="QSlider" name="fgBlueSlider">
+       <property name="geometry">
+        <rect>
+         <x>111</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+QSlider::handle {
+    background: #46B8FF;
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="sliderPosition">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="fgGreenSlider">
+       <property name="geometry">
+        <rect>
+         <x>72</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+
+QSlider::handle {
+    background: #2CEB6C; /* You can keep the handle visible */
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="sliderPosition">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="fgRedSlider">
+       <property name="geometry">
+        <rect>
+         <x>32</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+QSlider::handle {
+    background: #F03F3F;
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="sliderPosition">
+        <number>0</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TickPosition::NoTicks</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="bgColourBox">
+      <property name="geometry">
+       <rect>
+        <x>592</x>
+        <y>337</y>
+        <width>164</width>
+        <height>248</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin-top: 25px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+	subcontrol-position: top-center;
+    top: -5px;
+    background-color: transparent;
+    text-align: center; /* Force text to be centered */
+    width: 100%; /* Make title span the full width */
+	color: black;
+}</string>
+      </property>
+      <property name="title">
+       <string>Background</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <widget class="QSlider" name="bgBlueSlider">
+       <property name="geometry">
+        <rect>
+         <x>111</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+QSlider::handle {
+    background: #46B8FF;
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="bgGreenSlider">
+       <property name="geometry">
+        <rect>
+         <x>72</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+QSlider::handle {
+    background: #2CEB6C;
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="bgRedSlider">
+       <property name="geometry">
+        <rect>
+         <x>32</x>
+         <y>50</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider{
+	background: transparent;
+}
+QSlider::handle {
+    background: #F03F3F;
+    border-radius: 4px;
+}</string>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>255</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TickPosition::NoTicks</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="fgHexLine">
+      <property name="geometry">
+       <rect>
+        <x>86</x>
+        <y>600</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid black;
+    border-radius: 5px;
+	color: black;
+}</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="bgHexLine">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>600</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 2px solid black;
+    border-radius: 5px;
+	color: black;
+}</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="textLine">
+      <property name="geometry">
+       <rect>
+        <x>142</x>
+        <y>710</y>
+        <width>539</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    border: 1px solid black;
+    border-radius: 5px;
+}</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="appendButton">
+      <property name="geometry">
+       <rect>
+        <x>384</x>
+        <y>750</y>
+        <width>54</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Append</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fgWhiteButton">
+      <property name="geometry">
+       <rect>
+        <x>237</x>
+        <y>366</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>W</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fgBlackButton">
+      <property name="geometry">
+       <rect>
+        <x>237</x>
+        <y>400</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>B</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fgResetButton">
+      <property name="geometry">
+       <rect>
+        <x>237</x>
+        <y>558</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>R</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bgBlackButton">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>400</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>B</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bgWhiteButton">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>366</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>W</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bgResetButton">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>558</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>R</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>450</y>
+        <width>344</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: black;</string>
+      </property>
+      <property name="text">
+       <string>1) Paste text into text box.
+2) Select foreground and background colour using the sliders.
+3) Append text to test log to see how it may look on the screen.</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="testBox">
+      <property name="geometry">
+       <rect>
+        <x>332</x>
+        <y>545</y>
+        <width>157</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin-top: 25px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+	subcontrol-position: top-center;
+    top: -5px;
+    background-color: transparent;
+    text-align: center; /* Force text to be centered */
+    width: 100%; /* Make title span the full width */
+	color: black;
+}</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QTableWidget" name="testTable">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>50</y>
+         <width>123</width>
+         <height>53</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::FocusPolicy::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableWidget {
+    border: 2px solid black;
+	background: #E6E2BE;
+}
+
+QHeaderView::section {
+    background-color: #000000;
+    border: none;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+	color: black;
+}</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll">
+        <bool>false</bool>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>40</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>60</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>16</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>16</number>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Variable</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Value</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="bgDefButton">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>434</y>
+        <width>29</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>7</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearPaletteConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>727</x>
+        <y>269</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="consoleTab">
+    <property name="geometry">
+     <rect>
+      <x>1219</x>
+      <y>11</y>
+      <width>636</width>
+      <height>986</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 5px;
+    margin-top: -2px; /* Adjust to connect selected tab with pane */
+}
+
+QTabBar::tab {
+    border: 2px solid black;
+    color: black;
+    padding: 5px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 80px; /* Ensures tabs have consistent minimum width */
+    margin-right: 2px; /* Space between tabs */
+}
+
+QTabBar::tab:selected {
+    background-color: #A6FFA7;
+    border-bottom: none; /* Hides bottom border to connect with pane */
+}
+
+QTabBar::tab:!selected {
+    background-color: #FFA2A7;
+    margin-top: 2px; /* Makes unselected tabs slightly lower */
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #FFB5B9; /* Slightly lighter red on hover */
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="primaryTab">
+     <attribute name="title">
+      <string>ECU1</string>
+     </attribute>
+     <widget class="QPushButton" name="clearPrimaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>864</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="savePrimaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>894</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="primaryConsoleLog">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>15</y>
+        <width>600</width>
+        <height>924</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 1px; /* Smallest rounded corners for the border */
+    background-color: #E6E2BE; /* Yellowish-beige background color */
+    padding-top: 1px; /* Add padding to the top */
+    padding-bottom: 1px; /* Add padding to the bottom */
+    padding-right: 1px; /* Add padding to the right to move the scrollbar inward */
+	color: black; /* Default black text colour */
+}
+
+/* Vertical scroll bar */
+QScrollBar:vertical {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+}
+
+QScrollBar::handle:vertical {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-height: 20px; /* Minimum height of the handle */
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:vertical:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none; /* Match the background color of the QTextBrowser */
+    height: 0px; /* Height set to 0 to hide the add-line and sub-line */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* No background for the up-arrow and down-arrow */
+    height: 0px; /* Height set to 0 to hide the up-arrow and down-arrow */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}
+
+/* Horizontal scroll bar */
+QScrollBar:horizontal {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    height: 10px; /* Height of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+	padding-left: 1px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-width: 20px; /* Minimum width of the handle */
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none; /* Consistent background for hiding */
+    width: 0px; /* Use width for horizontal scrollbar buttons */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    background: none; /* No background for the arrows */
+    width: 0px; /* Use width for horizontal scrollbar arrows */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}</string>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QTextEdit::LineWrapMode::NoWrap</enum>
+      </property>
+     </widget>
+     <zorder>primaryConsoleLog</zorder>
+     <zorder>savePrimaryConsoleButton</zorder>
+     <zorder>clearPrimaryConsoleButton</zorder>
+    </widget>
+    <widget class="QWidget" name="secondaryTab">
+     <attribute name="title">
+      <string>ECU2</string>
+     </attribute>
+     <widget class="QPushButton" name="saveSecondaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>894</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearSecondaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>864</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="secondaryConsoleLog">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>15</y>
+        <width>600</width>
+        <height>924</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 1px; /* Smallest rounded corners for the border */
+    background-color: #E6E2BE; /* Yellowish-beige background color */
+    padding-top: 1px; /* Add padding to the top */
+    padding-bottom: 1px; /* Add padding to the bottom */
+    padding-right: 1px; /* Add padding to the right to move the scrollbar inward */
+	color: black; /* Default black text colour */
+}
+
+/* Vertical scroll bar */
+QScrollBar:vertical {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+}
+
+QScrollBar::handle:vertical {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-height: 20px; /* Minimum height of the handle */
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:vertical:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none; /* Match the background color of the QTextBrowser */
+    height: 0px; /* Height set to 0 to hide the add-line and sub-line */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* No background for the up-arrow and down-arrow */
+    height: 0px; /* Height set to 0 to hide the up-arrow and down-arrow */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}
+
+/* Horizontal scroll bar */
+QScrollBar:horizontal {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    height: 10px; /* Height of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+	padding-left: 1px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-width: 20px; /* Minimum width of the handle */
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none; /* Consistent background for hiding */
+    width: 0px; /* Use width for horizontal scrollbar buttons */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    background: none; /* No background for the arrows */
+    width: 0px; /* Use width for horizontal scrollbar arrows */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}</string>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QTextEdit::LineWrapMode::NoWrap</enum>
+      </property>
+     </widget>
+     <zorder>secondaryConsoleLog</zorder>
+     <zorder>clearSecondaryConsoleButton</zorder>
+     <zorder>saveSecondaryConsoleButton</zorder>
+    </widget>
+    <widget class="QWidget" name="tertiaryTab">
+     <attribute name="title">
+      <string>Debug</string>
+     </attribute>
+     <widget class="QTextBrowser" name="tertiaryConsoleLog">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>15</y>
+        <width>600</width>
+        <height>924</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser {
+    border: 2px solid black; /* Border for the group box */
+    border-radius: 1px; /* Smallest rounded corners for the border */
+    background-color: #E6E2BE; /* Yellowish-beige background color */
+    padding-top: 1px; /* Add padding to the top */
+    padding-bottom: 1px; /* Add padding to the bottom */
+    padding-right: 1px; /* Add padding to the right to move the scrollbar inward */
+	color: black; /* Default black text colour */
+}
+
+/* Vertical scroll bar */
+QScrollBar:vertical {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    width: 10px; /* Width of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+}
+
+QScrollBar::handle:vertical {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-height: 20px; /* Minimum height of the handle */
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:vertical:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none; /* Match the background color of the QTextBrowser */
+    height: 0px; /* Height set to 0 to hide the add-line and sub-line */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none; /* No background for the up-arrow and down-arrow */
+    height: 0px; /* Height set to 0 to hide the up-arrow and down-arrow */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}
+
+/* Horizontal scroll bar */
+QScrollBar:horizontal {
+    background: #E6E2BE; /* Background color of the scrollbar track */
+    height: 10px; /* Height of the scrollbar */
+    border-radius: 1px; /* Smallest rounded corners for the scrollbar track */
+	padding-left: 1px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #FFA2A7; /* Background color of the handle */
+    border: 1px solid black; /* Border color of the handle */
+    border-radius: 4px; /* Smallest rounded corners for the handle */
+    min-width: 20px; /* Minimum width of the handle */
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #A6FFA7; /* Change background color to green when hovered */
+}
+
+QScrollBar::handle:horizontal:pressed {
+    background: #A6FFA7; /* Change background color to green when selected */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none; /* Consistent background for hiding */
+    width: 0px; /* Use width for horizontal scrollbar buttons */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    background: none; /* No background for the arrows */
+    width: 0px; /* Use width for horizontal scrollbar arrows */
+    border: none; /* Remove any border */
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none; /* No background for the add-page and sub-page */
+    border: none; /* Remove any border */
+}
+
+</string>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QTextEdit::LineWrapMode::NoWrap</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearTertiaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>864</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveTertiaryConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>894</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="sysFrame">
+    <property name="geometry">
+     <rect>
+      <x>381</x>
+      <y>848</y>
+      <width>822</width>
+      <height>149</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame#sysFrame{    
+	border: 2px solid black; /* Border for the group box */
+    border-radius: 5px; /* Rounded corners for the border */
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>false</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>false</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+ <buttongroups>
+  <buttongroup name="autoManualCommsButtonGroup"/>
+ </buttongroups>
+</ui>

@@ -1,0 +1,5 @@
+VERSION_STRING = 1.0.0
+
+---------- History ----------
+1.0.0
+- Base release of GUI.
