@@ -13,7 +13,7 @@ from UI.ui_styling import CSS
 Metrics handler expects to receive messages in the following format:
 
 Message Header:
-    Message ID (1 byte) | Size (2 bytes) | Source (1 byte) | Destination (1 byte) | Mode (1 byte)
+    Message ID (1 byte) | Size (2 bytes) | Source (1 byte) | Destination (1 byte) | Mode (1 byte) | SRID (2 bytes)
 Metric Payload:
     Metric Subcode (2 bytes) | Timestamp (8 bytes) | Sequence Number (2 bytes) | UUID (4 bytes) | Mode (4 bytes) | Data1 (4 bytes) | Data2 (4 bytes) | Data3 (4 bytes) | Data4 (4 bytes)
 """

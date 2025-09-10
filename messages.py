@@ -4,9 +4,9 @@ from struct import calcsize, pack, unpack
 
 message_endianess = "<"            # Little endian.
 message_CRC_format = "B"           # Format for the CRC byte.
-message_header_format = "BHBBB"    # Little endian. ID, size, source, dest, mode.
-message_header_num_bytes = 6       # Number of bytes in the header.
-message_header_num_items = 5       # Number of items in the header once unpacked.
+message_header_format = "BHBBBH"   # Little endian. ID, size, source, dest, mode, SRID.
+message_header_num_bytes = 8       # Number of bytes in the header.
+message_header_num_items = 6       # Number of items in the header once unpacked.
 
 
 def unpackMessage(payload_format, msg):
@@ -128,7 +128,7 @@ def buildMessage(msg_ID, payload_format, payload, dest, mode, source=SrcDest.SRC
 
         # Then pack the header.
         size = len(packed_payload)
-        packed_header = pack(f"{message_endianess}{message_header_format}", msg_ID.value, size, source.value, dest.value, mode.value)
+        packed_header = pack(f"{message_endianess}{message_header_format}", msg_ID.value, size, source.value, dest.value, mode.value, 0) # SRID is 0 for now.
 
         return packed_header + packed_payload
     except Exception as e:

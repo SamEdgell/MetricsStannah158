@@ -34,8 +34,13 @@ class SrcDest(EnumUtils, Enum):
     """
     SRC_DEST_NONE           = 0
     SRC_DEST_PC             = 1
-    SRC_DEST_ECU1           = 2
-    SRC_DEST_ECU2           = 3
+    SRC_DEST_ATE            = 2
+    SRC_DEST_DEV_BOX        = 3
+    SRC_DEST_ECU1           = 4
+    SRC_DEST_ECU2           = 5
+    SRC_DEST_INSTALLATION   = 6
+    SRC_DEST_X06            = 7
+    SRC_DEST_HW_TEST_TOOL   = 8
 
 
 @unique
@@ -49,7 +54,7 @@ class MsgMode(EnumUtils, Enum):
     SET                     = 2
     REQ                     = 3
 
-    NACK                    = 10
-    GET_ACK                 = 11
-    SET_ACK                 = 12
-    REQ_ACK                 = 13
+    GET_ACK                 = 21
+    SET_ACK                 = 22
+    REQ_ACK                 = 23
+    NACK                    = 24
