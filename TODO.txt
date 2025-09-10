@@ -1,4 +1,0 @@
-UIADC/ UIGPIO:
-- if a channel is altered, highlight the columns row that states the name of that channel, handling of whether a channel has been altered will be done on ECU side,
-when a received message has come in, the update function for the table should also check whether any channels have been altered, if they have, it will highlight the channel row.
-- Altered messages must only be sent if there is more than 1 row to alter
