@@ -24,7 +24,7 @@ class UIPanel:
         # Fit and centre the Metrics logo within the image frame.
         self.image_label = ScalableLabel(self.main_window.ui.imageFrame)
         self.image_label.setAlignment(Qt.AlignCenter)
-        pixmap = QPixmap("Images/Metrics-Logo.png")
+        pixmap = QPixmap("Images/Metrics-Stannah-Logo.png")
         self.image_label.setPixmap(pixmap)
         image_frame_layout = QVBoxLayout(self.main_window.ui.imageFrame)
         image_frame_layout.addWidget(self.image_label)

@@ -70,7 +70,7 @@ class SplashScreen(QWidget):
 
         # Add the scalable logo label to the image frame.
         logo_label = ScalableLabel(metrics_image_frame)
-        pixmap = QPixmap("Images/Metrics-Logo.png")
+        pixmap = QPixmap("Images/Metrics-Stannah-Logo.png")
         logo_label.setPixmap(pixmap)
         image_frame_layout.addWidget(logo_label)
 
