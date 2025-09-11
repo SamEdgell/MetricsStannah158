@@ -200,6 +200,8 @@ class UIADC:
             offset:     Row number offset to start capturing data from.
         """
         data = [0] * adc_count
+        alter_approved = False
+
         for i in range(adc_count):
             row_num = i + offset
             altered_row = self.main_window.ui.adcTable.item(row_num, 4).text()
@@ -209,6 +211,7 @@ class UIADC:
 
             # Has this row been altered?
             if len(altered_row) > 0:
+                alter_approved = True
                 try:
                     # Convert string to int.
                     value = int(altered_row)
@@ -224,7 +227,8 @@ class UIADC:
 
             data[i] = value
 
-        self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
+        if alter_approved:
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
 
 
     def updateADCTable(self, msg):

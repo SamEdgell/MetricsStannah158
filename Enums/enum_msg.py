@@ -20,10 +20,10 @@ class MessageID(EnumUtils, Enum):
     METRICS_EVENT                       = 0x20
     METRICS_ADC_ALTER                   = 0x21
     METRICS_RESET_ADC_ALTER             = 0x22
-    METRICS_GPIO_INPUTS_ALTER           = 0x23
-    METRICS_RESET_GPIO_INPUTS_ALTER     = 0x24
-    METRICS_GPIO_OUTPUTS_ALTER          = 0x25
-    METRICS_RESET_GPIO_OUTPUTS_ALTER    = 0x26
+    METRICS_INPUTS_ALTER                = 0x23
+    METRICS_RESET_INPUTS_ALTER          = 0x24
+    METRICS_OUTPUTS_ALTER               = 0x25
+    METRICS_RESET_OUTPUTS_ALTER         = 0x26
 
 
 @unique

@@ -176,7 +176,7 @@ class UIGPIO:
         """
         self.clearAlteredData(table)
         # Reset alter on both boards.
-        msgID = MessageID.METRICS_RESET_GPIO_INPUTS_ALTER if table == self.main_window.ui.inputsTable else MessageID.METRICS_RESET_GPIO_OUTPUTS_ALTER
+        msgID = MessageID.METRICS_RESET_INPUTS_ALTER if table == self.main_window.ui.inputsTable else MessageID.METRICS_RESET_OUTPUTS_ALTER
         for dest in [SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2]:
             self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
 
@@ -224,6 +224,7 @@ class UIGPIO:
         """
         states = [0, 0, 0, 0]
         override_state = [0, 0, 0, 0]
+        alter_approved = False
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th input.
@@ -235,13 +236,15 @@ class UIGPIO:
 
             # Check to see whether this pin should be altered to logic 1.
             if altered_row == "1":
+                alter_approved = True
                 states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 # Update the pin to its altered state.
                 override_state[word] = override_state[word] | bitmask
 
-        self.main_window.ui_comms.sendMessage(MessageID.METRICS_GPIO_INPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
+        if alter_approved:
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
 
 
     def overrideOutputs(self, offset, gpio_count, dest):
@@ -255,6 +258,7 @@ class UIGPIO:
         """
         states = [0, 0, 0, 0]
         override_state = [0, 0, 0, 0]
+        alter_approved = False
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th output.
@@ -266,13 +270,15 @@ class UIGPIO:
 
             # Check to see whether this pin should be altered to logic 1.
             if altered_row == "1":
+                alter_approved = True
                 states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 # Update the pin to its altered state.
                 override_state[word] = override_state[word] | bitmask
 
-        self.main_window.ui_comms.sendMessage(MessageID.METRICS_GPIO_OUTPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
+        if alter_approved:
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
 
 
     def handleCellClick(self, table):
