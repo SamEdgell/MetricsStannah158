@@ -235,6 +235,21 @@ class UIComms:
     ########## Auto/Serial Connection Methods ##########
 
 
+    def inDemoMode(self):
+        """
+        Returns whether demo mode is currently active. Implemented here so that PortHandler can check this status before attempting to open a port.
+        This instance (UIComms) is passed to port handler on initialisation. There is no way to pass a reference of the demo UI class to PortHandler directly as it is created after PortHandler.
+
+        Returns:
+            True if active, False otherwise.
+        """
+        if self.main_window.ui_demo is not None:
+            if self.main_window.ui_demo.isActive():
+                self.main_window.ui_console.logDebugConsole(f"Cannot open port because demo mode is active.")
+                return True
+        return False
+
+
     def radioButtonHandler(self):
         """
         Determines what radio button has been selected and acts accordingly.
@@ -242,16 +257,24 @@ class UIComms:
         If manual mode is selected, enables manual connect, enables the connect button, and refreshes the list of available ports.
         """
         if self.main_window.ui.autoSerialButton.isChecked():
-            self.serial_port_handler.setAutoConnect()
-            # Serial connect button is disabled when auto serial is selected, also update button style sheet.
-            self.main_window.ui.serialConnectButton.setEnabled(False)
-            self.main_window.ui.serialConnectButton.setStyleSheet("""
-                                                                color: #000000;                     /* Text colour */
-                                                                border: 2px solid #000000;          /* Thick black solid border */
-                                                                border-radius: 5px;                 /* Rounded corners */
-                                                                background-color: #FFA2A7;          /* Background colour */
-                                                                """)
-            self.main_window.ui.serialConnectButton.setText("Select Manual")
+            # Do not allow switching to auto mode if demo mode is active.
+            if not self.inDemoMode():
+                self.serial_port_handler.setAutoConnect()
+                # Serial connect button is disabled when auto serial is selected, also update button style sheet.
+                self.main_window.ui.serialConnectButton.setEnabled(False)
+                self.main_window.ui.serialConnectButton.setStyleSheet("""
+                                                                    color: #000000;                     /* Text colour */
+                                                                    border: 2px solid #000000;          /* Thick black solid border */
+                                                                    border-radius: 5px;                 /* Rounded corners */
+                                                                    background-color: #FFA2A7;          /* Background colour */
+                                                                    """)
+                self.main_window.ui.serialConnectButton.setText("Select Manual")
+            else:
+                # Deny this button request, temporarily block the signal to prevent recursion.
+                self.main_window.ui.autoSerialButton.blockSignals(True)
+                self.main_window.ui.autoSerialButton.setChecked(False)
+                self.main_window.ui.autoSerialButton.blockSignals(False)
+                self.main_window.ui.manualSerialButton.setChecked(True)
         else:
             if self.main_window.ui.manualSerialButton.isChecked():
                 self.serial_port_handler.setManualConnect()
@@ -275,7 +298,8 @@ class UIComms:
         If already connected, closes the connection.
         """
         if self.main_window.ui.manualSerialButton.isChecked():
-            if not self.serial_port_handler.connected():
+            # We should only connect to the port if we are not already connected and we are not in demo mode.
+            if not self.serial_port_handler.connected() and not self.inDemoMode():
                 self.serial_port_handler.open(self.main_window.ui.comPortBox.currentText())
             else:
                 self.serial_port_handler.close()
@@ -296,14 +320,19 @@ class UIComms:
             # Only update if not connected.
             if not self.serial_port_handler.connected():
                 current_port = self.main_window.ui.comPortBox.currentText()
-                available_ports = sorted(ports[0])
+                discovered_ports = sorted(ports[0]) # Sort all discovered ports alphabetically.
 
-                # Only update if the list of ports has changed.
-                if available_ports != self.last_ports:
+                # Only update if the list of discovered ports has changed.
+                if discovered_ports != self.last_ports:
                     self.main_window.ui.comPortBox.clear()
-                    self.main_window.ui.comPortBox.addItems(available_ports)
-                    self.last_ports = available_ports.copy()
+                    self.main_window.ui.comPortBox.addItems(discovered_ports)
+                    self.last_ports = discovered_ports.copy()
 
+                    """
+                    Finds the index of the current port string in the combo box.
+                    If the port is present, selects it; otherwise, selects the first available port if any items exist.
+                    If both fail, the box remains empty.
+                    """
                     index = self.main_window.ui.comPortBox.findText(current_port)
                     if index != -1:
                         self.main_window.ui.comPortBox.setCurrentIndex(index)
@@ -311,15 +340,16 @@ class UIComms:
                         self.main_window.ui.comPortBox.setCurrentIndex(0)
         else:
             if self.main_window.ui.autoSerialButton.isChecked():
+                # Gather all strings displayed in the COM port box.
                 discovered_ports = [self.main_window.ui.comPortBox.itemText(i) for i in range(self.main_window.ui.comPortBox.count())]
 
-                # Only update if the connected port has changed (very unlikely to change).
-                if ports[1] is not None and (len(discovered_ports) != 1 or discovered_ports[0] != ports[1]):
+                # Only update if the connected port has changed (very unlikely to change) unless changing from None.
+                if ports[1] and (len(discovered_ports) != 1 or discovered_ports[0] != ports[1]):
                     self.main_window.ui.comPortBox.clear()
                     self.main_window.ui.comPortBox.addItem(ports[1])
                 else:
                     # Clear the box if the port has been disconnected.
-                    if ports[1] is None and len(discovered_ports) > 0:
+                    if not ports[1] and len(discovered_ports) > 0:
                         self.main_window.ui.comPortBox.clear()
 
 

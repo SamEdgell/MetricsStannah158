@@ -18,6 +18,8 @@ class UIDemo:
         """
         self.main_window = main_window
 
+        self.active = False
+
         # ADC demo data.
         self.ecu1_ADC_payloads = [
             # Num CH     Raw0    Scaled  Raw1    Scaled  Raw2    Scaled  Raw3    Scaled  Raw4    Scaled  Raw5    Scaled  Raw6    Scaled  Raw7    Scaled  Raw8    Scaled  Raw9    Scaled  Raw10   Scaled  Raw11   Scaled  Raw12   Scaled  Raw13   Scaled  Raw14   Scaled
@@ -136,6 +138,8 @@ class UIDemo:
         self.outputs_test_timer.timeout.connect(self.demoOutputs)
         self.outputs_test_timer.start(800)
 
+        self.active = True
+
 
     def stop(self):
         """
@@ -145,6 +149,14 @@ class UIDemo:
         self.adc_test_timer.stop()
         self.inputs_test_timer.stop()
         self.outputs_test_timer.stop()
+        self.active = False
+
+
+    def isActive(self):
+        """
+        Returns if demo mode is active.
+        """
+        return self.active
 
 
     def demoADC(self):

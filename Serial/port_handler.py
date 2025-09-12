@@ -58,7 +58,7 @@ class PortHandler:
                     else:
                         self.handleManualConnect()
 
-                connected_port = self.serial_handler.getConnectedPort() if self.serial_handler else None
+                connected_port = self.serial_handler.getConnectedPort() if self.serial_handler is not None else None # There is no connected port if the serial handler is None.
                 self.ui_comms.signal_slot.com_port_signal.emit([list(self.discovered_ports), connected_port])
 
                 time.sleep(LOOP_TIMEOUT)
@@ -96,7 +96,7 @@ class PortHandler:
         Attempts to close the connected port and serial handler.
         """
         # Cannot close a port if none is connected.
-        if not self.port_connected:
+        if not self.connected():
             return
 
         if self.serial_handler:
@@ -104,7 +104,7 @@ class PortHandler:
             self.serial_handler = None
 
         self.port_connected = False
-        self.ui_comms.signal_slot.status_signal.emit(self.port_connected)
+        self.ui_comms.signal_slot.status_signal.emit(self.connected())
 
 
     def handleAutoConnect(self):
@@ -115,11 +115,12 @@ class PortHandler:
 
         # If we have recognised ports, try to connect to the first one.
         if self.recognised_ports:
-            if not self.port_connected:
+            # We should only connect to the port if we are not already connected and we are not in demo mode.
+            if not self.connected() and not self.ui_comms.inDemoMode():
                 port_to_connect = next(iter(self.recognised_ports))
                 self.open(port_to_connect)
         # If we have no recognised ports, ensure we are disconnected.
-        elif self.port_connected:
+        elif self.connected():
             self.close()
 
 
@@ -127,8 +128,8 @@ class PortHandler:
         """
         Handles manual connection to a port.
         """
-        # If we are connected, but the port has physically disappeared, close the connection.
-        if self.port_connected and self.serial_handler:
+        # If we are connected, but the port has physically disappeared, and serial handler is active, close the connection.
+        if self.connected() and self.serial_handler is not None:
             if self.serial_handler.getConnectedPort() not in self.discovered_ports:
                 self.close()
 
@@ -141,7 +142,7 @@ class PortHandler:
             port: The requested port to connect to.
         """
         # Do not attempt to open the port if a port is already connected or we are preparing to close the application.
-        if self.port_connected or self.prepare_for_quit:
+        if self.connected() or self.prepare_for_quit:
             return
 
         try:
@@ -160,7 +161,7 @@ class PortHandler:
             print(f"E2: {__file__}: {e}")
             self.serial_handler = None
 
-        self.ui_comms.signal_slot.status_signal.emit(self.port_connected)
+        self.ui_comms.signal_slot.status_signal.emit(self.connected())
 
 
     def setAutoConnect(self):
@@ -208,7 +209,7 @@ class PortHandler:
         with self.lock:
             self.discovered_ports = current_ports
             self.scanPorts()
-        connected_port = self.serial_handler.getConnectedPort() if self.serial_handler else None
+        connected_port = self.serial_handler.getConnectedPort() if self.serial_handler is not None else None # There is no connected port if the serial handler is None.
         self.ui_comms.signal_slot.com_port_signal.emit([list(self.discovered_ports), connected_port])
 
 
