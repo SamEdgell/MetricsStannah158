@@ -80,7 +80,7 @@ class ProtocolParser:
                     self.reset()
 
             if msg_received:
-                if self.callbackMethod is not None:
+                if self.callbackMethod:
                     if self.rx_buffer[0] in [msg_id.value for msg_id in MessageID]:
                         # Create a copy of the message to avoid reference issues.
                         message = bytes(self.rx_buffer[:self.msg_size])
