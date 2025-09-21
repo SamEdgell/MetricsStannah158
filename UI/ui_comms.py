@@ -1,13 +1,17 @@
+# Standard library imports.
 import asyncio
-
 from datetime import datetime
+from time import time
+
+# Third party imports.
+from PySide6 import QtCore
+
+# Local application imports.
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from messages import buildMessage, unpackMessage
 from metrics_handler import processMetrics
-from PySide6 import QtCore
 from Serial.port_handler import PortHandler
 from Serial.protocol_parser import ProtocolParser
-from time import time
 from UI.ui_signal_slot import SignalSlot
 from UI.ui_styling import CSS
 

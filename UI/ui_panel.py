@@ -1,6 +1,12 @@
+# Standard library imports.
+import multiprocessing
+
+# Third party imports.
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QVBoxLayout
+
+# Local application imports.
 from UI.ui_colour_creator import UIColourCreator
 from UI.ui_custom_widgets import ScalableLabel
 from UI.ui_demo import UIDemo
