@@ -1,6 +1,9 @@
+# Third party imports.
 from PySide6.QtWidgets import QFrame, QLabel, QProgressBar, QVBoxLayout, QWidget
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
+
+# Local application imports.
 from UI.ui_custom_widgets import ScalableLabel
 
 

@@ -1,3 +1,4 @@
+# Third party imports.
 from PySide6 import QtCore
 
 

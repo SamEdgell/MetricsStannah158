@@ -1,7 +1,10 @@
+# Third party imports.
 from PySide6 import QtGui
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPainterPath, QRegion
 from PySide6.QtWidgets import QLabel, QStyle, QStyledItemDelegate
+
+# Local application imports.
 from UI.ui_styling import Colours
 
 
