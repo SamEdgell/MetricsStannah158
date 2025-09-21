@@ -1,8 +1,12 @@
+# Standard library imports.
 import time
 
+# Third party imports.
 from PySide6 import QtWidgets
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QMainWindow
+
+# Local application imports.
 from UI.ui_comms import UIComms # Component included here because its scope cannot be limited to one function like the other components.
 from UI.ui_main_window import Ui_MainWindow
 
@@ -34,7 +38,6 @@ class UIBase(QMainWindow):
         self.splash_screen.set_progress(self.splash_progress, "Loading UI...")
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.splash_screen.set_progress(self.splash_progress, "UI Loaded")
         QtWidgets.QApplication.instance().processEvents() # Forces the Qt event loop to process any pending GUI events immediately.
 
         # Set the window title and icon, the title contains the version.

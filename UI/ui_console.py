@@ -1,9 +1,13 @@
+# Standard library imports.
 import os
-
 from datetime import datetime
-from metrics_handler import formatTimestamp
+
+# Third party imports.
 from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import QFileDialog
+
+# Local application imports.
+from metrics_handler import formatTimestamp
 
 
 class UIConsole:
