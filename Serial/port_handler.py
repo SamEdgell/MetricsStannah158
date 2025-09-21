@@ -1,7 +1,11 @@
-import serial.tools.list_ports
+# Standard library imports.
 import threading
 import time
 
+# Third party imports.
+import serial.tools.list_ports
+
+# Local application imports.
 from Serial.serial_handler import SerialHandler
 
 

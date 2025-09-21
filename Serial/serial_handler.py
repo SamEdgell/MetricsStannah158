@@ -1,10 +1,12 @@
+# Standard library imports.
 import queue
 import serial
 import threading
 import time
-
 from datetime import datetime, timedelta
 from queue import Queue
+
+# Local application imports.
 from Serial.protocol_parser import ProtocolParser
 
 
