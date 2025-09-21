@@ -16,7 +16,7 @@ class Colours:
     MAP_EDITING             = QtGui.QColor("#FFB037")  # Orange
     MAP_FINDING             = QtGui.QColor("#FFB4D8")  # Pink
     MAP_RESTRICTED          = QtGui.QColor("#A6FFA7")  # Green
-    OVERRIDE                = QtGui.QColor("#F2C46F")  # Orange
+    ALTER                   = QtGui.QColor("#F2C46F")  # Orange
     RED                     = QtGui.QColor("#FF0000")  # Red
     SATURATED_RAW           = QtGui.QColor("#FFA2A7")  # Red
     ECU1_ID                 = QtGui.QColor("#C70000")  # Red

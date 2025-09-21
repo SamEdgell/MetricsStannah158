@@ -185,14 +185,14 @@ class UIADC:
         """
         Alters the ADC table. The user has requested to alter one or more values in the table.
         """
-        self.overrideADC(len(ADCECU1), SrcDest.SRC_DEST_ECU1, 0)
-        self.overrideADC(len(ADCECU2), SrcDest.SRC_DEST_ECU2, len(ADCECU1))
+        self.alterADC(len(ADCECU1), SrcDest.SRC_DEST_ECU1, 0)
+        self.alterADC(len(ADCECU2), SrcDest.SRC_DEST_ECU2, len(ADCECU1))
         self.clearAlteredData() # This option may be disabled at times in future, but for now, once the button is clicked, clear the column.
 
 
-    def overrideADC(self, adc_count, dest, offset):
+    def alterADC(self, adc_count, dest, offset):
         """
-        Overrides the ADC channels for specified destination. Altering any channels affects the raw value only, not the scaled.
+        Alters the ADC channels for specified destination. Altering any channels affects the raw value only, not the scaled.
 
         Args:
             adc_count:  Total number of channels to enumerate.

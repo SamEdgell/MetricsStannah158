@@ -29,8 +29,8 @@ class UIGPIO:
 
         self.inputs_prev_state = [0] * 8
         self.outputs_prev_state = [0] * 8
-        self.overridden_inputs_prev_state = [0] * 8
-        self.overridden_outputs_prev_state = [0] * 8
+        self.altered_inputs_prev_state = [0] * 8
+        self.altered_outputs_prev_state = [0] * 8
 
         # Set up custom painter for all columns.
         delegate = Painter()
@@ -205,17 +205,17 @@ class UIGPIO:
             table: Table to alter.
         """
         if table == self.main_window.ui.inputsTable:
-            self.overrideInputs(0, len(InputsECU1), SrcDest.SRC_DEST_ECU1)
-            self.overrideInputs(len(InputsECU1), len(InputsECU2), SrcDest.SRC_DEST_ECU2)
+            self.alterInputs(0, len(InputsECU1), SrcDest.SRC_DEST_ECU1)
+            self.alterInputs(len(InputsECU1), len(InputsECU2), SrcDest.SRC_DEST_ECU2)
         else:
-            self.overrideOutputs(0, len(OutputsECU1), SrcDest.SRC_DEST_ECU1)
-            self.overrideOutputs(len(OutputsECU1), len(OutputsECU2), SrcDest.SRC_DEST_ECU2)
+            self.alterOutputs(0, len(OutputsECU1), SrcDest.SRC_DEST_ECU1)
+            self.alterOutputs(len(OutputsECU1), len(OutputsECU2), SrcDest.SRC_DEST_ECU2)
         self.clearAlteredData(table) # This option may be disabled at times in future, but for now, once the button is clicked, clear the column.
 
 
-    def overrideInputs(self, offset, gpio_count, dest):
+    def alterInputs(self, offset, gpio_count, dest):
         """
-        Overrides the GPIO inputs for specified destination.
+        Alters the GPIO inputs for specified destination.
 
         Args:
             offset:     Row number offset to start capturing data from.
@@ -223,7 +223,7 @@ class UIGPIO:
             dest:       The destination of those inputs to change.
         """
         states = [0, 0, 0, 0]
-        override_state = [0, 0, 0, 0]
+        altered_states = [0, 0, 0, 0]
         alter_approved = False
 
         for i in range(gpio_count):
@@ -241,15 +241,15 @@ class UIGPIO:
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 # Update the pin to its altered state.
-                override_state[word] = override_state[word] | bitmask
+                altered_states[word] = altered_states[word] | bitmask
 
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *states, *altered_states], dest, MsgMode.SET)
 
 
-    def overrideOutputs(self, offset, gpio_count, dest):
+    def alterOutputs(self, offset, gpio_count, dest):
         """
-        Overrides the GPIO outputs for specified destination.
+        Alters the GPIO outputs for specified destination.
 
         Args:
             offset:     Row number offset to start capturing data from.
@@ -257,7 +257,7 @@ class UIGPIO:
             dest:       The destination of those outputs to change.
         """
         states = [0, 0, 0, 0]
-        override_state = [0, 0, 0, 0]
+        altered_states = [0, 0, 0, 0]
         alter_approved = False
 
         for i in range(gpio_count):
@@ -275,10 +275,10 @@ class UIGPIO:
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 # Update the pin to its altered state.
-                override_state[word] = override_state[word] | bitmask
+                altered_states[word] = altered_states[word] | bitmask
 
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *states, *override_state], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *states, *altered_states], dest, MsgMode.SET)
 
 
     def handleCellClick(self, table):
@@ -326,11 +326,11 @@ class UIGPIO:
                 header, input_payload = unpackMessage("9I", msg)
 
                 source = header[2]
-                num_inputs = input_payload[0]          # The total number of inputs to loop through and retrieve data from in this message.
-                inputs = input_payload[1:5]            # Where the input data is located, there is a buffer of 4 words containing up to 32 inputs each.
-                overridden_inputs = input_payload[5:9] # Where the overridden input data is located, buffer of 4 words containing up to 32 inputs each.
-                changed_inputs = [0] * 4               # 4 words capable of holding up to 32 inputs each.
-                changed_overridden_inputs = [0] * 4    # 4 words capable of holding up to 32 overridden inputs each.
+                num_inputs = input_payload[0]           # The total number of inputs to loop through and retrieve data from in this message.
+                inputs = input_payload[1:5]             # Where the input data is located, there is a buffer of 4 words containing up to 32 inputs each.
+                altered_inputs = input_payload[5:9]     # Where the altered input data is located, buffer of 4 words containing up to 32 inputs each.
+                changed_inputs = [0] * 4                # 4 words capable of holding up to 32 inputs each.
+                changed_altered_inputs = [0] * 4        # 4 words capable of holding up to 32 altered inputs each.
 
                 if SrcDest(source) == SrcDest.SRC_DEST_ECU1:
                     # Check the number of inputs matches the expected number.
@@ -350,12 +350,12 @@ class UIGPIO:
                     print(f"UIGPIO - Unknown Source Update Inputs - {source}")
                     return
 
-                # Check for any bits that have changed state from the previous reading for both inputs and overridden inputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
+                # Check for any bits that have changed state from the previous reading for both inputs and altered inputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
                 for i in range(4):
                     changed_inputs[i] = self.inputs_prev_state[i + prev_table_offset] ^ inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
                     self.inputs_prev_state[i + prev_table_offset] = inputs[i] # Update previous with current data.
-                    changed_overridden_inputs[i] = self.overridden_inputs_prev_state[i + prev_table_offset] ^ overridden_inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.overridden_inputs_prev_state[i + prev_table_offset] = overridden_inputs[i] # Update previous with current data.
+                    changed_altered_inputs[i] = self.altered_inputs_prev_state[i + prev_table_offset] ^ altered_inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.altered_inputs_prev_state[i + prev_table_offset] = altered_inputs[i] # Update previous with current data.
 
                 # Loop through each input and update state (if changed).
                 for i in range(num_inputs):
@@ -373,9 +373,9 @@ class UIGPIO:
                         self.main_window.ui.inputsTable.item(row_num, 2).setBackground(cell_colour)
                         self.main_window.ui.inputsTable.item(row_num, 2).setForeground(Colours.BLACK)
 
-                    # Check if this input has changed overridden state.
-                    if changed_overridden_inputs[word] & bitmask:
-                        cell_colour = Colours.OVERRIDE if overridden_inputs[word] & bitmask else Colours.DEFAULT
+                    # Check if this input has changed altered state.
+                    if changed_altered_inputs[word] & bitmask:
+                        cell_colour = Colours.ALTER if altered_inputs[word] & bitmask else Colours.DEFAULT
                         self.main_window.ui.inputsTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:
@@ -397,9 +397,9 @@ class UIGPIO:
                 source = header[2]
                 num_outputs = output_payload[0]          # The total number of outputs to loop through and retrieve data from in this message.
                 outputs = output_payload[1:5]            # Where the output data is located, there is a buffer of 4 words containing up to 32 outputs each.
-                overridden_outputs = output_payload[5:9] # Where the overridden output data is located, buffer of 4 words containing up to 32 outputs each.
+                altered_outputs = output_payload[5:9]    # Where the altered output data is located, buffer of 4 words containing up to 32 outputs each.
                 changed_outputs = [0] * 4                # 4 words capable of holding up to 32 outputs each.
-                changed_overridden_outputs = [0] * 4     # 4 words capable of holding up to 32 overridden outputs each.
+                changed_altered_outputs = [0] * 4        # 4 words capable of holding up to 32 altered outputs each.
 
                 if SrcDest(source) == SrcDest.SRC_DEST_ECU1:
                     # Check the number of outputs matches the expected number.
@@ -419,12 +419,12 @@ class UIGPIO:
                     print(f"UIGPIO - Unknown Source Update Outputs")
                     return
 
-                # Check for any bits that have changed state from the previous reading for both outputs and overridden outputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
+                # Check for any bits that have changed state from the previous reading for both outputs and altered outputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
                 for i in range(4):
                     changed_outputs[i] = self.outputs_prev_state[i + prev_table_offset] ^ outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
                     self.outputs_prev_state[i + prev_table_offset] = outputs[i] # Update previous with current data.
-                    changed_overridden_outputs[i] = self.overridden_outputs_prev_state[i + prev_table_offset] ^ overridden_outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.overridden_outputs_prev_state[i + prev_table_offset] = overridden_outputs[i] # Update previous with current data.
+                    changed_altered_outputs[i] = self.altered_outputs_prev_state[i + prev_table_offset] ^ altered_outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.altered_outputs_prev_state[i + prev_table_offset] = altered_outputs[i] # Update previous with current data.
 
                 # Loop through each output and update state (if changed).
                 for i in range(num_outputs):
@@ -442,9 +442,9 @@ class UIGPIO:
                         self.main_window.ui.outputsTable.item(row_num, 2).setBackground(cell_colour)
                         self.main_window.ui.outputsTable.item(row_num, 2).setForeground(Colours.BLACK)
 
-                    # Check if this output has changed overridden state.
-                    if changed_overridden_outputs[word] & bitmask:
-                        cell_colour = Colours.OVERRIDE if overridden_outputs[word] & bitmask else Colours.DEFAULT
+                    # Check if this output has changed altered state.
+                    if changed_altered_outputs[word] & bitmask:
+                        cell_colour = Colours.ALTER if altered_outputs[word] & bitmask else Colours.DEFAULT
                         self.main_window.ui.outputsTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:

@@ -11,13 +11,6 @@ class ADCECU1(EnumUtils, Enum):
     ADC_CHANNEL_1                = 0
     ADC_CHANNEL_2                = 1
     ADC_CHANNEL_3                = 2
-    ADC_CHANNEL_4                = 3
-    ADC_CHANNEL_5                = 4
-    ADC_CHANNEL_6                = 5
-    ADC_CHANNEL_7                = 6
-    ADC_CHANNEL_8                = 7
-    ADC_CHANNEL_9                = 8
-    ADC_CHANNEL_10               = 9
 
 
 @unique
@@ -29,10 +22,3 @@ class ADCECU2(EnumUtils, Enum):
     ADC_CHANNEL_1                = 0
     ADC_CHANNEL_2                = 1
     ADC_CHANNEL_3                = 2
-    ADC_CHANNEL_4                = 3
-    ADC_CHANNEL_5                = 4
-    ADC_CHANNEL_6                = 5
-    ADC_CHANNEL_7                = 6
-    ADC_CHANNEL_8                = 7
-    ADC_CHANNEL_9                = 8
-    ADC_CHANNEL_10               = 9

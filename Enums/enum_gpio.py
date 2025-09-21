@@ -11,19 +11,6 @@ class InputsECU1(EnumUtils, Enum):
     INPUT_ID_1             = 0
     INPUT_ID_2             = 1
     INPUT_ID_3             = 2
-    INPUT_ID_4             = 3
-    INPUT_ID_5             = 4
-    INPUT_ID_6             = 5
-    INPUT_ID_7             = 6
-    INPUT_ID_8             = 7
-    INPUT_ID_9             = 8
-    INPUT_ID_10            = 9
-    INPUT_ID_11            = 10
-    INPUT_ID_12            = 11
-    INPUT_ID_13            = 12
-    INPUT_ID_14            = 13
-    INPUT_ID_15            = 14
-    INPUT_ID_16            = 15
 
 
 @unique
@@ -35,19 +22,6 @@ class InputsECU2(EnumUtils, Enum):
     INPUT_ID_1             = 0
     INPUT_ID_2             = 1
     INPUT_ID_3             = 2
-    INPUT_ID_4             = 3
-    INPUT_ID_5             = 4
-    INPUT_ID_6             = 5
-    INPUT_ID_7             = 6
-    INPUT_ID_8             = 7
-    INPUT_ID_9             = 8
-    INPUT_ID_10            = 9
-    INPUT_ID_11            = 10
-    INPUT_ID_12            = 11
-    INPUT_ID_13            = 12
-    INPUT_ID_14            = 13
-    INPUT_ID_15            = 14
-    INPUT_ID_16            = 15
 
 
 @unique
@@ -59,11 +33,6 @@ class OutputsECU1(EnumUtils, Enum):
     OUTPUT_ID_1            = 0
     OUTPUT_ID_2            = 1
     OUTPUT_ID_3            = 2
-    OUTPUT_ID_4            = 3
-    OUTPUT_ID_5            = 4
-    OUTPUT_ID_6            = 5
-    OUTPUT_ID_7            = 6
-    OUTPUT_ID_8            = 7
 
 
 @unique
@@ -75,11 +44,6 @@ class OutputsECU2(EnumUtils, Enum):
     OUTPUT_ID_1            = 0
     OUTPUT_ID_2            = 1
     OUTPUT_ID_3            = 2
-    OUTPUT_ID_4            = 3
-    OUTPUT_ID_5            = 4
-    OUTPUT_ID_6            = 5
-    OUTPUT_ID_7            = 6
-    OUTPUT_ID_8            = 7
 
 
 @unique
