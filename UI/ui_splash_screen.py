@@ -48,6 +48,7 @@ class SplashScreen(QWidget):
                 text-align: center;
                 color: #000000;
                 background-color: #D3D3D3;
+                font-weight: bold;
             }
             QProgressBar::chunk {
                 background-color: #A6FFA7;
