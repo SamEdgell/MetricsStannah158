@@ -1,4 +1,7 @@
+# Standard library imports.
 from enum import Enum, unique
+
+# Local application imports.
 from Enums.enum_utils import EnumUtils
 
 
