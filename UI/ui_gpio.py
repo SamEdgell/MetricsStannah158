@@ -236,10 +236,10 @@ class UIGPIO:
 
             # Check to see whether this pin should be altered to logic 1.
             if altered_row == "1":
-                alter_approved = True
                 states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
+                alter_approved = True
                 # Update the pin to its altered state.
                 altered_states[word] = altered_states[word] | bitmask
 
@@ -270,10 +270,10 @@ class UIGPIO:
 
             # Check to see whether this pin should be altered to logic 1.
             if altered_row == "1":
-                alter_approved = True
                 states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
+                alter_approved = True
                 # Update the pin to its altered state.
                 altered_states[word] = altered_states[word] | bitmask
 
