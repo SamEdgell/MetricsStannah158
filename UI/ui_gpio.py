@@ -27,10 +27,11 @@ class UIGPIO:
         self.main_window.ui.inputsTable.cellClicked.connect(lambda: self.handleCellClick(self.main_window.ui.inputsTable))
         self.main_window.ui.outputsTable.cellClicked.connect(lambda: self.handleCellClick(self.main_window.ui.outputsTable))
 
-        self.inputs_prev_state = [0] * 8
-        self.outputs_prev_state = [0] * 8
-        self.altered_inputs_prev_state = [0] * 8
-        self.altered_outputs_prev_state = [0] * 8
+        # For below. First 4 words are ECU1, last 4 words are ECU2.
+        self.current_input_states = [0] * 8
+        self.current_output_states = [0] * 8
+        self.current_altered_input_states = [0] * 8
+        self.current_altered_output_states = [0] * 8
 
         # Set up custom painter for all columns.
         delegate = Painter()
@@ -222,9 +223,15 @@ class UIGPIO:
             gpio_count: Total number of inputs to enumerate.
             dest:       The destination of those inputs to change.
         """
-        states = [0, 0, 0, 0]
-        altered_states = [0, 0, 0, 0]
         alter_approved = False
+
+        # Retain all current states. This allows multiple alterations to be made without losing previous ones (unless reset).
+        if SrcDest(dest) == SrcDest.SRC_DEST_ECU1:
+            input_states = self.current_input_states[:4]                    # First 4 words are ECU1 inputs.
+            altered_input_states = self.current_altered_input_states[:4]    # First 4 words are ECU1 altered inputs.
+        else:
+            input_states = self.current_input_states[4:]                    # Last 4 words are ECU2 inputs.
+            altered_input_states = self.current_altered_input_states[4:]    # Last 4 words are ECU2 altered inputs.
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th input.
@@ -234,17 +241,22 @@ class UIGPIO:
 
             altered_row = self.main_window.ui.inputsTable.item(row_num, 3).text()
 
-            # Check to see whether this pin should be altered to logic 1.
-            if altered_row == "1":
-                states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 alter_approved = True
-                # Update the pin to its altered state.
-                altered_states[word] = altered_states[word] | bitmask
 
+                # Check to see whether this pin should be altered to logic 1 or 0.
+                if altered_row == "1":
+                    input_states[word] = input_states[word] | bitmask
+                else:
+                    input_states[word] = input_states[word] & ~bitmask
+
+                # Update that this pin has been altered.
+                altered_input_states[word] = altered_input_states[word] | bitmask
+
+        # Has at least one pin been altered?
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *states, *altered_states], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *input_states, *altered_input_states], dest, MsgMode.SET)
 
 
     def alterOutputs(self, offset, gpio_count, dest):
@@ -256,9 +268,15 @@ class UIGPIO:
             gpio_count: Total number of outputs to enumerate.
             dest:       The destination of those outputs to change.
         """
-        states = [0, 0, 0, 0]
-        altered_states = [0, 0, 0, 0]
         alter_approved = False
+
+        # Retain all current states. This allows multiple alterations to be made without losing previous ones (unless reset).
+        if SrcDest(dest) == SrcDest.SRC_DEST_ECU1:
+            output_states = self.current_output_states[:4]                     # First 4 words are ECU1 outputs.
+            altered_output_states = self.current_altered_output_states[:4]     # First 4 words are ECU1 altered outputs.
+        else:
+            output_states = self.current_output_states[4:]                     # Last 4 words are ECU2 outputs.
+            altered_output_states = self.current_altered_output_states[4:]     # Last 4 words are ECU2 altered outputs.
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th output.
@@ -268,17 +286,22 @@ class UIGPIO:
 
             altered_row = self.main_window.ui.outputsTable.item(row_num, 3).text()
 
-            # Check to see whether this pin should be altered to logic 1.
-            if altered_row == "1":
-                states[word] = states[word] | bitmask
             # Check to see whether this pin has an altered value set.
             if len(altered_row) > 0:
                 alter_approved = True
-                # Update the pin to its altered state.
-                altered_states[word] = altered_states[word] | bitmask
 
+                # Check to see whether this pin should be altered to logic 1 or 0.
+                if altered_row == "1":
+                    output_states[word] = output_states[word] | bitmask
+                else:
+                    output_states[word] = output_states[word] & ~bitmask
+
+                # Update that this pin has been altered.
+                altered_output_states[word] = altered_output_states[word] | bitmask
+
+        # Has at least one pin been altered?
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *states, *altered_states], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *output_states, *altered_output_states], dest, MsgMode.SET)
 
 
     def handleCellClick(self, table):
@@ -337,14 +360,14 @@ class UIGPIO:
                     if num_inputs != len(InputsECU1):
                         print(f"ECU1 Inputs Count Mismatch. Enum Count = {len(InputsECU1)}. Actual Count = {num_inputs}")
                         return
-                    prev_table_offset = 0 # First 4 words in self.inputs_prev_state are ECU1 inputs.
+                    prev_table_offset = 0 # First 4 words are ECU1 inputs.
                     ecu_offset = 0 # For ECU1 inputs, the row number is not shifted down the table.
                 elif SrcDest(source) == SrcDest.SRC_DEST_ECU2:
                     # Check the number of inputs matches the expected number.
                     if num_inputs != len(InputsECU2):
                         print(f"ECU2 Inputs Count Mismatch. Enum Count = {len(InputsECU2)}. Actual Count = {num_inputs}")
                         return
-                    prev_table_offset = 4 # Last 4 words in self.inputs_prev_state are ECU2 inputs.
+                    prev_table_offset = 4 # Last 4 words are ECU2 inputs.
                     ecu_offset = len(InputsECU1) # The ECU2 offset starts from at the end of the ECU1.
                 else:
                     print(f"UIGPIO - Unknown Source Update Inputs - {source}")
@@ -352,10 +375,10 @@ class UIGPIO:
 
                 # Check for any bits that have changed state from the previous reading for both inputs and altered inputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
                 for i in range(4):
-                    changed_inputs[i] = self.inputs_prev_state[i + prev_table_offset] ^ inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.inputs_prev_state[i + prev_table_offset] = inputs[i] # Update previous with current data.
-                    changed_altered_inputs[i] = self.altered_inputs_prev_state[i + prev_table_offset] ^ altered_inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.altered_inputs_prev_state[i + prev_table_offset] = altered_inputs[i] # Update previous with current data.
+                    changed_inputs[i] = self.current_input_states[i + prev_table_offset] ^ inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.current_input_states[i + prev_table_offset] = inputs[i] # Update current states.
+                    changed_altered_inputs[i] = self.current_altered_input_states[i + prev_table_offset] ^ altered_inputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.current_altered_input_states[i + prev_table_offset] = altered_inputs[i] # Update current altered states.
 
                 # Loop through each input and update state (if changed).
                 for i in range(num_inputs):
@@ -406,14 +429,14 @@ class UIGPIO:
                     if num_outputs != len(OutputsECU1):
                         print(f"ECU1 Outputs Count Mismatch. Enum Count = {len(OutputsECU1)}. Actual Count = {num_outputs}")
                         return
-                    prev_table_offset = 0 # First 4 words in self.outputs_prev_state are ECU1 outputs.
+                    prev_table_offset = 0 # First 4 words are ECU1 outputs.
                     ecu_offset = 0 # For ECU1 outputs, the row number is not shifted down the table.
                 elif SrcDest(source) == SrcDest.SRC_DEST_ECU2:
                     # Check the number of outputs matches the expected number.
                     if num_outputs != len(OutputsECU2):
                         print(f"ECU2 Outputs Count Mismatch. Enum Count = {len(OutputsECU2)}. Actual Count = {num_outputs}")
                         return
-                    prev_table_offset = 4 # Last 4 words in self.outputs_prev_state are ECU2 outputs.
+                    prev_table_offset = 4 # Last 4 words are ECU2 outputs.
                     ecu_offset = len(OutputsECU1) # The ECU2 offset starts from at the end of the ECU1.
                 else:
                     print(f"UIGPIO - Unknown Source Update Outputs")
@@ -421,10 +444,10 @@ class UIGPIO:
 
                 # Check for any bits that have changed state from the previous reading for both outputs and altered outputs. Doing this allows efficient GUI updates and prevents unnecessary redraws.
                 for i in range(4):
-                    changed_outputs[i] = self.outputs_prev_state[i + prev_table_offset] ^ outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.outputs_prev_state[i + prev_table_offset] = outputs[i] # Update previous with current data.
-                    changed_altered_outputs[i] = self.altered_outputs_prev_state[i + prev_table_offset] ^ altered_outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
-                    self.altered_outputs_prev_state[i + prev_table_offset] = altered_outputs[i] # Update previous with current data.
+                    changed_outputs[i] = self.current_output_states[i + prev_table_offset] ^ outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.current_output_states[i + prev_table_offset] = outputs[i] # Update current states.
+                    changed_altered_outputs[i] = self.current_altered_output_states[i + prev_table_offset] ^ altered_outputs[i] # This is a 'change mask', bits that have changed are set to 1, else 0.
+                    self.current_altered_output_states[i + prev_table_offset] = altered_outputs[i] # Update current altered states.
 
                 # Loop through each output and update state (if changed).
                 for i in range(num_outputs):
