@@ -1,7 +1,9 @@
+# Standard library imports.
 import re
-
 from datetime import datetime
 from enum import Enum, unique
+
+# Local application imports.
 from Enums.enum_gpio import InputsECU1, InputsECU2, LogicState, OutputsECU1, OutputsECU2
 from Enums.enum_metrics import MetricSubcodes
 from Enums.enum_msg import MsgMode, SrcDest

@@ -1,8 +1,12 @@
+# Standard library imports.
 import asyncio
 import qasync
 import sys
 
+# Third party imports.
 from PySide6 import QtWidgets
+
+# Local application imports.
 from UI.ui_base import UIBase
 from UI.ui_splash_screen import SplashScreen
 

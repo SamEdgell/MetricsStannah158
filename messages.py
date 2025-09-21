@@ -1,5 +1,8 @@
-from Enums.enum_msg import SrcDest
+# Standard library imports.
 from struct import calcsize, pack, unpack
+
+# Local application imports.
+from Enums.enum_msg import SrcDest
 
 
 message_endianess = "<"            # Little endian.

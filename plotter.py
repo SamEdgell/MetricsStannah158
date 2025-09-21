@@ -1,10 +1,12 @@
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
+# Standard library imports.
 import os
-import pandas as pd
-import seaborn as sns
 import sys
 
+# Third party imports.
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import pandas as pd
+import seaborn as sns
 from matplotlib.legend import Legend
 from matplotlib.lines import Line2D
 from matplotlib.widgets import Button
@@ -509,18 +511,21 @@ def createPlot(filename):
     #----------------------------------------------- SHOW/HIDE BUTTONS -----------------------------------------------
 
 
-    def toggleVisibilityGroup(event, group_key, lines_list):
+    def toggleVisibilityGroup(event, group_key, lines_list, set_visibility=None):
         """
         Toggles visibility for a group of lines and updates legend and button label.
 
         Args:
-            event:      The button click event.
-            group_key:  The key for the group ('primary', 'secondary', etc.).
-            lines_list: The list of Line2D objects for the group.
+            event:          The button click event.
+            group_key:      The key for the group ('primary', 'secondary', etc.).
+            lines_list:     The list of Line2D objects for the group.
+            set_visibility: If not None, force visibility to this value.
         """
         nonlocal hide_flags
-        flag = hide_flags[group_key]
-        new_visibility = not flag # Toggle visibility.
+        # Determine current visibility by checking the first line (if any)
+        current_visible = lines_list and lines_list[0].get_visible()
+        # If set_visibility is provided, use it; otherwise, toggle
+        new_visibility = set_visibility if set_visibility is not None else not current_visible
         new_alpha = 1.0 if new_visibility else 0.2
         new_button_text = f"Hide {group_key.capitalize()}" if new_visibility else f"Show {group_key.capitalize()}"
 
@@ -532,7 +537,7 @@ def createPlot(filename):
                     if legline in lined and lined[legline] == line: legline.set_alpha(new_alpha)
                     if legtext in lined and lined[legtext] == line: legtext.set_alpha(new_alpha)
 
-        hide_flags[group_key] = new_visibility
+        hide_flags[group_key] = not new_visibility  # True means hidden, False means visible
         if group_key in button_refs: button_refs[group_key].label.set_text(new_button_text)
         fig.canvas.draw_idle()
 
@@ -542,30 +547,17 @@ def createPlot(filename):
         Toggles visibility for all groups and updates the 'Show All/Hide All' button label.
         """
         nonlocal hide_flags
-        target_hide_state = not hide_flags['all']
-        # Trigger individual toggles based on target state.
-        if target_hide_state: # Target is Hide All.
-             if not hide_flags['primary']:
-                 toggleVisibilityGroup(event, 'primary', primary_lines)
-             if not hide_flags['secondary']:
-                 toggleVisibilityGroup(event, 'secondary', secondary_lines)
-             if not hide_flags['tertiary']:
-                 toggleVisibilityGroup(event, 'tertiary', tertiary_lines)
-             if not hide_flags['quaternary']:
-                 toggleVisibilityGroup(event, 'quaternary', quaternary_lines)
-        else: # Target is Show All.
-             if hide_flags['primary']:
-                 toggleVisibilityGroup(event, 'primary', primary_lines)
-             if hide_flags['secondary']:
-                 toggleVisibilityGroup(event, 'secondary', secondary_lines)
-             if hide_flags['tertiary']:
-                 toggleVisibilityGroup(event, 'tertiary', tertiary_lines)
-             if hide_flags['quaternary']:
-                 toggleVisibilityGroup(event, 'quaternary', quaternary_lines)
-
-        hide_flags['all'] = target_hide_state
+        hide_flags['all'] = not hide_flags['all']
         if 'all' in button_refs:
-            button_refs['all'].label.set_text('Hide All' if not hide_flags['all'] else 'Show All')
+            button_refs['all'].label.set_text('Show All' if hide_flags['all'] else 'Hide All')
+
+        # Explicitly set visibility for all groups
+        toggleVisibilityGroup(event, 'primary', primary_lines, set_visibility=not hide_flags['all'])
+        toggleVisibilityGroup(event, 'secondary', secondary_lines, set_visibility=not hide_flags['all'])
+        toggleVisibilityGroup(event, 'tertiary', tertiary_lines, set_visibility=not hide_flags['all'])
+        toggleVisibilityGroup(event, 'quaternary', quaternary_lines, set_visibility=not hide_flags['all'])
+
+        fig.canvas.draw_idle()
 
 
     # Create buttons and connect handlers.
@@ -600,3 +592,16 @@ def createPlot(filename):
         plt.show()
     except Exception as e:
         print(f"Error displaying plot: {e}", file=sys.stderr)
+
+
+"""
+This block allows running this file directly for manual testing or plotting.
+It is not used by the main project, which imports and calls createPlot elsewhere.
+"""
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Missing parameters")
+        sys.exit(1)
+
+    filename = sys.argv[1]
+    createPlot(filename)
