@@ -1,5 +1,5 @@
 # Third party imports.
-from PySide6 import QtGui
+from PySide6.QtGui import QColor
 
 
 class Colours:
@@ -7,21 +7,21 @@ class Colours:
     Class to store all user interface colours.
     Provides named colour constants for consistent UI styling throughout the application.
     """
-    BLACK                   = QtGui.QColor("#000000")  # Black
-    DEFAULT                 = QtGui.QColor("#E6E2BE")  # Yellow/Beige
-    GRIDLINES               = QtGui.QColor("#7F7F7F")  # Grey
-    HIGHLIGHT_MAP_POINT     = QtGui.QColor("#A6FFA7")  # Green
-    LOGIC_0                 = QtGui.QColor("#FFA2A7")  # Red
-    LOGIC_1                 = QtGui.QColor("#A6FFA7")  # Green
-    MAP_DISABLED            = QtGui.QColor("#FFA2A7")  # Red
-    MAP_EDITING             = QtGui.QColor("#FFB037")  # Orange
-    MAP_FINDING             = QtGui.QColor("#FFB4D8")  # Pink
-    MAP_RESTRICTED          = QtGui.QColor("#A6FFA7")  # Green
-    ALTER                   = QtGui.QColor("#F2C46F")  # Orange
-    RED                     = QtGui.QColor("#FF0000")  # Red
-    SATURATED_RAW           = QtGui.QColor("#FFA2A7")  # Red
-    ECU1_ID                 = QtGui.QColor("#C70000")  # Red
-    ECU2_ID                 = QtGui.QColor("#0033A0")  # Blue
+    BLACK                   = QColor("#000000")  # Black
+    DEFAULT                 = QColor("#E6E2BE")  # Yellow/Beige
+    GRIDLINES               = QColor("#7F7F7F")  # Grey
+    HIGHLIGHT_MAP_POINT     = QColor("#A6FFA7")  # Green
+    LOGIC_0                 = QColor("#FFA2A7")  # Red
+    LOGIC_1                 = QColor("#A6FFA7")  # Green
+    MAP_DISABLED            = QColor("#FFA2A7")  # Red
+    MAP_EDITING             = QColor("#FFB037")  # Orange
+    MAP_FINDING             = QColor("#FFB4D8")  # Pink
+    MAP_RESTRICTED          = QColor("#A6FFA7")  # Green
+    ALTER                   = QColor("#F2C46F")  # Orange
+    RED                     = QColor("#FF0000")  # Red
+    SATURATED_RAW           = QColor("#FFA2A7")  # Red
+    ECU1_ID                 = QColor("#C70000")  # Red
+    ECU2_ID                 = QColor("#0033A0")  # Blue
 
 
 class CSS:

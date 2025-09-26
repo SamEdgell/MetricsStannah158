@@ -1,7 +1,6 @@
 # Third party imports.
-from PySide6 import QtGui
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QPainterPath, QRegion
+from PySide6.QtGui import QBrush, QPainterPath, QPen, QRegion
 from PySide6.QtWidgets import QLabel, QStyle, QStyledItemDelegate
 
 # Local application imports.
@@ -34,14 +33,14 @@ class Painter(QStyledItemDelegate):
         fg = index.data(Qt.ForegroundRole) or Colours.BLACK
 
         # If fg is a QBrush, use its colour.
-        if isinstance(fg, QtGui.QBrush):
+        if isinstance(fg, QBrush):
             fg = fg.color()
 
         # Fill the entire cell area with the background colour.
         painter.fillRect(option.rect, bg)
 
         # Set up a pen for drawing borders.
-        border_pen = QtGui.QPen(Colours.GRIDLINES, 1)
+        border_pen = QPen(Colours.GRIDLINES, 1)
         painter.setPen(border_pen)
 
         # Get model dimensions.
@@ -68,7 +67,7 @@ class Painter(QStyledItemDelegate):
             padded_rect = option.rect.adjusted(2, 0, -2, 0)
 
             # Set the pen with the foreground colour.
-            painter.setPen(QtGui.QPen(fg))
+            painter.setPen(QPen(fg))
             painter.drawText(padded_rect, alignment, text)
 
         # Restore painter state.

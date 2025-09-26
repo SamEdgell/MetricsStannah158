@@ -4,7 +4,7 @@ from datetime import datetime
 from time import time
 
 # Third party imports.
-from PySide6 import QtCore
+from PySide6.QtCore import QTimer
 
 # Local application imports.
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
@@ -49,8 +49,8 @@ class UIComms:
         self.led_heartbeat_time_ms  = 500
         self.heartbeat_receive_time = 0
         self.heartbeat              = False
-        self.send_heartbeat_timer   = QtCore.QTimer()
-        self.led_heartbeat_timer    = QtCore.QTimer()
+        self.send_heartbeat_timer   = QTimer()
+        self.led_heartbeat_timer    = QTimer()
 
         # Create signal-slot connections and threaded objects.
         self.signal_slot = SignalSlot()

@@ -5,7 +5,7 @@ import qasync
 import sys
 
 # Third party imports.
-from PySide6 import QtWidgets
+from PySide6.QtWidgets import QApplication
 
 # Local application imports.
 from UI.ui_base import UIBase
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 
     try:
         # Create the main Qt application instance, required for all Qt GUI applications.
-        application = QtWidgets.QApplication(sys.argv)
+        application = QApplication(sys.argv)
 
         # Ensure the splash screen is displayed immediately.
         splash = SplashScreen()
