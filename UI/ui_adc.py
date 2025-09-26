@@ -5,9 +5,9 @@ from PySide6.QtWidgets import QHeaderView, QTableWidgetItem
 # Local application imports.
 from Enums.enum_adc import ADCECU1, ADCECU2
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
-from messages import unpackMessage
 from UI.ui_custom_widgets import Painter
 from UI.ui_styling import Colours
+from Utilities.messages import unpackMessage
 
 
 class UIADC:

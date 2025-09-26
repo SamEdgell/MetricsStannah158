@@ -7,7 +7,7 @@ from PySide6.QtGui import QPalette
 from PySide6.QtWidgets import QFileDialog
 
 # Local application imports.
-from metrics_handler import formatTimestamp
+from Utilities.metrics_handler import formatTimestamp
 
 
 class UIConsole:

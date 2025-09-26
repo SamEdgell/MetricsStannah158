@@ -3,7 +3,7 @@ from PySide6.QtCore import QTimer
 
 # Local application imports.
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
-from messages import buildMessage, SrcDest
+from Utilities.messages import buildMessage, SrcDest
 
 
 class UIDemo:

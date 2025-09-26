@@ -1,10 +1,11 @@
 # Third party imports.
-from PySide6.QtWidgets import QFrame, QLabel, QProgressBar, QVBoxLayout, QWidget
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
+from PySide6.QtWidgets import QFrame, QLabel, QProgressBar, QVBoxLayout, QWidget
 
 # Local application imports.
 from UI.ui_custom_widgets import ScalableLabel
+from Utilities.utils import resource_path
 
 
 class SplashScreen(QWidget):
@@ -74,7 +75,7 @@ class SplashScreen(QWidget):
 
         # Add the scalable logo label to the image frame.
         logo_label = ScalableLabel(metrics_image_frame)
-        pixmap = QPixmap("Images/Metrics-Stannah-Logo.png")
+        pixmap = QPixmap(resource_path("Images/Metrics-Stannah-Logo.png"))
         logo_label.setPixmap(pixmap)
         image_frame_layout.addWidget(logo_label)
 

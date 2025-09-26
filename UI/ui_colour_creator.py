@@ -2,8 +2,8 @@
 from datetime import datetime
 
 # Local application imports.
-from metrics_handler import CSS_STYLE, MessageStyleCode
 from UI.ui_styling import CSS
+from Utilities.metrics_handler import CSS_STYLE, MessageStyleCode
 
 
 class UIColourCreator:

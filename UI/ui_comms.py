@@ -8,12 +8,12 @@ from PySide6 import QtCore
 
 # Local application imports.
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
-from messages import buildMessage, unpackMessage
-from metrics_handler import processMetrics
 from Serial.port_handler import PortHandler
 from Serial.protocol_parser import ProtocolParser
 from UI.ui_signal_slot import SignalSlot
 from UI.ui_styling import CSS
+from Utilities.messages import buildMessage, unpackMessage
+from Utilities.metrics_handler import processMetrics
 
 
 class UIComms:

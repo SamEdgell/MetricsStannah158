@@ -7,8 +7,8 @@ from enum import Enum, unique
 from Enums.enum_gpio import InputsECU1, InputsECU2, LogicState, OutputsECU1, OutputsECU2
 from Enums.enum_metrics import MetricSubcodes
 from Enums.enum_msg import MsgMode, SrcDest
-from messages import unpackMessage
 from UI.ui_styling import CSS
+from Utilities.messages import unpackMessage
 
 
 """

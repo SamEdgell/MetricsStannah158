@@ -9,6 +9,7 @@ from PySide6.QtWidgets import QMainWindow
 # Local application imports.
 from UI.ui_comms import UIComms # Component included here because its scope cannot be limited to one function like the other components.
 from UI.ui_main_window import Ui_MainWindow
+from Utilities.utils import resource_path
 
 
 class UIBase(QMainWindow):
@@ -43,7 +44,7 @@ class UIBase(QMainWindow):
         # Set the window title and icon, the title contains the version.
         version = self.gatherVersion()
         self.setWindowTitle(f"Metrics - {version}")
-        app_icon = QIcon("Images/Metrics_App_Icon.png")
+        app_icon = QIcon(resource_path("Images/Metrics-App-Icon.png"))
         self.setWindowIcon(app_icon)
 
         # Prevent resizing of the main window.
@@ -64,7 +65,7 @@ class UIBase(QMainWindow):
         Returns:
             The version string, if found, else unknown.
         """
-        with open("version.txt", "r") as f:
+        with open(resource_path("General/version.txt"), "r") as f:
             for line in f:
                 if line.startswith("VERSION_STRING"):
                     version_string = line.split("=", 1)[1].strip().strip('"')

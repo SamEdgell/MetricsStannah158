@@ -1,5 +1,6 @@
 # Standard library imports.
 import asyncio
+import multiprocessing
 import qasync
 import sys
 
@@ -122,9 +123,17 @@ if __name__ == "__main__":
     'Metrics' generally refers to measurable data or quantitative measurements that help evaluate, compare, or track performance, progress, or quality.
     In a software context, metrics can be used to assess code performance, user interactions, and system behaviours, among other things.
     """
+    """
+    When a script using multiprocessing is frozen into an executable, starting a new process on Windows re-launches the main executable.
+    freeze_support() must be called immediately here. It allows the child process to run its target code instead of re-initializing the entire application,
+    which would otherwise create a new window.
+    """
+    multiprocessing.freeze_support()
+
     print(f"-------------------")
     print(f"Application Started")
     print(f"-------------------")
+
     try:
         # Create the main Qt application instance, required for all Qt GUI applications.
         application = QtWidgets.QApplication(sys.argv)

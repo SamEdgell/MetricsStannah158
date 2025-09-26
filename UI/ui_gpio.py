@@ -5,9 +5,9 @@ from PySide6.QtWidgets import QHeaderView, QTableWidgetItem
 # Local application imports.
 from Enums.enum_gpio import InputsECU1, InputsECU2, OutputsECU1, OutputsECU2
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
-from messages import unpackMessage
 from UI.ui_custom_widgets import Painter
 from UI.ui_styling import Colours
+from Utilities.messages import unpackMessage
 
 
 class UIGPIO:
@@ -27,8 +27,8 @@ class UIGPIO:
         self.main_window.ui.alterInputsButton.clicked.connect(lambda: self.alterGPIOTable(self.main_window.ui.inputsTable))
         self.main_window.ui.resetOutputsButton.clicked.connect(lambda: self.resetGPIOTable(self.main_window.ui.outputsTable))
         self.main_window.ui.alterOutputsButton.clicked.connect(lambda: self.alterGPIOTable(self.main_window.ui.outputsTable))
-        self.main_window.ui.inputsTable.cellClicked.connect(lambda: self.handleCellClick(self.main_window.ui.inputsTable))
-        self.main_window.ui.outputsTable.cellClicked.connect(lambda: self.handleCellClick(self.main_window.ui.outputsTable))
+        self.main_window.ui.inputsTable.cellClicked.connect(lambda row, column: self.handleCellClick(self.main_window.ui.inputsTable, row, column))
+        self.main_window.ui.outputsTable.cellClicked.connect(lambda row, column: self.handleCellClick(self.main_window.ui.outputsTable, row, column))
 
         # For below. First 4 words are ECU1, last 4 words are ECU2.
         self.current_input_states = [0] * 8
@@ -136,8 +136,9 @@ class UIGPIO:
 
                 # Column 3: Alter Value
                 column_3 = QTableWidgetItem("")
+                column_3.setForeground(Colours.BLACK)
                 column_3.setBackground(Colours.DEFAULT)
-                # Note: Alignment and other properties for editable column 3 are handled by cell click or default behaviour.
+                column_3.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row, 3, column_3)
 
                 row += 1
@@ -307,36 +308,32 @@ class UIGPIO:
             self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *output_states, *altered_output_states], dest, MsgMode.SET)
 
 
-    def handleCellClick(self, table):
+    def handleCellClick(self, table, row, column):
         """
         Handles the cell click event. The user has clicked on a cell in the table, requesting that row value to be altered.
 
         Args:
-            table: The table widget where the cell was clicked.
+            table:  The table widget where the cell was clicked.
+            row:    The row number of the clicked cell.
+            column: The column number of the clicked cell.
         """
-        column = table.currentColumn()
-        row = table.currentRow()
-
         # Allow altering of row if clicked inside the ID column or the alter column.
         if column in [1, 3]:
             item = table.item(row, 3)
             cell_value = item.text()
+
             if cell_value == "":
-                cell_value = "1"
+                new_value = "1"
                 cell_colour = Colours.LOGIC_1
             elif cell_value == "1":
-                cell_value = "0"
+                new_value = "0"
                 cell_colour = Colours.LOGIC_0
             else:
-                cell_value = ""
+                new_value = ""
                 cell_colour = Colours.DEFAULT
 
-            item.setText(cell_value)
-            item.setTextAlignment(Qt.AlignCenter)
-            item.setForeground(Colours.BLACK) # Delegate will paint the cell text with this colour.
-            item.setBackground(cell_colour) # Delegate will paint the cell background with this colour.
-
-        table.clearSelection()
+            item.setText(new_value)
+            item.setBackground(cell_colour)
 
 
     def updateInputTable(self, msg):
