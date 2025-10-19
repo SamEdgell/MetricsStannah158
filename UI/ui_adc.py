@@ -28,6 +28,7 @@ class UIADC:
 
         self.adc_resolution_bits = 12
         self.adc_raw_saturated_percent = 85
+        self.current_altered_channels = 0
 
         # Set up custom painter for all columns.
         delegate = Painter()
@@ -202,36 +203,30 @@ class UIADC:
             dest:       The destination of those channels to change.
             offset:     Row number offset to start capturing data from.
         """
-        data = [0] * adc_count
+        data = [0xFFFF] * adc_count # Default all values, this assumes they are not altered.
         alter_approved = False
+        max_adc_value = (2 ** self.adc_resolution_bits)
 
         for i in range(adc_count):
             row_num = i + offset
             altered_row = self.main_window.ui.adcTable.item(row_num, 4).text()
 
-            # Assume row/channel is not being altered. For channels where we are not altering, their default value should be 0xFFFF so the ECU knows not to change them.
-            value = 0xFFFF
-
             # Has this row been altered?
-            if len(altered_row) > 0:
+            if altered_row:
                 alter_approved = True
                 try:
                     # Convert string to int.
                     value = int(altered_row)
+
+                    # Check value is within raw value range.
+                    if 0 <= value < max_adc_value:
+                        data[i] = value
                 except ValueError:
-                    value = 0xFFFF  # If conversion fails, default it.
-
-                # Check value is within raw value range.
-                if value >= 0 and value < (2 ** self.adc_resolution_bits):
-                    data[i] = value
-                else:
-                    # Value not accepted range, default it.
-                    value = 0xFFFF
-
-            data[i] = value
+                    # Alter failed.
+                    pass
 
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}I", [adc_count, *data], dest, MsgMode.SET)
 
 
     def updateADCTable(self, msg):
@@ -242,19 +237,16 @@ class UIADC:
             msg: ADC payload.
         """
         try:
-            data_valid = False
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
             if MsgMode(msg[5]) == MsgMode.OUT:
-                header, adcPayload = unpackMessage("I30H", msg)
+                header, adcPayload = unpackMessage("32I", msg)
 
                 source = header[2]
                 num_channels = adcPayload[0]
-                data = adcPayload[1:] # Skip 1st index which is count.
-                data_valid = True
-            else:
-                return
+                data = adcPayload[1:-1] # Skip 1st index which is count.
+                altered_channels = adcPayload[-1] # Last index is the altered channels bitmask.
+                changed_altered_channels = 0
 
-            if data_valid:
                 # Check the channel count matches the expected number of channels per source.
                 if num_channels != len(ADCECU1) and SrcDest(source) == SrcDest.SRC_DEST_ECU1:
                     print(f"ECU1 ADC Count Mismatch. Enum Count = {len(ADCECU1)}. Actual Count = {num_channels}")
@@ -266,23 +258,33 @@ class UIADC:
                 # The ECU2 offset starts from the end of the ECU1 channels.
                 offset = 0 if SrcDest(source) == SrcDest.SRC_DEST_ECU1 else len(ADCECU1)
 
+                # Check for any bits that have changed state from the previous reading for the altered channels. Doing this allows efficient GUI updates and prevents unnecessary redraws.
+                changed_altered_channels = self.current_altered_channels ^ altered_channels
+                self.current_altered_channels = altered_channels
+
+                # Loop through each channel and update the table.
                 for i in range(num_channels):
-                    raw_value = data[i * 2] # Raw value is the first element of the pair.
-                    scaled_value = data[(i * 2) + 1] # Scaled value is the second element of the pair.
-
-                    row = offset + i
-
-                    # Populate scaled data.
-                    scaled_column = self.main_window.ui.adcTable.item(row, 2)
-                    scaled_column.setText(f"{scaled_value / 1000:.2f}")
+                    raw_value = data[i << 1] # Raw value is the first element of the pair.
+                    scaled_value = data[(i << 1) + 1] # Scaled value is the second element of the pair.
+                    bitmask = 1 << i
+                    row_num = offset + i
 
                     # Populate raw data.
-                    raw_column = self.main_window.ui.adcTable.item(row, 3)
+                    raw_column = self.main_window.ui.adcTable.item(row_num, 3)
                     raw_column.setText(str(raw_value))
 
+                    # Populate scaled data.
+                    scaled_column = self.main_window.ui.adcTable.item(row_num, 2)
+                    scaled_column.setText(f"{scaled_value / 1000:.2f}")
+
                     # Check if the raw value is close to saturation and set the background colour accordingly.
-                    bg_colour = Colours.SATURATED_RAW if (raw_value >= (2 ** self.adc_resolution_bits) * (self.adc_raw_saturated_percent / 100)) else Colours.DEFAULT
+                    bg_colour = Colours.SATURATED_RAW if (raw_value >= (((2 ** self.adc_resolution_bits) - 1) * (self.adc_raw_saturated_percent / 100))) else Colours.DEFAULT
                     raw_column.setBackground(bg_colour)
+
+                    # Check if this channel is currently altered.
+                    if changed_altered_channels & bitmask:
+                        cell_colour = Colours.ALTER if self.current_altered_channels & bitmask else Colours.DEFAULT
+                        self.main_window.ui.adcTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:
             print(f"E1: {__file__}: {e}")

@@ -246,7 +246,7 @@ class UIGPIO:
             altered_row = self.main_window.ui.inputsTable.item(row_num, 3).text()
 
             # Check to see whether this pin has an altered value set.
-            if len(altered_row) > 0:
+            if altered_row:
                 alter_approved = True
 
                 # Check to see whether this pin should be altered to logic 1 or 0.
@@ -291,7 +291,7 @@ class UIGPIO:
             altered_row = self.main_window.ui.outputsTable.item(row_num, 3).text()
 
             # Check to see whether this pin has an altered value set.
-            if len(altered_row) > 0:
+            if altered_row:
                 alter_approved = True
 
                 # Check to see whether this pin should be altered to logic 1 or 0.
