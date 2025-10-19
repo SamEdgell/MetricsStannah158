@@ -138,6 +138,14 @@ if __name__ == "__main__":
         # Create the main Qt application instance, required for all Qt GUI applications.
         application = QApplication(sys.argv)
 
+        """
+        Set the application style to "Fusion" for consistent styling. This must be done right after creating the QApplication instance.
+        Failure to do this resulted in style-related issues on some platforms for my QTableWidgets and QTextBrowsers.
+        This tells the application to use this consistent, style-sheet friendly engine for drawing all its widgets, "Fusion" correctly
+        interprets and applies properties correctly because it gives precedence to user defined styles over any default platform styles.
+        """
+        application.setStyle("Fusion")
+
         # Ensure the splash screen is displayed immediately.
         splash = SplashScreen()
         splash.show()
