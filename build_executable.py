@@ -38,6 +38,7 @@ try:
         'PIDLogs',
         'Snapshots',
         'UI',           # Contains main_window.ui files which are required.
+        'Utilities'     # Contains utility scripts which are required.
     ]
 
     # List of hidden imports compulsory to include in the build.
