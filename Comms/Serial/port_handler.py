@@ -6,10 +6,10 @@ import time
 import serial.tools.list_ports
 
 # Local application imports.
-from Serial.serial_handler import SerialHandler
+from Comms.Serial.serial_handler import SerialHandler
 
 
-LOOP_TIMEOUT        = 0.5     # Time to wait between port checks in seconds.
+LOOP_TIMEOUT        = 0.1     # Time to wait between port checks in seconds.
 THREAD_JOIN_TIMEOUT = 2.0     # Timeout for joining the port handler thread in seconds.
 
 
@@ -119,8 +119,8 @@ class PortHandler:
 
         # If we have recognised ports, try to connect to the first one.
         if self.recognised_ports:
-            # We should only connect to the port if we are not already connected and we are not in demo mode.
-            if not self.connected() and not self.ui_comms.inDemoMode():
+            # We should only connect to the port if we are not already connected.
+            if not self.connected():
                 port_to_connect = next(iter(self.recognised_ports))
                 self.open(port_to_connect)
         # If we have no recognised ports, ensure we are disconnected.
@@ -153,7 +153,7 @@ class PortHandler:
             # Pass the UIComms instance so that the SignalSlot can be set up.
             # A reference to the event loop is also required to read messages from the queue.
             self.serial_handler = SerialHandler(port,
-                                                int(self.ui_comms.main_window.ui.baudRateBox.currentText()),
+                                                int(self.ui_comms.main_window.ui.serialBaudRateBox.currentText()),
                                                 self.ui_comms,
                                                 self.event_loop)
             if self.serial_handler.connect():

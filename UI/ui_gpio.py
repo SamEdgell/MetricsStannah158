@@ -69,25 +69,6 @@ class UIGPIO:
             # Disable the built-in grid, will customise with the delegate class.
             table.setShowGrid(False)
 
-            # Refine the style sheet. Focusing really on the header.
-            table.setStyleSheet("""
-            QTableWidget {
-                border: 2px solid black;            /* Border of the table */
-                background: #E6E2BE;                /* Background colour of table */
-            }
-            QHeaderView::section {
-                background-color: #A0BEF4;          /* Background colour of the header */
-                border: none;                       /* Border of the header */
-                border-right: 1px solid black;      /* Right border of the header. Splits columns visually */
-                border-bottom: 2px solid black;     /* Bottom border of the header */
-                color: black;                       /* Text colour of the header */
-                font-weight: normal;                /* Font weight of the header text */
-            }
-            QHeaderView::section:last {
-                border-right: none;                 /* Remove the right border from the last header section. This is because of an overlap with the table widget border */
-            }
-            """)
-
 
     def populateGPIOTable(self, table):
         """
@@ -108,7 +89,7 @@ class UIGPIO:
         row = 0
 
         # Set up row for each input or output.
-        for table_group, colour, prefix in [(ecu1_table, Colours.ECU1_ID, "ECU1"), (ecu2_table, Colours.ECU2_ID, "ECU2")]:
+        for table_group, colour, prefix in ((ecu1_table, Colours.GARNET, "ECU1"), (ecu2_table, Colours.ROYAL_BLUE, "ECU2")):
             for count, channel in enumerate(table_group):
                 table.setRowHeight(row, 14)
                 pin_id = f"{prefix}-{count}"
@@ -116,28 +97,28 @@ class UIGPIO:
                 # Column 0: Pin ID
                 column_0 = QTableWidgetItem(pin_id)
                 column_0.setForeground(colour)
-                column_0.setBackground(Colours.DEFAULT)
+                column_0.setBackground(Colours.BEIGE)
                 column_0.setTextAlignment(Qt.AlignLeft)
                 table.setItem(row, 0, column_0)
 
                 # Column 1: Channel Name
                 column_1 = QTableWidgetItem(channel.name)
                 column_1.setForeground(Colours.BLACK)
-                column_1.setBackground(Colours.DEFAULT)
+                column_1.setBackground(Colours.BEIGE)
                 column_1.setTextAlignment(Qt.AlignLeft)
                 table.setItem(row, 1, column_1)
 
                 # Column 2: Value
                 column_2 = QTableWidgetItem("0")
                 column_2.setForeground(Colours.BLACK)
-                column_2.setBackground(Colours.LOGIC_0)
+                column_2.setBackground(Colours.LIGHT_PINK)
                 column_2.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row, 2, column_2)
 
                 # Column 3: Alter Value
                 column_3 = QTableWidgetItem("")
                 column_3.setForeground(Colours.BLACK)
-                column_3.setBackground(Colours.DEFAULT)
+                column_3.setBackground(Colours.BEIGE)
                 column_3.setTextAlignment(Qt.AlignCenter)
                 table.setItem(row, 3, column_3)
 
@@ -182,7 +163,7 @@ class UIGPIO:
         self.clearAlteredData(table)
         # Reset alter on both boards.
         msgID = MessageID.METRICS_RESET_INPUTS_ALTER if table == self.main_window.ui.inputsTable else MessageID.METRICS_RESET_OUTPUTS_ALTER
-        for dest in [SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2]:
+        for dest in (SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2):
             self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
 
 
@@ -199,7 +180,7 @@ class UIGPIO:
             alter_column.setText("")
             alter_column.setTextAlignment(Qt.AlignCenter)
             alter_column.setForeground(Colours.BLACK) # Delegate will paint the cell text with this colour.
-            alter_column.setBackground(Colours.DEFAULT) # Delegate will paint the cell background with this colour.
+            alter_column.setBackground(Colours.BEIGE) # Delegate will paint the cell background with this colour.
 
 
     def alterGPIOTable(self, table):
@@ -318,19 +299,19 @@ class UIGPIO:
             column: The column number of the clicked cell.
         """
         # Allow altering of row if clicked inside the ID column or the alter column.
-        if column in [1, 3]:
+        if column in (1, 3):
             item = table.item(row, 3)
             cell_value = item.text()
 
             if cell_value == "":
                 new_value = "1"
-                cell_colour = Colours.LOGIC_1
+                cell_colour = Colours.PALE_GREEN
             elif cell_value == "1":
                 new_value = "0"
-                cell_colour = Colours.LOGIC_0
+                cell_colour = Colours.LIGHT_PINK
             else:
                 new_value = ""
-                cell_colour = Colours.DEFAULT
+                cell_colour = Colours.BEIGE
 
             item.setText(new_value)
             item.setBackground(cell_colour)
@@ -390,7 +371,7 @@ class UIGPIO:
                     # Check if this input has changed state.
                     if changed_inputs[word] & bitmask:
                         cell_value = "1" if inputs[word] & bitmask else "0" # Get the new value of the input that has changed.
-                        cell_colour = Colours.LOGIC_1 if cell_value == "1" else Colours.LOGIC_0
+                        cell_colour = Colours.PALE_GREEN if cell_value == "1" else Colours.LIGHT_PINK
                         self.main_window.ui.inputsTable.setItem(row_num, 2, QTableWidgetItem(cell_value))
                         self.main_window.ui.inputsTable.item(row_num, 2).setTextAlignment(Qt.AlignCenter)
                         self.main_window.ui.inputsTable.item(row_num, 2).setBackground(cell_colour)
@@ -398,7 +379,7 @@ class UIGPIO:
 
                     # Check if this input has changed altered state.
                     if changed_altered_inputs[word] & bitmask:
-                        cell_colour = Colours.ALTER if altered_inputs[word] & bitmask else Colours.DEFAULT
+                        cell_colour = Colours.APRICOT if altered_inputs[word] & bitmask else Colours.BEIGE
                         self.main_window.ui.inputsTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:
@@ -459,7 +440,7 @@ class UIGPIO:
                     # Check if this output has changed state.
                     if changed_outputs[word] & bitmask:
                         cell_value = "1" if outputs[word] & bitmask else "0" # Get the new value of the output that has changed.
-                        cell_colour = Colours.LOGIC_1 if cell_value == "1" else Colours.LOGIC_0
+                        cell_colour = Colours.PALE_GREEN if cell_value == "1" else Colours.LIGHT_PINK
                         self.main_window.ui.outputsTable.setItem(row_num, 2, QTableWidgetItem(cell_value))
                         self.main_window.ui.outputsTable.item(row_num, 2).setTextAlignment(Qt.AlignCenter)
                         self.main_window.ui.outputsTable.item(row_num, 2).setBackground(cell_colour)
@@ -467,7 +448,7 @@ class UIGPIO:
 
                     # Check if this output has changed altered state.
                     if changed_altered_outputs[word] & bitmask:
-                        cell_colour = Colours.ALTER if altered_outputs[word] & bitmask else Colours.DEFAULT
+                        cell_colour = Colours.APRICOT if altered_outputs[word] & bitmask else Colours.BEIGE
                         self.main_window.ui.outputsTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:

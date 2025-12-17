@@ -1,22 +1,24 @@
 # Standard library imports.
+import threading
 import multiprocessing
+from time import time
 
 # Third party imports.
-from PySide6.QtCore import Qt
+from PySide6.QtCore import QTimer, Qt
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QVBoxLayout
 
 # Local application imports.
+from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_colour_creator import UIColourCreator
 from UI.ui_custom_widgets import ScalableLabel
-from UI.ui_demo import UIDemo
 from UI.ui_styling import Styles
 from Utilities.utils import resource_path
 
 
 class UIPanel:
     """
-    Class for the UI panel. Handles navigation within the main application panel.
+    Class for the UI panel. Handles navigation within the main application panel and additional feature such as heartbeat etc.
     """
 
     def __init__(self, main_window):
@@ -39,7 +41,6 @@ class UIPanel:
         # Connect buttons to their respective functions.
         self.main_window.ui.ADCIOPageButton.clicked.connect(lambda: self.goToADCIO())
         self.main_window.ui.colourPalettePageButton.clicked.connect(lambda: self.goToColourPalette())
-        self.main_window.ui.enableDemoModeButton.toggled.connect(self.handleDemoMode)
         self.main_window.ui.testButton1.clicked.connect(lambda: self.buttonTest1())
         self.main_window.ui.testButton2.clicked.connect(lambda: self.buttonTest2())
         self.main_window.ui.testButton3.clicked.connect(lambda: self.buttonTest3())
@@ -54,6 +55,18 @@ class UIPanel:
 
         # Update button styles to reflect the current page.
         self.updateButtons()
+
+        # Heartbeat setup.
+        self.heartbeat_poll_time_ms = 4000
+        self.heartbeat_timeout_s    = 8
+        self.led_heartbeat_time_ms  = 500
+        self.heartbeat_receive_time = 0
+        self.heartbeat              = False
+        self.send_heartbeat_timer   = QTimer()
+        self.led_heartbeat_timer    = QTimer()
+
+        self.send_heartbeat_timer.timeout.connect(self.sendHeartbeat)
+        self.led_heartbeat_timer.timeout.connect(self.toggleHeartbeatLED)
 
 
     def goToADCIO(self):
@@ -100,6 +113,16 @@ class UIPanel:
         Test button 1 action.
         """
         self.main_window.ui_console.logDebugConsole("Test button 1 pressed")
+        from Utilities.plotter import createPlot # imported here to import only when needed. Prevents slower load time.
+        if 0: # TODO Fix for future when PySide6 supports multithreading better.
+            # Only run for 3.14t
+            plot_thread = threading.Thread(target=createPlot, args=("PIDLogs/FR_PIDData_20250624_085727.csv",))
+            plot_thread.daemon = True # Ensure the thread exits when the plot is closed.
+            plot_thread.start()
+        else:
+            plot_process = multiprocessing.Process(target=createPlot, args=("PIDLogs/FR_PIDData_20250624_085727.csv",))
+            plot_process.daemon = True # Ensure the process exits when the plot is closed.
+            plot_process.start()
 
 
     def buttonTest2(self):
@@ -130,24 +153,75 @@ class UIPanel:
         self.main_window.ui_console.logDebugConsole("Test button 5 pressed")
 
 
-    def handleDemoMode(self):
-        """
-        Handles toggling of the demo mode button.
-        """
-        if self.main_window.ui.enableDemoModeButton.isChecked():
-            # Prevent demo mode from running if a serial port is connected.
-            if self.main_window.ui_comms.serial_port_handler.connected():
-                self.main_window.ui_console.logDebugConsole("Demo mode cannot be enabled whilst a serial port is connected.")
+    ########## Heartbeat Methods ##########
 
-                # Temporarily block the signal to prevent recursion.
-                self.main_window.ui.enableDemoModeButton.blockSignals(True)
-                self.main_window.ui.enableDemoModeButton.setChecked(False)
-                self.main_window.ui.enableDemoModeButton.blockSignals(False)
-            else:
-                if self.main_window.ui_demo is None:
-                    self.main_window.ui_demo = UIDemo(self.main_window)
-                self.main_window.ui_demo.start()
+
+    def heartbeatReceived(self):
+        """
+        Updates the heartbeat receive timer to the current time.
+        """
+        self.heartbeat_receive_time = time()
+
+
+    def sendHeartbeat(self):
+        """
+        Sends a heartbeat message to the connected device.
+        """
+        self.main_window.ui_comms.sendMessage(MessageID.HEARTBEAT, "", [], SrcDest.SRC_DEST_ECU1, MsgMode.REQ)
+
+
+    def startHeartbeatTimer(self):
+        """
+        Starts the heartbeat timer.
+        """
+        self.send_heartbeat_timer.start(self.heartbeat_poll_time_ms)
+
+
+    def startLEDHeartbeatTimer(self):
+        """
+        Starts the LED heartbeat timer.
+        """
+        self.led_heartbeat_timer.start(self.led_heartbeat_time_ms)
+
+
+    def stopHeartbeatTimer(self):
+        """
+        Stops the heartbeat timer.
+        """
+        self.send_heartbeat_timer.stop()
+
+
+    def stopLEDHeartbeatTimer(self):
+        """
+        Stops the LED heartbeat timer.
+        """
+        self.led_heartbeat_timer.stop()
+        self.setHeartbeatLED(False)  # Ensure the LED is turned off when stopping the timer.
+
+
+    def toggleHeartbeatLED(self):
+        """"
+        Toggles the heartbeat LED in the GUI.
+        """
+        if self.main_window.ui_comms.serial_port_handler.serial_handler is None: # This may need to be more robust and use hasattr checks.
+            is_healthy = False
         else:
-            if self.main_window.ui_demo is not None:
-                self.main_window.ui_demo.stop()
-                self.main_window.ui_demo = None
+            is_healthy = (self.main_window.ui_comms.serial_port_handler.serial_handler.isCommunicating() and
+                        (time() - self.heartbeat_receive_time) < self.heartbeat_timeout_s)
+
+        self.setHeartbeatLED(is_healthy)
+
+
+    def setHeartbeatLED(self, healthy):
+        """
+        Updates the heartbeat LED in the GUI to reflect the current heartbeat state.
+
+        Args:
+            healthy:    Toggle the LED if healthy, else force it off.
+        """
+        if healthy:
+            self.heartbeat = not self.heartbeat # Still receiving, toggle the LED state.
+        else:
+            self.heartbeat = False # Force the LED to turn off if we have lost heartbeat comms.
+
+        self.main_window.ui.heartbeatLED.setChecked(self.heartbeat)

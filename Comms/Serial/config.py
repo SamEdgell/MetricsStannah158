@@ -1,0 +1,1 @@
+USING_COBS = False # Set to True to use COBS byte stuffing, False to use DLE byte stuffing.

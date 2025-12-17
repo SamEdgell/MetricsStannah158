@@ -61,3 +61,15 @@ class MsgMode(EnumUtils, Enum):
     SET_ACK                 = 22
     REQ_ACK                 = 23
     NACK                    = 24
+
+
+@unique
+class ASCII(EnumUtils, Enum):
+    """
+    Enum class containing all the ASCII values used.
+    Inherits from EnumUtils and Python's Enum to provide utility methods and a set of unique, type-safe constants representing each ASCII value.
+    """
+    NULL                   = 0x00
+    SOH                    = 0x01
+    EOT                    = 0x04
+    DLE                    = 0x10

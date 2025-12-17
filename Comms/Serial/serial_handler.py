@@ -6,8 +6,14 @@ import time
 from datetime import datetime, timedelta
 from queue import Queue
 
+
 # Local application imports.
-from Serial.protocol_parser import ProtocolParser
+from Comms.Serial.config import USING_COBS
+
+if USING_COBS:
+    from Comms.Parsers.cobs_parser import COBSParser
+else:
+    from Comms.Parsers.dle_parser import DLEParser
 
 
 LOOP_PERIOD             = 0.002     # Loop period for the serial handler thread in seconds.
@@ -66,7 +72,10 @@ class SerialHandler:
             self.serial_port.reset_input_buffer()
             self.serial_port.reset_output_buffer()
             # The following below must be set up first before starting the thread.
-            self.protocol_parser = ProtocolParser(self.appendMessage)
+            if USING_COBS:
+                self.protocol_parser = COBSParser(self.appendMessage)
+            else:
+                self.protocol_parser = DLEParser(self.appendMessage)
             self.last_received_data = datetime.now()
             self.stopped_communicating = False
             # Set up the serial handler thread.
@@ -146,8 +155,8 @@ class SerialHandler:
                 if self.serial_port.in_waiting > 0:
                     data = self.serial_port.read(self.serial_port.in_waiting)
                     if data:
-                        self.ui_comms.signal_slot.rx_bytes_signal.emit(len(data))
-                        self.protocol_parser.parseMessage(data)
+                        self.ui_comms.signal_slot.serial_bytes_signal.emit(len(data), True)
+                        self.protocol_parser.parseBytes(data)
                         self.last_received_data = datetime.now()
                         if self.stopped_communicating:
                             self.stopped_communicating = False
@@ -158,7 +167,7 @@ class SerialHandler:
                     try:
                         msg = self.tx_queue.get_nowait()
                         bytes_written = self.serial_port.write(msg)
-                        self.ui_comms.signal_slot.tx_bytes_signal.emit(bytes_written)
+                        self.ui_comms.signal_slot.serial_bytes_signal.emit(bytes_written, False)
                         if bytes_written < len(msg): # Check if all bytes were written.
                             self.stopped_communicating = True
                             print(f"Write failed to {self.port} - only {bytes_written}/{len(msg)} bytes written.")

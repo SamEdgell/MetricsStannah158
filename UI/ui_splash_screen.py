@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QFrame, QLabel, QProgressBar, QVBoxLayout, QWidget
 
 # Local application imports.
 from UI.ui_custom_widgets import ScalableLabel
+from UI.ui_styling import Colours
 from Utilities.utils import resource_path
 
 
@@ -28,36 +29,36 @@ class SplashScreen(QWidget):
         container.setObjectName("container")
 
         # Set stylesheet for the splash screen.
-        self.setStyleSheet("""
-            #container {
-                background-color: #BABABA;
-                border: 2px solid #000000;
+        self.setStyleSheet(f"""
+            #container {{
+                background-color: {Colours.LIGHT_GREY.name()};
+                border: 2px solid {Colours.BLACK.name()};
                 border-radius: 15px;
-            }
-            #metrics_image_frame {
-                border: 2px solid #000000;
+            }}
+            #metrics_image_frame {{
+                border: 2px solid {Colours.BLACK.name()};
                 border-radius: 10px;
                 margin-top: 8px;
-            }
-            QLabel {
-                color: #000000;
+            }}
+            QLabel {{
+                color: {Colours.BLACK.name()};
                 font-size: 16px;
                 font-weight: bold;
                 border: none;
                 background-color: transparent;
-            }
-            QProgressBar {
-                border: 2px solid #000000;
+            }}
+            QProgressBar {{
+                border: 2px solid {Colours.BLACK.name()};
                 border-radius: 8px;
                 text-align: center;
-                color: #000000;
-                background-color: #D3D3D3;
+                color: {Colours.BLACK.name()};
+                background-color: {Colours.LIGHT_GREY.name()};
                 font-weight: bold;
-            }
-            QProgressBar::chunk {
-                background-color: #A6FFA7;
+            }}
+            QProgressBar::chunk {{
+                background-color: {Colours.PALE_GREEN.name()};
                 border-radius: 8px;
-            }
+            }}
         """)
 
         # Vertical layout for arranging all widgets in the container.

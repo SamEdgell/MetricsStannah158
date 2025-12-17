@@ -2,7 +2,7 @@
 from datetime import datetime
 
 # Local application imports.
-from UI.ui_styling import CSS
+from UI.ui_styling import Colours, CSS
 from Utilities.metrics_handler import CSS_STYLE, MessageStyleCode
 
 
@@ -74,7 +74,7 @@ class UIColourCreator:
             values = [255, 255, 255]
         elif colour == "B":  # Black.
             values = [0, 0, 0]
-        elif colour == "D":  # Default Yellow/Beige.
+        elif colour == "D":  # Beige.
             values = [230, 226, 190]
         elif colour == "R":  # Reset (default to 128 for neutral gray).
             values = [128, 128, 128]
@@ -114,7 +114,7 @@ class UIColourCreator:
             # Update the appropriate colour box.
             widget.setStyleSheet(f"""
                                 QGroupBox {{
-                                    border: 2px solid black;
+                                    border: 2px solid {Colours.BLACK.name()};
                                     border-radius: 5px;
                                     background-color: {hex_colour};
                                     margin-top: 25px;
@@ -127,7 +127,7 @@ class UIColourCreator:
                                     background-color: transparent;
                                     text-align: center;
                                     width: 100%;
-                                    color: black;
+                                    color: {Colours.BLACK.name()};
                                 }}
                                 """)
 
@@ -147,16 +147,16 @@ class UIColourCreator:
 
         self.main_window.ui.testTable.setStyleSheet(f"""
                                                     QTableWidget {{
-                                                    border: 2px solid black;
-                                                    background: #E6E2BE;
+                                                    border: 2px solid {Colours.BLACK.name()};
+                                                    background: {Colours.BEIGE.name()};
                                                     }}
 
                                                     QHeaderView::section {{
                                                         background-color: {hex_colour};
                                                         border: none;
-                                                        border-right: 1px solid black;
-                                                        border-bottom: 2px solid black;
-                                                        color: black;
+                                                        border-right: 1px solid {Colours.BLACK.name()};
+                                                        border-bottom: 2px solid {Colours.BLACK.name()};
+                                                        color: {Colours.BLACK.name()};
                                                     }}
                                                     """)
 
@@ -172,7 +172,7 @@ class UIColourCreator:
                                                     QLineEdit {{
                                                         color: rgb({self.fg_colour["r"]}, {self.fg_colour["g"]}, {self.fg_colour["b"]});
                                                         background-color: rgb({self.bg_colour["r"]}, {self.bg_colour["g"]}, {self.bg_colour["b"]});
-                                                        border: 1px solid black;
+                                                        border: 1px solid {Colours.BLACK.name()};
                                                         border-radius: 5px;
                                                     }}
                                                     """)

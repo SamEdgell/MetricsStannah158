@@ -7,7 +7,7 @@ from enum import Enum, unique
 from Enums.enum_gpio import InputsECU1, InputsECU2, LogicState, OutputsECU1, OutputsECU2
 from Enums.enum_metrics import MetricSubcodes
 from Enums.enum_msg import MsgMode, SrcDest
-from UI.ui_styling import CSS
+from UI.ui_styling import Colours, CSS
 from Utilities.messages import unpackMessage
 
 
@@ -41,6 +41,7 @@ class MessageStyleCode(Enum):
     STYLE_8                 = 0x0008
 
     # Non Metric specific styles Below.
+    TEST                    = 0xFFF8
     WARNING                 = 0xFFF9
     PASS                    = 0xFFFA
     DEFAULT                 = 0xFFFB
@@ -52,25 +53,26 @@ class MessageStyleCode(Enum):
 
 # All possible style codes for the metric messages displayed on the UIConsole.
 CSS_STYLE = {
-    MessageStyleCode.COMPONENT_FAULT:           "color: #000000; background-color: #FF787D;",      # Black text, Red background.
+    MessageStyleCode.COMPONENT_FAULT:           f"color: {Colours.BLACK.name()}; background-color: {Colours.CORAL_PINK.name()};",
 
-    MessageStyleCode.STYLE_1:                   "color: #000000; background-color: #FFB4D8;",      # Black text, Pink background.
-    MessageStyleCode.STYLE_2:                   "color: #000000; background-color: #B2CF4F;",      # Black text, Lime background.
-    MessageStyleCode.STYLE_3:                   "color: #000000; background-color: #C3D4FF;",      # Black text, Light Blue background.
-    MessageStyleCode.STYLE_4:                   "color: #FFC800; background-color: #004B00;",      # Yellow text, Green background.
-    MessageStyleCode.STYLE_5:                   "color: #000000; background-color: #FFC12E;",      # Black text, Orange background.
-    MessageStyleCode.STYLE_6:                   "color: #000000; background-color: #00CFE4;",      # Black text, Blue background.
-    MessageStyleCode.STYLE_7:                   "color: #000000; background-color: #EBFB3D;",      # Black text, Yellow background.
-    MessageStyleCode.STYLE_8:                   "color: #000000; background-color: #E09EF2;",      # Black text, Purple background.
+    MessageStyleCode.STYLE_1:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.PASTEL_PINK.name()};",
+    MessageStyleCode.STYLE_2:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.LIME_GREEN.name()};",
+    MessageStyleCode.STYLE_3:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.PERIWINKLE.name()};",
+    MessageStyleCode.STYLE_4:                   f"color: {Colours.AMBER.name()}; background-color: {Colours.FOREST_GREEN.name()};",
+    MessageStyleCode.STYLE_5:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.GOLDEN_YELLOW.name()};",
+    MessageStyleCode.STYLE_6:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.BRIGHT_CYAN.name()};",
+    MessageStyleCode.STYLE_7:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.ELECTRIC_LIME.name()};",
+    MessageStyleCode.STYLE_8:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.LAVENDER.name()};",
 
     # Non Metric specific styles Below.
-    MessageStyleCode.WARNING:                   "color: #000000; background-color: #EBA82C;",      # Black text, Orange background.
-    MessageStyleCode.PASS:                      "color: #000000; background-color: #2CEB6C;",      # Black text, Green background.
-    MessageStyleCode.DEFAULT:                   "color: #000000;",                                 # Black text.
-    MessageStyleCode.ERROR:                     "color: #000000; background-color: #FF787D;",      # Black text, Red background.
-    MessageStyleCode.SEQUENCE_NUMBER:           "color: #C70000;",                                 # Red text.
-    MessageStyleCode.TIME_STAMP_EVEN:           "color: #000000; background-color: #FFD700;",      # Black text, Gold background.
-    MessageStyleCode.TIME_STAMP_ODD:            "color: #000000; background-color: #B5D7F9;",      # Black text, Blue background.
+    MessageStyleCode.TEST:                      f"color: {Colours.BLACK.name()}; background-color: {Colours.YELLOW.name()};",
+    MessageStyleCode.WARNING:                   f"color: {Colours.BLACK.name()}; background-color: {Colours.MARIGOLD.name()};",
+    MessageStyleCode.PASS:                      f"color: {Colours.BLACK.name()}; background-color: {Colours.KELLY_GREEN.name()};",
+    MessageStyleCode.DEFAULT:                   f"color: {Colours.BLACK.name()};",
+    MessageStyleCode.ERROR:                     f"color: {Colours.BLACK.name()}; background-color: {Colours.CORAL_PINK.name()};",
+    MessageStyleCode.SEQUENCE_NUMBER:           f"color: {Colours.GARNET.name()}",
+    MessageStyleCode.TIME_STAMP_EVEN:           f"color: {Colours.BLACK.name()}; background-color: {Colours.GOLD.name()};",
+    MessageStyleCode.TIME_STAMP_ODD:            f"color: {Colours.BLACK.name()}; background-color: {Colours.BABY_BLUE.name()};",
 }
 
 
@@ -98,20 +100,20 @@ class PlaceholderStyleCode(Enum):
     GPIO_LOW             = 10
     GPIO_HIGH            = 11
 
-    BG_ORANGE            = 20
+    BG_APRICOT           = 20
 
 
 # Further CSS style codes for the placeholders in the metric message.
 PLACEHOLDER_STYLE = {
-    PlaceholderStyleCode.DEFAULT:                       "color: #000000;",                                    # Black text.
-    PlaceholderStyleCode.PASS:                          "color: #000000; background-color: #2CEB6C;",         # Black text, Green background.
-    PlaceholderStyleCode.WARNING:                       "color: #000000; background-color: #EBA82C;",         # Black text, Orange background.
-    PlaceholderStyleCode.ERROR:                         "color: #000000; background-color: #FF787D;",         # Black text, Red background.
+    PlaceholderStyleCode.DEFAULT:                       f"color: {Colours.BLACK.name()};",
+    PlaceholderStyleCode.PASS:                          f"color: {Colours.BLACK.name()}; background-color: {Colours.KELLY_GREEN.name()};",
+    PlaceholderStyleCode.WARNING:                       f"color: {Colours.BLACK.name()}; background-color: {Colours.MARIGOLD.name()};",
+    PlaceholderStyleCode.ERROR:                         f"color: {Colours.BLACK.name()}; background-color: {Colours.CORAL_PINK.name()};",
 
-    PlaceholderStyleCode.GPIO_LOW:                      "color: #000000; background-color: #FF787D;",         # Black text, Red background.
-    PlaceholderStyleCode.GPIO_HIGH:                     "color: #000000; background-color: #2CEB6C;",         # Black text, Green background.
+    PlaceholderStyleCode.GPIO_LOW:                      f"color: {Colours.BLACK.name()}; background-color: {Colours.CORAL_PINK.name()};",
+    PlaceholderStyleCode.GPIO_HIGH:                     f"color: {Colours.BLACK.name()}; background-color: {Colours.KELLY_GREEN.name()};",
 
-    PlaceholderStyleCode.BG_ORANGE:                     "color: #000000; background-color: #F2C46F;",         # Black text, Orange background.
+    PlaceholderStyleCode.BG_APRICOT:                    f"color: {Colours.BLACK.name()}; background-color: {Colours.APRICOT.name()};",
 }
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -294,17 +296,17 @@ def formatPlaceholders(subcode_member_string, header, payload):
 
                     elif format == 'GPIO_INPUTS':
                         if SrcDest(source) == SrcDest.SRC_DEST_ECU1 and InputsECU1.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_ORANGE], 0, f"{InputsECU1(data).name}")
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsECU1(data).name}")
                         elif SrcDest(source) == SrcDest.SRC_DEST_ECU2 and InputsECU2.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_ORANGE], 0, f"{InputsECU2(data).name}")
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsECU2(data).name}")
                         else:
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 
                     elif format == 'GPIO_OUTPUTS':
                         if SrcDest(source) == SrcDest.SRC_DEST_ECU1 and OutputsECU1.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_ORANGE], 0, f"{OutputsECU1(data).name}")
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsECU1(data).name}")
                         elif SrcDest(source) == SrcDest.SRC_DEST_ECU2 and OutputsECU2.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_ORANGE], 0, f"{OutputsECU2(data).name}")
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsECU2(data).name}")
                         else:
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 

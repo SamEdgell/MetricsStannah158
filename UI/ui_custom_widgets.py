@@ -7,6 +7,25 @@ from PySide6.QtWidgets import QLabel, QStyle, QStyledItemDelegate
 from UI.ui_styling import Colours
 
 
+class NoFocus(QStyledItemDelegate):
+    """
+    Custom delegate for list widgets, inheriting from QStyledItemDelegate.
+    Prevents the focus rectangle from being drawn around items when they are selected or focused.
+    """
+
+    def paint(self, painter, option, index):
+        """
+        Removes the HasFocus bit so style doesn't paint the dotted focus rectangle.
+
+        Args:
+            painter:    The painter object used for drawing.
+            option:     The style options for the item.
+            index:      The index of the cell being painted.
+        """
+        option.state &= ~QStyle.State_HasFocus
+        super().paint(painter, option, index)
+
+
 class Painter(QStyledItemDelegate):
     """
     Custom delegate for table widgets, inheriting from QStyledItemDelegate.
@@ -29,7 +48,7 @@ class Painter(QStyledItemDelegate):
         painter.save()
 
         # Retrieve background and text colour.
-        bg = index.data(Qt.BackgroundRole) or Colours.DEFAULT
+        bg = index.data(Qt.BackgroundRole) or Colours.BEIGE
         fg = index.data(Qt.ForegroundRole) or Colours.BLACK
 
         # If fg is a QBrush, use its colour.
@@ -40,7 +59,7 @@ class Painter(QStyledItemDelegate):
         painter.fillRect(option.rect, bg)
 
         # Set up a pen for drawing borders.
-        border_pen = QPen(Colours.GRIDLINES, 1)
+        border_pen = QPen(Colours.MEDIUM_GREY, 1)
         painter.setPen(border_pen)
 
         # Get model dimensions.
@@ -89,7 +108,11 @@ class Painter(QStyledItemDelegate):
 
         # Remove any automatic background change while editing.
         # The transparent background will let the table's background show through.
-        editor.setStyleSheet("background-color: transparent; border: none; color: black;")
+        editor.setStyleSheet(f"""
+                             background-color: transparent;
+                             border: none;
+                             color: {Colours.BLACK.name()};
+                             """)
 
         # If the editor is a QLineEdit, remove its frame. This gets rid of the underline when double clicking a cell.
         if hasattr(editor, "setFrame"):

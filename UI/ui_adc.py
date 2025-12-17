@@ -57,27 +57,8 @@ class UIADC:
         self.main_window.ui.adcTable.setColumnWidth(3, 40)
         self.main_window.ui.adcTable.setColumnWidth(4, 55)
 
-        # Disable the built-in grid, will customise with the delegate class.
+        # Disable the built-in grid, will customise with the delegate painter.
         self.main_window.ui.adcTable.setShowGrid(False)
-
-        # Refine the style sheet. Focusing really on the header.
-        self.main_window.ui.adcTable.setStyleSheet("""
-        QTableWidget {
-            border: 2px solid black;            /* Border of the table */
-            background: #E6E2BE;                /* Background colour of table */
-        }
-        QHeaderView::section {
-            background-color: #A0BEF4;          /* Background colour of the header */
-            border: none;                       /* Border of the header */
-            border-right: 1px solid black;      /* Right border of the header. Splits columns visually */
-            border-bottom: 2px solid black;     /* Bottom border of the header */
-            color: black;                       /* Text colour of the header */
-            font-weight: normal;                /* Font weight of the header text */
-        }
-        QHeaderView::section:last {
-            border-right: none;                 /* Remove the right border from the last header section. This is because of an overlap with the table widget border */
-        }
-        """)
 
 
     def populateADCTable(self):
@@ -88,7 +69,7 @@ class UIADC:
         row = 0
 
         # Setup row for each channel.
-        for adc_group, colour, prefix in [(ADCECU1, Colours.ECU1_ID, "ECU1"), (ADCECU2, Colours.ECU2_ID, "ECU2")]:
+        for adc_group, colour, prefix in ((ADCECU1, Colours.GARNET, "ECU1"), (ADCECU2, Colours.ROYAL_BLUE, "ECU2")):
             for adc_count, channel in enumerate(adc_group):
                 self.main_window.ui.adcTable.setRowHeight(row, 14)
                 pin_id = f"{prefix}-{adc_count}"
@@ -97,7 +78,7 @@ class UIADC:
                 column_0 = QTableWidgetItem(pin_id)
                 column_0.setFlags(Qt.ItemIsEnabled)
                 column_0.setForeground(colour)
-                column_0.setBackground(Colours.DEFAULT)
+                column_0.setBackground(Colours.BEIGE)
                 column_0.setTextAlignment(Qt.AlignLeft)
                 self.main_window.ui.adcTable.setItem(row, 0, column_0)
 
@@ -105,7 +86,7 @@ class UIADC:
                 column_1 = QTableWidgetItem(channel.name)
                 column_1.setFlags(Qt.ItemIsEnabled)
                 column_1.setForeground(Colours.BLACK)
-                column_1.setBackground(Colours.DEFAULT)
+                column_1.setBackground(Colours.BEIGE)
                 column_1.setTextAlignment(Qt.AlignLeft)
                 self.main_window.ui.adcTable.setItem(row, 1, column_1)
 
@@ -113,7 +94,7 @@ class UIADC:
                 column_2 = QTableWidgetItem("")
                 column_2.setFlags(Qt.ItemIsEnabled)
                 column_2.setForeground(Colours.BLACK)
-                column_2.setBackground(Colours.DEFAULT)
+                column_2.setBackground(Colours.BEIGE)
                 column_2.setTextAlignment(Qt.AlignCenter)
                 self.main_window.ui.adcTable.setItem(row, 2, column_2)
 
@@ -121,7 +102,7 @@ class UIADC:
                 column_3 = QTableWidgetItem("")
                 column_3.setFlags(Qt.ItemIsEnabled)
                 column_3.setForeground(Colours.BLACK)
-                column_3.setBackground(Colours.DEFAULT)
+                column_3.setBackground(Colours.BEIGE)
                 column_3.setTextAlignment(Qt.AlignCenter)
                 self.main_window.ui.adcTable.setItem(row, 3, column_3)
 
@@ -129,7 +110,7 @@ class UIADC:
                 column_4 = QTableWidgetItem("")
                 column_4.setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsEditable)
                 column_4.setForeground(Colours.BLACK)
-                column_4.setBackground(Colours.DEFAULT)
+                column_4.setBackground(Colours.BEIGE)
                 # Note: Alignment for editable column 4 is handled by the delegate or default behaviour.
                 self.main_window.ui.adcTable.setItem(row, 4, column_4)
 
@@ -168,7 +149,7 @@ class UIADC:
         self.clearAlteredData()
         # Reset alter on both boards.
         msgID = MessageID.METRICS_RESET_ADC_ALTER
-        for dest in [SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2]:
+        for dest in (SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2):
             self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
 
 
@@ -182,7 +163,7 @@ class UIADC:
             alter_column.setText("")
             alter_column.setTextAlignment(Qt.AlignCenter)
             alter_column.setForeground(Colours.BLACK) # Delegate will paint the cell text with this colour.
-            alter_column.setBackground(Colours.DEFAULT) # Delegate will paint the cell background with this colour.
+            alter_column.setBackground(Colours.BEIGE) # Delegate will paint the cell background with this colour.
 
 
     def alterADCTable(self):
@@ -226,7 +207,7 @@ class UIADC:
                     pass
 
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}I", [adc_count, *data], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
 
 
     def updateADCTable(self, msg):
@@ -239,7 +220,7 @@ class UIADC:
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
             if MsgMode(msg[5]) == MsgMode.OUT:
-                header, adcPayload = unpackMessage("32I", msg)
+                header, adcPayload = unpackMessage("I30H", msg)
 
                 source = header[2]
                 num_channels = adcPayload[0]
@@ -278,12 +259,12 @@ class UIADC:
                     scaled_column.setText(f"{scaled_value / 1000:.2f}")
 
                     # Check if the raw value is close to saturation and set the background colour accordingly.
-                    bg_colour = Colours.SATURATED_RAW if (raw_value >= (((2 ** self.adc_resolution_bits) - 1) * (self.adc_raw_saturated_percent / 100))) else Colours.DEFAULT
+                    bg_colour = Colours.LIGHT_PINK if (raw_value >= (((2 ** self.adc_resolution_bits) - 1) * (self.adc_raw_saturated_percent / 100))) else Colours.BEIGE
                     raw_column.setBackground(bg_colour)
 
                     # Check if this channel is currently altered.
                     if changed_altered_channels & bitmask:
-                        cell_colour = Colours.ALTER if self.current_altered_channels & bitmask else Colours.DEFAULT
+                        cell_colour = Colours.APRICOT if self.current_altered_channels & bitmask else Colours.BEIGE
                         self.main_window.ui.adcTable.item(row_num, 1).setBackground(cell_colour)
 
         except Exception as e:

@@ -1,22 +1,15 @@
 # Local application imports.
-from Enums.enum_msg import MessageID
+from Enums.enum_msg import ASCII, MessageID
 
 
-SOM = 0x01
-EOM = 0x04
-DLE = 0x10
-
-MAX_BUFFER_SIZE = 2048
-
-
-class ProtocolParser:
+class DLEParser:
     """
-    Class for parsing incoming serial data and encoding outgoing serial data.
+    Class for parsing incoming serial data and encoding outgoing serial data using DLE byte stuffing.
     """
 
     def __init__(self, callback=None):
         """
-        Initialises the ProtocolParser class.
+        Initialises the DLEParser class.
 
         Args:
             callback: Callback method to be called when a new message is received. This is optional and not all objects will require a callback.
@@ -24,20 +17,21 @@ class ProtocolParser:
         self.rx_buffer = bytearray()
         self.callbackMethod = callback
         self.reset()
+        self.MAX_BUFFER_SIZE = 1024
 
 
     def reset(self):
         """
         Resets the parser to a known state.
         """
-        self.escaped = False
+        self.dlePending = False
         self.started = False
         self.msg_size = 0
         self.crc = 0
         self.rx_buffer.clear()
 
 
-    def parseMessage(self, data):
+    def parseBytes(self, data):
         """
         Parses all incoming bytes and determines if a new message has been received.
 
@@ -48,18 +42,18 @@ class ProtocolParser:
             insert = False
             msg_received = False
 
-            if not self.escaped:
-                if byte == DLE:
-                    self.escaped = True
+            if not self.dlePending:
+                if byte == ASCII.DLE.value:
+                    self.dlePending = True
                 else:
                     insert = True
             else:
-                if byte == SOM:
+                if byte == ASCII.SOH.value:
                     self.rx_buffer.clear()
                     self.started = True
                     self.msg_size = 0
                     self.crc = 0
-                elif byte == EOM:
+                elif byte == ASCII.EOT.value:
                     if self.started:
                         self.started = False
                         if self.crc == 0:
@@ -69,10 +63,10 @@ class ProtocolParser:
                             self.reset()
                 else:
                     insert = True
-                self.escaped = False
+                self.dlePending = False
 
             if self.started and insert:
-                if self.msg_size < MAX_BUFFER_SIZE:
+                if self.msg_size < self.MAX_BUFFER_SIZE:
                     self.rx_buffer.append(byte)
                     self.msg_size += 1
                     self.crc ^= byte
@@ -82,7 +76,7 @@ class ProtocolParser:
 
             if msg_received:
                 if self.callbackMethod:
-                    if self.rx_buffer[0] in [msg_id.value for msg_id in MessageID]:
+                    if self.rx_buffer[0] in (msg_id.value for msg_id in MessageID):
                         # Create a copy of the message to avoid reference issues.
                         message = bytes(self.rx_buffer[:self.msg_size])
                         # When a complete message is received and approved, the callback method provided at instantiation will be called where it will add the new message to the queue.
@@ -90,10 +84,9 @@ class ProtocolParser:
                 self.reset()  # Reset after successful message.
 
 
-    @staticmethod
-    def encodeMessage(msg):
+    def encodeMessage(self, msg):
         """
-        Encodes a message to the required serial format. This static method allows encoding without instantiating the class.
+        Encodes a message using DLE byte stuffing.
 
         Args:
             msg: Message to encode (as a bytes-like object).
@@ -101,44 +94,53 @@ class ProtocolParser:
         Returns:
             Encoded message as a bytearray.
         """
-        out_msg = bytearray([DLE, SOM])
+        out_msg = bytearray([ASCII.DLE.value, ASCII.SOH.value])
         crc = 0
 
         for byte in msg:
-            if byte == DLE:
-                out_msg.append(DLE)
+            if byte == ASCII.DLE.value:
+                out_msg.append(ASCII.DLE.value)
             out_msg.append(byte)
             crc ^= byte
 
-        out_msg.extend([crc, DLE, EOM])
-
+        out_msg.extend([crc, ASCII.DLE.value, ASCII.EOT.value])
         return out_msg
 
 
     @staticmethod
-    def decodeMessage(msg, is_encoded=True):
+    def debugMessage(msg, is_encoded=True):
         """
-        For debugging purposes only. Decodes either the encoded message or the built message. This static method allows decoding without instantiating the class.
+        For debugging purposes only. Decodes either the encoded message or the built message and prints to CMD to see the contents.
+        Static to allow calling without instantiating the class.
 
         Args:
-            msg:        Message to decode.
-            is_encoded: If True, the message is encoded. If False, the message is built only.
+            msg:            Message to debug.
+            is_encoded:     If True, the message is encoded. If False, the message is built only.
         """
-        print(f"\n------ Decode Message ------")
+        print(f"\n------ Debug Message Start ------")
 
         if is_encoded:
-            spaced_full_message = ' '.join(f'{byte:02x}' for byte in msg)   # Full message: all bytes.
-            spaced_header = ' '.join(f'{byte:02x}' for byte in msg[2:10])   # Header: index 2 to 10.
-            spaced_payload = ' '.join(f'{byte:02x}' for byte in msg[10:-3]) # Payload: index 10 to -3.
-            spaced_CRC = ' '.join(f'{byte:02x}' for byte in msg[-3:-2])     # CRC: Third last byte.
+            """
+            The header could consist of all double DLEs, so this needs to be accounted for first before splitting the header and payload.
+            A total of header bytes * 2 must be checked for DLE pairs, and for every DLE pair found, the expected header size must be increased by 1.
+            """
+            header_bytes = 6
+            dle_header_region = msg[2:header_bytes * 2]
+            dle_pairs = dle_header_region.count(bytes([ASCII.DLE.value, ASCII.DLE.value]))
+            header_region = header_bytes + dle_pairs + 2  # +2 to account for DLE & SOM bytes, this is an index variable for slicing.
+
+            spaced_full_message = ' '.join(f'{byte:02x}' for byte in msg)                # Full message: all bytes.
+            spaced_header = ' '.join(f'{byte:02x}' for byte in msg[2:header_region])     # Header: index 2 to 8 (If no DLEs present).
+            spaced_payload = ' '.join(f'{byte:02x}' for byte in msg[header_region:-3])   # Payload: index 8 to -3 (If no DLEs present).
+            spaced_CRC = ' '.join(f'{byte:02x}' for byte in msg[-3:-2])                  # CRC: Third last byte.
             print(f"\nDecoded Message: {spaced_full_message}")
             print(f"\nDecoded Header: {spaced_header}")
             print(f"\nDecoded Payload: {spaced_payload}")
             print(f"\nDecoded CRC: {spaced_CRC}")
         else:
-            spaced_header = ' '.join(f'{byte:02x}' for byte in msg[0:8])    # Header: index 0 to 8.
-            spaced_payload = ' '.join(f'{byte:02x}' for byte in msg[8:])    # Payload: index 8 onward.
+            spaced_header = ' '.join(f'{byte:02x}' for byte in msg[0:6])     # Header: index 0 to 6.
+            spaced_payload = ' '.join(f'{byte:02x}' for byte in msg[6:])     # Payload: index 6 onward.
             print(f"\nBuilt Header: {spaced_header}")
             print(f"\nBuilt Payload: {spaced_payload}")
 
-        print(f"\n------ Decode Message End ------\n")
+        print(f"\n------ Debug Message End ------\n")

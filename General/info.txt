@@ -1,0 +1,25 @@
+Async Tasks:
+1) TASK_MessageProcessing
+    An asynchronous task running on the main event loop. Its job is to wait for and process messages from a queue, allowing it to update the UI without blocking.
+
+Threads:
+1) GUI
+    When the application starts, a QApplication object is created. The thread that executes this code becomes the GUI thread.
+    This is the main thread of the program. When the applications event loop is started (Which is managed by qasync, which integrates with QT's loop),
+    that GUI thread is now dedicated to running the event loop. Its job is to process events like mouse clicks, button presses, signals,
+    painting and updating widgets on the screen.
+
+2) Port Handler
+    Thread to periodically check for available ports.
+
+3) Serial Handler
+    Thread to receive/transmit data over the connected serial port using pyserial.
+
+4) Plotting (Future)
+    With a no-GIL Python 3.14 build, this thread will run CPU-intensive tasks like generating a plot.
+    This will allow the task to run on a separate CPU core, achieving true parallelism without the overhead of a separate process.
+
+Process:
+1) Plotting (Current)
+    A seperate process is created to run CPU-intensive tasks like generating a plot.
+    This uses 'multiprocessing' to run the task on a different CPU core, preventing the main GUI thread from freezing.

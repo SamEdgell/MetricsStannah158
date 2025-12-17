@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.10.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -44,287 +44,14 @@ class Ui_MainWindow(object):
 "}")
         self.navigationFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.navigationFrame.setFrameShadow(QFrame.Shadow.Raised)
-        self.UICommsBox = QGroupBox(self.navigationFrame)
-        self.UICommsBox.setObjectName(u"UICommsBox")
-        self.UICommsBox.setGeometry(QRect(17, 816, 321, 154))
-        font1 = QFont()
-        font1.setPointSize(12)
-        font1.setBold(True)
-        self.UICommsBox.setFont(font1)
-        self.UICommsBox.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"    margin-top: 0px; /* Moves the entire group box and border down */\n"
-"}\n"
-"")
-        self.autoSerialButton = QRadioButton(self.UICommsBox)
-        self.autoManualCommsButtonGroup = QButtonGroup(MainWindow)
-        self.autoManualCommsButtonGroup.setObjectName(u"autoManualCommsButtonGroup")
-        self.autoManualCommsButtonGroup.addButton(self.autoSerialButton)
-        self.autoSerialButton.setObjectName(u"autoSerialButton")
-        self.autoSerialButton.setGeometry(QRect(10, 40, 51, 22))
-        font2 = QFont()
-        font2.setPointSize(9)
-        self.autoSerialButton.setFont(font2)
-        self.autoSerialButton.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.autoSerialButton.setChecked(True)
-        self.manualSerialButton = QRadioButton(self.UICommsBox)
-        self.autoManualCommsButtonGroup.addButton(self.manualSerialButton)
-        self.manualSerialButton.setObjectName(u"manualSerialButton")
-        self.manualSerialButton.setGeometry(QRect(10, 10, 71, 22))
-        self.manualSerialButton.setFont(font2)
-        self.manualSerialButton.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.manualSerialButton.setChecked(False)
-        self.comPortBox = QComboBox(self.UICommsBox)
-        self.comPortBox.setObjectName(u"comPortBox")
-        self.comPortBox.setGeometry(QRect(84, 10, 75, 21))
-        self.comPortBox.setStyleSheet(u"QComboBox{\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFFFFF; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"	outline: none; /* Remove focus outline */\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"	color: #000000; /* Text color for drop-down items */\n"
-"	background-color: #FFFFFF; /* Background color for drop-down items */\n"
-"}\n"
-"\n"
-"QComboBox::drop-down{\n"
-"	border: 0px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow{\n"
-"	image: none;\n"
-"}")
-        self.serialConnectButton = QPushButton(self.UICommsBox)
-        self.serialConnectButton.setObjectName(u"serialConnectButton")
-        self.serialConnectButton.setGeometry(QRect(168, 10, 143, 21))
-        font3 = QFont()
-        font3.setBold(False)
-        self.serialConnectButton.setFont(font3)
-        self.serialConnectButton.setStyleSheet(u"QPushButton {\n"
-"    color: #000000; /* Text color */\n"
-"    border: 2px solid #000000; /* Border color */\n"
-"    border-radius: 10px; /* Rounded corners */\n"
-"	background-color: #FFA2A7;\n"
-"}")
-        self.rxByteLineEdit = QLineEdit(self.UICommsBox)
-        self.rxByteLineEdit.setObjectName(u"rxByteLineEdit")
-        self.rxByteLineEdit.setGeometry(QRect(67, 80, 81, 21))
-        self.rxByteLineEdit.setStyleSheet(u"QLineEdit {\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFFFFF; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"}\n"
-"")
-        self.rxByteLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.rxByteLineEdit.setReadOnly(True)
-        self.rxLabel = QLabel(self.UICommsBox)
-        self.rxLabel.setObjectName(u"rxLabel")
-        self.rxLabel.setGeometry(QRect(10, 79, 51, 21))
-        self.rxLabel.setStyleSheet(u"QLabel{\n"
-"    color: #000000; /* Text color */\n"
-"	background: transparent;\n"
-"}")
-        self.txLabel = QLabel(self.UICommsBox)
-        self.txLabel.setObjectName(u"txLabel")
-        self.txLabel.setGeometry(QRect(160, 80, 71, 21))
-        self.txLabel.setStyleSheet(u"QLabel{\n"
-"    color: #000000; /* Text color */\n"
-"	background: transparent;\n"
-"}")
-        self.txByteLineEdit = QLineEdit(self.UICommsBox)
-        self.txByteLineEdit.setObjectName(u"txByteLineEdit")
-        self.txByteLineEdit.setGeometry(QRect(230, 80, 81, 21))
-        self.txByteLineEdit.setFont(font3)
-        self.txByteLineEdit.setStyleSheet(u"QLineEdit {\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFFFFF; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"}\n"
-"")
-        self.txByteLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.txByteLineEdit.setReadOnly(True)
-        self.statusLineEdit = QLineEdit(self.UICommsBox)
-        self.statusLineEdit.setObjectName(u"statusLineEdit")
-        self.statusLineEdit.setGeometry(QRect(168, 40, 143, 21))
-        self.statusLineEdit.setStyleSheet(u"QLineEdit {\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFA2A7; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"}\n"
-"")
-        self.statusLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.statusLineEdit.setReadOnly(True)
-        self.topLine = QFrame(self.UICommsBox)
-        self.topLine.setObjectName(u"topLine")
-        self.topLine.setGeometry(QRect(10, 70, 301, 2))
-        font4 = QFont()
-        font4.setKerning(True)
-        self.topLine.setFont(font4)
-        self.topLine.setStyleSheet(u"QFrame {\n"
-"    background-color: #000000; /* Solid black line */\n"
-"    max-height: 2px;          /* Restrict height to 1px */\n"
-"    min-height: 2px;          /* Ensure it stays 1px tall */\n"
-"    border: none;             /* Remove any borders */\n"
-"}")
-        self.topLine.setFrameShape(QFrame.Shape.HLine)
-        self.topLine.setFrameShadow(QFrame.Shadow.Sunken)
-        self.authenticateLineEdit = QLineEdit(self.UICommsBox)
-        self.authenticateLineEdit.setObjectName(u"authenticateLineEdit")
-        self.authenticateLineEdit.setGeometry(QRect(197, 120, 113, 23))
-        self.authenticateLineEdit.setStyleSheet(u"QLineEdit {\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFE200; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"}\n"
-"")
-        self.authenticateLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.authenticateLineEdit.setReadOnly(True)
-        self.bottomLine = QFrame(self.UICommsBox)
-        self.bottomLine.setObjectName(u"bottomLine")
-        self.bottomLine.setGeometry(QRect(10, 110, 301, 2))
-        self.bottomLine.setFont(font4)
-        self.bottomLine.setStyleSheet(u"QFrame {\n"
-"    background-color: #000000; /* Solid black line */\n"
-"    max-height: 2px;          /* Restrict height to 1px */\n"
-"    min-height: 2px;          /* Ensure it stays 1px tall */\n"
-"    border: none;             /* Remove any borders */\n"
-"}")
-        self.bottomLine.setFrameShape(QFrame.Shape.HLine)
-        self.bottomLine.setFrameShadow(QFrame.Shadow.Sunken)
-        self.heartbeatLED = QRadioButton(self.UICommsBox)
-        self.heartbeatLED.setObjectName(u"heartbeatLED")
-        self.heartbeatLED.setEnabled(False)
-        self.heartbeatLED.setGeometry(QRect(12, 120, 77, 22))
-        self.heartbeatLED.setFont(font2)
-        self.heartbeatLED.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.heartbeatLED.setChecked(False)
-        self.heartbeatLED.setAutoExclusive(False)
-        self.authenticateButton = QRadioButton(self.UICommsBox)
-        self.authenticateButton.setObjectName(u"authenticateButton")
-        self.authenticateButton.setGeometry(QRect(100, 120, 89, 22))
-        self.authenticateButton.setFont(font2)
-        self.authenticateButton.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.authenticateButton.setChecked(False)
-        self.authenticateButton.setAutoExclusive(False)
-        self.baudRateBox = QComboBox(self.UICommsBox)
-        self.baudRateBox.setObjectName(u"baudRateBox")
-        self.baudRateBox.setGeometry(QRect(84, 40, 75, 21))
-        self.baudRateBox.setStyleSheet(u"QComboBox{\n"
-"    color: #000000; /* Text color */\n"
-"    background-color: #FFFFFF; /* Background color */\n"
-"    border: 1px solid black; /* Thin black solid border */\n"
-"    border-radius: 5px; /* Optional: rounded corners */\n"
-"    padding: 5px; /* Adds space around the text */\n"
-"    padding-top: 3px; /* Adjusts the padding at the top */\n"
-"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
-"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
-"	outline: none; /* Remove focus outline */\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"	color: #000000; /* Text color for drop-down items */\n"
-"	background-color: #FFFFFF; /* Background color for drop-down items */\n"
-"}\n"
-"\n"
-"QComboBox::drop-down{\n"
-"	border: 0px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow{\n"
-"	image: none;\n"
-"}")
         self.ADCIOPageButton = QPushButton(self.navigationFrame)
         self.ADCIOPageButton.setObjectName(u"ADCIOPageButton")
         self.ADCIOPageButton.setGeometry(QRect(19, 117, 68, 48))
-        font5 = QFont()
-        font5.setFamilies([u"Verdana"])
-        font5.setPointSize(10)
-        font5.setBold(False)
-        self.ADCIOPageButton.setFont(font5)
+        font1 = QFont()
+        font1.setFamilies([u"Verdana"])
+        font1.setPointSize(10)
+        font1.setBold(False)
+        self.ADCIOPageButton.setFont(font1)
         self.ADCIOPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -356,11 +83,11 @@ class Ui_MainWindow(object):
         self.testButton1 = QPushButton(self.navigationFrame)
         self.testButton1.setObjectName(u"testButton1")
         self.testButton1.setGeometry(QRect(34, 470, 54, 34))
-        font6 = QFont()
-        font6.setFamilies([u"Verdana"])
-        font6.setPointSize(7)
-        font6.setBold(False)
-        self.testButton1.setFont(font6)
+        font2 = QFont()
+        font2.setFamilies([u"Verdana"])
+        font2.setPointSize(7)
+        font2.setBold(False)
+        self.testButton1.setFont(font2)
         self.testButton1.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -382,7 +109,7 @@ class Ui_MainWindow(object):
         self.testButton3 = QPushButton(self.navigationFrame)
         self.testButton3.setObjectName(u"testButton3")
         self.testButton3.setGeometry(QRect(150, 470, 54, 34))
-        self.testButton3.setFont(font6)
+        self.testButton3.setFont(font2)
         self.testButton3.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -404,7 +131,7 @@ class Ui_MainWindow(object):
         self.testButton5 = QPushButton(self.navigationFrame)
         self.testButton5.setObjectName(u"testButton5")
         self.testButton5.setGeometry(QRect(266, 470, 54, 34))
-        self.testButton5.setFont(font6)
+        self.testButton5.setFont(font2)
         self.testButton5.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -426,7 +153,7 @@ class Ui_MainWindow(object):
         self.testButton4 = QPushButton(self.navigationFrame)
         self.testButton4.setObjectName(u"testButton4")
         self.testButton4.setGeometry(QRect(208, 470, 54, 34))
-        self.testButton4.setFont(font6)
+        self.testButton4.setFont(font2)
         self.testButton4.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -448,7 +175,7 @@ class Ui_MainWindow(object):
         self.testButton2 = QPushButton(self.navigationFrame)
         self.testButton2.setObjectName(u"testButton2")
         self.testButton2.setGeometry(QRect(92, 470, 54, 34))
-        self.testButton2.setFont(font6)
+        self.testButton2.setFont(font2)
         self.testButton2.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -470,7 +197,7 @@ class Ui_MainWindow(object):
         self.colourPalettePageButton = QPushButton(self.navigationFrame)
         self.colourPalettePageButton.setObjectName(u"colourPalettePageButton")
         self.colourPalettePageButton.setGeometry(QRect(102, 117, 68, 48))
-        self.colourPalettePageButton.setFont(font5)
+        self.colourPalettePageButton.setFont(font1)
         self.colourPalettePageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -492,7 +219,9 @@ class Ui_MainWindow(object):
         self.topLine_2 = QFrame(self.navigationFrame)
         self.topLine_2.setObjectName(u"topLine_2")
         self.topLine_2.setGeometry(QRect(18, 181, 317, 2))
-        self.topLine_2.setFont(font4)
+        font3 = QFont()
+        font3.setKerning(True)
+        self.topLine_2.setFont(font3)
         self.topLine_2.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -501,11 +230,125 @@ class Ui_MainWindow(object):
 "}")
         self.topLine_2.setFrameShape(QFrame.Shape.HLine)
         self.topLine_2.setFrameShadow(QFrame.Shadow.Sunken)
-        self.enableDemoModeButton = QRadioButton(self.navigationFrame)
-        self.enableDemoModeButton.setObjectName(u"enableDemoModeButton")
-        self.enableDemoModeButton.setGeometry(QRect(110, 440, 139, 22))
-        self.enableDemoModeButton.setFont(font2)
-        self.enableDemoModeButton.setStyleSheet(u"QRadioButton {\n"
+        self.commsTab = QTabWidget(self.navigationFrame)
+        self.commsTab.setObjectName(u"commsTab")
+        self.commsTab.setGeometry(QRect(19, 787, 317, 150))
+        font4 = QFont()
+        font4.setBold(True)
+        font4.setItalic(True)
+        self.commsTab.setFont(font4)
+        self.commsTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
+        self.commsTab.setStyleSheet(u"QTabWidget::pane {\n"
+"    border: 2px solid black; /* Border for the group box */\n"
+"    border-radius: 5px;\n"
+"    margin-top: -2px; /* Adjust to connect selected tab with pane */\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"    border: 2px solid black;\n"
+"    color: black;\n"
+"    padding: 5px;\n"
+"    border-top-left-radius: 4px;\n"
+"    border-top-right-radius: 4px;\n"
+"    min-width: 80px; /* Ensures tabs have consistent minimum width */\n"
+"    margin-right: 2px; /* Space between tabs */\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"    background-color: #A6FFA7;\n"
+"    border-bottom: none; /* Hides bottom border to connect with pane */\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected {\n"
+"    background-color: #FFA2A7;\n"
+"    margin-top: 2px; /* Makes unselected tabs slightly lower */\n"
+"}\n"
+"\n"
+"QTabBar::tab:hover:!selected {\n"
+"    background-color: #FFB5B9; /* Slightly lighter red on hover */\n"
+"}")
+        self.serialTab = QWidget()
+        self.serialTab.setObjectName(u"serialTab")
+        self.clearPrimaryConsoleButton_3 = QPushButton(self.serialTab)
+        self.clearPrimaryConsoleButton_3.setObjectName(u"clearPrimaryConsoleButton_3")
+        self.clearPrimaryConsoleButton_3.setGeometry(QRect(540, 864, 51, 22))
+        self.clearPrimaryConsoleButton_3.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}")
+        self.savePrimaryConsoleButton_3 = QPushButton(self.serialTab)
+        self.savePrimaryConsoleButton_3.setObjectName(u"savePrimaryConsoleButton_3")
+        self.savePrimaryConsoleButton_3.setGeometry(QRect(540, 894, 51, 22))
+        self.savePrimaryConsoleButton_3.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}")
+        self.bottomLine = QFrame(self.serialTab)
+        self.bottomLine.setObjectName(u"bottomLine")
+        self.bottomLine.setGeometry(QRect(8, 74, 295, 2))
+        self.bottomLine.setFont(font3)
+        self.bottomLine.setStyleSheet(u"QFrame {\n"
+"    background-color: #000000; /* Solid black line */\n"
+"    max-height: 2px;          /* Restrict height to 1px */\n"
+"    min-height: 2px;          /* Ensure it stays 1px tall */\n"
+"    border: none;             /* Remove any borders */\n"
+"}")
+        self.bottomLine.setFrameShape(QFrame.Shape.HLine)
+        self.bottomLine.setFrameShadow(QFrame.Shadow.Sunken)
+        self.serialComPortBox = QComboBox(self.serialTab)
+        self.serialComPortBox.setObjectName(u"serialComPortBox")
+        self.serialComPortBox.setGeometry(QRect(82, 11, 75, 21))
+        self.serialComPortBox.setStyleSheet(u"QComboBox{\n"
+"    color: #000000;             /* Text colour */\n"
+"    background: #FFFFFF;        /* Background colour */\n"
+"    border: 1px solid black;    /* Border colour */\n"
+"    border-radius: 5px;         /* Rounded corners */\n"
+"}\n"
+"QComboBox::drop-down{\n"
+"    width: 0px;                 /* Hides the drop-down arrow */\n"
+"    border: none;               /* No border for the drop-down */\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"    image: none;                /* Hides the down arrow */\n"
+"}")
+        self.serialAutoButton = QRadioButton(self.serialTab)
+        self.autoManualCommsButtonGroup = QButtonGroup(MainWindow)
+        self.autoManualCommsButtonGroup.setObjectName(u"autoManualCommsButtonGroup")
+        self.autoManualCommsButtonGroup.addButton(self.serialAutoButton)
+        self.serialAutoButton.setObjectName(u"serialAutoButton")
+        self.serialAutoButton.setGeometry(QRect(8, 41, 51, 22))
+        font5 = QFont()
+        font5.setPointSize(9)
+        self.serialAutoButton.setFont(font5)
+        self.serialAutoButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
 "\n"
@@ -520,8 +363,227 @@ class Ui_MainWindow(object):
 "QRadioButton::indicator:checked {\n"
 "    background-color: #FF0000; /* Set background color to red when checked */\n"
 "}")
-        self.enableDemoModeButton.setChecked(False)
-        self.enableDemoModeButton.setAutoExclusive(False)
+        self.serialAutoButton.setChecked(True)
+        self.serialConnectButton = QPushButton(self.serialTab)
+        self.serialConnectButton.setObjectName(u"serialConnectButton")
+        self.serialConnectButton.setGeometry(QRect(167, 11, 136, 21))
+        font6 = QFont()
+        font6.setBold(False)
+        self.serialConnectButton.setFont(font6)
+        self.serialConnectButton.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #FFA2A7;\n"
+"}")
+        self.serialStatus = QLineEdit(self.serialTab)
+        self.serialStatus.setObjectName(u"serialStatus")
+        self.serialStatus.setGeometry(QRect(167, 41, 136, 21))
+        self.serialStatus.setStyleSheet(u"QLineEdit {\n"
+"    color: #000000; /* Text color */\n"
+"    background-color: #FFA2A7; /* Background color */\n"
+"    border: 1px solid black; /* Thin black solid border */\n"
+"    border-radius: 5px; /* Optional: rounded corners */\n"
+"    padding: 5px; /* Adds space around the text */\n"
+"    padding-top: 3px; /* Adjusts the padding at the top */\n"
+"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
+"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
+"}\n"
+"")
+        self.serialStatus.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.serialStatus.setReadOnly(True)
+        self.serialManualButton = QRadioButton(self.serialTab)
+        self.autoManualCommsButtonGroup.addButton(self.serialManualButton)
+        self.serialManualButton.setObjectName(u"serialManualButton")
+        self.serialManualButton.setGeometry(QRect(8, 11, 71, 22))
+        self.serialManualButton.setFont(font5)
+        self.serialManualButton.setStyleSheet(u"QRadioButton {\n"
+"    color: #000000; /* Text color */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width: 10px; /* Size of the circle */\n"
+"    height: 10px; /* Size of the circle */\n"
+"    border: 2px solid #000000; /* Border of the circle */\n"
+"    border-radius: 5px; /* Makes the circle rounded */\n"
+"    background-color: #FFFFFF; /* Background of the circle */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: #FF0000; /* Set background color to red when checked */\n"
+"}")
+        self.serialManualButton.setChecked(False)
+        self.serialTxBytes = QLineEdit(self.serialTab)
+        self.serialTxBytes.setObjectName(u"serialTxBytes")
+        self.serialTxBytes.setGeometry(QRect(222, 86, 81, 21))
+        self.serialTxBytes.setFont(font6)
+        self.serialTxBytes.setStyleSheet(u"QLineEdit {\n"
+"    color: #000000; /* Text color */\n"
+"    background-color: #FFFFFF; /* Background color */\n"
+"    border: 1px solid black; /* Thin black solid border */\n"
+"    border-radius: 5px; /* Optional: rounded corners */\n"
+"    padding: 5px; /* Adds space around the text */\n"
+"    padding-top: 3px; /* Adjusts the padding at the top */\n"
+"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
+"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
+"}\n"
+"")
+        self.serialTxBytes.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.serialTxBytes.setReadOnly(True)
+        self.serialRxBytes = QLineEdit(self.serialTab)
+        self.serialRxBytes.setObjectName(u"serialRxBytes")
+        self.serialRxBytes.setGeometry(QRect(62, 86, 81, 21))
+        self.serialRxBytes.setStyleSheet(u"QLineEdit {\n"
+"    color: #000000; /* Text color */\n"
+"    background-color: #FFFFFF; /* Background color */\n"
+"    border: 1px solid black; /* Thin black solid border */\n"
+"    border-radius: 5px; /* Optional: rounded corners */\n"
+"    padding: 5px; /* Adds space around the text */\n"
+"    padding-top: 3px; /* Adjusts the padding at the top */\n"
+"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
+"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
+"}\n"
+"")
+        self.serialRxBytes.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.serialRxBytes.setReadOnly(True)
+        self.serialTxLabel = QLabel(self.serialTab)
+        self.serialTxLabel.setObjectName(u"serialTxLabel")
+        self.serialTxLabel.setGeometry(QRect(152, 85, 71, 21))
+        self.serialTxLabel.setStyleSheet(u"QLabel{\n"
+"    color: #000000; /* Text color */\n"
+"	background: transparent;\n"
+"}")
+        self.serialBaudRateBox = QComboBox(self.serialTab)
+        self.serialBaudRateBox.setObjectName(u"serialBaudRateBox")
+        self.serialBaudRateBox.setGeometry(QRect(82, 41, 75, 21))
+        self.serialBaudRateBox.setStyleSheet(u"QComboBox{\n"
+"    color: #000000;             /* Text colour */\n"
+"    background: #FFFFFF;        /* Background colour */\n"
+"    border: 1px solid black;    /* Border colour */\n"
+"    border-radius: 5px;         /* Rounded corners */\n"
+"}\n"
+"QComboBox::drop-down{\n"
+"    width: 0px;                 /* Hides the drop-down arrow */\n"
+"    border: none;               /* No border for the drop-down */\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"    image: none;                /* Hides the down arrow */\n"
+"}")
+        self.serialRxLabel = QLabel(self.serialTab)
+        self.serialRxLabel.setObjectName(u"serialRxLabel")
+        self.serialRxLabel.setGeometry(QRect(8, 85, 51, 21))
+        self.serialRxLabel.setStyleSheet(u"QLabel{\n"
+"    color: #000000; /* Text color */\n"
+"	background: transparent;\n"
+"}")
+        self.commsTab.addTab(self.serialTab, "")
+        self.bluetoothTab = QWidget()
+        self.bluetoothTab.setObjectName(u"bluetoothTab")
+        self.saveSecondaryConsoleButton_3 = QPushButton(self.bluetoothTab)
+        self.saveSecondaryConsoleButton_3.setObjectName(u"saveSecondaryConsoleButton_3")
+        self.saveSecondaryConsoleButton_3.setGeometry(QRect(540, 894, 51, 22))
+        self.saveSecondaryConsoleButton_3.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}")
+        self.clearSecondaryConsoleButton_3 = QPushButton(self.bluetoothTab)
+        self.clearSecondaryConsoleButton_3.setObjectName(u"clearSecondaryConsoleButton_3")
+        self.clearSecondaryConsoleButton_3.setGeometry(QRect(540, 864, 51, 22))
+        self.clearSecondaryConsoleButton_3.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}")
+        self.commsTab.addTab(self.bluetoothTab, "")
+        self.WiFiTab = QWidget()
+        self.WiFiTab.setObjectName(u"WiFiTab")
+        self.commsTab.addTab(self.WiFiTab, "")
+        self.authenticateLineEdit = QLineEdit(self.navigationFrame)
+        self.authenticateLineEdit.setObjectName(u"authenticateLineEdit")
+        self.authenticateLineEdit.setGeometry(QRect(221, 948, 115, 23))
+        self.authenticateLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    color: #000000; /* Text color */\n"
+"    background-color: #FFE200; /* Background color */\n"
+"    border: 1px solid black; /* Thin black solid border */\n"
+"    border-radius: 5px; /* Optional: rounded corners */\n"
+"    padding: 5px; /* Adds space around the text */\n"
+"    padding-top: 3px; /* Adjusts the padding at the top */\n"
+"    padding-bottom: 3px; /* Adjusts the padding at the bottom */\n"
+"    line-height: 20px; /* Ensures proper vertical alignment of text */\n"
+"}\n"
+"")
+        self.authenticateLineEdit.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.authenticateLineEdit.setReadOnly(True)
+        self.heartbeatLED = QRadioButton(self.navigationFrame)
+        self.heartbeatLED.setObjectName(u"heartbeatLED")
+        self.heartbeatLED.setEnabled(False)
+        self.heartbeatLED.setGeometry(QRect(29, 948, 77, 22))
+        self.heartbeatLED.setFont(font5)
+        self.heartbeatLED.setStyleSheet(u"QRadioButton {\n"
+"    color: #000000; /* Text color */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width: 10px; /* Size of the circle */\n"
+"    height: 10px; /* Size of the circle */\n"
+"    border: 2px solid #000000; /* Border of the circle */\n"
+"    border-radius: 5px; /* Makes the circle rounded */\n"
+"    background-color: #FFFFFF; /* Background of the circle */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: #FF0000; /* Set background color to red when checked */\n"
+"}")
+        self.heartbeatLED.setChecked(False)
+        self.heartbeatLED.setAutoExclusive(False)
+        self.authenticateButton = QRadioButton(self.navigationFrame)
+        self.authenticateButton.setObjectName(u"authenticateButton")
+        self.authenticateButton.setGeometry(QRect(124, 948, 89, 22))
+        self.authenticateButton.setFont(font5)
+        self.authenticateButton.setStyleSheet(u"QRadioButton {\n"
+"    color: #000000; /* Text color */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width: 10px; /* Size of the circle */\n"
+"    height: 10px; /* Size of the circle */\n"
+"    border: 2px solid #000000; /* Border of the circle */\n"
+"    border-radius: 5px; /* Makes the circle rounded */\n"
+"    background-color: #FFFFFF; /* Background of the circle */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: #FF0000; /* Set background color to red when checked */\n"
+"}")
+        self.authenticateButton.setChecked(False)
+        self.authenticateButton.setAutoExclusive(False)
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setGeometry(QRect(381, 11, 823, 825))
@@ -535,7 +597,10 @@ class Ui_MainWindow(object):
         self.ADCBox = QGroupBox(self.ADCIOPage)
         self.ADCBox.setObjectName(u"ADCBox")
         self.ADCBox.setGeometry(QRect(17, 17, 382, 399))
-        self.ADCBox.setFont(font1)
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(True)
+        self.ADCBox.setFont(font7)
         self.ADCBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -564,22 +629,25 @@ class Ui_MainWindow(object):
         self.adcTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.adcTable.setObjectName(u"adcTable")
         self.adcTable.setGeometry(QRect(18, 50, 346, 332))
-        font7 = QFont()
-        font7.setPointSize(7)
-        self.adcTable.setFont(font7)
+        font8 = QFont()
+        font8.setPointSize(7)
+        self.adcTable.setFont(font8)
         self.adcTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.adcTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.adcTable.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
+"    border: 2px solid black;            /* Border of the table */\n"
+"    background: #E6E2BE;                /* Background colour of table */\n"
 "}\n"
-"\n"
 "QHeaderView::section {\n"
-"    background-color: #A0BEF4;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"	color: black;\n"
+"    background-color: #A0BEF4;          /* Background colour of the header */\n"
+"    border: none;                       /* Border of the header */\n"
+"    border-right: 1px solid black;      /* Right border of the header. Splits columns visually */\n"
+"    border-bottom: 2px solid black;     /* Bottom border of the header */\n"
+"    color: black;                       /* Text colour of the header */\n"
+"    font-weight: normal;                /* Font weight of the header text */\n"
+"}\n"
+"QHeaderView::section:last {\n"
+"    border-right: none;                 /* Remove the right border from the last header section. This is because of an overlap with the table widget border */\n"
 "}")
         self.adcTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.adcTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
@@ -637,7 +705,7 @@ class Ui_MainWindow(object):
         self.inputsBox = QGroupBox(self.ADCIOPage)
         self.inputsBox.setObjectName(u"inputsBox")
         self.inputsBox.setGeometry(QRect(415, 17, 387, 527))
-        self.inputsBox.setFont(font1)
+        self.inputsBox.setFont(font7)
         self.inputsBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -664,20 +732,23 @@ class Ui_MainWindow(object):
         self.inputsTable.setHorizontalHeaderItem(3, __qtablewidgetitem8)
         self.inputsTable.setObjectName(u"inputsTable")
         self.inputsTable.setGeometry(QRect(18, 50, 351, 460))
-        self.inputsTable.setFont(font7)
+        self.inputsTable.setFont(font8)
         self.inputsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.inputsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.inputsTable.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
+"    border: 2px solid black;            /* Border of the table */\n"
+"    background: #E6E2BE;                /* Background colour of table */\n"
 "}\n"
-"\n"
 "QHeaderView::section {\n"
-"    background-color: #A0BEF4;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"	color: black;\n"
+"    background-color: #A0BEF4;          /* Background colour of the header */\n"
+"    border: none;                         /* Border of the header */\n"
+"    border-right: 1px solid black;      /* Right border of the header. Splits columns visually */\n"
+"    border-bottom: 2px solid black;     /* Bottom border of the header */\n"
+"    color: black;                       /* Text colour of the header */\n"
+"    font-weight: normal;                  /* Font weight of the header text */\n"
+"}\n"
+"QHeaderView::section:last {\n"
+"    border-right: none;                   /* Remove the right border from the last header section. This is because of an overlap with the table widget border */\n"
 "}")
         self.inputsTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.inputsTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
@@ -739,7 +810,7 @@ class Ui_MainWindow(object):
         self.outputsBox = QGroupBox(self.ADCIOPage)
         self.outputsBox.setObjectName(u"outputsBox")
         self.outputsBox.setGeometry(QRect(17, 430, 382, 305))
-        self.outputsBox.setFont(font1)
+        self.outputsBox.setFont(font7)
         self.outputsBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -766,20 +837,23 @@ class Ui_MainWindow(object):
         self.outputsTable.setHorizontalHeaderItem(3, __qtablewidgetitem12)
         self.outputsTable.setObjectName(u"outputsTable")
         self.outputsTable.setGeometry(QRect(18, 50, 346, 230))
-        self.outputsTable.setFont(font7)
+        self.outputsTable.setFont(font8)
         self.outputsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.outputsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.outputsTable.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
+"    border: 2px solid black;            /* Border of the table */\n"
+"    background: #E6E2BE;                /* Background colour of table */\n"
 "}\n"
-"\n"
 "QHeaderView::section {\n"
-"    background-color: #A0BEF4;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"	color: black;\n"
+"    background-color: #A0BEF4;          /* Background colour of the header */\n"
+"    border: none;                         /* Border of the header */\n"
+"    border-right: 1px solid black;      /* Right border of the header. Splits columns visually */\n"
+"    border-bottom: 2px solid black;     /* Bottom border of the header */\n"
+"    color: black;                       /* Text colour of the header */\n"
+"    font-weight: normal;                  /* Font weight of the header text */\n"
+"}\n"
+"QHeaderView::section:last {\n"
+"    border-right: none;                   /* Remove the right border from the last header section. This is because of an overlap with the table widget border */\n"
 "}")
         self.outputsTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.outputsTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
@@ -844,10 +918,10 @@ class Ui_MainWindow(object):
         self.colourPaletteLog = QTextEdit(self.colourPalettePage)
         self.colourPaletteLog.setObjectName(u"colourPaletteLog")
         self.colourPaletteLog.setGeometry(QRect(17, 15, 784, 299))
-        font8 = QFont()
-        font8.setFamilies([u"Consolas"])
-        font8.setPointSize(8)
-        self.colourPaletteLog.setFont(font8)
+        font9 = QFont()
+        font9.setFamilies([u"Consolas"])
+        font9.setPointSize(8)
+        self.colourPaletteLog.setFont(font9)
         self.colourPaletteLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.colourPaletteLog.setStyleSheet(u"QTextEdit {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -901,10 +975,10 @@ class Ui_MainWindow(object):
         self.fgColourBox = QGroupBox(self.colourPalettePage)
         self.fgColourBox.setObjectName(u"fgColourBox")
         self.fgColourBox.setGeometry(QRect(60, 337, 164, 248))
-        font9 = QFont()
-        font9.setPointSize(15)
-        font9.setBold(True)
-        self.fgColourBox.setFont(font9)
+        font10 = QFont()
+        font10.setPointSize(15)
+        font10.setBold(True)
+        self.fgColourBox.setFont(font10)
         self.fgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -943,7 +1017,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QSlider::handle {\n"
-"    background: #2CEB6C; /* You can keep the handle visible */\n"
+"    background: #2CEB6C;\n"
 "    border-radius: 4px;\n"
 "}")
         self.fgGreenSlider.setMaximum(255)
@@ -967,7 +1041,7 @@ class Ui_MainWindow(object):
         self.bgColourBox = QGroupBox(self.colourPalettePage)
         self.bgColourBox.setObjectName(u"bgColourBox")
         self.bgColourBox.setGeometry(QRect(592, 337, 164, 248))
-        self.bgColourBox.setFont(font9)
+        self.bgColourBox.setFont(font10)
         self.bgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1054,7 +1128,7 @@ class Ui_MainWindow(object):
         self.appendButton = QPushButton(self.colourPalettePage)
         self.appendButton.setObjectName(u"appendButton")
         self.appendButton.setGeometry(QRect(384, 750, 54, 34))
-        self.appendButton.setFont(font6)
+        self.appendButton.setFont(font2)
         self.appendButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000; /* Text color */\n"
 "    border: 2px solid #000000; /* Border color */\n"
@@ -1076,11 +1150,11 @@ class Ui_MainWindow(object):
         self.fgWhiteButton = QPushButton(self.colourPalettePage)
         self.fgWhiteButton.setObjectName(u"fgWhiteButton")
         self.fgWhiteButton.setGeometry(QRect(237, 366, 29, 26))
-        font10 = QFont()
-        font10.setFamilies([u"Verdana"])
-        font10.setPointSize(7)
-        font10.setBold(True)
-        self.fgWhiteButton.setFont(font10)
+        font11 = QFont()
+        font11.setFamilies([u"Verdana"])
+        font11.setPointSize(7)
+        font11.setBold(True)
+        self.fgWhiteButton.setFont(font11)
         self.fgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1102,7 +1176,7 @@ class Ui_MainWindow(object):
         self.fgBlackButton = QPushButton(self.colourPalettePage)
         self.fgBlackButton.setObjectName(u"fgBlackButton")
         self.fgBlackButton.setGeometry(QRect(237, 400, 29, 26))
-        self.fgBlackButton.setFont(font10)
+        self.fgBlackButton.setFont(font11)
         self.fgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1124,7 +1198,7 @@ class Ui_MainWindow(object):
         self.fgResetButton = QPushButton(self.colourPalettePage)
         self.fgResetButton.setObjectName(u"fgResetButton")
         self.fgResetButton.setGeometry(QRect(237, 558, 29, 26))
-        self.fgResetButton.setFont(font10)
+        self.fgResetButton.setFont(font11)
         self.fgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1146,7 +1220,7 @@ class Ui_MainWindow(object):
         self.bgBlackButton = QPushButton(self.colourPalettePage)
         self.bgBlackButton.setObjectName(u"bgBlackButton")
         self.bgBlackButton.setGeometry(QRect(550, 400, 29, 26))
-        self.bgBlackButton.setFont(font10)
+        self.bgBlackButton.setFont(font11)
         self.bgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1168,7 +1242,7 @@ class Ui_MainWindow(object):
         self.bgWhiteButton = QPushButton(self.colourPalettePage)
         self.bgWhiteButton.setObjectName(u"bgWhiteButton")
         self.bgWhiteButton.setGeometry(QRect(550, 366, 29, 26))
-        self.bgWhiteButton.setFont(font10)
+        self.bgWhiteButton.setFont(font11)
         self.bgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1190,7 +1264,7 @@ class Ui_MainWindow(object):
         self.bgResetButton = QPushButton(self.colourPalettePage)
         self.bgResetButton.setObjectName(u"bgResetButton")
         self.bgResetButton.setGeometry(QRect(550, 558, 29, 26))
-        self.bgResetButton.setFont(font10)
+        self.bgResetButton.setFont(font11)
         self.bgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1216,7 +1290,7 @@ class Ui_MainWindow(object):
         self.testBox = QGroupBox(self.colourPalettePage)
         self.testBox.setObjectName(u"testBox")
         self.testBox.setGeometry(QRect(332, 545, 157, 121))
-        self.testBox.setFont(font1)
+        self.testBox.setFont(font7)
         self.testBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1242,9 +1316,9 @@ class Ui_MainWindow(object):
         self.testTable.setHorizontalHeaderItem(1, __qtablewidgetitem14)
         self.testTable.setObjectName(u"testTable")
         self.testTable.setGeometry(QRect(17, 50, 123, 53))
-        font11 = QFont()
-        font11.setPointSize(8)
-        self.testTable.setFont(font11)
+        font12 = QFont()
+        font12.setPointSize(8)
+        self.testTable.setFont(font12)
         self.testTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.testTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -1272,7 +1346,7 @@ class Ui_MainWindow(object):
         self.bgDefButton = QPushButton(self.colourPalettePage)
         self.bgDefButton.setObjectName(u"bgDefButton")
         self.bgDefButton.setGeometry(QRect(550, 434, 29, 26))
-        self.bgDefButton.setFont(font10)
+        self.bgDefButton.setFont(font11)
         self.bgDefButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1316,10 +1390,7 @@ class Ui_MainWindow(object):
         self.consoleTab = QTabWidget(self.centralwidget)
         self.consoleTab.setObjectName(u"consoleTab")
         self.consoleTab.setGeometry(QRect(1219, 11, 636, 986))
-        font12 = QFont()
-        font12.setBold(True)
-        font12.setItalic(True)
-        self.consoleTab.setFont(font12)
+        self.consoleTab.setFont(font4)
         self.consoleTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.consoleTab.setStyleSheet(u"QTabWidget::pane {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1397,7 +1468,7 @@ class Ui_MainWindow(object):
         self.primaryConsoleLog = QTextBrowser(self.primaryTab)
         self.primaryConsoleLog.setObjectName(u"primaryConsoleLog")
         self.primaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.primaryConsoleLog.setFont(font8)
+        self.primaryConsoleLog.setFont(font9)
         self.primaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.primaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1542,7 +1613,7 @@ class Ui_MainWindow(object):
         self.secondaryConsoleLog = QTextBrowser(self.secondaryTab)
         self.secondaryConsoleLog.setObjectName(u"secondaryConsoleLog")
         self.secondaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.secondaryConsoleLog.setFont(font8)
+        self.secondaryConsoleLog.setFont(font9)
         self.secondaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.secondaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1645,7 +1716,7 @@ class Ui_MainWindow(object):
         self.tertiaryConsoleLog = QTextBrowser(self.tertiaryTab)
         self.tertiaryConsoleLog.setObjectName(u"tertiaryConsoleLog")
         self.tertiaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.tertiaryConsoleLog.setFont(font8)
+        self.tertiaryConsoleLog.setFont(font9)
         self.tertiaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.tertiaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1797,6 +1868,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.commsTab.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
         self.consoleTab.setCurrentIndex(0)
 
@@ -1806,18 +1878,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Metrics", None))
-        self.UICommsBox.setTitle("")
-        self.autoSerialButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
-        self.manualSerialButton.setText(QCoreApplication.translate("MainWindow", u"Manual", None))
-        self.serialConnectButton.setText(QCoreApplication.translate("MainWindow", u"Select Manual", None))
-        self.rxByteLineEdit.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.rxLabel.setText(QCoreApplication.translate("MainWindow", u"Received", None))
-        self.txLabel.setText(QCoreApplication.translate("MainWindow", u"Transmitted", None))
-        self.txByteLineEdit.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.statusLineEdit.setText(QCoreApplication.translate("MainWindow", u"Not Connected", None))
-        self.authenticateLineEdit.setText(QCoreApplication.translate("MainWindow", u"Not Required", None))
-        self.heartbeatLED.setText(QCoreApplication.translate("MainWindow", u"Heartbeat", None))
-        self.authenticateButton.setText(QCoreApplication.translate("MainWindow", u"Authenticate", None))
         self.ADCIOPageButton.setText(QCoreApplication.translate("MainWindow", u"ADC/IO", None))
         self.testButton1.setText(QCoreApplication.translate("MainWindow", u"Test \n"
 " Button 1", None))
@@ -1831,7 +1891,24 @@ class Ui_MainWindow(object):
 " Button 2", None))
         self.colourPalettePageButton.setText(QCoreApplication.translate("MainWindow", u"Colour\n"
 "Palette", None))
-        self.enableDemoModeButton.setText(QCoreApplication.translate("MainWindow", u"Enable Demo Mode", None))
+        self.clearPrimaryConsoleButton_3.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
+        self.savePrimaryConsoleButton_3.setText(QCoreApplication.translate("MainWindow", u"Save", None))
+        self.serialAutoButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
+        self.serialConnectButton.setText(QCoreApplication.translate("MainWindow", u"Select Manual", None))
+        self.serialStatus.setText(QCoreApplication.translate("MainWindow", u"Not Connected", None))
+        self.serialManualButton.setText(QCoreApplication.translate("MainWindow", u"Manual", None))
+        self.serialTxBytes.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.serialRxBytes.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.serialTxLabel.setText(QCoreApplication.translate("MainWindow", u"Transmitted", None))
+        self.serialRxLabel.setText(QCoreApplication.translate("MainWindow", u"Received", None))
+        self.commsTab.setTabText(self.commsTab.indexOf(self.serialTab), QCoreApplication.translate("MainWindow", u"Serial", None))
+        self.saveSecondaryConsoleButton_3.setText(QCoreApplication.translate("MainWindow", u"Save", None))
+        self.clearSecondaryConsoleButton_3.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
+        self.commsTab.setTabText(self.commsTab.indexOf(self.bluetoothTab), QCoreApplication.translate("MainWindow", u"Bluetooth", None))
+        self.commsTab.setTabText(self.commsTab.indexOf(self.WiFiTab), QCoreApplication.translate("MainWindow", u"WiFi", None))
+        self.authenticateLineEdit.setText(QCoreApplication.translate("MainWindow", u"Not Required", None))
+        self.heartbeatLED.setText(QCoreApplication.translate("MainWindow", u"Heartbeat", None))
+        self.authenticateButton.setText(QCoreApplication.translate("MainWindow", u"Authenticate", None))
         self.ADCBox.setTitle(QCoreApplication.translate("MainWindow", u"ADC", None))
         ___qtablewidgetitem = self.adcTable.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ECU-ID", None));

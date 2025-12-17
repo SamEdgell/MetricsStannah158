@@ -431,7 +431,7 @@ def createPlot(filename):
         """
         nonlocal selected_line
         # First check if we're inside one of the plot axes.
-        if event.inaxes in [ax1, ax2, ax3, ax4]:
+        if event.inaxes in (ax1, ax2, ax3, ax4):
             # Check if the click was inside the legend's bbox.
             if legend and legend.get_window_extent().contains(event.x, event.y):
                 # Click is inside legend, do nothing.
