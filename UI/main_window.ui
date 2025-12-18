@@ -2215,7 +2215,7 @@ QRadioButton::indicator:checked {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="ADCIOPage">
      <widget class="QGroupBox" name="ADCBox">
@@ -3155,12 +3155,23 @@ QGroupBox::title {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
-QSlider::handle {
-    background: #46B8FF;
+
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #46B8FF;  /* Blue handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3183,13 +3194,23 @@ QSlider::handle {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
 
-QSlider::handle {
-    background: #2CEB6C; /* You can keep the handle visible */
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #2CEB6C;  /* Green handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3212,12 +3233,23 @@ QSlider::handle {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
-QSlider::handle {
-    background: #F03F3F;
+
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #F03F3F;  /* Red handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3286,12 +3318,23 @@ QGroupBox::title {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
-QSlider::handle {
-    background: #46B8FF;
+
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #46B8FF;  /* Blue handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3314,12 +3357,23 @@ QSlider::handle {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
-QSlider::handle {
-    background: #2CEB6C;
+
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #2CEB6C;  /* Green handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3342,12 +3396,23 @@ QSlider::handle {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QSlider{
-	background: transparent;
+        <string notr="true">QSlider {
+    background: transparent;
 }
-QSlider::handle {
-    background: #F03F3F;
+
+QSlider::groove:vertical {
+    background: black;
+    width: 4px;  /* Width of the groove */
+    margin: 0 8px;  /* Keep horizontal spacing */
+}
+
+QSlider::handle:vertical {
+    background: #F03F3F;  /* Red handle */
+	border: 1px solid black;
     border-radius: 4px;
+    height: 12px;
+    width: 20px;  /* Increased width for a wider handle */
+    margin: 0 -8px;  /* Adjusted to center the wider handle */
 }</string>
        </property>
        <property name="maximum">
@@ -3871,6 +3936,39 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>D</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clearPaletteConsoleButton">
+      <property name="geometry">
+       <rect>
+        <x>724</x>
+        <y>270</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #000000; /* Text color */
+    border: 2px solid #000000; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+	background-color: #F6F6F6;
+}
+
+QPushButton:hover {
+    border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}
+
+QPushButton:pressed {
+	border: 2px solid #000000; /* Border color */
+    border-radius: 1px; /* Rounded corners */
+	background-color: #A6FFA7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Clear</string>
       </property>
      </widget>
     </widget>
@@ -19267,18 +19365,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="swivelTuneButtonGroup"/>
-  <buttongroup name="chairPlotModeButtonGroup"/>
-  <buttongroup name="chairTuneButtonGroup"/>
-  <buttongroup name="rmmLocatingButtonGroup"/>
   <buttongroup name="footrestPlotModeButtonGroup"/>
   <buttongroup name="footrestTuneButtonGroup"/>
+  <buttongroup name="rmmLocatingButtonGroup"/>
+  <buttongroup name="chairTuneButtonGroup"/>
+  <buttongroup name="mainPlotModeButtonGroup"/>
+  <buttongroup name="swivelTuneButtonGroup"/>
   <buttongroup name="swivelPlotModeButtonGroup"/>
+  <buttongroup name="chairPlotModeButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="mainPlotModeButtonGroup"/>
  </buttongroups>
 </ui>

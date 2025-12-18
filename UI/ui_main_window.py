@@ -1716,12 +1716,23 @@ class Ui_MainWindow(object):
         self.fgBlueSlider = QSlider(self.fgColourBox)
         self.fgBlueSlider.setObjectName(u"fgBlueSlider")
         self.fgBlueSlider.setGeometry(QRect(111, 50, 22, 160))
-        self.fgBlueSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.fgBlueSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
-"QSlider::handle {\n"
-"    background: #46B8FF;\n"
+"\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #46B8FF;  /* Blue handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.fgBlueSlider.setMaximum(255)
         self.fgBlueSlider.setSliderPosition(0)
@@ -1729,13 +1740,23 @@ class Ui_MainWindow(object):
         self.fgGreenSlider = QSlider(self.fgColourBox)
         self.fgGreenSlider.setObjectName(u"fgGreenSlider")
         self.fgGreenSlider.setGeometry(QRect(72, 50, 22, 160))
-        self.fgGreenSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.fgGreenSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
 "\n"
-"QSlider::handle {\n"
-"    background: #2CEB6C; /* You can keep the handle visible */\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #2CEB6C;  /* Green handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.fgGreenSlider.setMaximum(255)
         self.fgGreenSlider.setSliderPosition(0)
@@ -1743,12 +1764,23 @@ class Ui_MainWindow(object):
         self.fgRedSlider = QSlider(self.fgColourBox)
         self.fgRedSlider.setObjectName(u"fgRedSlider")
         self.fgRedSlider.setGeometry(QRect(32, 50, 22, 160))
-        self.fgRedSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.fgRedSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
-"QSlider::handle {\n"
-"    background: #F03F3F;\n"
+"\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #F03F3F;  /* Red handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.fgRedSlider.setMaximum(255)
         self.fgRedSlider.setValue(0)
@@ -1779,12 +1811,23 @@ class Ui_MainWindow(object):
         self.bgBlueSlider = QSlider(self.bgColourBox)
         self.bgBlueSlider.setObjectName(u"bgBlueSlider")
         self.bgBlueSlider.setGeometry(QRect(111, 50, 22, 160))
-        self.bgBlueSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.bgBlueSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
-"QSlider::handle {\n"
-"    background: #46B8FF;\n"
+"\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #46B8FF;  /* Blue handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.bgBlueSlider.setMaximum(255)
         self.bgBlueSlider.setValue(255)
@@ -1792,12 +1835,23 @@ class Ui_MainWindow(object):
         self.bgGreenSlider = QSlider(self.bgColourBox)
         self.bgGreenSlider.setObjectName(u"bgGreenSlider")
         self.bgGreenSlider.setGeometry(QRect(72, 50, 22, 160))
-        self.bgGreenSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.bgGreenSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
-"QSlider::handle {\n"
-"    background: #2CEB6C;\n"
+"\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #2CEB6C;  /* Green handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.bgGreenSlider.setMaximum(255)
         self.bgGreenSlider.setValue(255)
@@ -1805,12 +1859,23 @@ class Ui_MainWindow(object):
         self.bgRedSlider = QSlider(self.bgColourBox)
         self.bgRedSlider.setObjectName(u"bgRedSlider")
         self.bgRedSlider.setGeometry(QRect(32, 50, 22, 160))
-        self.bgRedSlider.setStyleSheet(u"QSlider{\n"
-"	background: transparent;\n"
+        self.bgRedSlider.setStyleSheet(u"QSlider {\n"
+"    background: transparent;\n"
 "}\n"
-"QSlider::handle {\n"
-"    background: #F03F3F;\n"
+"\n"
+"QSlider::groove:vertical {\n"
+"    background: black;\n"
+"    width: 4px;  /* Width of the groove */\n"
+"    margin: 0 8px;  /* Keep horizontal spacing */\n"
+"}\n"
+"\n"
+"QSlider::handle:vertical {\n"
+"    background: #F03F3F;  /* Red handle */\n"
+"	border: 1px solid black;\n"
 "    border-radius: 4px;\n"
+"    height: 12px;\n"
+"    width: 20px;  /* Increased width for a wider handle */\n"
+"    margin: 0 -8px;  /* Adjusted to center the wider handle */\n"
 "}")
         self.bgRedSlider.setMaximum(255)
         self.bgRedSlider.setValue(255)
@@ -2079,6 +2144,27 @@ class Ui_MainWindow(object):
 "    border: 2px solid #000000;\n"
 "    border-radius: 5px;\n"
 "    background-color: #A6FFA7;\n"
+"}")
+        self.clearPaletteConsoleButton = QPushButton(self.colourPalettePage)
+        self.clearPaletteConsoleButton.setObjectName(u"clearPaletteConsoleButton")
+        self.clearPaletteConsoleButton.setGeometry(QRect(724, 270, 51, 22))
+        self.clearPaletteConsoleButton.setStyleSheet(u"QPushButton {\n"
+"    color: #000000; /* Text color */\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 10px; /* Rounded corners */\n"
+"	background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	border: 2px solid #000000; /* Border color */\n"
+"    border-radius: 1px; /* Rounded corners */\n"
+"	background-color: #A6FFA7;\n"
 "}")
         self.stackedWidget.addWidget(self.colourPalettePage)
         self.configurationPage = QWidget()
@@ -9902,7 +9988,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.commsTab.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         self.consoleTab.setCurrentIndex(0)
 
 
@@ -10064,6 +10150,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem18 = self.testTable.horizontalHeaderItem(1)
         ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.bgDefButton.setText(QCoreApplication.translate("MainWindow", u"D", None))
+        self.clearPaletteConsoleButton.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.configBox.setTitle(QCoreApplication.translate("MainWindow", u"Stored Configuration", None))
         ___qtablewidgetitem19 = self.configTable.horizontalHeaderItem(0)
         ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"ID", None));
