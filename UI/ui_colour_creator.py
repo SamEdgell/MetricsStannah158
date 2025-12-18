@@ -11,14 +11,15 @@ class UIColourCreator:
     Class for the colour creator.
     """
 
-    def __init__(self, main_Window):
+    def __init__(self, main_window):
         """
         Initialises the ColourCreator class.
 
         Args:
             main_Window: Reference to the main window, used for accessing UI elements.
         """
-        self.main_window = main_Window
+        self.main_window = main_window
+
         self.main_window.ui.clearPaletteConsoleButton.clicked.connect(self.clearConsole)
         self.main_window.ui.appendButton.clicked.connect(self.appendText)
         self.main_window.ui.fgWhiteButton.clicked.connect(lambda: self.setSliders("W", True))
