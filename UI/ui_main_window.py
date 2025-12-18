@@ -94,7 +94,7 @@ class Ui_MainWindow(object):
 "}")
         self.configurationPageButton = QPushButton(self.navigationFrame)
         self.configurationPageButton.setObjectName(u"configurationPageButton")
-        self.configurationPageButton.setGeometry(QRect(268, 117, 68, 48))
+        self.configurationPageButton.setGeometry(QRect(185, 117, 68, 48))
         self.configurationPageButton.setFont(font1)
         self.configurationPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
 "}")
         self.railMappingPageButton = QPushButton(self.navigationFrame)
         self.railMappingPageButton.setObjectName(u"railMappingPageButton")
-        self.railMappingPageButton.setGeometry(QRect(185, 199, 68, 48))
+        self.railMappingPageButton.setGeometry(QRect(19, 199, 68, 48))
         self.railMappingPageButton.setFont(font1)
         self.railMappingPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -654,7 +654,7 @@ class Ui_MainWindow(object):
 "}")
         self.colourPalettePageButton = QPushButton(self.navigationFrame)
         self.colourPalettePageButton.setObjectName(u"colourPalettePageButton")
-        self.colourPalettePageButton.setGeometry(QRect(185, 117, 68, 48))
+        self.colourPalettePageButton.setGeometry(QRect(102, 117, 68, 48))
         self.colourPalettePageButton.setFont(font1)
         self.colourPalettePageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -676,7 +676,7 @@ class Ui_MainWindow(object):
 "}")
         self.chairFoldPageButton = QPushButton(self.navigationFrame)
         self.chairFoldPageButton.setObjectName(u"chairFoldPageButton")
-        self.chairFoldPageButton.setGeometry(QRect(19, 281, 68, 48))
+        self.chairFoldPageButton.setGeometry(QRect(19, 280, 68, 48))
         self.chairFoldPageButton.setFont(font1)
         self.chairFoldPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -698,7 +698,7 @@ class Ui_MainWindow(object):
 "}")
         self.footrestPageButton = QPushButton(self.navigationFrame)
         self.footrestPageButton.setObjectName(u"footrestPageButton")
-        self.footrestPageButton.setGeometry(QRect(102, 281, 68, 48))
+        self.footrestPageButton.setGeometry(QRect(102, 280, 68, 48))
         self.footrestPageButton.setFont(font1)
         self.footrestPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -768,7 +768,7 @@ class Ui_MainWindow(object):
         self.topLine_5.setFrameShadow(QFrame.Shadow.Sunken)
         self.systemPageButton = QPushButton(self.navigationFrame)
         self.systemPageButton.setObjectName(u"systemPageButton")
-        self.systemPageButton.setGeometry(QRect(268, 199, 68, 48))
+        self.systemPageButton.setGeometry(QRect(102, 199, 68, 48))
         self.systemPageButton.setFont(font1)
         self.systemPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -790,31 +790,9 @@ class Ui_MainWindow(object):
 "}")
         self.keyWiringPageButton = QPushButton(self.navigationFrame)
         self.keyWiringPageButton.setObjectName(u"keyWiringPageButton")
-        self.keyWiringPageButton.setGeometry(QRect(102, 199, 68, 48))
+        self.keyWiringPageButton.setGeometry(QRect(268, 117, 68, 48))
         self.keyWiringPageButton.setFont(font1)
         self.keyWiringPageButton.setStyleSheet(u"QPushButton {\n"
-"    color: #000000;\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #FFA2A7;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #A6FFA7;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #A6FFA7;\n"
-"}")
-        self.debuggingPageButton = QPushButton(self.navigationFrame)
-        self.debuggingPageButton.setObjectName(u"debuggingPageButton")
-        self.debuggingPageButton.setGeometry(QRect(19, 199, 68, 48))
-        self.debuggingPageButton.setFont(font1)
-        self.debuggingPageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
 "    border-radius: 5px;\n"
@@ -844,54 +822,9 @@ class Ui_MainWindow(object):
 "}")
         self.topLine_21.setFrameShape(QFrame.Shape.HLine)
         self.topLine_21.setFrameShadow(QFrame.Shadow.Sunken)
-        self.callAndDemandPageButton = QPushButton(self.navigationFrame)
-        self.callAndDemandPageButton.setObjectName(u"callAndDemandPageButton")
-        self.callAndDemandPageButton.setGeometry(QRect(102, 117, 68, 48))
-        self.callAndDemandPageButton.setFont(font1)
-        self.callAndDemandPageButton.setStyleSheet(u"QPushButton {\n"
-"    color: #000000;\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #FFA2A7;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #A6FFA7;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    border: 2px solid #000000;\n"
-"    border-radius: 5px;\n"
-"    background-color: #A6FFA7;\n"
-"}")
-        self.enableDemoModeButton = QRadioButton(self.navigationFrame)
-        self.enableDemoModeButton.setObjectName(u"enableDemoModeButton")
-        self.enableDemoModeButton.setGeometry(QRect(200, 377, 139, 22))
-        font4 = QFont()
-        font4.setPointSize(9)
-        self.enableDemoModeButton.setFont(font4)
-        self.enableDemoModeButton.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.enableDemoModeButton.setChecked(False)
-        self.enableDemoModeButton.setAutoExclusive(False)
         self.x06PageButton = QPushButton(self.navigationFrame)
         self.x06PageButton.setObjectName(u"x06PageButton")
-        self.x06PageButton.setGeometry(QRect(19, 364, 68, 48))
+        self.x06PageButton.setGeometry(QRect(185, 199, 68, 48))
         self.x06PageButton.setFont(font1)
         self.x06PageButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
@@ -914,10 +847,10 @@ class Ui_MainWindow(object):
         self.commsTab = QTabWidget(self.navigationFrame)
         self.commsTab.setObjectName(u"commsTab")
         self.commsTab.setGeometry(QRect(17, 790, 320, 150))
-        font5 = QFont()
-        font5.setBold(True)
-        font5.setItalic(True)
-        self.commsTab.setFont(font5)
+        font4 = QFont()
+        font4.setBold(True)
+        font4.setItalic(True)
+        self.commsTab.setFont(font4)
         self.commsTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.commsTab.setStyleSheet(u"QTabWidget::pane {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -981,7 +914,9 @@ class Ui_MainWindow(object):
         self.serialAutoButton = QRadioButton(self.serialTab)
         self.serialAutoButton.setObjectName(u"serialAutoButton")
         self.serialAutoButton.setGeometry(QRect(8, 41, 51, 22))
-        self.serialAutoButton.setFont(font4)
+        font5 = QFont()
+        font5.setPointSize(9)
+        self.serialAutoButton.setFont(font5)
         self.serialAutoButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1029,7 +964,7 @@ class Ui_MainWindow(object):
         self.serialManualButton = QRadioButton(self.serialTab)
         self.serialManualButton.setObjectName(u"serialManualButton")
         self.serialManualButton.setGeometry(QRect(8, 11, 71, 22))
-        self.serialManualButton.setFont(font4)
+        self.serialManualButton.setFont(font5)
         self.serialManualButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1120,7 +1055,7 @@ class Ui_MainWindow(object):
         self.heartbeatLED.setObjectName(u"heartbeatLED")
         self.heartbeatLED.setEnabled(False)
         self.heartbeatLED.setGeometry(QRect(16, 951, 77, 22))
-        self.heartbeatLED.setFont(font4)
+        self.heartbeatLED.setFont(font5)
         self.heartbeatLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1157,7 +1092,7 @@ class Ui_MainWindow(object):
         self.authenticateButton = QRadioButton(self.navigationFrame)
         self.authenticateButton.setObjectName(u"authenticateButton")
         self.authenticateButton.setGeometry(QRect(125, 951, 89, 22))
-        self.authenticateButton.setFont(font4)
+        self.authenticateButton.setFont(font5)
         self.authenticateButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1193,12 +1128,9 @@ class Ui_MainWindow(object):
         self.mainDrivePageButton.raise_()
         self.topLine_5.raise_()
         self.systemPageButton.raise_()
-        self.debuggingPageButton.raise_()
         self.topLine_21.raise_()
         self.swivelPageButton.raise_()
-        self.callAndDemandPageButton.raise_()
         self.x06PageButton.raise_()
-        self.enableDemoModeButton.raise_()
         self.commsTab.raise_()
         self.heartbeatLED.raise_()
         self.authenticateLineEdit.raise_()
@@ -1523,122 +1455,15 @@ class Ui_MainWindow(object):
         self.ADCBox.raise_()
         self.outputsBox.raise_()
         self.inputsBox.raise_()
-        self.callAndDemandPage = QWidget()
-        self.callAndDemandPage.setObjectName(u"callAndDemandPage")
-        self.callDetectionGroup = QGroupBox(self.callAndDemandPage)
-        self.callDetectionGroup.setObjectName(u"callDetectionGroup")
-        self.callDetectionGroup.setGeometry(QRect(110, 31, 278, 253))
-        self.callDetectionGroup.setFont(font7)
-        self.callDetectionGroup.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.callDetectionTable = QTableWidget(self.callDetectionGroup)
-        if (self.callDetectionTable.columnCount() < 2):
-            self.callDetectionTable.setColumnCount(2)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        self.callDetectionTable.setHorizontalHeaderItem(0, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.callDetectionTable.setHorizontalHeaderItem(1, __qtablewidgetitem14)
-        self.callDetectionTable.setObjectName(u"callDetectionTable")
-        self.callDetectionTable.setGeometry(QRect(18, 51, 241, 183))
-        font9 = QFont()
-        font9.setPointSize(8)
-        self.callDetectionTable.setFont(font9)
-        self.callDetectionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.callDetectionTable.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.callDetectionTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.callDetectionTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.callDetectionTable.setAutoScroll(False)
-        self.callDetectionTable.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.callDetectionTable.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.callDetectionTable.horizontalHeader().setVisible(False)
-        self.callDetectionTable.horizontalHeader().setMinimumSectionSize(80)
-        self.callDetectionTable.horizontalHeader().setDefaultSectionSize(120)
-        self.callDetectionTable.horizontalHeader().setStretchLastSection(False)
-        self.callDetectionTable.verticalHeader().setVisible(False)
-        self.callDetectionTable.verticalHeader().setMinimumSectionSize(16)
-        self.callDetectionTable.verticalHeader().setDefaultSectionSize(18)
-        self.demandProcessorGroup = QGroupBox(self.callAndDemandPage)
-        self.demandProcessorGroup.setObjectName(u"demandProcessorGroup")
-        self.demandProcessorGroup.setGeometry(QRect(404, 31, 278, 253))
-        self.demandProcessorGroup.setFont(font7)
-        self.demandProcessorGroup.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.demandProcessorTable = QTableWidget(self.demandProcessorGroup)
-        if (self.demandProcessorTable.columnCount() < 2):
-            self.demandProcessorTable.setColumnCount(2)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.demandProcessorTable.setHorizontalHeaderItem(0, __qtablewidgetitem15)
-        __qtablewidgetitem16 = QTableWidgetItem()
-        self.demandProcessorTable.setHorizontalHeaderItem(1, __qtablewidgetitem16)
-        self.demandProcessorTable.setObjectName(u"demandProcessorTable")
-        self.demandProcessorTable.setGeometry(QRect(18, 51, 241, 183))
-        self.demandProcessorTable.setFont(font9)
-        self.demandProcessorTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.demandProcessorTable.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.demandProcessorTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.demandProcessorTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.demandProcessorTable.setAutoScroll(False)
-        self.demandProcessorTable.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.demandProcessorTable.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.demandProcessorTable.horizontalHeader().setVisible(False)
-        self.demandProcessorTable.horizontalHeader().setMinimumSectionSize(80)
-        self.demandProcessorTable.horizontalHeader().setDefaultSectionSize(120)
-        self.demandProcessorTable.horizontalHeader().setStretchLastSection(False)
-        self.demandProcessorTable.verticalHeader().setVisible(False)
-        self.demandProcessorTable.verticalHeader().setMinimumSectionSize(16)
-        self.demandProcessorTable.verticalHeader().setDefaultSectionSize(18)
-        self.stackedWidget.addWidget(self.callAndDemandPage)
         self.colourPalettePage = QWidget()
         self.colourPalettePage.setObjectName(u"colourPalettePage")
         self.testColourLog = QTextEdit(self.colourPalettePage)
         self.testColourLog.setObjectName(u"testColourLog")
         self.testColourLog.setGeometry(QRect(17, 15, 784, 299))
-        font10 = QFont()
-        font10.setFamilies([u"Consolas"])
-        font10.setPointSize(8)
-        self.testColourLog.setFont(font10)
+        font9 = QFont()
+        font9.setFamilies([u"Consolas"])
+        font9.setPointSize(8)
+        self.testColourLog.setFont(font9)
         self.testColourLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.testColourLog.setStyleSheet(u"QTextEdit {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1692,10 +1517,10 @@ class Ui_MainWindow(object):
         self.fgColourBox = QGroupBox(self.colourPalettePage)
         self.fgColourBox.setObjectName(u"fgColourBox")
         self.fgColourBox.setGeometry(QRect(60, 337, 164, 248))
-        font11 = QFont()
-        font11.setPointSize(15)
-        font11.setBold(True)
-        self.fgColourBox.setFont(font11)
+        font10 = QFont()
+        font10.setPointSize(15)
+        font10.setBold(True)
+        self.fgColourBox.setFont(font10)
         self.fgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1790,7 +1615,7 @@ class Ui_MainWindow(object):
         self.bgColourBox = QGroupBox(self.colourPalettePage)
         self.bgColourBox.setObjectName(u"bgColourBox")
         self.bgColourBox.setGeometry(QRect(592, 337, 164, 248))
-        self.bgColourBox.setFont(font11)
+        self.bgColourBox.setFont(font10)
         self.bgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1932,11 +1757,11 @@ class Ui_MainWindow(object):
         self.fgWhiteButton = QPushButton(self.colourPalettePage)
         self.fgWhiteButton.setObjectName(u"fgWhiteButton")
         self.fgWhiteButton.setGeometry(QRect(237, 366, 29, 26))
-        font12 = QFont()
-        font12.setFamilies([u"Verdana"])
-        font12.setPointSize(7)
-        font12.setBold(True)
-        self.fgWhiteButton.setFont(font12)
+        font11 = QFont()
+        font11.setFamilies([u"Verdana"])
+        font11.setPointSize(7)
+        font11.setBold(True)
+        self.fgWhiteButton.setFont(font11)
         self.fgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1958,7 +1783,7 @@ class Ui_MainWindow(object):
         self.fgBlackButton = QPushButton(self.colourPalettePage)
         self.fgBlackButton.setObjectName(u"fgBlackButton")
         self.fgBlackButton.setGeometry(QRect(237, 400, 29, 26))
-        self.fgBlackButton.setFont(font12)
+        self.fgBlackButton.setFont(font11)
         self.fgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1980,7 +1805,7 @@ class Ui_MainWindow(object):
         self.fgResetButton = QPushButton(self.colourPalettePage)
         self.fgResetButton.setObjectName(u"fgResetButton")
         self.fgResetButton.setGeometry(QRect(237, 558, 29, 26))
-        self.fgResetButton.setFont(font12)
+        self.fgResetButton.setFont(font11)
         self.fgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2002,7 +1827,7 @@ class Ui_MainWindow(object):
         self.bgBlackButton = QPushButton(self.colourPalettePage)
         self.bgBlackButton.setObjectName(u"bgBlackButton")
         self.bgBlackButton.setGeometry(QRect(550, 400, 29, 26))
-        self.bgBlackButton.setFont(font12)
+        self.bgBlackButton.setFont(font11)
         self.bgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2024,7 +1849,7 @@ class Ui_MainWindow(object):
         self.bgWhiteButton = QPushButton(self.colourPalettePage)
         self.bgWhiteButton.setObjectName(u"bgWhiteButton")
         self.bgWhiteButton.setGeometry(QRect(550, 366, 29, 26))
-        self.bgWhiteButton.setFont(font12)
+        self.bgWhiteButton.setFont(font11)
         self.bgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2046,7 +1871,7 @@ class Ui_MainWindow(object):
         self.bgResetButton = QPushButton(self.colourPalettePage)
         self.bgResetButton.setObjectName(u"bgResetButton")
         self.bgResetButton.setGeometry(QRect(550, 558, 29, 26))
-        self.bgResetButton.setFont(font12)
+        self.bgResetButton.setFont(font11)
         self.bgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2092,13 +1917,15 @@ class Ui_MainWindow(object):
         self.testTable = QTableWidget(self.testBox)
         if (self.testTable.columnCount() < 2):
             self.testTable.setColumnCount(2)
-        __qtablewidgetitem17 = QTableWidgetItem()
-        self.testTable.setHorizontalHeaderItem(0, __qtablewidgetitem17)
-        __qtablewidgetitem18 = QTableWidgetItem()
-        self.testTable.setHorizontalHeaderItem(1, __qtablewidgetitem18)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.testTable.setHorizontalHeaderItem(0, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.testTable.setHorizontalHeaderItem(1, __qtablewidgetitem14)
         self.testTable.setObjectName(u"testTable")
         self.testTable.setGeometry(QRect(17, 50, 123, 53))
-        self.testTable.setFont(font9)
+        font12 = QFont()
+        font12.setPointSize(8)
+        self.testTable.setFont(font12)
         self.testTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.testTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2126,7 +1953,7 @@ class Ui_MainWindow(object):
         self.bgDefButton = QPushButton(self.colourPalettePage)
         self.bgDefButton.setObjectName(u"bgDefButton")
         self.bgDefButton.setGeometry(QRect(550, 434, 29, 26))
-        self.bgDefButton.setFont(font12)
+        self.bgDefButton.setFont(font11)
         self.bgDefButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2189,14 +2016,14 @@ class Ui_MainWindow(object):
         self.configTable = QTableWidget(self.configBox)
         if (self.configTable.columnCount() < 4):
             self.configTable.setColumnCount(4)
-        __qtablewidgetitem19 = QTableWidgetItem()
-        self.configTable.setHorizontalHeaderItem(0, __qtablewidgetitem19)
-        __qtablewidgetitem20 = QTableWidgetItem()
-        self.configTable.setHorizontalHeaderItem(1, __qtablewidgetitem20)
-        __qtablewidgetitem21 = QTableWidgetItem()
-        self.configTable.setHorizontalHeaderItem(2, __qtablewidgetitem21)
-        __qtablewidgetitem22 = QTableWidgetItem()
-        self.configTable.setHorizontalHeaderItem(3, __qtablewidgetitem22)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.configTable.setHorizontalHeaderItem(0, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.configTable.setHorizontalHeaderItem(1, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.configTable.setHorizontalHeaderItem(2, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.configTable.setHorizontalHeaderItem(3, __qtablewidgetitem18)
         self.configTable.setObjectName(u"configTable")
         self.configTable.setGeometry(QRect(17, 50, 483, 550))
         self.configTable.setFont(font8)
@@ -2314,7 +2141,7 @@ class Ui_MainWindow(object):
         self.confirmRestoreButton = QRadioButton(self.configBox)
         self.confirmRestoreButton.setObjectName(u"confirmRestoreButton")
         self.confirmRestoreButton.setGeometry(QRect(80, 15, 68, 22))
-        self.confirmRestoreButton.setFont(font4)
+        self.confirmRestoreButton.setFont(font5)
         self.confirmRestoreButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2428,7 +2255,7 @@ class Ui_MainWindow(object):
         self.confirmEraseButton = QRadioButton(self.sdCardBox)
         self.confirmEraseButton.setObjectName(u"confirmEraseButton")
         self.confirmEraseButton.setGeometry(QRect(86, 50, 68, 22))
-        self.confirmEraseButton.setFont(font4)
+        self.confirmEraseButton.setFont(font5)
         self.confirmEraseButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2447,315 +2274,6 @@ class Ui_MainWindow(object):
 "}")
         self.confirmEraseButton.setChecked(False)
         self.stackedWidget.addWidget(self.configurationPage)
-        self.debuggingPage = QWidget()
-        self.debuggingPage.setObjectName(u"debuggingPage")
-        self.debugGroup1 = QGroupBox(self.debuggingPage)
-        self.debugGroup1.setObjectName(u"debugGroup1")
-        self.debugGroup1.setGeometry(QRect(120, 16, 278, 253))
-        self.debugGroup1.setFont(font7)
-        self.debugGroup1.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable1 = QTableWidget(self.debugGroup1)
-        if (self.debugTable1.columnCount() < 2):
-            self.debugTable1.setColumnCount(2)
-        __qtablewidgetitem23 = QTableWidgetItem()
-        self.debugTable1.setHorizontalHeaderItem(0, __qtablewidgetitem23)
-        __qtablewidgetitem24 = QTableWidgetItem()
-        self.debugTable1.setHorizontalHeaderItem(1, __qtablewidgetitem24)
-        self.debugTable1.setObjectName(u"debugTable1")
-        self.debugTable1.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable1.setFont(font9)
-        self.debugTable1.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable1.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable1.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable1.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable1.setAutoScroll(False)
-        self.debugTable1.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable1.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable1.horizontalHeader().setVisible(False)
-        self.debugTable1.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable1.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable1.horizontalHeader().setStretchLastSection(False)
-        self.debugTable1.verticalHeader().setVisible(False)
-        self.debugTable1.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable1.verticalHeader().setDefaultSectionSize(18)
-        self.debugGroup2 = QGroupBox(self.debuggingPage)
-        self.debugGroup2.setObjectName(u"debugGroup2")
-        self.debugGroup2.setGeometry(QRect(412, 16, 278, 253))
-        self.debugGroup2.setFont(font7)
-        self.debugGroup2.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable2 = QTableWidget(self.debugGroup2)
-        if (self.debugTable2.columnCount() < 2):
-            self.debugTable2.setColumnCount(2)
-        __qtablewidgetitem25 = QTableWidgetItem()
-        self.debugTable2.setHorizontalHeaderItem(0, __qtablewidgetitem25)
-        __qtablewidgetitem26 = QTableWidgetItem()
-        self.debugTable2.setHorizontalHeaderItem(1, __qtablewidgetitem26)
-        self.debugTable2.setObjectName(u"debugTable2")
-        self.debugTable2.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable2.setFont(font9)
-        self.debugTable2.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable2.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable2.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable2.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable2.setAutoScroll(False)
-        self.debugTable2.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable2.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable2.horizontalHeader().setVisible(False)
-        self.debugTable2.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable2.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable2.horizontalHeader().setStretchLastSection(False)
-        self.debugTable2.verticalHeader().setVisible(False)
-        self.debugTable2.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable2.verticalHeader().setDefaultSectionSize(18)
-        self.debugGroup3 = QGroupBox(self.debuggingPage)
-        self.debugGroup3.setObjectName(u"debugGroup3")
-        self.debugGroup3.setGeometry(QRect(120, 283, 278, 253))
-        self.debugGroup3.setFont(font7)
-        self.debugGroup3.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable3 = QTableWidget(self.debugGroup3)
-        if (self.debugTable3.columnCount() < 2):
-            self.debugTable3.setColumnCount(2)
-        __qtablewidgetitem27 = QTableWidgetItem()
-        self.debugTable3.setHorizontalHeaderItem(0, __qtablewidgetitem27)
-        __qtablewidgetitem28 = QTableWidgetItem()
-        self.debugTable3.setHorizontalHeaderItem(1, __qtablewidgetitem28)
-        self.debugTable3.setObjectName(u"debugTable3")
-        self.debugTable3.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable3.setFont(font9)
-        self.debugTable3.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable3.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable3.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable3.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable3.setAutoScroll(False)
-        self.debugTable3.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable3.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable3.horizontalHeader().setVisible(False)
-        self.debugTable3.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable3.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable3.horizontalHeader().setStretchLastSection(False)
-        self.debugTable3.verticalHeader().setVisible(False)
-        self.debugTable3.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable3.verticalHeader().setDefaultSectionSize(18)
-        self.debugGroup4 = QGroupBox(self.debuggingPage)
-        self.debugGroup4.setObjectName(u"debugGroup4")
-        self.debugGroup4.setGeometry(QRect(412, 283, 278, 253))
-        self.debugGroup4.setFont(font7)
-        self.debugGroup4.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable4 = QTableWidget(self.debugGroup4)
-        if (self.debugTable4.columnCount() < 2):
-            self.debugTable4.setColumnCount(2)
-        __qtablewidgetitem29 = QTableWidgetItem()
-        self.debugTable4.setHorizontalHeaderItem(0, __qtablewidgetitem29)
-        __qtablewidgetitem30 = QTableWidgetItem()
-        self.debugTable4.setHorizontalHeaderItem(1, __qtablewidgetitem30)
-        self.debugTable4.setObjectName(u"debugTable4")
-        self.debugTable4.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable4.setFont(font9)
-        self.debugTable4.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable4.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable4.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable4.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable4.setAutoScroll(False)
-        self.debugTable4.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable4.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable4.horizontalHeader().setVisible(False)
-        self.debugTable4.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable4.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable4.horizontalHeader().setStretchLastSection(False)
-        self.debugTable4.verticalHeader().setVisible(False)
-        self.debugTable4.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable4.verticalHeader().setDefaultSectionSize(18)
-        self.debugGroup6 = QGroupBox(self.debuggingPage)
-        self.debugGroup6.setObjectName(u"debugGroup6")
-        self.debugGroup6.setGeometry(QRect(412, 550, 278, 253))
-        self.debugGroup6.setFont(font7)
-        self.debugGroup6.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable6 = QTableWidget(self.debugGroup6)
-        if (self.debugTable6.columnCount() < 2):
-            self.debugTable6.setColumnCount(2)
-        __qtablewidgetitem31 = QTableWidgetItem()
-        self.debugTable6.setHorizontalHeaderItem(0, __qtablewidgetitem31)
-        __qtablewidgetitem32 = QTableWidgetItem()
-        self.debugTable6.setHorizontalHeaderItem(1, __qtablewidgetitem32)
-        self.debugTable6.setObjectName(u"debugTable6")
-        self.debugTable6.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable6.setFont(font9)
-        self.debugTable6.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable6.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable6.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable6.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable6.setAutoScroll(False)
-        self.debugTable6.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable6.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable6.horizontalHeader().setVisible(False)
-        self.debugTable6.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable6.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable6.horizontalHeader().setStretchLastSection(False)
-        self.debugTable6.verticalHeader().setVisible(False)
-        self.debugTable6.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable6.verticalHeader().setDefaultSectionSize(18)
-        self.debugGroup5 = QGroupBox(self.debuggingPage)
-        self.debugGroup5.setObjectName(u"debugGroup5")
-        self.debugGroup5.setGeometry(QRect(120, 550, 278, 253))
-        self.debugGroup5.setFont(font7)
-        self.debugGroup5.setStyleSheet(u"QGroupBox {\n"
-"    border: 2px solid black; /* Border for the group box */\n"
-"    border-radius: 5px; /* Rounded corners for the border */\n"
-"	background-color: #57CAFF;\n"
-"}\n"
-"\n"
-"QGroupBox::title{\n"
-"	color: black;\n"
-"    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center;\n"
-"    padding: 0px 10px;\n"
-"	top: 15px;\n"
-"}")
-        self.debugTable5 = QTableWidget(self.debugGroup5)
-        if (self.debugTable5.columnCount() < 2):
-            self.debugTable5.setColumnCount(2)
-        __qtablewidgetitem33 = QTableWidgetItem()
-        self.debugTable5.setHorizontalHeaderItem(0, __qtablewidgetitem33)
-        __qtablewidgetitem34 = QTableWidgetItem()
-        self.debugTable5.setHorizontalHeaderItem(1, __qtablewidgetitem34)
-        self.debugTable5.setObjectName(u"debugTable5")
-        self.debugTable5.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable5.setFont(font9)
-        self.debugTable5.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self.debugTable5.setStyleSheet(u"QTableWidget {\n"
-"    border: 2px solid black;\n"
-"	background: #E6E2BE;\n"
-"}\n"
-"QHeaderView::section {\n"
-"    background-color: #F6FF68;\n"
-"    border: none;\n"
-"    border-right: 1px solid black;\n"
-"    border-bottom: 2px solid black;\n"
-"    color: black;\n"
-"}")
-        self.debugTable5.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable5.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.debugTable5.setAutoScroll(False)
-        self.debugTable5.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
-        self.debugTable5.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection)
-        self.debugTable5.horizontalHeader().setVisible(False)
-        self.debugTable5.horizontalHeader().setMinimumSectionSize(80)
-        self.debugTable5.horizontalHeader().setDefaultSectionSize(120)
-        self.debugTable5.horizontalHeader().setStretchLastSection(False)
-        self.debugTable5.verticalHeader().setVisible(False)
-        self.debugTable5.verticalHeader().setMinimumSectionSize(16)
-        self.debugTable5.verticalHeader().setDefaultSectionSize(18)
-        self.stackedWidget.addWidget(self.debuggingPage)
         self.keyWiringPage = QWidget()
         self.keyWiringPage.setObjectName(u"keyWiringPage")
         self.rightStopLED = QRadioButton(self.keyWiringPage)
@@ -2766,7 +2284,7 @@ class Ui_MainWindow(object):
         self.rightStopLED.setObjectName(u"rightStopLED")
         self.rightStopLED.setEnabled(False)
         self.rightStopLED.setGeometry(QRect(562, 385, 25, 30))
-        self.rightStopLED.setFont(font4)
+        self.rightStopLED.setFont(font5)
         self.rightStopLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2790,7 +2308,7 @@ class Ui_MainWindow(object):
         self.rightSafetyLED.setObjectName(u"rightSafetyLED")
         self.rightSafetyLED.setEnabled(False)
         self.rightSafetyLED.setGeometry(QRect(562, 505, 25, 30))
-        self.rightSafetyLED.setFont(font4)
+        self.rightSafetyLED.setFont(font5)
         self.rightSafetyLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2820,7 +2338,7 @@ class Ui_MainWindow(object):
         self.leftFootrestLED.setObjectName(u"leftFootrestLED")
         self.leftFootrestLED.setEnabled(False)
         self.leftFootrestLED.setGeometry(QRect(239, 565, 25, 30))
-        self.leftFootrestLED.setFont(font4)
+        self.leftFootrestLED.setFont(font5)
         self.leftFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2844,7 +2362,7 @@ class Ui_MainWindow(object):
         self.leftSkateLED.setObjectName(u"leftSkateLED")
         self.leftSkateLED.setEnabled(False)
         self.leftSkateLED.setGeometry(QRect(239, 445, 25, 30))
-        self.leftSkateLED.setFont(font4)
+        self.leftSkateLED.setFont(font5)
         self.leftSkateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2868,7 +2386,7 @@ class Ui_MainWindow(object):
         self.leftSafetyLED.setObjectName(u"leftSafetyLED")
         self.leftSafetyLED.setEnabled(False)
         self.leftSafetyLED.setGeometry(QRect(239, 505, 25, 30))
-        self.leftSafetyLED.setFont(font4)
+        self.leftSafetyLED.setFont(font5)
         self.leftSafetyLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2905,7 +2423,7 @@ class Ui_MainWindow(object):
         self.osgReturnLED.setObjectName(u"osgReturnLED")
         self.osgReturnLED.setEnabled(False)
         self.osgReturnLED.setGeometry(QRect(82, 96, 25, 30))
-        self.osgReturnLED.setFont(font4)
+        self.osgReturnLED.setFont(font5)
         self.osgReturnLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2935,7 +2453,7 @@ class Ui_MainWindow(object):
         self.callUpLED.setObjectName(u"callUpLED")
         self.callUpLED.setEnabled(False)
         self.callUpLED.setGeometry(QRect(201, 181, 25, 30))
-        self.callUpLED.setFont(font4)
+        self.callUpLED.setFont(font5)
         self.callUpLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2959,7 +2477,7 @@ class Ui_MainWindow(object):
         self.handing2LED.setObjectName(u"handing2LED")
         self.handing2LED.setEnabled(False)
         self.handing2LED.setGeometry(QRect(562, 182, 25, 30))
-        self.handing2LED.setFont(font4)
+        self.handing2LED.setFont(font5)
         self.handing2LED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2995,7 +2513,7 @@ class Ui_MainWindow(object):
         self.bottomFootrestLED.setObjectName(u"bottomFootrestLED")
         self.bottomFootrestLED.setEnabled(False)
         self.bottomFootrestLED.setGeometry(QRect(297, 240, 25, 30))
-        self.bottomFootrestLED.setFont(font4)
+        self.bottomFootrestLED.setFont(font5)
         self.bottomFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3019,7 +2537,7 @@ class Ui_MainWindow(object):
         self.rightFootrestLED.setObjectName(u"rightFootrestLED")
         self.rightFootrestLED.setEnabled(False)
         self.rightFootrestLED.setGeometry(QRect(562, 565, 25, 30))
-        self.rightFootrestLED.setFont(font4)
+        self.rightFootrestLED.setFont(font5)
         self.rightFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3043,7 +2561,7 @@ class Ui_MainWindow(object):
         self.ultimateLED.setObjectName(u"ultimateLED")
         self.ultimateLED.setEnabled(False)
         self.ultimateLED.setGeometry(QRect(712, 96, 25, 30))
-        self.ultimateLED.setFont(font4)
+        self.ultimateLED.setFont(font5)
         self.ultimateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3104,7 +2622,7 @@ class Ui_MainWindow(object):
         self.bistableReturnLED.setObjectName(u"bistableReturnLED")
         self.bistableReturnLED.setEnabled(False)
         self.bistableReturnLED.setGeometry(QRect(399, 96, 25, 30))
-        self.bistableReturnLED.setFont(font4)
+        self.bistableReturnLED.setFont(font5)
         self.bistableReturnLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3129,7 +2647,7 @@ class Ui_MainWindow(object):
         self.handing4LED.setObjectName(u"handing4LED")
         self.handing4LED.setEnabled(False)
         self.handing4LED.setGeometry(QRect(492, 239, 25, 30))
-        self.handing4LED.setFont(font4)
+        self.handing4LED.setFont(font5)
         self.handing4LED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3159,7 +2677,7 @@ class Ui_MainWindow(object):
         self.rightSkateLED.setObjectName(u"rightSkateLED")
         self.rightSkateLED.setEnabled(False)
         self.rightSkateLED.setGeometry(QRect(562, 445, 25, 30))
-        self.rightSkateLED.setFont(font4)
+        self.rightSkateLED.setFont(font5)
         self.rightSkateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3189,7 +2707,7 @@ class Ui_MainWindow(object):
         self.bistableFeedLED.setObjectName(u"bistableFeedLED")
         self.bistableFeedLED.setEnabled(False)
         self.bistableFeedLED.setGeometry(QRect(558, 96, 25, 30))
-        self.bistableFeedLED.setFont(font4)
+        self.bistableFeedLED.setFont(font5)
         self.bistableFeedLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3221,7 +2739,7 @@ class Ui_MainWindow(object):
         self.callDownLED.setObjectName(u"callDownLED")
         self.callDownLED.setEnabled(False)
         self.callDownLED.setGeometry(QRect(201, 240, 25, 30))
-        self.callDownLED.setFont(font4)
+        self.callDownLED.setFont(font5)
         self.callDownLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3245,7 +2763,7 @@ class Ui_MainWindow(object):
         self.leftStopLED.setObjectName(u"leftStopLED")
         self.leftStopLED.setEnabled(False)
         self.leftStopLED.setGeometry(QRect(239, 385, 25, 30))
-        self.leftStopLED.setFont(font4)
+        self.leftStopLED.setFont(font5)
         self.leftStopLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3293,7 +2811,7 @@ class Ui_MainWindow(object):
         self.relayCoilMonitorLED.setObjectName(u"relayCoilMonitorLED")
         self.relayCoilMonitorLED.setEnabled(False)
         self.relayCoilMonitorLED.setGeometry(QRect(402, 623, 25, 30))
-        self.relayCoilMonitorLED.setFont(font4)
+        self.relayCoilMonitorLED.setFont(font5)
         self.relayCoilMonitorLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3317,7 +2835,7 @@ class Ui_MainWindow(object):
         self.swivelOverrideLED.setObjectName(u"swivelOverrideLED")
         self.swivelOverrideLED.setEnabled(False)
         self.swivelOverrideLED.setGeometry(QRect(239, 96, 25, 30))
-        self.swivelOverrideLED.setFont(font4)
+        self.swivelOverrideLED.setFont(font5)
         self.swivelOverrideLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3340,7 +2858,7 @@ class Ui_MainWindow(object):
         self.handingLink4 = QRadioButton(self.keyWiringPage)
         self.handingLink4.setObjectName(u"handingLink4")
         self.handingLink4.setGeometry(QRect(417, 244, 16, 22))
-        self.handingLink4.setFont(font4)
+        self.handingLink4.setFont(font5)
         self.handingLink4.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3474,7 +2992,7 @@ class Ui_MainWindow(object):
         self.handingLink3 = QRadioButton(self.keyWiringPage)
         self.handingLink3.setObjectName(u"handingLink3")
         self.handingLink3.setGeometry(QRect(417, 214, 16, 22))
-        self.handingLink3.setFont(font4)
+        self.handingLink3.setFont(font5)
         self.handingLink3.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3540,7 +3058,7 @@ class Ui_MainWindow(object):
         self.handingLink5 = QRadioButton(self.keyWiringPage)
         self.handingLink5.setObjectName(u"handingLink5")
         self.handingLink5.setGeometry(QRect(417, 274, 16, 22))
-        self.handingLink5.setFont(font4)
+        self.handingLink5.setFont(font5)
         self.handingLink5.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3630,7 +3148,7 @@ class Ui_MainWindow(object):
         self.handingLink1 = QRadioButton(self.keyWiringPage)
         self.handingLink1.setObjectName(u"handingLink1")
         self.handingLink1.setGeometry(QRect(417, 158, 16, 22))
-        self.handingLink1.setFont(font4)
+        self.handingLink1.setFont(font5)
         self.handingLink1.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3649,7 +3167,7 @@ class Ui_MainWindow(object):
         self.handingLink4_2 = QRadioButton(self.keyWiringPage)
         self.handingLink4_2.setObjectName(u"handingLink4_2")
         self.handingLink4_2.setGeometry(QRect(417, 242, 16, 22))
-        self.handingLink4_2.setFont(font4)
+        self.handingLink4_2.setFont(font5)
         self.handingLink4_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3680,7 +3198,7 @@ class Ui_MainWindow(object):
         self.handingLink3_2 = QRadioButton(self.keyWiringPage)
         self.handingLink3_2.setObjectName(u"handingLink3_2")
         self.handingLink3_2.setGeometry(QRect(417, 214, 16, 22))
-        self.handingLink3_2.setFont(font4)
+        self.handingLink3_2.setFont(font5)
         self.handingLink3_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3711,7 +3229,7 @@ class Ui_MainWindow(object):
         self.handingLink5_2 = QRadioButton(self.keyWiringPage)
         self.handingLink5_2.setObjectName(u"handingLink5_2")
         self.handingLink5_2.setGeometry(QRect(417, 270, 16, 22))
-        self.handingLink5_2.setFont(font4)
+        self.handingLink5_2.setFont(font5)
         self.handingLink5_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3730,7 +3248,7 @@ class Ui_MainWindow(object):
         self.handingLink2_2 = QRadioButton(self.keyWiringPage)
         self.handingLink2_2.setObjectName(u"handingLink2_2")
         self.handingLink2_2.setGeometry(QRect(417, 186, 16, 22))
-        self.handingLink2_2.setFont(font4)
+        self.handingLink2_2.setFont(font5)
         self.handingLink2_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3771,7 +3289,7 @@ class Ui_MainWindow(object):
         self.handingLinkJoin = QRadioButton(self.keyWiringPage)
         self.handingLinkJoin.setObjectName(u"handingLinkJoin")
         self.handingLinkJoin.setGeometry(QRect(374, 184, 16, 22))
-        self.handingLinkJoin.setFont(font4)
+        self.handingLinkJoin.setFont(font5)
         self.handingLinkJoin.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3909,15 +3427,15 @@ class Ui_MainWindow(object):
         self.mapPointsTable = QTableWidget(self.railMapBox)
         if (self.mapPointsTable.columnCount() < 3):
             self.mapPointsTable.setColumnCount(3)
-        __qtablewidgetitem35 = QTableWidgetItem()
-        self.mapPointsTable.setHorizontalHeaderItem(0, __qtablewidgetitem35)
-        __qtablewidgetitem36 = QTableWidgetItem()
-        self.mapPointsTable.setHorizontalHeaderItem(1, __qtablewidgetitem36)
-        __qtablewidgetitem37 = QTableWidgetItem()
-        self.mapPointsTable.setHorizontalHeaderItem(2, __qtablewidgetitem37)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.mapPointsTable.setHorizontalHeaderItem(0, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.mapPointsTable.setHorizontalHeaderItem(1, __qtablewidgetitem20)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.mapPointsTable.setHorizontalHeaderItem(2, __qtablewidgetitem21)
         self.mapPointsTable.setObjectName(u"mapPointsTable")
         self.mapPointsTable.setGeometry(QRect(19, 50, 270, 209))
-        self.mapPointsTable.setFont(font9)
+        self.mapPointsTable.setFont(font12)
         self.mapPointsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mapPointsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mapPointsTable.setStyleSheet(u"QTableWidget {\n"
@@ -3965,7 +3483,7 @@ class Ui_MainWindow(object):
         self.modeRemoteDButton.setObjectName(u"modeRemoteDButton")
         self.modeRemoteDButton.setEnabled(True)
         self.modeRemoteDButton.setGeometry(QRect(33, 380, 134, 22))
-        self.modeRemoteDButton.setFont(font4)
+        self.modeRemoteDButton.setFont(font5)
         self.modeRemoteDButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3987,7 +3505,7 @@ class Ui_MainWindow(object):
         self.modePartialUnfoldButton = QRadioButton(self.mainMapModeGroup)
         self.modePartialUnfoldButton.setObjectName(u"modePartialUnfoldButton")
         self.modePartialUnfoldButton.setGeometry(QRect(33, 222, 126, 22))
-        self.modePartialUnfoldButton.setFont(font4)
+        self.modePartialUnfoldButton.setFont(font5)
         self.modePartialUnfoldButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4009,7 +3527,7 @@ class Ui_MainWindow(object):
         self.modeHalfSpeedButton = QRadioButton(self.mainMapModeGroup)
         self.modeHalfSpeedButton.setObjectName(u"modeHalfSpeedButton")
         self.modeHalfSpeedButton.setGeometry(QRect(33, 246, 128, 22))
-        self.modeHalfSpeedButton.setFont(font4)
+        self.modeHalfSpeedButton.setFont(font5)
         self.modeHalfSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4031,7 +3549,7 @@ class Ui_MainWindow(object):
         self.modeRemoteBButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteBButton.setObjectName(u"modeRemoteBButton")
         self.modeRemoteBButton.setGeometry(QRect(33, 331, 128, 22))
-        self.modeRemoteBButton.setFont(font4)
+        self.modeRemoteBButton.setFont(font5)
         self.modeRemoteBButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4053,7 +3571,7 @@ class Ui_MainWindow(object):
         self.modeRemoteCButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteCButton.setObjectName(u"modeRemoteCButton")
         self.modeRemoteCButton.setGeometry(QRect(33, 356, 134, 22))
-        self.modeRemoteCButton.setFont(font4)
+        self.modeRemoteCButton.setFont(font5)
         self.modeRemoteCButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4075,7 +3593,7 @@ class Ui_MainWindow(object):
         self.modeSwivelRightButton = QRadioButton(self.mainMapModeGroup)
         self.modeSwivelRightButton.setObjectName(u"modeSwivelRightButton")
         self.modeSwivelRightButton.setGeometry(QRect(33, 182, 134, 22))
-        self.modeSwivelRightButton.setFont(font4)
+        self.modeSwivelRightButton.setFont(font5)
         self.modeSwivelRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4097,7 +3615,7 @@ class Ui_MainWindow(object):
         self.modeRemoteAButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteAButton.setObjectName(u"modeRemoteAButton")
         self.modeRemoteAButton.setGeometry(QRect(33, 307, 126, 22))
-        self.modeRemoteAButton.setFont(font4)
+        self.modeRemoteAButton.setFont(font5)
         self.modeRemoteAButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4119,7 +3637,7 @@ class Ui_MainWindow(object):
         self.modeUnpackButton = QRadioButton(self.mainMapModeGroup)
         self.modeUnpackButton.setObjectName(u"modeUnpackButton")
         self.modeUnpackButton.setGeometry(QRect(33, 133, 119, 22))
-        self.modeUnpackButton.setFont(font4)
+        self.modeUnpackButton.setFont(font5)
         self.modeUnpackButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4141,7 +3659,7 @@ class Ui_MainWindow(object):
         self.modeFullSwivelButton = QRadioButton(self.mainMapModeGroup)
         self.modeFullSwivelButton.setObjectName(u"modeFullSwivelButton")
         self.modeFullSwivelButton.setGeometry(QRect(33, 271, 134, 22))
-        self.modeFullSwivelButton.setFont(font4)
+        self.modeFullSwivelButton.setFont(font5)
         self.modeFullSwivelButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4163,7 +3681,7 @@ class Ui_MainWindow(object):
         self.modeParkingPointButton = QRadioButton(self.mainMapModeGroup)
         self.modeParkingPointButton.setObjectName(u"modeParkingPointButton")
         self.modeParkingPointButton.setGeometry(QRect(33, 93, 78, 22))
-        self.modeParkingPointButton.setFont(font4)
+        self.modeParkingPointButton.setFont(font5)
         self.modeParkingPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4185,7 +3703,7 @@ class Ui_MainWindow(object):
         self.modeSwivelLeftButton = QRadioButton(self.mainMapModeGroup)
         self.modeSwivelLeftButton.setObjectName(u"modeSwivelLeftButton")
         self.modeSwivelLeftButton.setGeometry(QRect(33, 157, 128, 22))
-        self.modeSwivelLeftButton.setFont(font4)
+        self.modeSwivelLeftButton.setFont(font5)
         self.modeSwivelLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4207,7 +3725,7 @@ class Ui_MainWindow(object):
         self.modeBoardingPointButton = QRadioButton(self.mainMapModeGroup)
         self.modeBoardingPointButton.setObjectName(u"modeBoardingPointButton")
         self.modeBoardingPointButton.setGeometry(QRect(33, 69, 78, 22))
-        self.modeBoardingPointButton.setFont(font4)
+        self.modeBoardingPointButton.setFont(font5)
         self.modeBoardingPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4286,7 +3804,7 @@ class Ui_MainWindow(object):
         self.modeEnabledButton = QRadioButton(self.mainMapModeGroup)
         self.modeEnabledButton.setObjectName(u"modeEnabledButton")
         self.modeEnabledButton.setGeometry(QRect(33, 46, 70, 20))
-        self.modeEnabledButton.setFont(font4)
+        self.modeEnabledButton.setFont(font5)
         self.modeEnabledButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4377,7 +3895,7 @@ class Ui_MainWindow(object):
         self.leftStopButton.setObjectName(u"leftStopButton")
         self.leftStopButton.setEnabled(False)
         self.leftStopButton.setGeometry(QRect(17, 39, 78, 22))
-        self.leftStopButton.setFont(font4)
+        self.leftStopButton.setFont(font5)
         self.leftStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4400,7 +3918,7 @@ class Ui_MainWindow(object):
         self.middleStopButton.setObjectName(u"middleStopButton")
         self.middleStopButton.setEnabled(False)
         self.middleStopButton.setGeometry(QRect(17, 60, 91, 22))
-        self.middleStopButton.setFont(font4)
+        self.middleStopButton.setFont(font5)
         self.middleStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4423,7 +3941,7 @@ class Ui_MainWindow(object):
         self.rightStopButton.setObjectName(u"rightStopButton")
         self.rightStopButton.setEnabled(False)
         self.rightStopButton.setGeometry(QRect(17, 80, 78, 22))
-        self.rightStopButton.setFont(font4)
+        self.rightStopButton.setFont(font5)
         self.rightStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4446,7 +3964,7 @@ class Ui_MainWindow(object):
         self.parkPointButton.setObjectName(u"parkPointButton")
         self.parkPointButton.setEnabled(False)
         self.parkPointButton.setGeometry(QRect(17, 100, 91, 22))
-        self.parkPointButton.setFont(font4)
+        self.parkPointButton.setFont(font5)
         self.parkPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4469,7 +3987,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldLeftButton.setObjectName(u"partialUnfoldLeftButton")
         self.partialUnfoldLeftButton.setEnabled(False)
         self.partialUnfoldLeftButton.setGeometry(QRect(187, 80, 136, 22))
-        self.partialUnfoldLeftButton.setFont(font4)
+        self.partialUnfoldLeftButton.setFont(font5)
         self.partialUnfoldLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4492,7 +4010,7 @@ class Ui_MainWindow(object):
         self.halfSpeedButton.setObjectName(u"halfSpeedButton")
         self.halfSpeedButton.setEnabled(False)
         self.halfSpeedButton.setGeometry(QRect(187, 39, 113, 22))
-        self.halfSpeedButton.setFont(font4)
+        self.halfSpeedButton.setFont(font5)
         self.halfSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4515,7 +4033,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldRightButton.setObjectName(u"partialUnfoldRightButton")
         self.partialUnfoldRightButton.setEnabled(False)
         self.partialUnfoldRightButton.setGeometry(QRect(187, 100, 142, 22))
-        self.partialUnfoldRightButton.setFont(font4)
+        self.partialUnfoldRightButton.setFont(font5)
         self.partialUnfoldRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4538,7 +4056,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldZoneButton.setObjectName(u"partialUnfoldZoneButton")
         self.partialUnfoldZoneButton.setEnabled(False)
         self.partialUnfoldZoneButton.setGeometry(QRect(187, 60, 132, 22))
-        self.partialUnfoldZoneButton.setFont(font4)
+        self.partialUnfoldZoneButton.setFont(font5)
         self.partialUnfoldZoneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4561,7 +4079,7 @@ class Ui_MainWindow(object):
         self.swivelFullAngleButton.setObjectName(u"swivelFullAngleButton")
         self.swivelFullAngleButton.setEnabled(False)
         self.swivelFullAngleButton.setGeometry(QRect(397, 80, 123, 22))
-        self.swivelFullAngleButton.setFont(font4)
+        self.swivelFullAngleButton.setFont(font5)
         self.swivelFullAngleButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4584,7 +4102,7 @@ class Ui_MainWindow(object):
         self.swivelLeftButton.setObjectName(u"swivelLeftButton")
         self.swivelLeftButton.setEnabled(False)
         self.swivelLeftButton.setGeometry(QRect(397, 39, 130, 22))
-        self.swivelLeftButton.setFont(font4)
+        self.swivelLeftButton.setFont(font5)
         self.swivelLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4607,7 +4125,7 @@ class Ui_MainWindow(object):
         self.unpackArrivalButton.setObjectName(u"unpackArrivalButton")
         self.unpackArrivalButton.setEnabled(False)
         self.unpackArrivalButton.setGeometry(QRect(397, 100, 125, 22))
-        self.unpackArrivalButton.setFont(font4)
+        self.unpackArrivalButton.setFont(font5)
         self.unpackArrivalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4630,7 +4148,7 @@ class Ui_MainWindow(object):
         self.swivelRightButton.setObjectName(u"swivelRightButton")
         self.swivelRightButton.setEnabled(False)
         self.swivelRightButton.setGeometry(QRect(397, 60, 135, 22))
-        self.swivelRightButton.setFont(font4)
+        self.swivelRightButton.setFont(font5)
         self.swivelRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4669,7 +4187,7 @@ class Ui_MainWindow(object):
         self.autoMainCalButton = QRadioButton(self.mainCalibrationGroup)
         self.autoMainCalButton.setObjectName(u"autoMainCalButton")
         self.autoMainCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoMainCalButton.setFont(font4)
+        self.autoMainCalButton.setFont(font5)
         self.autoMainCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -4691,7 +4209,7 @@ class Ui_MainWindow(object):
         self.manualMainCalButton = QRadioButton(self.mainCalibrationGroup)
         self.manualMainCalButton.setObjectName(u"manualMainCalButton")
         self.manualMainCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualMainCalButton.setFont(font4)
+        self.manualMainCalButton.setFont(font5)
         self.manualMainCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -4828,13 +4346,13 @@ class Ui_MainWindow(object):
         self.mapDataTable = QTableWidget(self.railMapBox)
         if (self.mapDataTable.columnCount() < 2):
             self.mapDataTable.setColumnCount(2)
-        __qtablewidgetitem38 = QTableWidgetItem()
-        self.mapDataTable.setHorizontalHeaderItem(0, __qtablewidgetitem38)
-        __qtablewidgetitem39 = QTableWidgetItem()
-        self.mapDataTable.setHorizontalHeaderItem(1, __qtablewidgetitem39)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.mapDataTable.setHorizontalHeaderItem(0, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.mapDataTable.setHorizontalHeaderItem(1, __qtablewidgetitem23)
         self.mapDataTable.setObjectName(u"mapDataTable")
         self.mapDataTable.setGeometry(QRect(305, 50, 257, 147))
-        self.mapDataTable.setFont(font9)
+        self.mapDataTable.setFont(font12)
         self.mapDataTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mapDataTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5027,7 +4545,7 @@ class Ui_MainWindow(object):
         self.confirmWipeMapButton.setObjectName(u"confirmWipeMapButton")
         self.confirmWipeMapButton.setEnabled(True)
         self.confirmWipeMapButton.setGeometry(QRect(81, 157, 69, 22))
-        self.confirmWipeMapButton.setFont(font4)
+        self.confirmWipeMapButton.setFont(font5)
         self.confirmWipeMapButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5071,7 +4589,7 @@ class Ui_MainWindow(object):
         self.confirmDeletePointButton.setObjectName(u"confirmDeletePointButton")
         self.confirmDeletePointButton.setEnabled(True)
         self.confirmDeletePointButton.setGeometry(QRect(81, 107, 69, 22))
-        self.confirmDeletePointButton.setFont(font4)
+        self.confirmDeletePointButton.setFont(font5)
         self.confirmDeletePointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5247,7 +4765,7 @@ class Ui_MainWindow(object):
         self.specifyPositionButton.setObjectName(u"specifyPositionButton")
         self.specifyPositionButton.setEnabled(True)
         self.specifyPositionButton.setGeometry(QRect(19, 92, 109, 23))
-        self.specifyPositionButton.setFont(font4)
+        self.specifyPositionButton.setFont(font5)
         self.specifyPositionButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5296,7 +4814,7 @@ class Ui_MainWindow(object):
         self.findLeftPosButton.setObjectName(u"findLeftPosButton")
         self.findLeftPosButton.setEnabled(True)
         self.findLeftPosButton.setGeometry(QRect(15, 200, 69, 22))
-        self.findLeftPosButton.setFont(font4)
+        self.findLeftPosButton.setFont(font5)
         self.findLeftPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5320,7 +4838,7 @@ class Ui_MainWindow(object):
         self.findBothPosButton.setObjectName(u"findBothPosButton")
         self.findBothPosButton.setEnabled(True)
         self.findBothPosButton.setGeometry(QRect(105, 200, 69, 22))
-        self.findBothPosButton.setFont(font4)
+        self.findBothPosButton.setFont(font5)
         self.findBothPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5344,7 +4862,7 @@ class Ui_MainWindow(object):
         self.findRightPosButton.setObjectName(u"findRightPosButton")
         self.findRightPosButton.setEnabled(True)
         self.findRightPosButton.setGeometry(QRect(196, 200, 54, 22))
-        self.findRightPosButton.setFont(font4)
+        self.findRightPosButton.setFont(font5)
         self.findRightPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5575,13 +5093,13 @@ class Ui_MainWindow(object):
         self.sysVerTable = QTableWidget(self.sysVersionGroup)
         if (self.sysVerTable.columnCount() < 2):
             self.sysVerTable.setColumnCount(2)
-        __qtablewidgetitem40 = QTableWidgetItem()
-        self.sysVerTable.setHorizontalHeaderItem(0, __qtablewidgetitem40)
-        __qtablewidgetitem41 = QTableWidgetItem()
-        self.sysVerTable.setHorizontalHeaderItem(1, __qtablewidgetitem41)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.sysVerTable.setHorizontalHeaderItem(0, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.sysVerTable.setHorizontalHeaderItem(1, __qtablewidgetitem25)
         self.sysVerTable.setObjectName(u"sysVerTable")
         self.sysVerTable.setGeometry(QRect(18, 51, 241, 147))
-        self.sysVerTable.setFont(font9)
+        self.sysVerTable.setFont(font12)
         self.sysVerTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.sysVerTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5647,13 +5165,13 @@ class Ui_MainWindow(object):
         self.timeTable = QTableWidget(self.timeGroup)
         if (self.timeTable.columnCount() < 2):
             self.timeTable.setColumnCount(2)
-        __qtablewidgetitem42 = QTableWidgetItem()
-        self.timeTable.setHorizontalHeaderItem(0, __qtablewidgetitem42)
-        __qtablewidgetitem43 = QTableWidgetItem()
-        self.timeTable.setHorizontalHeaderItem(1, __qtablewidgetitem43)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.timeTable.setHorizontalHeaderItem(0, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.timeTable.setHorizontalHeaderItem(1, __qtablewidgetitem27)
         self.timeTable.setObjectName(u"timeTable")
         self.timeTable.setGeometry(QRect(18, 51, 242, 75))
-        self.timeTable.setFont(font9)
+        self.timeTable.setFont(font12)
         self.timeTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.timeTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5679,6 +5197,30 @@ class Ui_MainWindow(object):
         self.timeTable.verticalHeader().setMinimumSectionSize(16)
         self.timeTable.verticalHeader().setDefaultSectionSize(18)
         self.stackedWidget.addWidget(self.systemPage)
+        self.x06Page = QWidget()
+        self.x06Page.setObjectName(u"x06Page")
+        self.enableX06MessagesButton = QRadioButton(self.x06Page)
+        self.enableX06MessagesButton.setObjectName(u"enableX06MessagesButton")
+        self.enableX06MessagesButton.setGeometry(QRect(14, 13, 139, 22))
+        self.enableX06MessagesButton.setFont(font5)
+        self.enableX06MessagesButton.setStyleSheet(u"QRadioButton {\n"
+"    color: #000000; /* Text color */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width: 10px; /* Size of the circle */\n"
+"    height: 10px; /* Size of the circle */\n"
+"    border: 2px solid #000000; /* Border of the circle */\n"
+"    border-radius: 5px; /* Makes the circle rounded */\n"
+"    background-color: #FFFFFF; /* Background of the circle */\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: #FF0000; /* Set background color to red when checked */\n"
+"}")
+        self.enableX06MessagesButton.setChecked(False)
+        self.enableX06MessagesButton.setAutoExclusive(False)
+        self.stackedWidget.addWidget(self.x06Page)
         self.chairFoldPage = QWidget()
         self.chairFoldPage.setObjectName(u"chairFoldPage")
         self.chairDrivePositionGroup = QGroupBox(self.chairFoldPage)
@@ -5701,13 +5243,13 @@ class Ui_MainWindow(object):
         self.chairDrivePositionTable = QTableWidget(self.chairDrivePositionGroup)
         if (self.chairDrivePositionTable.columnCount() < 2):
             self.chairDrivePositionTable.setColumnCount(2)
-        __qtablewidgetitem44 = QTableWidgetItem()
-        self.chairDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem44)
-        __qtablewidgetitem45 = QTableWidgetItem()
-        self.chairDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem45)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.chairDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.chairDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem29)
         self.chairDrivePositionTable.setObjectName(u"chairDrivePositionTable")
         self.chairDrivePositionTable.setGeometry(QRect(17, 50, 203, 129))
-        self.chairDrivePositionTable.setFont(font9)
+        self.chairDrivePositionTable.setFont(font12)
         self.chairDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5793,15 +5335,15 @@ class Ui_MainWindow(object):
         self.chairPIDPosTable = QTableWidget(self.chairDriveControlGroup)
         if (self.chairPIDPosTable.columnCount() < 3):
             self.chairPIDPosTable.setColumnCount(3)
-        __qtablewidgetitem46 = QTableWidgetItem()
-        self.chairPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem46)
-        __qtablewidgetitem47 = QTableWidgetItem()
-        self.chairPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem47)
-        __qtablewidgetitem48 = QTableWidgetItem()
-        self.chairPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem48)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.chairPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.chairPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.chairPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem32)
         self.chairPIDPosTable.setObjectName(u"chairPIDPosTable")
         self.chairPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.chairPIDPosTable.setFont(font9)
+        self.chairPIDPosTable.setFont(font12)
         self.chairPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.chairPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.chairPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -5830,15 +5372,15 @@ class Ui_MainWindow(object):
         self.chairPIDSpeedTable = QTableWidget(self.chairDriveControlGroup)
         if (self.chairPIDSpeedTable.columnCount() < 3):
             self.chairPIDSpeedTable.setColumnCount(3)
-        __qtablewidgetitem49 = QTableWidgetItem()
-        self.chairPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem49)
-        __qtablewidgetitem50 = QTableWidgetItem()
-        self.chairPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem50)
-        __qtablewidgetitem51 = QTableWidgetItem()
-        self.chairPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem51)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.chairPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.chairPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.chairPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem35)
         self.chairPIDSpeedTable.setObjectName(u"chairPIDSpeedTable")
         self.chairPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.chairPIDSpeedTable.setFont(font9)
+        self.chairPIDSpeedTable.setFont(font12)
         self.chairPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.chairPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.chairPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -5867,7 +5409,7 @@ class Ui_MainWindow(object):
         self.enableChairSpeedButton = QRadioButton(self.chairDriveControlGroup)
         self.enableChairSpeedButton.setObjectName(u"enableChairSpeedButton")
         self.enableChairSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableChairSpeedButton.setFont(font4)
+        self.enableChairSpeedButton.setFont(font5)
         self.enableChairSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -5967,7 +5509,7 @@ class Ui_MainWindow(object):
         self.chairPlotModeButtonGroup.addButton(self.autoChairPlotButton)
         self.autoChairPlotButton.setObjectName(u"autoChairPlotButton")
         self.autoChairPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoChairPlotButton.setFont(font4)
+        self.autoChairPlotButton.setFont(font5)
         self.autoChairPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -5990,7 +5532,7 @@ class Ui_MainWindow(object):
         self.chairPlotModeButtonGroup.addButton(self.manualChairPlotButton)
         self.manualChairPlotButton.setObjectName(u"manualChairPlotButton")
         self.manualChairPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualChairPlotButton.setFont(font4)
+        self.manualChairPlotButton.setFont(font5)
         self.manualChairPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6033,15 +5575,15 @@ class Ui_MainWindow(object):
         self.chairDriveControlTable = QTableWidget(self.chairDriveControlGroup)
         if (self.chairDriveControlTable.columnCount() < 3):
             self.chairDriveControlTable.setColumnCount(3)
-        __qtablewidgetitem52 = QTableWidgetItem()
-        self.chairDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem52)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.chairDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem53)
-        __qtablewidgetitem54 = QTableWidgetItem()
-        self.chairDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem54)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.chairDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.chairDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.chairDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem38)
         self.chairDriveControlTable.setObjectName(u"chairDriveControlTable")
         self.chairDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.chairDriveControlTable.setFont(font9)
+        self.chairDriveControlTable.setFont(font12)
         self.chairDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6090,7 +5632,7 @@ class Ui_MainWindow(object):
         self.chairFolder = QLineEdit(self.chairDriveControlGroup)
         self.chairFolder.setObjectName(u"chairFolder")
         self.chairFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.chairFolder.setFont(font9)
+        self.chairFolder.setFont(font12)
         self.chairFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -6147,7 +5689,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairFoldTuneButton)
         self.chairFoldTuneButton.setObjectName(u"chairFoldTuneButton")
         self.chairFoldTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.chairFoldTuneButton.setFont(font4)
+        self.chairFoldTuneButton.setFont(font5)
         self.chairFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6170,7 +5712,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairPartFoldTuneButton)
         self.chairPartFoldTuneButton.setObjectName(u"chairPartFoldTuneButton")
         self.chairPartFoldTuneButton.setGeometry(QRect(356, 20, 73, 22))
-        self.chairPartFoldTuneButton.setFont(font4)
+        self.chairPartFoldTuneButton.setFont(font5)
         self.chairPartFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6193,7 +5735,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairUnfoldTuneButton)
         self.chairUnfoldTuneButton.setObjectName(u"chairUnfoldTuneButton")
         self.chairUnfoldTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.chairUnfoldTuneButton.setFont(font4)
+        self.chairUnfoldTuneButton.setFont(font5)
         self.chairUnfoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6378,7 +5920,7 @@ class Ui_MainWindow(object):
         self.chairHoldRightDutyButton = QRadioButton(self.chairHBridgeGroup)
         self.chairHoldRightDutyButton.setObjectName(u"chairHoldRightDutyButton")
         self.chairHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.chairHoldRightDutyButton.setFont(font4)
+        self.chairHoldRightDutyButton.setFont(font5)
         self.chairHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6400,7 +5942,7 @@ class Ui_MainWindow(object):
         self.chairHoldLeftDutyButton = QRadioButton(self.chairHBridgeGroup)
         self.chairHoldLeftDutyButton.setObjectName(u"chairHoldLeftDutyButton")
         self.chairHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.chairHoldLeftDutyButton.setFont(font4)
+        self.chairHoldLeftDutyButton.setFont(font5)
         self.chairHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6454,7 +5996,7 @@ class Ui_MainWindow(object):
         self.enableChairBridgeButton = QRadioButton(self.chairHBridgeGroup)
         self.enableChairBridgeButton.setObjectName(u"enableChairBridgeButton")
         self.enableChairBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableChairBridgeButton.setFont(font4)
+        self.enableChairBridgeButton.setFont(font5)
         self.enableChairBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6493,13 +6035,13 @@ class Ui_MainWindow(object):
         self.chairStateMachineTable = QTableWidget(self.chairStateMachineGroup)
         if (self.chairStateMachineTable.columnCount() < 2):
             self.chairStateMachineTable.setColumnCount(2)
-        __qtablewidgetitem55 = QTableWidgetItem()
-        self.chairStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem55)
-        __qtablewidgetitem56 = QTableWidgetItem()
-        self.chairStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem56)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.chairStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        self.chairStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem40)
         self.chairStateMachineTable.setObjectName(u"chairStateMachineTable")
         self.chairStateMachineTable.setGeometry(QRect(17, 50, 203, 75))
-        self.chairStateMachineTable.setFont(font9)
+        self.chairStateMachineTable.setFont(font12)
         self.chairStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6545,7 +6087,7 @@ class Ui_MainWindow(object):
         self.autoChairCalButton = QRadioButton(self.chairCalibrationGroup)
         self.autoChairCalButton.setObjectName(u"autoChairCalButton")
         self.autoChairCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoChairCalButton.setFont(font4)
+        self.autoChairCalButton.setFont(font5)
         self.autoChairCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6567,7 +6109,7 @@ class Ui_MainWindow(object):
         self.manualChairCalButton = QRadioButton(self.chairCalibrationGroup)
         self.manualChairCalButton.setObjectName(u"manualChairCalButton")
         self.manualChairCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualChairCalButton.setFont(font4)
+        self.manualChairCalButton.setFont(font5)
         self.manualChairCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6672,15 +6214,15 @@ class Ui_MainWindow(object):
         self.footrestDriveControlTable = QTableWidget(self.footrestDriveControlGroup)
         if (self.footrestDriveControlTable.columnCount() < 3):
             self.footrestDriveControlTable.setColumnCount(3)
-        __qtablewidgetitem57 = QTableWidgetItem()
-        self.footrestDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem57)
-        __qtablewidgetitem58 = QTableWidgetItem()
-        self.footrestDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem58)
-        __qtablewidgetitem59 = QTableWidgetItem()
-        self.footrestDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem59)
+        __qtablewidgetitem41 = QTableWidgetItem()
+        self.footrestDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.footrestDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem42)
+        __qtablewidgetitem43 = QTableWidgetItem()
+        self.footrestDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem43)
         self.footrestDriveControlTable.setObjectName(u"footrestDriveControlTable")
         self.footrestDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.footrestDriveControlTable.setFont(font9)
+        self.footrestDriveControlTable.setFont(font12)
         self.footrestDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6717,15 +6259,15 @@ class Ui_MainWindow(object):
         self.footrestPIDPosTable = QTableWidget(self.footrestDriveControlGroup)
         if (self.footrestPIDPosTable.columnCount() < 3):
             self.footrestPIDPosTable.setColumnCount(3)
-        __qtablewidgetitem60 = QTableWidgetItem()
-        self.footrestPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem60)
-        __qtablewidgetitem61 = QTableWidgetItem()
-        self.footrestPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem61)
-        __qtablewidgetitem62 = QTableWidgetItem()
-        self.footrestPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem62)
+        __qtablewidgetitem44 = QTableWidgetItem()
+        self.footrestPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem44)
+        __qtablewidgetitem45 = QTableWidgetItem()
+        self.footrestPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem45)
+        __qtablewidgetitem46 = QTableWidgetItem()
+        self.footrestPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem46)
         self.footrestPIDPosTable.setObjectName(u"footrestPIDPosTable")
         self.footrestPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.footrestPIDPosTable.setFont(font9)
+        self.footrestPIDPosTable.setFont(font12)
         self.footrestPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.footrestPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.footrestPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -6754,15 +6296,15 @@ class Ui_MainWindow(object):
         self.footrestPIDSpeedTable = QTableWidget(self.footrestDriveControlGroup)
         if (self.footrestPIDSpeedTable.columnCount() < 3):
             self.footrestPIDSpeedTable.setColumnCount(3)
-        __qtablewidgetitem63 = QTableWidgetItem()
-        self.footrestPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem63)
-        __qtablewidgetitem64 = QTableWidgetItem()
-        self.footrestPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem64)
-        __qtablewidgetitem65 = QTableWidgetItem()
-        self.footrestPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem65)
+        __qtablewidgetitem47 = QTableWidgetItem()
+        self.footrestPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem47)
+        __qtablewidgetitem48 = QTableWidgetItem()
+        self.footrestPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem48)
+        __qtablewidgetitem49 = QTableWidgetItem()
+        self.footrestPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem49)
         self.footrestPIDSpeedTable.setObjectName(u"footrestPIDSpeedTable")
         self.footrestPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.footrestPIDSpeedTable.setFont(font9)
+        self.footrestPIDSpeedTable.setFont(font12)
         self.footrestPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.footrestPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.footrestPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -6791,7 +6333,7 @@ class Ui_MainWindow(object):
         self.enableFootrestSpeedButton = QRadioButton(self.footrestDriveControlGroup)
         self.enableFootrestSpeedButton.setObjectName(u"enableFootrestSpeedButton")
         self.enableFootrestSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableFootrestSpeedButton.setFont(font4)
+        self.enableFootrestSpeedButton.setFont(font5)
         self.enableFootrestSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6891,7 +6433,7 @@ class Ui_MainWindow(object):
         self.footrestPlotModeButtonGroup.addButton(self.autoFootrestPlotButton)
         self.autoFootrestPlotButton.setObjectName(u"autoFootrestPlotButton")
         self.autoFootrestPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoFootrestPlotButton.setFont(font4)
+        self.autoFootrestPlotButton.setFont(font5)
         self.autoFootrestPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6914,7 +6456,7 @@ class Ui_MainWindow(object):
         self.footrestPlotModeButtonGroup.addButton(self.manualFootrestPlotButton)
         self.manualFootrestPlotButton.setObjectName(u"manualFootrestPlotButton")
         self.manualFootrestPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualFootrestPlotButton.setFont(font4)
+        self.manualFootrestPlotButton.setFont(font5)
         self.manualFootrestPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6978,7 +6520,7 @@ class Ui_MainWindow(object):
         self.footrestFolder = QLineEdit(self.footrestDriveControlGroup)
         self.footrestFolder.setObjectName(u"footrestFolder")
         self.footrestFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.footrestFolder.setFont(font9)
+        self.footrestFolder.setFont(font12)
         self.footrestFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -7035,7 +6577,7 @@ class Ui_MainWindow(object):
         self.footrestTuneButtonGroup.addButton(self.footrestFoldTuneButton)
         self.footrestFoldTuneButton.setObjectName(u"footrestFoldTuneButton")
         self.footrestFoldTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.footrestFoldTuneButton.setFont(font4)
+        self.footrestFoldTuneButton.setFont(font5)
         self.footrestFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7058,7 +6600,7 @@ class Ui_MainWindow(object):
         self.footrestTuneButtonGroup.addButton(self.footrestUnfoldTuneButton)
         self.footrestUnfoldTuneButton.setObjectName(u"footrestUnfoldTuneButton")
         self.footrestUnfoldTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.footrestUnfoldTuneButton.setFont(font4)
+        self.footrestUnfoldTuneButton.setFont(font5)
         self.footrestUnfoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7145,13 +6687,13 @@ class Ui_MainWindow(object):
         self.footrestDrivePositionTable = QTableWidget(self.footrestDrivePositionGroup)
         if (self.footrestDrivePositionTable.columnCount() < 2):
             self.footrestDrivePositionTable.setColumnCount(2)
-        __qtablewidgetitem66 = QTableWidgetItem()
-        self.footrestDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem66)
-        __qtablewidgetitem67 = QTableWidgetItem()
-        self.footrestDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem67)
+        __qtablewidgetitem50 = QTableWidgetItem()
+        self.footrestDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem50)
+        __qtablewidgetitem51 = QTableWidgetItem()
+        self.footrestDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem51)
         self.footrestDrivePositionTable.setObjectName(u"footrestDrivePositionTable")
         self.footrestDrivePositionTable.setGeometry(QRect(17, 50, 203, 111))
-        self.footrestDrivePositionTable.setFont(font9)
+        self.footrestDrivePositionTable.setFont(font12)
         self.footrestDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7291,7 +6833,7 @@ class Ui_MainWindow(object):
         self.footrestHoldRightDutyButton = QRadioButton(self.footrestHBridgeGroup)
         self.footrestHoldRightDutyButton.setObjectName(u"footrestHoldRightDutyButton")
         self.footrestHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.footrestHoldRightDutyButton.setFont(font4)
+        self.footrestHoldRightDutyButton.setFont(font5)
         self.footrestHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7313,7 +6855,7 @@ class Ui_MainWindow(object):
         self.footrestHoldLeftDutyButton = QRadioButton(self.footrestHBridgeGroup)
         self.footrestHoldLeftDutyButton.setObjectName(u"footrestHoldLeftDutyButton")
         self.footrestHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.footrestHoldLeftDutyButton.setFont(font4)
+        self.footrestHoldLeftDutyButton.setFont(font5)
         self.footrestHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7367,7 +6909,7 @@ class Ui_MainWindow(object):
         self.enableFootrestBridgeButton = QRadioButton(self.footrestHBridgeGroup)
         self.enableFootrestBridgeButton.setObjectName(u"enableFootrestBridgeButton")
         self.enableFootrestBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableFootrestBridgeButton.setFont(font4)
+        self.enableFootrestBridgeButton.setFont(font5)
         self.enableFootrestBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7406,13 +6948,13 @@ class Ui_MainWindow(object):
         self.footrestStateMachineTable = QTableWidget(self.footrestStateMachineGroup)
         if (self.footrestStateMachineTable.columnCount() < 2):
             self.footrestStateMachineTable.setColumnCount(2)
-        __qtablewidgetitem68 = QTableWidgetItem()
-        self.footrestStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem68)
-        __qtablewidgetitem69 = QTableWidgetItem()
-        self.footrestStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem69)
+        __qtablewidgetitem52 = QTableWidgetItem()
+        self.footrestStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem52)
+        __qtablewidgetitem53 = QTableWidgetItem()
+        self.footrestStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem53)
         self.footrestStateMachineTable.setObjectName(u"footrestStateMachineTable")
         self.footrestStateMachineTable.setGeometry(QRect(17, 50, 203, 74))
-        self.footrestStateMachineTable.setFont(font9)
+        self.footrestStateMachineTable.setFont(font12)
         self.footrestStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7458,7 +7000,7 @@ class Ui_MainWindow(object):
         self.autoFootrestCalButton = QRadioButton(self.footrestCalibrationGroup)
         self.autoFootrestCalButton.setObjectName(u"autoFootrestCalButton")
         self.autoFootrestCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoFootrestCalButton.setFont(font4)
+        self.autoFootrestCalButton.setFont(font5)
         self.autoFootrestCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7480,7 +7022,7 @@ class Ui_MainWindow(object):
         self.manualFootrestCalButton = QRadioButton(self.footrestCalibrationGroup)
         self.manualFootrestCalButton.setObjectName(u"manualFootrestCalButton")
         self.manualFootrestCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualFootrestCalButton.setFont(font4)
+        self.manualFootrestCalButton.setFont(font5)
         self.manualFootrestCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7585,13 +7127,13 @@ class Ui_MainWindow(object):
         self.mainStateMachineTable = QTableWidget(self.mainStateMachineGroup)
         if (self.mainStateMachineTable.columnCount() < 2):
             self.mainStateMachineTable.setColumnCount(2)
-        __qtablewidgetitem70 = QTableWidgetItem()
-        self.mainStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem70)
-        __qtablewidgetitem71 = QTableWidgetItem()
-        self.mainStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem71)
+        __qtablewidgetitem54 = QTableWidgetItem()
+        self.mainStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem54)
+        __qtablewidgetitem55 = QTableWidgetItem()
+        self.mainStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem55)
         self.mainStateMachineTable.setObjectName(u"mainStateMachineTable")
         self.mainStateMachineTable.setGeometry(QRect(17, 50, 203, 74))
-        self.mainStateMachineTable.setFont(font9)
+        self.mainStateMachineTable.setFont(font12)
         self.mainStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7710,7 +7252,7 @@ class Ui_MainWindow(object):
         self.mainHoldRightDutyButton = QRadioButton(self.mainHBridgeGroup)
         self.mainHoldRightDutyButton.setObjectName(u"mainHoldRightDutyButton")
         self.mainHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.mainHoldRightDutyButton.setFont(font4)
+        self.mainHoldRightDutyButton.setFont(font5)
         self.mainHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7732,7 +7274,7 @@ class Ui_MainWindow(object):
         self.mainHoldLeftDutyButton = QRadioButton(self.mainHBridgeGroup)
         self.mainHoldLeftDutyButton.setObjectName(u"mainHoldLeftDutyButton")
         self.mainHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.mainHoldLeftDutyButton.setFont(font4)
+        self.mainHoldLeftDutyButton.setFont(font5)
         self.mainHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7786,7 +7328,7 @@ class Ui_MainWindow(object):
         self.enableMainBridgeButton = QRadioButton(self.mainHBridgeGroup)
         self.enableMainBridgeButton.setObjectName(u"enableMainBridgeButton")
         self.enableMainBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableMainBridgeButton.setFont(font4)
+        self.enableMainBridgeButton.setFont(font5)
         self.enableMainBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7825,15 +7367,15 @@ class Ui_MainWindow(object):
         self.mainDriveControlTable = QTableWidget(self.mainDriveControlGroup)
         if (self.mainDriveControlTable.columnCount() < 3):
             self.mainDriveControlTable.setColumnCount(3)
-        __qtablewidgetitem72 = QTableWidgetItem()
-        self.mainDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem72)
-        __qtablewidgetitem73 = QTableWidgetItem()
-        self.mainDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem73)
-        __qtablewidgetitem74 = QTableWidgetItem()
-        self.mainDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem74)
+        __qtablewidgetitem56 = QTableWidgetItem()
+        self.mainDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem56)
+        __qtablewidgetitem57 = QTableWidgetItem()
+        self.mainDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem57)
+        __qtablewidgetitem58 = QTableWidgetItem()
+        self.mainDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem58)
         self.mainDriveControlTable.setObjectName(u"mainDriveControlTable")
         self.mainDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.mainDriveControlTable.setFont(font9)
+        self.mainDriveControlTable.setFont(font12)
         self.mainDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7870,15 +7412,15 @@ class Ui_MainWindow(object):
         self.mainPIDPosTable = QTableWidget(self.mainDriveControlGroup)
         if (self.mainPIDPosTable.columnCount() < 3):
             self.mainPIDPosTable.setColumnCount(3)
-        __qtablewidgetitem75 = QTableWidgetItem()
-        self.mainPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem75)
-        __qtablewidgetitem76 = QTableWidgetItem()
-        self.mainPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem76)
-        __qtablewidgetitem77 = QTableWidgetItem()
-        self.mainPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem77)
+        __qtablewidgetitem59 = QTableWidgetItem()
+        self.mainPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem59)
+        __qtablewidgetitem60 = QTableWidgetItem()
+        self.mainPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem60)
+        __qtablewidgetitem61 = QTableWidgetItem()
+        self.mainPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem61)
         self.mainPIDPosTable.setObjectName(u"mainPIDPosTable")
         self.mainPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.mainPIDPosTable.setFont(font9)
+        self.mainPIDPosTable.setFont(font12)
         self.mainPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mainPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.mainPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -7907,15 +7449,15 @@ class Ui_MainWindow(object):
         self.mainPIDSpeedTable = QTableWidget(self.mainDriveControlGroup)
         if (self.mainPIDSpeedTable.columnCount() < 3):
             self.mainPIDSpeedTable.setColumnCount(3)
-        __qtablewidgetitem78 = QTableWidgetItem()
-        self.mainPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem78)
-        __qtablewidgetitem79 = QTableWidgetItem()
-        self.mainPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem79)
-        __qtablewidgetitem80 = QTableWidgetItem()
-        self.mainPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem80)
+        __qtablewidgetitem62 = QTableWidgetItem()
+        self.mainPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem62)
+        __qtablewidgetitem63 = QTableWidgetItem()
+        self.mainPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem63)
+        __qtablewidgetitem64 = QTableWidgetItem()
+        self.mainPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem64)
         self.mainPIDSpeedTable.setObjectName(u"mainPIDSpeedTable")
         self.mainPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.mainPIDSpeedTable.setFont(font9)
+        self.mainPIDSpeedTable.setFont(font12)
         self.mainPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mainPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.mainPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -7944,7 +7486,7 @@ class Ui_MainWindow(object):
         self.enableMainSpeedButton = QRadioButton(self.mainDriveControlGroup)
         self.enableMainSpeedButton.setObjectName(u"enableMainSpeedButton")
         self.enableMainSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableMainSpeedButton.setFont(font4)
+        self.enableMainSpeedButton.setFont(font5)
         self.enableMainSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8044,7 +7586,7 @@ class Ui_MainWindow(object):
         self.mainPlotModeButtonGroup.addButton(self.autoMainPlotButton)
         self.autoMainPlotButton.setObjectName(u"autoMainPlotButton")
         self.autoMainPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoMainPlotButton.setFont(font4)
+        self.autoMainPlotButton.setFont(font5)
         self.autoMainPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8067,7 +7609,7 @@ class Ui_MainWindow(object):
         self.mainPlotModeButtonGroup.addButton(self.manualMainPlotButton)
         self.manualMainPlotButton.setObjectName(u"manualMainPlotButton")
         self.manualMainPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualMainPlotButton.setFont(font4)
+        self.manualMainPlotButton.setFont(font5)
         self.manualMainPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8152,7 +7694,7 @@ class Ui_MainWindow(object):
         self.mainFolder = QLineEdit(self.mainDriveControlGroup)
         self.mainFolder.setObjectName(u"mainFolder")
         self.mainFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.mainFolder.setFont(font9)
+        self.mainFolder.setFont(font12)
         self.mainFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -8250,13 +7792,13 @@ class Ui_MainWindow(object):
         self.mainDrivePositionTable = QTableWidget(self.mainDrivePositionGroup)
         if (self.mainDrivePositionTable.columnCount() < 2):
             self.mainDrivePositionTable.setColumnCount(2)
-        __qtablewidgetitem81 = QTableWidgetItem()
-        self.mainDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem81)
-        __qtablewidgetitem82 = QTableWidgetItem()
-        self.mainDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem82)
+        __qtablewidgetitem65 = QTableWidgetItem()
+        self.mainDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem65)
+        __qtablewidgetitem66 = QTableWidgetItem()
+        self.mainDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem66)
         self.mainDrivePositionTable.setObjectName(u"mainDrivePositionTable")
         self.mainDrivePositionTable.setGeometry(QRect(17, 50, 203, 39))
-        self.mainDrivePositionTable.setFont(font9)
+        self.mainDrivePositionTable.setFont(font12)
         self.mainDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8326,13 +7868,13 @@ class Ui_MainWindow(object):
         self.swivelDrivePositionTable = QTableWidget(self.swivelDrivePositionGroup)
         if (self.swivelDrivePositionTable.columnCount() < 2):
             self.swivelDrivePositionTable.setColumnCount(2)
-        __qtablewidgetitem83 = QTableWidgetItem()
-        self.swivelDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem83)
-        __qtablewidgetitem84 = QTableWidgetItem()
-        self.swivelDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem84)
+        __qtablewidgetitem67 = QTableWidgetItem()
+        self.swivelDrivePositionTable.setHorizontalHeaderItem(0, __qtablewidgetitem67)
+        __qtablewidgetitem68 = QTableWidgetItem()
+        self.swivelDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem68)
         self.swivelDrivePositionTable.setObjectName(u"swivelDrivePositionTable")
         self.swivelDrivePositionTable.setGeometry(QRect(17, 50, 203, 129))
-        self.swivelDrivePositionTable.setFont(font9)
+        self.swivelDrivePositionTable.setFont(font12)
         self.swivelDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8399,7 +7941,7 @@ class Ui_MainWindow(object):
         self.autoSwivelCalButton = QRadioButton(self.swivelCalibrationGroup)
         self.autoSwivelCalButton.setObjectName(u"autoSwivelCalButton")
         self.autoSwivelCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoSwivelCalButton.setFont(font4)
+        self.autoSwivelCalButton.setFont(font5)
         self.autoSwivelCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8421,7 +7963,7 @@ class Ui_MainWindow(object):
         self.manualSwivelCalButton = QRadioButton(self.swivelCalibrationGroup)
         self.manualSwivelCalButton.setObjectName(u"manualSwivelCalButton")
         self.manualSwivelCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualSwivelCalButton.setFont(font4)
+        self.manualSwivelCalButton.setFont(font5)
         self.manualSwivelCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8523,15 +8065,15 @@ class Ui_MainWindow(object):
         self.swivelDriveControlTable = QTableWidget(self.swivelDriveControlGroup)
         if (self.swivelDriveControlTable.columnCount() < 3):
             self.swivelDriveControlTable.setColumnCount(3)
-        __qtablewidgetitem85 = QTableWidgetItem()
-        self.swivelDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem85)
-        __qtablewidgetitem86 = QTableWidgetItem()
-        self.swivelDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem86)
-        __qtablewidgetitem87 = QTableWidgetItem()
-        self.swivelDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem87)
+        __qtablewidgetitem69 = QTableWidgetItem()
+        self.swivelDriveControlTable.setHorizontalHeaderItem(0, __qtablewidgetitem69)
+        __qtablewidgetitem70 = QTableWidgetItem()
+        self.swivelDriveControlTable.setHorizontalHeaderItem(1, __qtablewidgetitem70)
+        __qtablewidgetitem71 = QTableWidgetItem()
+        self.swivelDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem71)
         self.swivelDriveControlTable.setObjectName(u"swivelDriveControlTable")
         self.swivelDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.swivelDriveControlTable.setFont(font9)
+        self.swivelDriveControlTable.setFont(font12)
         self.swivelDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8568,15 +8110,15 @@ class Ui_MainWindow(object):
         self.swivelPIDPosTable = QTableWidget(self.swivelDriveControlGroup)
         if (self.swivelPIDPosTable.columnCount() < 3):
             self.swivelPIDPosTable.setColumnCount(3)
-        __qtablewidgetitem88 = QTableWidgetItem()
-        self.swivelPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem88)
-        __qtablewidgetitem89 = QTableWidgetItem()
-        self.swivelPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem89)
-        __qtablewidgetitem90 = QTableWidgetItem()
-        self.swivelPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem90)
+        __qtablewidgetitem72 = QTableWidgetItem()
+        self.swivelPIDPosTable.setHorizontalHeaderItem(0, __qtablewidgetitem72)
+        __qtablewidgetitem73 = QTableWidgetItem()
+        self.swivelPIDPosTable.setHorizontalHeaderItem(1, __qtablewidgetitem73)
+        __qtablewidgetitem74 = QTableWidgetItem()
+        self.swivelPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem74)
         self.swivelPIDPosTable.setObjectName(u"swivelPIDPosTable")
         self.swivelPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.swivelPIDPosTable.setFont(font9)
+        self.swivelPIDPosTable.setFont(font12)
         self.swivelPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.swivelPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.swivelPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -8605,15 +8147,15 @@ class Ui_MainWindow(object):
         self.swivelPIDSpeedTable = QTableWidget(self.swivelDriveControlGroup)
         if (self.swivelPIDSpeedTable.columnCount() < 3):
             self.swivelPIDSpeedTable.setColumnCount(3)
-        __qtablewidgetitem91 = QTableWidgetItem()
-        self.swivelPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem91)
-        __qtablewidgetitem92 = QTableWidgetItem()
-        self.swivelPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem92)
-        __qtablewidgetitem93 = QTableWidgetItem()
-        self.swivelPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem93)
+        __qtablewidgetitem75 = QTableWidgetItem()
+        self.swivelPIDSpeedTable.setHorizontalHeaderItem(0, __qtablewidgetitem75)
+        __qtablewidgetitem76 = QTableWidgetItem()
+        self.swivelPIDSpeedTable.setHorizontalHeaderItem(1, __qtablewidgetitem76)
+        __qtablewidgetitem77 = QTableWidgetItem()
+        self.swivelPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem77)
         self.swivelPIDSpeedTable.setObjectName(u"swivelPIDSpeedTable")
         self.swivelPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.swivelPIDSpeedTable.setFont(font9)
+        self.swivelPIDSpeedTable.setFont(font12)
         self.swivelPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.swivelPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.swivelPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -8642,7 +8184,7 @@ class Ui_MainWindow(object):
         self.enableSwivelSpeedButton = QRadioButton(self.swivelDriveControlGroup)
         self.enableSwivelSpeedButton.setObjectName(u"enableSwivelSpeedButton")
         self.enableSwivelSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableSwivelSpeedButton.setFont(font4)
+        self.enableSwivelSpeedButton.setFont(font5)
         self.enableSwivelSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8742,7 +8284,7 @@ class Ui_MainWindow(object):
         self.swivelPlotModeButtonGroup.addButton(self.autoSwivelPlotButton)
         self.autoSwivelPlotButton.setObjectName(u"autoSwivelPlotButton")
         self.autoSwivelPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoSwivelPlotButton.setFont(font4)
+        self.autoSwivelPlotButton.setFont(font5)
         self.autoSwivelPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8765,7 +8307,7 @@ class Ui_MainWindow(object):
         self.swivelPlotModeButtonGroup.addButton(self.manualSwivelPlotButton)
         self.manualSwivelPlotButton.setObjectName(u"manualSwivelPlotButton")
         self.manualSwivelPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualSwivelPlotButton.setFont(font4)
+        self.manualSwivelPlotButton.setFont(font5)
         self.manualSwivelPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8850,7 +8392,7 @@ class Ui_MainWindow(object):
         self.swivelFolder = QLineEdit(self.swivelDriveControlGroup)
         self.swivelFolder.setObjectName(u"swivelFolder")
         self.swivelFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.swivelFolder.setFont(font9)
+        self.swivelFolder.setFont(font12)
         self.swivelFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -8886,7 +8428,7 @@ class Ui_MainWindow(object):
         self.swivelTuneButtonGroup.addButton(self.swivelLeftTuneButton)
         self.swivelLeftTuneButton.setObjectName(u"swivelLeftTuneButton")
         self.swivelLeftTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.swivelLeftTuneButton.setFont(font4)
+        self.swivelLeftTuneButton.setFont(font5)
         self.swivelLeftTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8909,7 +8451,7 @@ class Ui_MainWindow(object):
         self.swivelTuneButtonGroup.addButton(self.swivelRightTuneButton)
         self.swivelRightTuneButton.setObjectName(u"swivelRightTuneButton")
         self.swivelRightTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.swivelRightTuneButton.setFont(font4)
+        self.swivelRightTuneButton.setFont(font5)
         self.swivelRightTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9069,7 +8611,7 @@ class Ui_MainWindow(object):
         self.swivelHoldRightDutyButton = QRadioButton(self.swivelHBridgeGroup)
         self.swivelHoldRightDutyButton.setObjectName(u"swivelHoldRightDutyButton")
         self.swivelHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.swivelHoldRightDutyButton.setFont(font4)
+        self.swivelHoldRightDutyButton.setFont(font5)
         self.swivelHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9091,7 +8633,7 @@ class Ui_MainWindow(object):
         self.swivelHoldLeftDutyButton = QRadioButton(self.swivelHBridgeGroup)
         self.swivelHoldLeftDutyButton.setObjectName(u"swivelHoldLeftDutyButton")
         self.swivelHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.swivelHoldLeftDutyButton.setFont(font4)
+        self.swivelHoldLeftDutyButton.setFont(font5)
         self.swivelHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9145,7 +8687,7 @@ class Ui_MainWindow(object):
         self.enableSwivelBridgeButton = QRadioButton(self.swivelHBridgeGroup)
         self.enableSwivelBridgeButton.setObjectName(u"enableSwivelBridgeButton")
         self.enableSwivelBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableSwivelBridgeButton.setFont(font4)
+        self.enableSwivelBridgeButton.setFont(font5)
         self.enableSwivelBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9184,13 +8726,13 @@ class Ui_MainWindow(object):
         self.swivelStateMachineTable = QTableWidget(self.swivelStateMachineGroup)
         if (self.swivelStateMachineTable.columnCount() < 2):
             self.swivelStateMachineTable.setColumnCount(2)
-        __qtablewidgetitem94 = QTableWidgetItem()
-        self.swivelStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem94)
-        __qtablewidgetitem95 = QTableWidgetItem()
-        self.swivelStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem95)
+        __qtablewidgetitem78 = QTableWidgetItem()
+        self.swivelStateMachineTable.setHorizontalHeaderItem(0, __qtablewidgetitem78)
+        __qtablewidgetitem79 = QTableWidgetItem()
+        self.swivelStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem79)
         self.swivelStateMachineTable.setObjectName(u"swivelStateMachineTable")
         self.swivelStateMachineTable.setGeometry(QRect(17, 50, 203, 75))
-        self.swivelStateMachineTable.setFont(font9)
+        self.swivelStateMachineTable.setFont(font12)
         self.swivelStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9217,34 +8759,10 @@ class Ui_MainWindow(object):
         self.swivelStateMachineTable.verticalHeader().setMinimumSectionSize(16)
         self.swivelStateMachineTable.verticalHeader().setDefaultSectionSize(18)
         self.stackedWidget.addWidget(self.swivelPage)
-        self.x06Page = QWidget()
-        self.x06Page.setObjectName(u"x06Page")
-        self.enableX06MessagesButton = QRadioButton(self.x06Page)
-        self.enableX06MessagesButton.setObjectName(u"enableX06MessagesButton")
-        self.enableX06MessagesButton.setGeometry(QRect(14, 13, 139, 22))
-        self.enableX06MessagesButton.setFont(font4)
-        self.enableX06MessagesButton.setStyleSheet(u"QRadioButton {\n"
-"    color: #000000; /* Text color */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator {\n"
-"    width: 10px; /* Size of the circle */\n"
-"    height: 10px; /* Size of the circle */\n"
-"    border: 2px solid #000000; /* Border of the circle */\n"
-"    border-radius: 5px; /* Makes the circle rounded */\n"
-"    background-color: #FFFFFF; /* Background of the circle */\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked {\n"
-"    background-color: #FF0000; /* Set background color to red when checked */\n"
-"}")
-        self.enableX06MessagesButton.setChecked(False)
-        self.enableX06MessagesButton.setAutoExclusive(False)
-        self.stackedWidget.addWidget(self.x06Page)
         self.consoleTab = QTabWidget(self.centralwidget)
         self.consoleTab.setObjectName(u"consoleTab")
         self.consoleTab.setGeometry(QRect(1219, 11, 636, 986))
-        self.consoleTab.setFont(font5)
+        self.consoleTab.setFont(font4)
         self.consoleTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.consoleTab.setStyleSheet(u"QTabWidget::pane {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9322,7 +8840,7 @@ class Ui_MainWindow(object):
         self.primaryConsoleLog = QTextBrowser(self.primaryTab)
         self.primaryConsoleLog.setObjectName(u"primaryConsoleLog")
         self.primaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.primaryConsoleLog.setFont(font10)
+        self.primaryConsoleLog.setFont(font9)
         self.primaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.primaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9466,7 +8984,7 @@ class Ui_MainWindow(object):
         self.secondaryConsoleLog = QTextBrowser(self.secondaryTab)
         self.secondaryConsoleLog.setObjectName(u"secondaryConsoleLog")
         self.secondaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.secondaryConsoleLog.setFont(font10)
+        self.secondaryConsoleLog.setFont(font9)
         self.secondaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.secondaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9568,7 +9086,7 @@ class Ui_MainWindow(object):
         self.tertiaryConsoleLog = QTextBrowser(self.tertiaryTab)
         self.tertiaryConsoleLog.setObjectName(u"tertiaryConsoleLog")
         self.tertiaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.tertiaryConsoleLog.setFont(font10)
+        self.tertiaryConsoleLog.setFont(font9)
         self.tertiaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.tertiaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9814,7 +9332,7 @@ class Ui_MainWindow(object):
         self.eCodeLineEdit = QLineEdit(self.sysFrame)
         self.eCodeLineEdit.setObjectName(u"eCodeLineEdit")
         self.eCodeLineEdit.setGeometry(QRect(553, 117, 256, 22))
-        self.eCodeLineEdit.setFont(font9)
+        self.eCodeLineEdit.setFont(font12)
         self.eCodeLineEdit.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -9825,13 +9343,13 @@ class Ui_MainWindow(object):
         self.miscTable = QTableWidget(self.sysFrame)
         if (self.miscTable.columnCount() < 2):
             self.miscTable.setColumnCount(2)
-        __qtablewidgetitem96 = QTableWidgetItem()
-        self.miscTable.setHorizontalHeaderItem(0, __qtablewidgetitem96)
-        __qtablewidgetitem97 = QTableWidgetItem()
-        self.miscTable.setHorizontalHeaderItem(1, __qtablewidgetitem97)
+        __qtablewidgetitem80 = QTableWidgetItem()
+        self.miscTable.setHorizontalHeaderItem(0, __qtablewidgetitem80)
+        __qtablewidgetitem81 = QTableWidgetItem()
+        self.miscTable.setHorizontalHeaderItem(1, __qtablewidgetitem81)
         self.miscTable.setObjectName(u"miscTable")
         self.miscTable.setGeometry(QRect(15, 14, 241, 94))
-        self.miscTable.setFont(font9)
+        self.miscTable.setFont(font12)
         self.miscTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.miscTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9859,7 +9377,7 @@ class Ui_MainWindow(object):
         self.opModeBox = QComboBox(self.sysFrame)
         self.opModeBox.setObjectName(u"opModeBox")
         self.opModeBox.setGeometry(QRect(15, 117, 152, 21))
-        self.opModeBox.setFont(font9)
+        self.opModeBox.setFont(font12)
         self.opModeBox.setStyleSheet(u"QComboBox{\n"
 "    color: #000000; /* Text color */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
@@ -9930,13 +9448,13 @@ class Ui_MainWindow(object):
         self.assertTable = QTableWidget(self.sysFrame)
         if (self.assertTable.columnCount() < 2):
             self.assertTable.setColumnCount(2)
-        __qtablewidgetitem98 = QTableWidgetItem()
-        self.assertTable.setHorizontalHeaderItem(0, __qtablewidgetitem98)
-        __qtablewidgetitem99 = QTableWidgetItem()
-        self.assertTable.setHorizontalHeaderItem(1, __qtablewidgetitem99)
+        __qtablewidgetitem82 = QTableWidgetItem()
+        self.assertTable.setHorizontalHeaderItem(0, __qtablewidgetitem82)
+        __qtablewidgetitem83 = QTableWidgetItem()
+        self.assertTable.setHorizontalHeaderItem(1, __qtablewidgetitem83)
         self.assertTable.setObjectName(u"assertTable")
         self.assertTable.setGeometry(QRect(270, 14, 241, 74))
-        self.assertTable.setFont(font9)
+        self.assertTable.setFont(font12)
         self.assertTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.assertTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9988,7 +9506,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.commsTab.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         self.consoleTab.setCurrentIndex(0)
 
 
@@ -10060,10 +9578,6 @@ class Ui_MainWindow(object):
         self.systemPageButton.setText(QCoreApplication.translate("MainWindow", u"System", None))
         self.keyWiringPageButton.setText(QCoreApplication.translate("MainWindow", u"Key \n"
 " Wiring", None))
-        self.debuggingPageButton.setText(QCoreApplication.translate("MainWindow", u"Debug", None))
-        self.callAndDemandPageButton.setText(QCoreApplication.translate("MainWindow", u"Call\n"
-"Demand", None))
-        self.enableDemoModeButton.setText(QCoreApplication.translate("MainWindow", u"Enable Demo Mode", None))
         self.x06PageButton.setText(QCoreApplication.translate("MainWindow", u"X06", None))
         self.serialAutoButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
         self.serialConnectButton.setText(QCoreApplication.translate("MainWindow", u"Select Manual", None))
@@ -10114,16 +9628,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.resetOutputsButton.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.alterOutputsButton.setText(QCoreApplication.translate("MainWindow", u"Alter", None))
-        self.callDetectionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Call Detection", None))
-        ___qtablewidgetitem13 = self.callDetectionTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem14 = self.callDetectionTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.demandProcessorGroup.setTitle(QCoreApplication.translate("MainWindow", u"Demand Processor", None))
-        ___qtablewidgetitem15 = self.demandProcessorTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem16 = self.demandProcessorTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.testColourLog.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -10145,21 +9649,21 @@ class Ui_MainWindow(object):
 "2) Select foreground and background colour using the sliders.\n"
 "3) Append text to test log to see how it may look on the screen.", None))
         self.testBox.setTitle("")
-        ___qtablewidgetitem17 = self.testTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
-        ___qtablewidgetitem18 = self.testTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem13 = self.testTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
+        ___qtablewidgetitem14 = self.testTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.bgDefButton.setText(QCoreApplication.translate("MainWindow", u"D", None))
         self.clearPaletteConsoleButton.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.configBox.setTitle(QCoreApplication.translate("MainWindow", u"Stored Configuration", None))
-        ___qtablewidgetitem19 = self.configTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem20 = self.configTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Record", None));
-        ___qtablewidgetitem21 = self.configTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        ___qtablewidgetitem22 = self.configTable.horizontalHeaderItem(3)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem15 = self.configTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem16 = self.configTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Record", None));
+        ___qtablewidgetitem17 = self.configTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem18 = self.configTable.horizontalHeaderItem(3)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.loadConfigButton.setText(QCoreApplication.translate("MainWindow", u"Load", None))
         self.alterConfigButton.setText(QCoreApplication.translate("MainWindow", u"Alter", None))
         self.restoreConfigButton.setText(QCoreApplication.translate("MainWindow", u"Restore", None))
@@ -10171,36 +9675,6 @@ class Ui_MainWindow(object):
         self.eraseSDCardButton.setText(QCoreApplication.translate("MainWindow", u"Erase", None))
         self.sdCardTextEdit.setText(QCoreApplication.translate("MainWindow", u"SD Card Files Present", None))
         self.confirmEraseButton.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
-        self.debugGroup1.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 1", None))
-        ___qtablewidgetitem23 = self.debugTable1.horizontalHeaderItem(0)
-        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem24 = self.debugTable1.horizontalHeaderItem(1)
-        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.debugGroup2.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 2", None))
-        ___qtablewidgetitem25 = self.debugTable2.horizontalHeaderItem(0)
-        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem26 = self.debugTable2.horizontalHeaderItem(1)
-        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.debugGroup3.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 3", None))
-        ___qtablewidgetitem27 = self.debugTable3.horizontalHeaderItem(0)
-        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem28 = self.debugTable3.horizontalHeaderItem(1)
-        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.debugGroup4.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 4", None))
-        ___qtablewidgetitem29 = self.debugTable4.horizontalHeaderItem(0)
-        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem30 = self.debugTable4.horizontalHeaderItem(1)
-        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.debugGroup6.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 6", None))
-        ___qtablewidgetitem31 = self.debugTable6.horizontalHeaderItem(0)
-        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem32 = self.debugTable6.horizontalHeaderItem(1)
-        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.debugGroup5.setTitle(QCoreApplication.translate("MainWindow", u"Debug Table 5", None))
-        ___qtablewidgetitem33 = self.debugTable5.horizontalHeaderItem(0)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem34 = self.debugTable5.horizontalHeaderItem(1)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.rightStopLED.setText("")
         self.rightSafetyLED.setText("")
         self.callDownLabel.setText(QCoreApplication.translate("MainWindow", u"Call Down", None))
@@ -10273,12 +9747,12 @@ class Ui_MainWindow(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For RH Stairlift, link 1-2 and 3-4.</p></body></html>", None))
         self.railMapBox.setTitle(QCoreApplication.translate("MainWindow", u"Rail Mapping", None))
-        ___qtablewidgetitem35 = self.mapPointsTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Index", None));
-        ___qtablewidgetitem36 = self.mapPointsTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"Type", None));
-        ___qtablewidgetitem37 = self.mapPointsTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"Position", None));
+        ___qtablewidgetitem19 = self.mapPointsTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Index", None));
+        ___qtablewidgetitem20 = self.mapPointsTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Type", None));
+        ___qtablewidgetitem21 = self.mapPointsTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Position", None));
         self.mainMapModeGroup.setTitle(QCoreApplication.translate("MainWindow", u"Mode", None))
         self.modeRemoteDButton.setText(QCoreApplication.translate("MainWindow", u"Remote Control D", None))
         self.modePartialUnfoldButton.setText(QCoreApplication.translate("MainWindow", u"Partial Unfold Zone", None))
@@ -10321,10 +9795,10 @@ class Ui_MainWindow(object):
         self.mainNewPositionText.setText("")
         self.setPositionButton.setText(QCoreApplication.translate("MainWindow", u"Set", None))
         self.zeroPositionButton.setText(QCoreApplication.translate("MainWindow", u"Zero", None))
-        ___qtablewidgetitem38 = self.mapDataTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem39 = self.mapDataTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem22 = self.mapDataTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem23 = self.mapDataTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.saveMapFileButton.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.injectMapButton.setText(QCoreApplication.translate("MainWindow", u"Inject", None))
         self.mainPointGroup_2.setTitle(QCoreApplication.translate("MainWindow", u"Map Control", None))
@@ -10374,36 +9848,37 @@ class Ui_MainWindow(object):
         self.clearMapTableButton.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.sysVersionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Version", None))
         self.requestSystemVersionButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
-        ___qtablewidgetitem40 = self.sysVerTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem41 = self.sysVerTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem24 = self.sysVerTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem25 = self.sysVerTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.timeGroup.setTitle(QCoreApplication.translate("MainWindow", u"RTC", None))
         self.setRTCButton.setText(QCoreApplication.translate("MainWindow", u"Set RTC", None))
-        ___qtablewidgetitem42 = self.timeTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem43 = self.timeTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem26 = self.timeTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem27 = self.timeTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        self.enableX06MessagesButton.setText(QCoreApplication.translate("MainWindow", u"Enable X06 Messages", None))
         self.chairDrivePositionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Position", None))
-        ___qtablewidgetitem44 = self.chairDrivePositionTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem45 = self.chairDrivePositionTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem28 = self.chairDrivePositionTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem29 = self.chairDrivePositionTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.requestChairPositionButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.chairDriveControlGroup.setTitle(QCoreApplication.translate("MainWindow", u"Drive Control", None))
         self.plotChairButton.setText(QCoreApplication.translate("MainWindow", u"Start Plot", None))
-        ___qtablewidgetitem46 = self.chairPIDPosTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem47 = self.chairPIDPosTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Position", None));
-        ___qtablewidgetitem48 = self.chairPIDPosTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
-        ___qtablewidgetitem49 = self.chairPIDSpeedTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem50 = self.chairPIDSpeedTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
-        ___qtablewidgetitem51 = self.chairPIDSpeedTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem30 = self.chairPIDPosTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem31 = self.chairPIDPosTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"Position", None));
+        ___qtablewidgetitem32 = self.chairPIDPosTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem33 = self.chairPIDSpeedTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem34 = self.chairPIDSpeedTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
+        ___qtablewidgetitem35 = self.chairPIDSpeedTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.enableChairSpeedButton.setText(QCoreApplication.translate("MainWindow", u"Enable Speed Control", None))
         self.requestChairTuningButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.copyChairTuningButton.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
@@ -10411,12 +9886,12 @@ class Ui_MainWindow(object):
         self.autoChairPlotButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
         self.manualChairPlotButton.setText(QCoreApplication.translate("MainWindow", u"Manual", None))
         self.openChairPlotButton.setText(QCoreApplication.translate("MainWindow", u"Open Plot", None))
-        ___qtablewidgetitem52 = self.chairDriveControlTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem53 = self.chairDriveControlTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
-        ___qtablewidgetitem54 = self.chairDriveControlTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem36 = self.chairDriveControlTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem37 = self.chairDriveControlTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem37.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
+        ___qtablewidgetitem38 = self.chairDriveControlTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem38.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.requestChairLoggingButton.setText(QCoreApplication.translate("MainWindow", u"HS Request", None))
         self.chairFolder.setText(QCoreApplication.translate("MainWindow", u"No Folder Selected", None))
         self.selectChairFolderButton.setText(QCoreApplication.translate("MainWindow", u"Select Folder", None))
@@ -10441,10 +9916,10 @@ class Ui_MainWindow(object):
         self.minChairPWMLabel.setText(QCoreApplication.translate("MainWindow", u"Min", None))
         self.enableChairBridgeButton.setText(QCoreApplication.translate("MainWindow", u"Enable", None))
         self.chairStateMachineGroup.setTitle(QCoreApplication.translate("MainWindow", u"State Machine", None))
-        ___qtablewidgetitem55 = self.chairStateMachineTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem56 = self.chairStateMachineTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem39 = self.chairStateMachineTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem39.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem40 = self.chairStateMachineTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem40.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.chairCalibrationGroup.setTitle(QCoreApplication.translate("MainWindow", u"Calibration", None))
         self.autoChairCalButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
         self.manualChairCalButton.setText(QCoreApplication.translate("MainWindow", u"Manual", None))
@@ -10452,25 +9927,25 @@ class Ui_MainWindow(object):
         self.acceptChairCalButton.setText(QCoreApplication.translate("MainWindow", u"Accept", None))
         self.rejectChairCalButton.setText(QCoreApplication.translate("MainWindow", u"Reject", None))
         self.footrestDriveControlGroup.setTitle(QCoreApplication.translate("MainWindow", u"Drive Control", None))
-        ___qtablewidgetitem57 = self.footrestDriveControlTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem58 = self.footrestDriveControlTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
-        ___qtablewidgetitem59 = self.footrestDriveControlTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem41 = self.footrestDriveControlTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem41.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem42 = self.footrestDriveControlTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem42.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
+        ___qtablewidgetitem43 = self.footrestDriveControlTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem43.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.plotFootrestButton.setText(QCoreApplication.translate("MainWindow", u"Start Plot", None))
-        ___qtablewidgetitem60 = self.footrestPIDPosTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem61 = self.footrestPIDPosTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Position", None));
-        ___qtablewidgetitem62 = self.footrestPIDPosTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
-        ___qtablewidgetitem63 = self.footrestPIDSpeedTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem64 = self.footrestPIDSpeedTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
-        ___qtablewidgetitem65 = self.footrestPIDSpeedTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem44 = self.footrestPIDPosTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem44.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem45 = self.footrestPIDPosTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Position", None));
+        ___qtablewidgetitem46 = self.footrestPIDPosTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem47 = self.footrestPIDSpeedTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem48 = self.footrestPIDSpeedTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem48.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
+        ___qtablewidgetitem49 = self.footrestPIDSpeedTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem49.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.enableFootrestSpeedButton.setText(QCoreApplication.translate("MainWindow", u"Enable Speed Control", None))
         self.requestFootrestTuningButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.copyFootrestTuningButton.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
@@ -10491,10 +9966,10 @@ class Ui_MainWindow(object):
         self.footrestLoggingState.setText(QCoreApplication.translate("MainWindow", u"Inactive", None))
         self.footrestPlottingState.setText(QCoreApplication.translate("MainWindow", u"Closed", None))
         self.footrestDrivePositionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Position", None))
-        ___qtablewidgetitem66 = self.footrestDrivePositionTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem67 = self.footrestDrivePositionTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem50 = self.footrestDrivePositionTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem50.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem51 = self.footrestDrivePositionTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem51.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.requestFootrestPositionButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.footrestHBridgeGroup.setTitle(QCoreApplication.translate("MainWindow", u"H Bridge", None))
         self.footrestLeftBridgeText.setText(QCoreApplication.translate("MainWindow", u"0%", None))
@@ -10507,10 +9982,10 @@ class Ui_MainWindow(object):
         self.minFootrestPWMLabel.setText(QCoreApplication.translate("MainWindow", u"Min", None))
         self.enableFootrestBridgeButton.setText(QCoreApplication.translate("MainWindow", u"Enable", None))
         self.footrestStateMachineGroup.setTitle(QCoreApplication.translate("MainWindow", u"State Machine", None))
-        ___qtablewidgetitem68 = self.footrestStateMachineTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem69 = self.footrestStateMachineTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem52 = self.footrestStateMachineTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem52.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem53 = self.footrestStateMachineTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem53.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.footrestCalibrationGroup.setTitle(QCoreApplication.translate("MainWindow", u"Calibration", None))
         self.autoFootrestCalButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
         self.manualFootrestCalButton.setText(QCoreApplication.translate("MainWindow", u"Manual", None))
@@ -10518,10 +9993,10 @@ class Ui_MainWindow(object):
         self.acceptFootrestCalButton.setText(QCoreApplication.translate("MainWindow", u"Accept", None))
         self.rejectFootrestCalButton.setText(QCoreApplication.translate("MainWindow", u"Reject", None))
         self.mainStateMachineGroup.setTitle(QCoreApplication.translate("MainWindow", u"State Machine", None))
-        ___qtablewidgetitem70 = self.mainStateMachineTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem71 = self.mainStateMachineTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem54 = self.mainStateMachineTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem54.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem55 = self.mainStateMachineTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem55.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.mainHBridgeGroup.setTitle(QCoreApplication.translate("MainWindow", u"H Bridge", None))
         self.mainLeftBridgeText.setText(QCoreApplication.translate("MainWindow", u"0%", None))
         self.mainRightBridgeText.setText(QCoreApplication.translate("MainWindow", u"0%", None))
@@ -10533,25 +10008,25 @@ class Ui_MainWindow(object):
         self.minMainPWMLabel.setText(QCoreApplication.translate("MainWindow", u"Min", None))
         self.enableMainBridgeButton.setText(QCoreApplication.translate("MainWindow", u"Enable", None))
         self.mainDriveControlGroup.setTitle(QCoreApplication.translate("MainWindow", u"Drive Control", None))
-        ___qtablewidgetitem72 = self.mainDriveControlTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem73 = self.mainDriveControlTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
-        ___qtablewidgetitem74 = self.mainDriveControlTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem74.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem56 = self.mainDriveControlTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem56.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem57 = self.mainDriveControlTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem57.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
+        ___qtablewidgetitem58 = self.mainDriveControlTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.plotMainButton.setText(QCoreApplication.translate("MainWindow", u"Start Plot", None))
-        ___qtablewidgetitem75 = self.mainPIDPosTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem75.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem76 = self.mainPIDPosTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem76.setText(QCoreApplication.translate("MainWindow", u"Position", None));
-        ___qtablewidgetitem77 = self.mainPIDPosTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem77.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
-        ___qtablewidgetitem78 = self.mainPIDSpeedTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem78.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem79 = self.mainPIDSpeedTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
-        ___qtablewidgetitem80 = self.mainPIDSpeedTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem59 = self.mainPIDPosTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem60 = self.mainPIDPosTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Position", None));
+        ___qtablewidgetitem61 = self.mainPIDPosTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem62 = self.mainPIDSpeedTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem63 = self.mainPIDSpeedTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
+        ___qtablewidgetitem64 = self.mainPIDSpeedTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.enableMainSpeedButton.setText(QCoreApplication.translate("MainWindow", u"Enable Speed Control", None))
         self.requestMainTuningButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.copyMainTuningButton.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
@@ -10570,16 +10045,16 @@ class Ui_MainWindow(object):
         self.mainLoggingLabel.setText(QCoreApplication.translate("MainWindow", u"Logging State:", None))
         self.mainPlottingState.setText(QCoreApplication.translate("MainWindow", u"Closed", None))
         self.mainDrivePositionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Position", None))
-        ___qtablewidgetitem81 = self.mainDrivePositionTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem81.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem82 = self.mainDrivePositionTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem82.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem65 = self.mainDrivePositionTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem66 = self.mainDrivePositionTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.requestMainPositionButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.swivelDrivePositionGroup.setTitle(QCoreApplication.translate("MainWindow", u"Position", None))
-        ___qtablewidgetitem83 = self.swivelDrivePositionTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem83.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem84 = self.swivelDrivePositionTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem84.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem67 = self.swivelDrivePositionTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem68 = self.swivelDrivePositionTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.requestSwivelPositionButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.swivelCalibrationGroup.setTitle(QCoreApplication.translate("MainWindow", u"Calibration", None))
         self.autoSwivelCalButton.setText(QCoreApplication.translate("MainWindow", u"Auto", None))
@@ -10588,25 +10063,25 @@ class Ui_MainWindow(object):
         self.acceptSwivelCalButton.setText(QCoreApplication.translate("MainWindow", u"Accept", None))
         self.rejectSwivelCalButton.setText(QCoreApplication.translate("MainWindow", u"Reject", None))
         self.swivelDriveControlGroup.setTitle(QCoreApplication.translate("MainWindow", u"Drive Control", None))
-        ___qtablewidgetitem85 = self.swivelDriveControlTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem85.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        ___qtablewidgetitem86 = self.swivelDriveControlTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem86.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
-        ___qtablewidgetitem87 = self.swivelDriveControlTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem69 = self.swivelDriveControlTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem70 = self.swivelDriveControlTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Variable", None));
+        ___qtablewidgetitem71 = self.swivelDriveControlTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.plotSwivelButton.setText(QCoreApplication.translate("MainWindow", u"Start Plot", None))
-        ___qtablewidgetitem88 = self.swivelPIDPosTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem89 = self.swivelPIDPosTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem89.setText(QCoreApplication.translate("MainWindow", u"Position", None));
-        ___qtablewidgetitem90 = self.swivelPIDPosTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem90.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
-        ___qtablewidgetitem91 = self.swivelPIDSpeedTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem91.setText(QCoreApplication.translate("MainWindow", u"Term", None));
-        ___qtablewidgetitem92 = self.swivelPIDSpeedTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem92.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
-        ___qtablewidgetitem93 = self.swivelPIDSpeedTable.horizontalHeaderItem(2)
-        ___qtablewidgetitem93.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem72 = self.swivelPIDPosTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem73 = self.swivelPIDPosTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Position", None));
+        ___qtablewidgetitem74 = self.swivelPIDPosTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem74.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
+        ___qtablewidgetitem75 = self.swivelPIDSpeedTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem75.setText(QCoreApplication.translate("MainWindow", u"Term", None));
+        ___qtablewidgetitem76 = self.swivelPIDSpeedTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem76.setText(QCoreApplication.translate("MainWindow", u"Speed", None));
+        ___qtablewidgetitem77 = self.swivelPIDSpeedTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem77.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.enableSwivelSpeedButton.setText(QCoreApplication.translate("MainWindow", u"Enable Speed Control", None))
         self.requestSwivelTuningButton.setText(QCoreApplication.translate("MainWindow", u"Request", None))
         self.copySwivelTuningButton.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
@@ -10637,11 +10112,10 @@ class Ui_MainWindow(object):
         self.minSwivelPWMLabel.setText(QCoreApplication.translate("MainWindow", u"Min", None))
         self.enableSwivelBridgeButton.setText(QCoreApplication.translate("MainWindow", u"Enable", None))
         self.swivelStateMachineGroup.setTitle(QCoreApplication.translate("MainWindow", u"State Machine", None))
-        ___qtablewidgetitem94 = self.swivelStateMachineTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem94.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem95 = self.swivelStateMachineTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem95.setText(QCoreApplication.translate("MainWindow", u"Value", None));
-        self.enableX06MessagesButton.setText(QCoreApplication.translate("MainWindow", u"Enable X06 Messages", None))
+        ___qtablewidgetitem78 = self.swivelStateMachineTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem78.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem79 = self.swivelStateMachineTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.clearPrimaryConsoleButton.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.savePrimaryConsoleButton.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.consoleTab.setTabText(self.consoleTab.indexOf(self.primaryTab), QCoreApplication.translate("MainWindow", u"X04", None))
@@ -10654,17 +10128,17 @@ class Ui_MainWindow(object):
         self.hexDisplayGroup.setTitle("")
         self.decimalPoint.setText(QCoreApplication.translate("MainWindow", u".", None))
         self.eCodeLineEdit.setText(QCoreApplication.translate("MainWindow", u"NO ERROR", None))
-        ___qtablewidgetitem96 = self.miscTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem96.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem97 = self.miscTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem97.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem80 = self.miscTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem81 = self.miscTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem81.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.setOpModeButton.setText(QCoreApplication.translate("MainWindow", u"Set Mode", None))
         self.clearFaultButton.setText(QCoreApplication.translate("MainWindow", u"Clear \n"
 " Fault", None))
-        ___qtablewidgetitem98 = self.assertTable.horizontalHeaderItem(0)
-        ___qtablewidgetitem98.setText(QCoreApplication.translate("MainWindow", u"Name", None));
-        ___qtablewidgetitem99 = self.assertTable.horizontalHeaderItem(1)
-        ___qtablewidgetitem99.setText(QCoreApplication.translate("MainWindow", u"Value", None));
+        ___qtablewidgetitem82 = self.assertTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem82.setText(QCoreApplication.translate("MainWindow", u"Name", None));
+        ___qtablewidgetitem83 = self.assertTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem83.setText(QCoreApplication.translate("MainWindow", u"Value", None));
         self.clearAssertButton.setText(QCoreApplication.translate("MainWindow", u"Clear\n"
 "Assert", None))
     # retranslateUi

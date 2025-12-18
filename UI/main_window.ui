@@ -133,7 +133,7 @@ Drive</string>
     <widget class="QPushButton" name="configurationPageButton">
      <property name="geometry">
       <rect>
-       <x>268</x>
+       <x>185</x>
        <y>117</y>
        <width>68</width>
        <height>48</height>
@@ -173,7 +173,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="railMappingPageButton">
      <property name="geometry">
       <rect>
-       <x>185</x>
+       <x>19</x>
        <y>199</y>
        <width>68</width>
        <height>48</height>
@@ -1183,7 +1183,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="colourPalettePageButton">
      <property name="geometry">
       <rect>
-       <x>185</x>
+       <x>102</x>
        <y>117</y>
        <width>68</width>
        <height>48</height>
@@ -1225,7 +1225,7 @@ Palette</string>
      <property name="geometry">
       <rect>
        <x>19</x>
-       <y>281</y>
+       <y>280</y>
        <width>68</width>
        <height>48</height>
       </rect>
@@ -1266,7 +1266,7 @@ Drive</string>
      <property name="geometry">
       <rect>
        <x>102</x>
-       <y>281</y>
+       <y>280</y>
        <width>68</width>
        <height>48</height>
       </rect>
@@ -1399,7 +1399,7 @@ Drive</string>
     <widget class="QPushButton" name="systemPageButton">
      <property name="geometry">
       <rect>
-       <x>268</x>
+       <x>102</x>
        <y>199</y>
        <width>68</width>
        <height>48</height>
@@ -1439,8 +1439,8 @@ QPushButton:pressed {
     <widget class="QPushButton" name="keyWiringPageButton">
      <property name="geometry">
       <rect>
-       <x>102</x>
-       <y>199</y>
+       <x>268</x>
+       <y>117</y>
        <width>68</width>
        <height>48</height>
       </rect>
@@ -1477,46 +1477,6 @@ QPushButton:pressed {
  Wiring</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="debuggingPageButton">
-     <property name="geometry">
-      <rect>
-       <x>19</x>
-       <y>199</y>
-       <width>68</width>
-       <height>48</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Verdana</family>
-       <pointsize>10</pointsize>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    color: #000000;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #FFA2A7;
-}
-
-QPushButton:hover {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #A6FFA7;
-}
-
-QPushButton:pressed {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #A6FFA7;
-}</string>
-     </property>
-     <property name="text">
-      <string>Debug</string>
-     </property>
-    </widget>
     <widget class="Line" name="topLine_21">
      <property name="geometry">
       <rect>
@@ -1543,93 +1503,11 @@ QPushButton:pressed {
       <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QPushButton" name="callAndDemandPageButton">
-     <property name="geometry">
-      <rect>
-       <x>102</x>
-       <y>117</y>
-       <width>68</width>
-       <height>48</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Verdana</family>
-       <pointsize>10</pointsize>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    color: #000000;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #FFA2A7;
-}
-
-QPushButton:hover {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #A6FFA7;
-}
-
-QPushButton:pressed {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-color: #A6FFA7;
-}</string>
-     </property>
-     <property name="text">
-      <string>Call
-Demand</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="enableDemoModeButton">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>377</y>
-       <width>139</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QRadioButton {
-    color: #000000; /* Text color */
-}
-
-QRadioButton::indicator {
-    width: 10px; /* Size of the circle */
-    height: 10px; /* Size of the circle */
-    border: 2px solid #000000; /* Border of the circle */
-    border-radius: 5px; /* Makes the circle rounded */
-    background-color: #FFFFFF; /* Background of the circle */
-}
-
-QRadioButton::indicator:checked {
-    background-color: #FF0000; /* Set background color to red when checked */
-}</string>
-     </property>
-     <property name="text">
-      <string>Enable Demo Mode</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <property name="autoExclusive">
-      <bool>false</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="x06PageButton">
      <property name="geometry">
       <rect>
-       <x>19</x>
-       <y>364</y>
+       <x>185</x>
+       <y>199</y>
        <width>68</width>
        <height>48</height>
       </rect>
@@ -2185,12 +2063,9 @@ QRadioButton::indicator:checked {
     <zorder>mainDrivePageButton</zorder>
     <zorder>topLine_5</zorder>
     <zorder>systemPageButton</zorder>
-    <zorder>debuggingPageButton</zorder>
     <zorder>topLine_21</zorder>
     <zorder>swivelPageButton</zorder>
-    <zorder>callAndDemandPageButton</zorder>
     <zorder>x06PageButton</zorder>
-    <zorder>enableDemoModeButton</zorder>
     <zorder>commsTab</zorder>
     <zorder>heartbeatLED</zorder>
     <zorder>authenticateLineEdit</zorder>
@@ -2215,7 +2090,7 @@ QRadioButton::indicator:checked {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="ADCIOPage">
      <widget class="QGroupBox" name="ADCBox">
@@ -2799,230 +2674,6 @@ QPushButton:pressed {
      <zorder>ADCBox</zorder>
      <zorder>outputsBox</zorder>
      <zorder>inputsBox</zorder>
-    </widget>
-    <widget class="QWidget" name="callAndDemandPage">
-     <widget class="QGroupBox" name="callDetectionGroup">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>31</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Call Detection</string>
-      </property>
-      <widget class="QTableWidget" name="callDetectionTable">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="demandProcessorGroup">
-      <property name="geometry">
-       <rect>
-        <x>404</x>
-        <y>31</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Demand Processor</string>
-      </property>
-      <widget class="QTableWidget" name="demandProcessorTable">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
     </widget>
     <widget class="QWidget" name="colourPalettePage">
      <widget class="QTextEdit" name="testColourLog">
@@ -4467,674 +4118,6 @@ QRadioButton::indicator:checked {
        <property name="checked">
         <bool>false</bool>
        </property>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="debuggingPage">
-     <widget class="QGroupBox" name="debugGroup1">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>16</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 1</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable1">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="debugGroup2">
-      <property name="geometry">
-       <rect>
-        <x>412</x>
-        <y>16</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 2</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable2">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="debugGroup3">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>283</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 3</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable3">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="debugGroup4">
-      <property name="geometry">
-       <rect>
-        <x>412</x>
-        <y>283</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 4</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable4">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="debugGroup6">
-      <property name="geometry">
-       <rect>
-        <x>412</x>
-        <y>550</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 6</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable6">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="debugGroup5">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>550</y>
-        <width>278</width>
-        <height>253</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox {
-    border: 2px solid black; /* Border for the group box */
-    border-radius: 5px; /* Rounded corners for the border */
-	background-color: #57CAFF;
-}
-
-QGroupBox::title{
-	color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top center;
-    padding: 0px 10px;
-	top: 15px;
-}</string>
-      </property>
-      <property name="title">
-       <string>Debug Table 5</string>
-      </property>
-      <widget class="QTableWidget" name="debugTable5">
-       <property name="geometry">
-        <rect>
-         <x>18</x>
-         <y>51</y>
-         <width>241</width>
-         <height>183</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>8</pointsize>
-        </font>
-       </property>
-       <property name="focusPolicy">
-        <enum>Qt::FocusPolicy::NoFocus</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
-    border: 2px solid black;
-	background: #E6E2BE;
-}
-QHeaderView::section {
-    background-color: #F6FF68;
-    border: none;
-    border-right: 1px solid black;
-    border-bottom: 2px solid black;
-    color: black;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll">
-        <bool>false</bool>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>80</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>120</number>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="verticalHeaderDefaultSectionSize">
-        <number>18</number>
-       </attribute>
-       <column>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
       </widget>
      </widget>
     </widget>
@@ -11065,6 +10048,49 @@ QHeaderView::section {
         </property>
        </column>
       </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="x06Page">
+     <widget class="QRadioButton" name="enableX06MessagesButton">
+      <property name="geometry">
+       <rect>
+        <x>14</x>
+        <y>13</y>
+        <width>139</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton {
+    color: #000000; /* Text color */
+}
+
+QRadioButton::indicator {
+    width: 10px; /* Size of the circle */
+    height: 10px; /* Size of the circle */
+    border: 2px solid #000000; /* Border of the circle */
+    border-radius: 5px; /* Makes the circle rounded */
+    background-color: #FFFFFF; /* Background of the circle */
+}
+
+QRadioButton::indicator:checked {
+    background-color: #FF0000; /* Set background color to red when checked */
+}</string>
+      </property>
+      <property name="text">
+       <string>Enable X06 Messages</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="chairFoldPage">
@@ -18108,49 +17134,6 @@ QHeaderView::section {
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="x06Page">
-     <widget class="QRadioButton" name="enableX06MessagesButton">
-      <property name="geometry">
-       <rect>
-        <x>14</x>
-        <y>13</y>
-        <width>139</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QRadioButton {
-    color: #000000; /* Text color */
-}
-
-QRadioButton::indicator {
-    width: 10px; /* Size of the circle */
-    height: 10px; /* Size of the circle */
-    border: 2px solid #000000; /* Border of the circle */
-    border-radius: 5px; /* Makes the circle rounded */
-    background-color: #FFFFFF; /* Background of the circle */
-}
-
-QRadioButton::indicator:checked {
-    background-color: #FF0000; /* Set background color to red when checked */
-}</string>
-      </property>
-      <property name="text">
-       <string>Enable X06 Messages</string>
-      </property>
-      <property name="checked">
-       <bool>false</bool>
-      </property>
-      <property name="autoExclusive">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </widget>
    </widget>
    <widget class="QTabWidget" name="consoleTab">
     <property name="geometry">
@@ -19365,18 +18348,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="footrestPlotModeButtonGroup"/>
-  <buttongroup name="footrestTuneButtonGroup"/>
-  <buttongroup name="rmmLocatingButtonGroup"/>
-  <buttongroup name="chairTuneButtonGroup"/>
-  <buttongroup name="mainPlotModeButtonGroup"/>
-  <buttongroup name="swivelTuneButtonGroup"/>
-  <buttongroup name="swivelPlotModeButtonGroup"/>
   <buttongroup name="chairPlotModeButtonGroup"/>
+  <buttongroup name="rmmLocatingButtonGroup"/>
+  <buttongroup name="footrestTuneButtonGroup"/>
+  <buttongroup name="chairTuneButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
+  <buttongroup name="swivelTuneButtonGroup"/>
+  <buttongroup name="swivelPlotModeButtonGroup"/>
+  <buttongroup name="footrestPlotModeButtonGroup"/>
+  <buttongroup name="mainPlotModeButtonGroup"/>
  </buttongroups>
 </ui>
