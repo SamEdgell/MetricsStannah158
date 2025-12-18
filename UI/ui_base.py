@@ -51,6 +51,7 @@ class UIBase(QMainWindow):
 
         # These components do not need to be initialised unless requested by the user.
         self.ui_colour_creator = None
+        self.ui_x06 = None
 
         # Load compulsory components separately.
         self.initComponentSet1()
