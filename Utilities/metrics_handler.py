@@ -4,7 +4,7 @@ from datetime import datetime
 from enum import Enum, unique
 
 # Local application imports.
-from Enums.enum_gpio import InputsECU1, InputsECU2, LogicState, OutputsECU1, OutputsECU2
+from Enums.enum_gpio import InputsX04, InputsX01, LogicState, OutputsX04, OutputsX01
 from Enums.enum_metrics import MetricSubcodes
 from Enums.enum_msg import MsgMode, SrcDest
 from UI.ui_styling import Colours, CSS
@@ -142,10 +142,10 @@ def processMetrics(app_instance, msg):
         console_string = timestamp + metric_message
 
         # Emit the string to the appropriate console.
-        if SrcDest(source) == SrcDest.SRC_DEST_ECU1:
+        if SrcDest(source) == SrcDest.SRC_DEST_X04:
             # Emit to primary console.
             app_instance.signal_slot.primary_console_signal.emit(console_string)
-        elif SrcDest(source) == SrcDest.SRC_DEST_ECU2:
+        elif SrcDest(source) == SrcDest.SRC_DEST_X01:
             # Emit to secondary console.
             app_instance.signal_slot.secondary_console_signal.emit(console_string)
 
@@ -295,18 +295,18 @@ def formatPlaceholders(subcode_member_string, header, payload):
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 
                     elif format == 'GPIO_INPUTS':
-                        if SrcDest(source) == SrcDest.SRC_DEST_ECU1 and InputsECU1.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsECU1(data).name}")
-                        elif SrcDest(source) == SrcDest.SRC_DEST_ECU2 and InputsECU2.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsECU2(data).name}")
+                        if SrcDest(source) == SrcDest.SRC_DEST_X04 and InputsX04.doesValueExist(data):
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsX04(data).name}")
+                        elif SrcDest(source) == SrcDest.SRC_DEST_X01 and InputsX01.doesValueExist(data):
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{InputsX01(data).name}")
                         else:
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 
                     elif format == 'GPIO_OUTPUTS':
-                        if SrcDest(source) == SrcDest.SRC_DEST_ECU1 and OutputsECU1.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsECU1(data).name}")
-                        elif SrcDest(source) == SrcDest.SRC_DEST_ECU2 and OutputsECU2.doesValueExist(data):
-                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsECU2(data).name}")
+                        if SrcDest(source) == SrcDest.SRC_DEST_X04 and OutputsX04.doesValueExist(data):
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsX04(data).name}")
+                        elif SrcDest(source) == SrcDest.SRC_DEST_X01 and OutputsX01.doesValueExist(data):
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.BG_APRICOT], 0, f"{OutputsX01(data).name}")
                         else:
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 

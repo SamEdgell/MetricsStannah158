@@ -3,7 +3,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QHeaderView, QTableWidgetItem
 
 # Local application imports.
-from Enums.enum_adc import ADCECU1, ADCECU2
+from Enums.enum_adc import ADCX04, ADCX01
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_custom_widgets import Painter
 from UI.ui_styling import Colours
@@ -65,11 +65,11 @@ class UIADC:
         """
         Populates the ADC table with the ADC enums.
         """
-        self.main_window.ui.adcTable.setRowCount(len(ADCECU1) + len(ADCECU2))
+        self.main_window.ui.adcTable.setRowCount(len(ADCX04) + len(ADCX01))
         row = 0
 
         # Setup row for each channel.
-        for adc_group, colour, prefix in ((ADCECU1, Colours.GARNET, "ECU1"), (ADCECU2, Colours.ROYAL_BLUE, "ECU2")):
+        for adc_group, colour, prefix in ((ADCX04, Colours.GARNET, "X04"), (ADCX01, Colours.ROYAL_BLUE, "X01")):
             for adc_count, channel in enumerate(adc_group):
                 self.main_window.ui.adcTable.setRowHeight(row, 14)
                 pin_id = f"{prefix}-{adc_count}"
@@ -148,8 +148,8 @@ class UIADC:
         """
         self.clearAlteredData()
         # Reset alter on both boards.
-        msgID = MessageID.METRICS_RESET_ADC_ALTER
-        for dest in (SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2):
+        msgID = MessageID.METRICS_RESET_ADC_ALTER # NOTE: This message has not been implemented on the ECU side.
+        for dest in (SrcDest.SRC_DEST_X04, SrcDest.SRC_DEST_X01):
             self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
 
 
@@ -170,8 +170,8 @@ class UIADC:
         """
         Alters the ADC table. The user has requested to alter one or more values in the table.
         """
-        self.alterADC(len(ADCECU1), SrcDest.SRC_DEST_ECU1, 0)
-        self.alterADC(len(ADCECU2), SrcDest.SRC_DEST_ECU2, len(ADCECU1))
+        self.alterADC(len(ADCX04), SrcDest.SRC_DEST_X04, 0)
+        self.alterADC(len(ADCX01), SrcDest.SRC_DEST_X01, len(ADCX04))
         self.clearAlteredData() # This option may be disabled at times in future, but for now, once the button is clicked, clear the column.
 
 
@@ -207,7 +207,7 @@ class UIADC:
                     pass
 
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_ADC_ALTER, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRIC_ADC_INPUTS_OVERRIDE, f"I{adc_count}H", [adc_count, *data], dest, MsgMode.SET)
 
 
     def updateADCTable(self, msg):
@@ -229,15 +229,15 @@ class UIADC:
                 changed_altered_channels = 0
 
                 # Check the channel count matches the expected number of channels per source.
-                if num_channels != len(ADCECU1) and SrcDest(source) == SrcDest.SRC_DEST_ECU1:
-                    print(f"ECU1 ADC Count Mismatch. Enum Count = {len(ADCECU1)}. Actual Count = {num_channels}")
+                if num_channels != len(ADCX04) and SrcDest(source) == SrcDest.SRC_DEST_X04:
+                    print(f"X04 ADC Count Mismatch. Enum Count = {len(ADCX04)}. Actual Count = {num_channels}")
                     return
-                elif num_channels != len(ADCECU2) and SrcDest(source) == SrcDest.SRC_DEST_ECU2:
-                    print(f"ECU2 ADC Count Mismatch. Enum Count = {len(ADCECU2)}. Actual Count = {num_channels}")
+                elif num_channels != len(ADCX01) and SrcDest(source) == SrcDest.SRC_DEST_X01:
+                    print(f"X01 ADC Count Mismatch. Enum Count = {len(ADCX01)}. Actual Count = {num_channels}")
                     return
 
-                # The ECU2 offset starts from the end of the ECU1 channels.
-                offset = 0 if SrcDest(source) == SrcDest.SRC_DEST_ECU1 else len(ADCECU1)
+                # The X01 offset starts from the end of the X04 channels.
+                offset = 0 if SrcDest(source) == SrcDest.SRC_DEST_X04 else len(ADCX04)
 
                 # Check for any bits that have changed state from the previous reading for the altered channels. Doing this allows efficient GUI updates and prevents unnecessary redraws.
                 changed_altered_channels = self.current_altered_channels ^ altered_channels

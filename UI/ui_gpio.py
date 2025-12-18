@@ -3,7 +3,7 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QHeaderView, QTableWidgetItem
 
 # Local application imports.
-from Enums.enum_gpio import InputsECU1, InputsECU2, OutputsECU1, OutputsECU2
+from Enums.enum_gpio import InputsX04, InputsX01, OutputsX04, OutputsX01
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_custom_widgets import Painter
 from UI.ui_styling import Colours
@@ -30,7 +30,7 @@ class UIGPIO:
         self.main_window.ui.inputsTable.cellClicked.connect(lambda row, column: self.handleCellClick(self.main_window.ui.inputsTable, row, column))
         self.main_window.ui.outputsTable.cellClicked.connect(lambda row, column: self.handleCellClick(self.main_window.ui.outputsTable, row, column))
 
-        # For below. First 4 words are ECU1, last 4 words are ECU2.
+        # For below. First 4 words are X04, last 4 words are X01.
         self.current_input_states = [0] * 8
         self.current_output_states = [0] * 8
         self.current_altered_input_states = [0] * 8
@@ -78,18 +78,17 @@ class UIGPIO:
             table: The table widget to populate.
         """
         if table == self.main_window.ui.inputsTable:
-            self.main_window.ui.inputsTable.setRowCount(len(InputsECU1) + len(InputsECU2))
-            ecu1_table = InputsECU1
-            ecu2_table = InputsECU2
+            self.main_window.ui.inputsTable.setRowCount(len(InputsX04) + len(InputsX01))
+            x04_table = InputsX04
+            x01_table = InputsX01
         else:
-            self.main_window.ui.outputsTable.setRowCount(len(OutputsECU1) + len(OutputsECU2))
-            ecu1_table = OutputsECU1
-            ecu2_table = OutputsECU2
-
+            self.main_window.ui.outputsTable.setRowCount(len(OutputsX04) + len(OutputsX01))
+            x04_table = OutputsX04
+            x01_table = OutputsX01
         row = 0
 
         # Set up row for each input or output.
-        for table_group, colour, prefix in ((ecu1_table, Colours.GARNET, "ECU1"), (ecu2_table, Colours.ROYAL_BLUE, "ECU2")):
+        for table_group, colour, prefix in ((x04_table, Colours.GARNET, "X04"), (x01_table, Colours.ROYAL_BLUE, "X01")):
             for count, channel in enumerate(table_group):
                 table.setRowHeight(row, 14)
                 pin_id = f"{prefix}-{count}"
@@ -162,8 +161,8 @@ class UIGPIO:
         """
         self.clearAlteredData(table)
         # Reset alter on both boards.
-        msgID = MessageID.METRICS_RESET_INPUTS_ALTER if table == self.main_window.ui.inputsTable else MessageID.METRICS_RESET_OUTPUTS_ALTER
-        for dest in (SrcDest.SRC_DEST_ECU1, SrcDest.SRC_DEST_ECU2):
+        msgID = MessageID.OVERRIDE_INPUT_RESET if table == self.main_window.ui.inputsTable else MessageID.OVERRIDE_OUTPUT_RESET
+        for dest in (SrcDest.SRC_DEST_X04, SrcDest.SRC_DEST_X01):
             self.main_window.ui_comms.sendMessage(msgID, "", [], dest, MsgMode.SET)
 
 
@@ -191,11 +190,11 @@ class UIGPIO:
             table: Table to alter.
         """
         if table == self.main_window.ui.inputsTable:
-            self.alterInputs(0, len(InputsECU1), SrcDest.SRC_DEST_ECU1)
-            self.alterInputs(len(InputsECU1), len(InputsECU2), SrcDest.SRC_DEST_ECU2)
+            self.alterInputs(0, len(InputsX04), SrcDest.SRC_DEST_X04)
+            self.alterInputs(len(InputsX04), len(InputsX01), SrcDest.SRC_DEST_X01)
         else:
-            self.alterOutputs(0, len(OutputsECU1), SrcDest.SRC_DEST_ECU1)
-            self.alterOutputs(len(OutputsECU1), len(OutputsECU2), SrcDest.SRC_DEST_ECU2)
+            self.alterOutputs(0, len(OutputsX04), SrcDest.SRC_DEST_X04)
+            self.alterOutputs(len(OutputsX04), len(OutputsX01), SrcDest.SRC_DEST_X01)
         self.clearAlteredData(table) # This option may be disabled at times in future, but for now, once the button is clicked, clear the column.
 
 
@@ -211,18 +210,18 @@ class UIGPIO:
         alter_approved = False
 
         # Retain all current states. This allows multiple alterations to be made without losing previous ones (unless reset).
-        if SrcDest(dest) == SrcDest.SRC_DEST_ECU1:
-            input_states = self.current_input_states[:4]                    # First 4 words are ECU1 inputs.
-            altered_input_states = self.current_altered_input_states[:4]    # First 4 words are ECU1 altered inputs.
+        if SrcDest(dest) == SrcDest.SRC_DEST_X04:
+            input_states = self.current_input_states[:4]                    # First 4 words are X04 inputs.
+            altered_input_states = self.current_altered_input_states[:4]    # First 4 words are X04 altered inputs.
         else:
-            input_states = self.current_input_states[4:]                    # Last 4 words are ECU2 inputs.
-            altered_input_states = self.current_altered_input_states[4:]    # Last 4 words are ECU2 altered inputs.
+            input_states = self.current_input_states[4:]                    # Last 4 words are X01 inputs.
+            altered_input_states = self.current_altered_input_states[4:]    # Last 4 words are X01 altered inputs.
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th input.
             bit = i & 31            # Locate bit position of input.
             bitmask = 1 << bit      # Creates mask with a 1 in the position of the input.
-            row_num = i + offset    # For ECU1 inputs, the row number is not shifted down the table.
+            row_num = i + offset    # For X04 inputs, the row number is not shifted down the table.
 
             altered_row = self.main_window.ui.inputsTable.item(row_num, 3).text()
 
@@ -241,7 +240,7 @@ class UIGPIO:
 
         # Has at least one pin been altered?
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_INPUTS_ALTER, "9I", [gpio_count, *input_states, *altered_input_states], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRIC_GPIO_INPUTS_OVERRIDE, "9I", [gpio_count, *input_states, *altered_input_states], dest, MsgMode.SET)
 
 
     def alterOutputs(self, offset, gpio_count, dest):
@@ -256,18 +255,18 @@ class UIGPIO:
         alter_approved = False
 
         # Retain all current states. This allows multiple alterations to be made without losing previous ones (unless reset).
-        if SrcDest(dest) == SrcDest.SRC_DEST_ECU1:
-            output_states = self.current_output_states[:4]                     # First 4 words are ECU1 outputs.
-            altered_output_states = self.current_altered_output_states[:4]     # First 4 words are ECU1 altered outputs.
+        if SrcDest(dest) == SrcDest.SRC_DEST_X04:
+            output_states = self.current_output_states[:4]                     # First 4 words are X04 outputs.
+            altered_output_states = self.current_altered_output_states[:4]     # First 4 words are X04 altered outputs.
         else:
-            output_states = self.current_output_states[4:]                     # Last 4 words are ECU2 outputs.
-            altered_output_states = self.current_altered_output_states[4:]     # Last 4 words are ECU2 altered outputs.
+            output_states = self.current_output_states[4:]                     # Last 4 words are X01 outputs.
+            altered_output_states = self.current_altered_output_states[4:]     # Last 4 words are X01 altered outputs.
 
         for i in range(gpio_count):
             word = i // 32          # Calculates which word contains the i-th output.
             bit = i & 31            # Locate bit position of output.
             bitmask = 1 << bit      # Creates mask with a 1 in the position of the output.
-            row_num = i + offset    # For ECU1 outputs, the row number is not shifted down the table.
+            row_num = i + offset    # For X04 outputs, the row number is not shifted down the table.
 
             altered_row = self.main_window.ui.outputsTable.item(row_num, 3).text()
 
@@ -286,7 +285,7 @@ class UIGPIO:
 
         # Has at least one pin been altered?
         if alter_approved:
-            self.main_window.ui_comms.sendMessage(MessageID.METRICS_OUTPUTS_ALTER, "9I", [gpio_count, *output_states, *altered_output_states], dest, MsgMode.SET)
+            self.main_window.ui_comms.sendMessage(MessageID.METRIC_GPIO_OUTPUTS_OVERRIDE, "9I", [gpio_count, *output_states, *altered_output_states], dest, MsgMode.SET)
 
 
     def handleCellClick(self, table, row, column):
@@ -336,20 +335,20 @@ class UIGPIO:
                 changed_inputs = [0] * 4                # 4 words capable of holding up to 32 inputs each.
                 changed_altered_inputs = [0] * 4        # 4 words capable of holding up to 32 altered inputs each.
 
-                if SrcDest(source) == SrcDest.SRC_DEST_ECU1:
+                if SrcDest(source) == SrcDest.SRC_DEST_X04:
                     # Check the number of inputs matches the expected number.
-                    if num_inputs != len(InputsECU1):
-                        print(f"ECU1 Inputs Count Mismatch. Enum Count = {len(InputsECU1)}. Actual Count = {num_inputs}")
+                    if num_inputs != len(InputsX04):
+                        print(f"X04 Inputs Count Mismatch. Enum Count = {len(InputsX04)}. Actual Count = {num_inputs}")
                         return
-                    prev_table_offset = 0 # First 4 words are ECU1 inputs.
-                    ecu_offset = 0 # For ECU1 inputs, the row number is not shifted down the table.
-                elif SrcDest(source) == SrcDest.SRC_DEST_ECU2:
+                    prev_table_offset = 0 # First 4 words are X04 inputs.
+                    ecu_offset = 0 # For X04 inputs, the row number is not shifted down the table.
+                elif SrcDest(source) == SrcDest.SRC_DEST_X01:
                     # Check the number of inputs matches the expected number.
-                    if num_inputs != len(InputsECU2):
-                        print(f"ECU2 Inputs Count Mismatch. Enum Count = {len(InputsECU2)}. Actual Count = {num_inputs}")
+                    if num_inputs != len(InputsX01):
+                        print(f"X01 Inputs Count Mismatch. Enum Count = {len(InputsX01)}. Actual Count = {num_inputs}")
                         return
-                    prev_table_offset = 4 # Last 4 words are ECU2 inputs.
-                    ecu_offset = len(InputsECU1) # The ECU2 offset starts from at the end of the ECU1.
+                    prev_table_offset = 4 # Last 4 words are X01 inputs.
+                    ecu_offset = len(InputsX04) # The X01 offset starts from at the end of the X04.
                 else:
                     print(f"UIGPIO - Unknown Source Update Inputs - {source}")
                     return
@@ -405,20 +404,20 @@ class UIGPIO:
                 changed_outputs = [0] * 4                # 4 words capable of holding up to 32 outputs each.
                 changed_altered_outputs = [0] * 4        # 4 words capable of holding up to 32 altered outputs each.
 
-                if SrcDest(source) == SrcDest.SRC_DEST_ECU1:
+                if SrcDest(source) == SrcDest.SRC_DEST_X04:
                     # Check the number of outputs matches the expected number.
-                    if num_outputs != len(OutputsECU1):
-                        print(f"ECU1 Outputs Count Mismatch. Enum Count = {len(OutputsECU1)}. Actual Count = {num_outputs}")
+                    if num_outputs != len(OutputsX04):
+                        print(f"X04 Outputs Count Mismatch. Enum Count = {len(OutputsX04)}. Actual Count = {num_outputs}")
                         return
-                    prev_table_offset = 0 # First 4 words are ECU1 outputs.
-                    ecu_offset = 0 # For ECU1 outputs, the row number is not shifted down the table.
-                elif SrcDest(source) == SrcDest.SRC_DEST_ECU2:
+                    prev_table_offset = 0 # First 4 words are X04 outputs.
+                    ecu_offset = 0 # For X04 outputs, the row number is not shifted down the table.
+                elif SrcDest(source) == SrcDest.SRC_DEST_X01:
                     # Check the number of outputs matches the expected number.
-                    if num_outputs != len(OutputsECU2):
-                        print(f"ECU2 Outputs Count Mismatch. Enum Count = {len(OutputsECU2)}. Actual Count = {num_outputs}")
+                    if num_outputs != len(OutputsX01):
+                        print(f"X01 Outputs Count Mismatch. Enum Count = {len(OutputsX01)}. Actual Count = {num_outputs}")
                         return
-                    prev_table_offset = 4 # Last 4 words are ECU2 outputs.
-                    ecu_offset = len(OutputsECU1) # The ECU2 offset starts from at the end of the ECU1.
+                    prev_table_offset = 4 # Last 4 words are X01 outputs.
+                    ecu_offset = len(OutputsX04) # The X01 offset starts from at the end of the X04.
                 else:
                     print(f"UIGPIO - Unknown Source Update Outputs")
                     return

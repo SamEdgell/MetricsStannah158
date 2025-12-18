@@ -146,22 +146,6 @@ class Ui_MainWindow(object):
 "}")
         self.imageFrame.setFrameShape(QFrame.Shape.StyledPanel)
         self.imageFrame.setFrameShadow(QFrame.Shadow.Raised)
-        self.metricsVersionText = QLineEdit(self.imageFrame)
-        self.metricsVersionText.setObjectName(u"metricsVersionText")
-        self.metricsVersionText.setGeometry(QRect(5, 61, 50, 22))
-        font2 = QFont()
-        font2.setPointSize(9)
-        font2.setBold(True)
-        font2.setItalic(False)
-        self.metricsVersionText.setFont(font2)
-        self.metricsVersionText.setStyleSheet(u"QLineEdit{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"	border-radius: 3px;\n"
-"	color: black;\n"
-"}")
-        self.metricsVersionText.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
-        self.metricsVersionText.setReadOnly(True)
         self.callFrame = QFrame(self.navigationFrame)
         self.callFrame.setObjectName(u"callFrame")
         self.callFrame.setGeometry(QRect(17, 488, 320, 286))
@@ -174,11 +158,11 @@ class Ui_MainWindow(object):
         self.carriageLeftCallButton = QPushButton(self.callFrame)
         self.carriageLeftCallButton.setObjectName(u"carriageLeftCallButton")
         self.carriageLeftCallButton.setGeometry(QRect(17, 175, 54, 48))
-        font3 = QFont()
-        font3.setFamilies([u"Verdana"])
-        font3.setPointSize(7)
-        font3.setBold(False)
-        self.carriageLeftCallButton.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Verdana"])
+        font2.setPointSize(7)
+        font2.setBold(False)
+        self.carriageLeftCallButton.setFont(font2)
         self.carriageLeftCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -200,7 +184,7 @@ class Ui_MainWindow(object):
         self.footrestUnfoldCallButton = QPushButton(self.callFrame)
         self.footrestUnfoldCallButton.setObjectName(u"footrestUnfoldCallButton")
         self.footrestUnfoldCallButton.setGeometry(QRect(75, 68, 54, 48))
-        self.footrestUnfoldCallButton.setFont(font3)
+        self.footrestUnfoldCallButton.setFont(font2)
         self.footrestUnfoldCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -222,7 +206,7 @@ class Ui_MainWindow(object):
         self.swivelLeftCallButton = QPushButton(self.callFrame)
         self.swivelLeftCallButton.setObjectName(u"swivelLeftCallButton")
         self.swivelLeftCallButton.setGeometry(QRect(133, 68, 54, 48))
-        self.swivelLeftCallButton.setFont(font3)
+        self.swivelLeftCallButton.setFont(font2)
         self.swivelLeftCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -244,7 +228,7 @@ class Ui_MainWindow(object):
         self.chairFoldCallButton = QPushButton(self.callFrame)
         self.chairFoldCallButton.setObjectName(u"chairFoldCallButton")
         self.chairFoldCallButton.setGeometry(QRect(74, 15, 54, 48))
-        self.chairFoldCallButton.setFont(font3)
+        self.chairFoldCallButton.setFont(font2)
         self.chairFoldCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -266,7 +250,7 @@ class Ui_MainWindow(object):
         self.swivelRightCallButton = QPushButton(self.callFrame)
         self.swivelRightCallButton.setObjectName(u"swivelRightCallButton")
         self.swivelRightCallButton.setGeometry(QRect(249, 68, 54, 48))
-        self.swivelRightCallButton.setFont(font3)
+        self.swivelRightCallButton.setFont(font2)
         self.swivelRightCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -288,7 +272,7 @@ class Ui_MainWindow(object):
         self.chairPartFoldCallButton = QPushButton(self.callFrame)
         self.chairPartFoldCallButton.setObjectName(u"chairPartFoldCallButton")
         self.chairPartFoldCallButton.setGeometry(QRect(132, 15, 54, 48))
-        self.chairPartFoldCallButton.setFont(font3)
+        self.chairPartFoldCallButton.setFont(font2)
         self.chairPartFoldCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -310,7 +294,7 @@ class Ui_MainWindow(object):
         self.footrestFoldCallButton = QPushButton(self.callFrame)
         self.footrestFoldCallButton.setObjectName(u"footrestFoldCallButton")
         self.footrestFoldCallButton.setGeometry(QRect(17, 68, 54, 48))
-        self.footrestFoldCallButton.setFont(font3)
+        self.footrestFoldCallButton.setFont(font2)
         self.footrestFoldCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -332,7 +316,7 @@ class Ui_MainWindow(object):
         self.carriageRightCallButton = QPushButton(self.callFrame)
         self.carriageRightCallButton.setObjectName(u"carriageRightCallButton")
         self.carriageRightCallButton.setGeometry(QRect(75, 175, 54, 48))
-        self.carriageRightCallButton.setFont(font3)
+        self.carriageRightCallButton.setFont(font2)
         self.carriageRightCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -354,7 +338,7 @@ class Ui_MainWindow(object):
         self.swivelCentreCallButton = QPushButton(self.callFrame)
         self.swivelCentreCallButton.setObjectName(u"swivelCentreCallButton")
         self.swivelCentreCallButton.setGeometry(QRect(191, 68, 54, 48))
-        self.swivelCentreCallButton.setFont(font3)
+        self.swivelCentreCallButton.setFont(font2)
         self.swivelCentreCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -376,7 +360,7 @@ class Ui_MainWindow(object):
         self.chairUnfoldCallButton = QPushButton(self.callFrame)
         self.chairUnfoldCallButton.setObjectName(u"chairUnfoldCallButton")
         self.chairUnfoldCallButton.setGeometry(QRect(190, 15, 54, 48))
-        self.chairUnfoldCallButton.setFont(font3)
+        self.chairUnfoldCallButton.setFont(font2)
         self.chairUnfoldCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -398,7 +382,7 @@ class Ui_MainWindow(object):
         self.localLeftCallButton = QPushButton(self.callFrame)
         self.localLeftCallButton.setObjectName(u"localLeftCallButton")
         self.localLeftCallButton.setGeometry(QRect(17, 122, 54, 48))
-        self.localLeftCallButton.setFont(font3)
+        self.localLeftCallButton.setFont(font2)
         self.localLeftCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -420,7 +404,7 @@ class Ui_MainWindow(object):
         self.localRightCallButton = QPushButton(self.callFrame)
         self.localRightCallButton.setObjectName(u"localRightCallButton")
         self.localRightCallButton.setGeometry(QRect(75, 122, 54, 48))
-        self.localRightCallButton.setFont(font3)
+        self.localRightCallButton.setFont(font2)
         self.localRightCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -442,7 +426,7 @@ class Ui_MainWindow(object):
         self.remoteUpCallButton = QPushButton(self.callFrame)
         self.remoteUpCallButton.setObjectName(u"remoteUpCallButton")
         self.remoteUpCallButton.setGeometry(QRect(191, 122, 54, 48))
-        self.remoteUpCallButton.setFont(font3)
+        self.remoteUpCallButton.setFont(font2)
         self.remoteUpCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -464,7 +448,7 @@ class Ui_MainWindow(object):
         self.remoteDownCallButton = QPushButton(self.callFrame)
         self.remoteDownCallButton.setObjectName(u"remoteDownCallButton")
         self.remoteDownCallButton.setGeometry(QRect(249, 122, 54, 48))
-        self.remoteDownCallButton.setFont(font3)
+        self.remoteDownCallButton.setFont(font2)
         self.remoteDownCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -495,7 +479,7 @@ class Ui_MainWindow(object):
         self.carriageDownCallButton = QPushButton(self.callFrame)
         self.carriageDownCallButton.setObjectName(u"carriageDownCallButton")
         self.carriageDownCallButton.setGeometry(QRect(249, 175, 54, 48))
-        self.carriageDownCallButton.setFont(font3)
+        self.carriageDownCallButton.setFont(font2)
         self.carriageDownCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -517,7 +501,7 @@ class Ui_MainWindow(object):
         self.carriageUpCallButton = QPushButton(self.callFrame)
         self.carriageUpCallButton.setObjectName(u"carriageUpCallButton")
         self.carriageUpCallButton.setGeometry(QRect(191, 175, 54, 48))
-        self.carriageUpCallButton.setFont(font3)
+        self.carriageUpCallButton.setFont(font2)
         self.carriageUpCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -539,7 +523,7 @@ class Ui_MainWindow(object):
         self.noCallButton = QPushButton(self.callFrame)
         self.noCallButton.setObjectName(u"noCallButton")
         self.noCallButton.setGeometry(QRect(133, 122, 54, 48))
-        self.noCallButton.setFont(font3)
+        self.noCallButton.setFont(font2)
         self.noCallButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -561,7 +545,7 @@ class Ui_MainWindow(object):
         self.testButton1 = QPushButton(self.navigationFrame)
         self.testButton1.setObjectName(u"testButton1")
         self.testButton1.setGeometry(QRect(34, 443, 54, 34))
-        self.testButton1.setFont(font3)
+        self.testButton1.setFont(font2)
         self.testButton1.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -583,7 +567,7 @@ class Ui_MainWindow(object):
         self.testButton3 = QPushButton(self.navigationFrame)
         self.testButton3.setObjectName(u"testButton3")
         self.testButton3.setGeometry(QRect(150, 443, 54, 34))
-        self.testButton3.setFont(font3)
+        self.testButton3.setFont(font2)
         self.testButton3.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -605,7 +589,7 @@ class Ui_MainWindow(object):
         self.testButton5 = QPushButton(self.navigationFrame)
         self.testButton5.setObjectName(u"testButton5")
         self.testButton5.setGeometry(QRect(266, 443, 54, 34))
-        self.testButton5.setFont(font3)
+        self.testButton5.setFont(font2)
         self.testButton5.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -627,7 +611,7 @@ class Ui_MainWindow(object):
         self.testButton4 = QPushButton(self.navigationFrame)
         self.testButton4.setObjectName(u"testButton4")
         self.testButton4.setGeometry(QRect(208, 443, 54, 34))
-        self.testButton4.setFont(font3)
+        self.testButton4.setFont(font2)
         self.testButton4.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -649,7 +633,7 @@ class Ui_MainWindow(object):
         self.testButton2 = QPushButton(self.navigationFrame)
         self.testButton2.setObjectName(u"testButton2")
         self.testButton2.setGeometry(QRect(92, 443, 54, 34))
-        self.testButton2.setFont(font3)
+        self.testButton2.setFont(font2)
         self.testButton2.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -737,9 +721,9 @@ class Ui_MainWindow(object):
         self.topLine_2 = QFrame(self.navigationFrame)
         self.topLine_2.setObjectName(u"topLine_2")
         self.topLine_2.setGeometry(QRect(18, 181, 317, 2))
-        font4 = QFont()
-        font4.setKerning(True)
-        self.topLine_2.setFont(font4)
+        font3 = QFont()
+        font3.setKerning(True)
+        self.topLine_2.setFont(font3)
         self.topLine_2.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -773,7 +757,7 @@ class Ui_MainWindow(object):
         self.topLine_5 = QFrame(self.navigationFrame)
         self.topLine_5.setObjectName(u"topLine_5")
         self.topLine_5.setGeometry(QRect(18, 263, 317, 2))
-        self.topLine_5.setFont(font4)
+        self.topLine_5.setFont(font3)
         self.topLine_5.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -851,7 +835,7 @@ class Ui_MainWindow(object):
         self.topLine_21 = QFrame(self.navigationFrame)
         self.topLine_21.setObjectName(u"topLine_21")
         self.topLine_21.setGeometry(QRect(18, 345, 317, 2))
-        self.topLine_21.setFont(font4)
+        self.topLine_21.setFont(font3)
         self.topLine_21.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -885,9 +869,9 @@ class Ui_MainWindow(object):
         self.enableDemoModeButton = QRadioButton(self.navigationFrame)
         self.enableDemoModeButton.setObjectName(u"enableDemoModeButton")
         self.enableDemoModeButton.setGeometry(QRect(200, 377, 139, 22))
-        font5 = QFont()
-        font5.setPointSize(9)
-        self.enableDemoModeButton.setFont(font5)
+        font4 = QFont()
+        font4.setPointSize(9)
+        self.enableDemoModeButton.setFont(font4)
         self.enableDemoModeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -930,10 +914,10 @@ class Ui_MainWindow(object):
         self.commsTab = QTabWidget(self.navigationFrame)
         self.commsTab.setObjectName(u"commsTab")
         self.commsTab.setGeometry(QRect(17, 790, 320, 150))
-        font6 = QFont()
-        font6.setBold(True)
-        font6.setItalic(True)
-        self.commsTab.setFont(font6)
+        font5 = QFont()
+        font5.setBold(True)
+        font5.setItalic(True)
+        self.commsTab.setFont(font5)
         self.commsTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.commsTab.setStyleSheet(u"QTabWidget::pane {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -969,7 +953,7 @@ class Ui_MainWindow(object):
         self.bottomLine = QFrame(self.serialTab)
         self.bottomLine.setObjectName(u"bottomLine")
         self.bottomLine.setGeometry(QRect(8, 74, 295, 2))
-        self.bottomLine.setFont(font4)
+        self.bottomLine.setFont(font3)
         self.bottomLine.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -997,7 +981,7 @@ class Ui_MainWindow(object):
         self.serialAutoButton = QRadioButton(self.serialTab)
         self.serialAutoButton.setObjectName(u"serialAutoButton")
         self.serialAutoButton.setGeometry(QRect(8, 41, 51, 22))
-        self.serialAutoButton.setFont(font5)
+        self.serialAutoButton.setFont(font4)
         self.serialAutoButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1017,9 +1001,9 @@ class Ui_MainWindow(object):
         self.serialConnectButton = QPushButton(self.serialTab)
         self.serialConnectButton.setObjectName(u"serialConnectButton")
         self.serialConnectButton.setGeometry(QRect(167, 11, 136, 21))
-        font7 = QFont()
-        font7.setBold(False)
-        self.serialConnectButton.setFont(font7)
+        font6 = QFont()
+        font6.setBold(False)
+        self.serialConnectButton.setFont(font6)
         self.serialConnectButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000; /* Text color */\n"
 "    border: 2px solid #000000; /* Border color */\n"
@@ -1045,7 +1029,7 @@ class Ui_MainWindow(object):
         self.serialManualButton = QRadioButton(self.serialTab)
         self.serialManualButton.setObjectName(u"serialManualButton")
         self.serialManualButton.setGeometry(QRect(8, 11, 71, 22))
-        self.serialManualButton.setFont(font5)
+        self.serialManualButton.setFont(font4)
         self.serialManualButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1065,7 +1049,7 @@ class Ui_MainWindow(object):
         self.serialTxBytes = QLineEdit(self.serialTab)
         self.serialTxBytes.setObjectName(u"serialTxBytes")
         self.serialTxBytes.setGeometry(QRect(222, 86, 81, 21))
-        self.serialTxBytes.setFont(font7)
+        self.serialTxBytes.setFont(font6)
         self.serialTxBytes.setStyleSheet(u"QLineEdit {\n"
 "    color: #000000; /* Text color */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
@@ -1136,7 +1120,7 @@ class Ui_MainWindow(object):
         self.heartbeatLED.setObjectName(u"heartbeatLED")
         self.heartbeatLED.setEnabled(False)
         self.heartbeatLED.setGeometry(QRect(16, 951, 77, 22))
-        self.heartbeatLED.setFont(font5)
+        self.heartbeatLED.setFont(font4)
         self.heartbeatLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1173,7 +1157,7 @@ class Ui_MainWindow(object):
         self.authenticateButton = QRadioButton(self.navigationFrame)
         self.authenticateButton.setObjectName(u"authenticateButton")
         self.authenticateButton.setGeometry(QRect(125, 951, 89, 22))
-        self.authenticateButton.setFont(font5)
+        self.authenticateButton.setFont(font4)
         self.authenticateButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -1232,10 +1216,10 @@ class Ui_MainWindow(object):
         self.ADCBox = QGroupBox(self.ADCIOPage)
         self.ADCBox.setObjectName(u"ADCBox")
         self.ADCBox.setGeometry(QRect(17, 17, 382, 399))
-        font8 = QFont()
-        font8.setPointSize(12)
-        font8.setBold(True)
-        self.ADCBox.setFont(font8)
+        font7 = QFont()
+        font7.setPointSize(12)
+        font7.setBold(True)
+        self.ADCBox.setFont(font7)
         self.ADCBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -1264,9 +1248,9 @@ class Ui_MainWindow(object):
         self.adcTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.adcTable.setObjectName(u"adcTable")
         self.adcTable.setGeometry(QRect(18, 50, 346, 332))
-        font9 = QFont()
-        font9.setPointSize(7)
-        self.adcTable.setFont(font9)
+        font8 = QFont()
+        font8.setPointSize(7)
+        self.adcTable.setFont(font8)
         self.adcTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.adcTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.adcTable.setStyleSheet(u"QTableWidget {\n"
@@ -1337,7 +1321,7 @@ class Ui_MainWindow(object):
         self.inputsBox = QGroupBox(self.ADCIOPage)
         self.inputsBox.setObjectName(u"inputsBox")
         self.inputsBox.setGeometry(QRect(415, 17, 387, 527))
-        self.inputsBox.setFont(font8)
+        self.inputsBox.setFont(font7)
         self.inputsBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -1364,7 +1348,7 @@ class Ui_MainWindow(object):
         self.inputsTable.setHorizontalHeaderItem(3, __qtablewidgetitem8)
         self.inputsTable.setObjectName(u"inputsTable")
         self.inputsTable.setGeometry(QRect(18, 50, 351, 460))
-        self.inputsTable.setFont(font9)
+        self.inputsTable.setFont(font8)
         self.inputsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.inputsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.inputsTable.setStyleSheet(u"QTableWidget {\n"
@@ -1439,7 +1423,7 @@ class Ui_MainWindow(object):
         self.outputsBox = QGroupBox(self.ADCIOPage)
         self.outputsBox.setObjectName(u"outputsBox")
         self.outputsBox.setGeometry(QRect(17, 430, 382, 305))
-        self.outputsBox.setFont(font8)
+        self.outputsBox.setFont(font7)
         self.outputsBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -1466,7 +1450,7 @@ class Ui_MainWindow(object):
         self.outputsTable.setHorizontalHeaderItem(3, __qtablewidgetitem12)
         self.outputsTable.setObjectName(u"outputsTable")
         self.outputsTable.setGeometry(QRect(18, 50, 346, 230))
-        self.outputsTable.setFont(font9)
+        self.outputsTable.setFont(font8)
         self.outputsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.outputsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.outputsTable.setStyleSheet(u"QTableWidget {\n"
@@ -1544,7 +1528,7 @@ class Ui_MainWindow(object):
         self.callDetectionGroup = QGroupBox(self.callAndDemandPage)
         self.callDetectionGroup.setObjectName(u"callDetectionGroup")
         self.callDetectionGroup.setGeometry(QRect(110, 31, 278, 253))
-        self.callDetectionGroup.setFont(font8)
+        self.callDetectionGroup.setFont(font7)
         self.callDetectionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -1567,9 +1551,9 @@ class Ui_MainWindow(object):
         self.callDetectionTable.setHorizontalHeaderItem(1, __qtablewidgetitem14)
         self.callDetectionTable.setObjectName(u"callDetectionTable")
         self.callDetectionTable.setGeometry(QRect(18, 51, 241, 183))
-        font10 = QFont()
-        font10.setPointSize(8)
-        self.callDetectionTable.setFont(font10)
+        font9 = QFont()
+        font9.setPointSize(8)
+        self.callDetectionTable.setFont(font9)
         self.callDetectionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.callDetectionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -1597,7 +1581,7 @@ class Ui_MainWindow(object):
         self.demandProcessorGroup = QGroupBox(self.callAndDemandPage)
         self.demandProcessorGroup.setObjectName(u"demandProcessorGroup")
         self.demandProcessorGroup.setGeometry(QRect(404, 31, 278, 253))
-        self.demandProcessorGroup.setFont(font8)
+        self.demandProcessorGroup.setFont(font7)
         self.demandProcessorGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -1620,7 +1604,7 @@ class Ui_MainWindow(object):
         self.demandProcessorTable.setHorizontalHeaderItem(1, __qtablewidgetitem16)
         self.demandProcessorTable.setObjectName(u"demandProcessorTable")
         self.demandProcessorTable.setGeometry(QRect(18, 51, 241, 183))
-        self.demandProcessorTable.setFont(font10)
+        self.demandProcessorTable.setFont(font9)
         self.demandProcessorTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.demandProcessorTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -1651,10 +1635,10 @@ class Ui_MainWindow(object):
         self.testColourLog = QTextEdit(self.colourPalettePage)
         self.testColourLog.setObjectName(u"testColourLog")
         self.testColourLog.setGeometry(QRect(17, 15, 784, 299))
-        font11 = QFont()
-        font11.setFamilies([u"Consolas"])
-        font11.setPointSize(8)
-        self.testColourLog.setFont(font11)
+        font10 = QFont()
+        font10.setFamilies([u"Consolas"])
+        font10.setPointSize(8)
+        self.testColourLog.setFont(font10)
         self.testColourLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.testColourLog.setStyleSheet(u"QTextEdit {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -1708,10 +1692,10 @@ class Ui_MainWindow(object):
         self.fgColourBox = QGroupBox(self.colourPalettePage)
         self.fgColourBox.setObjectName(u"fgColourBox")
         self.fgColourBox.setGeometry(QRect(60, 337, 164, 248))
-        font12 = QFont()
-        font12.setPointSize(15)
-        font12.setBold(True)
-        self.fgColourBox.setFont(font12)
+        font11 = QFont()
+        font11.setPointSize(15)
+        font11.setBold(True)
+        self.fgColourBox.setFont(font11)
         self.fgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1774,7 +1758,7 @@ class Ui_MainWindow(object):
         self.bgColourBox = QGroupBox(self.colourPalettePage)
         self.bgColourBox.setObjectName(u"bgColourBox")
         self.bgColourBox.setGeometry(QRect(592, 337, 164, 248))
-        self.bgColourBox.setFont(font12)
+        self.bgColourBox.setFont(font11)
         self.bgColourBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -1861,7 +1845,7 @@ class Ui_MainWindow(object):
         self.appendButton = QPushButton(self.colourPalettePage)
         self.appendButton.setObjectName(u"appendButton")
         self.appendButton.setGeometry(QRect(384, 750, 54, 34))
-        self.appendButton.setFont(font3)
+        self.appendButton.setFont(font2)
         self.appendButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000; /* Text color */\n"
 "    border: 2px solid #000000; /* Border color */\n"
@@ -1883,11 +1867,11 @@ class Ui_MainWindow(object):
         self.fgWhiteButton = QPushButton(self.colourPalettePage)
         self.fgWhiteButton.setObjectName(u"fgWhiteButton")
         self.fgWhiteButton.setGeometry(QRect(237, 366, 29, 26))
-        font13 = QFont()
-        font13.setFamilies([u"Verdana"])
-        font13.setPointSize(7)
-        font13.setBold(True)
-        self.fgWhiteButton.setFont(font13)
+        font12 = QFont()
+        font12.setFamilies([u"Verdana"])
+        font12.setPointSize(7)
+        font12.setBold(True)
+        self.fgWhiteButton.setFont(font12)
         self.fgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1909,7 +1893,7 @@ class Ui_MainWindow(object):
         self.fgBlackButton = QPushButton(self.colourPalettePage)
         self.fgBlackButton.setObjectName(u"fgBlackButton")
         self.fgBlackButton.setGeometry(QRect(237, 400, 29, 26))
-        self.fgBlackButton.setFont(font13)
+        self.fgBlackButton.setFont(font12)
         self.fgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1931,7 +1915,7 @@ class Ui_MainWindow(object):
         self.fgResetButton = QPushButton(self.colourPalettePage)
         self.fgResetButton.setObjectName(u"fgResetButton")
         self.fgResetButton.setGeometry(QRect(237, 558, 29, 26))
-        self.fgResetButton.setFont(font13)
+        self.fgResetButton.setFont(font12)
         self.fgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1953,7 +1937,7 @@ class Ui_MainWindow(object):
         self.bgBlackButton = QPushButton(self.colourPalettePage)
         self.bgBlackButton.setObjectName(u"bgBlackButton")
         self.bgBlackButton.setGeometry(QRect(550, 400, 29, 26))
-        self.bgBlackButton.setFont(font13)
+        self.bgBlackButton.setFont(font12)
         self.bgBlackButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1975,7 +1959,7 @@ class Ui_MainWindow(object):
         self.bgWhiteButton = QPushButton(self.colourPalettePage)
         self.bgWhiteButton.setObjectName(u"bgWhiteButton")
         self.bgWhiteButton.setGeometry(QRect(550, 366, 29, 26))
-        self.bgWhiteButton.setFont(font13)
+        self.bgWhiteButton.setFont(font12)
         self.bgWhiteButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -1997,7 +1981,7 @@ class Ui_MainWindow(object):
         self.bgResetButton = QPushButton(self.colourPalettePage)
         self.bgResetButton.setObjectName(u"bgResetButton")
         self.bgResetButton.setGeometry(QRect(550, 558, 29, 26))
-        self.bgResetButton.setFont(font13)
+        self.bgResetButton.setFont(font12)
         self.bgResetButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2023,7 +2007,7 @@ class Ui_MainWindow(object):
         self.testBox = QGroupBox(self.colourPalettePage)
         self.testBox.setObjectName(u"testBox")
         self.testBox.setGeometry(QRect(332, 545, 157, 121))
-        self.testBox.setFont(font8)
+        self.testBox.setFont(font7)
         self.testBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black;\n"
 "    border-radius: 5px;\n"
@@ -2049,7 +2033,7 @@ class Ui_MainWindow(object):
         self.testTable.setHorizontalHeaderItem(1, __qtablewidgetitem18)
         self.testTable.setObjectName(u"testTable")
         self.testTable.setGeometry(QRect(17, 50, 123, 53))
-        self.testTable.setFont(font10)
+        self.testTable.setFont(font9)
         self.testTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.testTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2077,7 +2061,7 @@ class Ui_MainWindow(object):
         self.bgDefButton = QPushButton(self.colourPalettePage)
         self.bgDefButton.setObjectName(u"bgDefButton")
         self.bgDefButton.setGeometry(QRect(550, 434, 29, 26))
-        self.bgDefButton.setFont(font13)
+        self.bgDefButton.setFont(font12)
         self.bgDefButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -2102,7 +2086,7 @@ class Ui_MainWindow(object):
         self.configBox = QGroupBox(self.configurationPage)
         self.configBox.setObjectName(u"configBox")
         self.configBox.setGeometry(QRect(54, 20, 518, 661))
-        self.configBox.setFont(font8)
+        self.configBox.setFont(font7)
         self.configBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2129,7 +2113,7 @@ class Ui_MainWindow(object):
         self.configTable.setHorizontalHeaderItem(3, __qtablewidgetitem22)
         self.configTable.setObjectName(u"configTable")
         self.configTable.setGeometry(QRect(17, 50, 483, 550))
-        self.configTable.setFont(font9)
+        self.configTable.setFont(font8)
         self.configTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.configTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.configTable.setStyleSheet(u"QTableWidget {\n"
@@ -2244,7 +2228,7 @@ class Ui_MainWindow(object):
         self.confirmRestoreButton = QRadioButton(self.configBox)
         self.confirmRestoreButton.setObjectName(u"confirmRestoreButton")
         self.confirmRestoreButton.setGeometry(QRect(80, 15, 68, 22))
-        self.confirmRestoreButton.setFont(font5)
+        self.confirmRestoreButton.setFont(font4)
         self.confirmRestoreButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2307,7 +2291,7 @@ class Ui_MainWindow(object):
         self.sdCardBox = QGroupBox(self.configurationPage)
         self.sdCardBox.setObjectName(u"sdCardBox")
         self.sdCardBox.setGeometry(QRect(589, 20, 180, 119))
-        self.sdCardBox.setFont(font8)
+        self.sdCardBox.setFont(font7)
         self.sdCardBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2358,7 +2342,7 @@ class Ui_MainWindow(object):
         self.confirmEraseButton = QRadioButton(self.sdCardBox)
         self.confirmEraseButton.setObjectName(u"confirmEraseButton")
         self.confirmEraseButton.setGeometry(QRect(86, 50, 68, 22))
-        self.confirmEraseButton.setFont(font5)
+        self.confirmEraseButton.setFont(font4)
         self.confirmEraseButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2382,7 +2366,7 @@ class Ui_MainWindow(object):
         self.debugGroup1 = QGroupBox(self.debuggingPage)
         self.debugGroup1.setObjectName(u"debugGroup1")
         self.debugGroup1.setGeometry(QRect(120, 16, 278, 253))
-        self.debugGroup1.setFont(font8)
+        self.debugGroup1.setFont(font7)
         self.debugGroup1.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2405,7 +2389,7 @@ class Ui_MainWindow(object):
         self.debugTable1.setHorizontalHeaderItem(1, __qtablewidgetitem24)
         self.debugTable1.setObjectName(u"debugTable1")
         self.debugTable1.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable1.setFont(font10)
+        self.debugTable1.setFont(font9)
         self.debugTable1.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable1.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2433,7 +2417,7 @@ class Ui_MainWindow(object):
         self.debugGroup2 = QGroupBox(self.debuggingPage)
         self.debugGroup2.setObjectName(u"debugGroup2")
         self.debugGroup2.setGeometry(QRect(412, 16, 278, 253))
-        self.debugGroup2.setFont(font8)
+        self.debugGroup2.setFont(font7)
         self.debugGroup2.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2456,7 +2440,7 @@ class Ui_MainWindow(object):
         self.debugTable2.setHorizontalHeaderItem(1, __qtablewidgetitem26)
         self.debugTable2.setObjectName(u"debugTable2")
         self.debugTable2.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable2.setFont(font10)
+        self.debugTable2.setFont(font9)
         self.debugTable2.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable2.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2484,7 +2468,7 @@ class Ui_MainWindow(object):
         self.debugGroup3 = QGroupBox(self.debuggingPage)
         self.debugGroup3.setObjectName(u"debugGroup3")
         self.debugGroup3.setGeometry(QRect(120, 283, 278, 253))
-        self.debugGroup3.setFont(font8)
+        self.debugGroup3.setFont(font7)
         self.debugGroup3.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2507,7 +2491,7 @@ class Ui_MainWindow(object):
         self.debugTable3.setHorizontalHeaderItem(1, __qtablewidgetitem28)
         self.debugTable3.setObjectName(u"debugTable3")
         self.debugTable3.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable3.setFont(font10)
+        self.debugTable3.setFont(font9)
         self.debugTable3.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable3.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2535,7 +2519,7 @@ class Ui_MainWindow(object):
         self.debugGroup4 = QGroupBox(self.debuggingPage)
         self.debugGroup4.setObjectName(u"debugGroup4")
         self.debugGroup4.setGeometry(QRect(412, 283, 278, 253))
-        self.debugGroup4.setFont(font8)
+        self.debugGroup4.setFont(font7)
         self.debugGroup4.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2558,7 +2542,7 @@ class Ui_MainWindow(object):
         self.debugTable4.setHorizontalHeaderItem(1, __qtablewidgetitem30)
         self.debugTable4.setObjectName(u"debugTable4")
         self.debugTable4.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable4.setFont(font10)
+        self.debugTable4.setFont(font9)
         self.debugTable4.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable4.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2586,7 +2570,7 @@ class Ui_MainWindow(object):
         self.debugGroup6 = QGroupBox(self.debuggingPage)
         self.debugGroup6.setObjectName(u"debugGroup6")
         self.debugGroup6.setGeometry(QRect(412, 550, 278, 253))
-        self.debugGroup6.setFont(font8)
+        self.debugGroup6.setFont(font7)
         self.debugGroup6.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2609,7 +2593,7 @@ class Ui_MainWindow(object):
         self.debugTable6.setHorizontalHeaderItem(1, __qtablewidgetitem32)
         self.debugTable6.setObjectName(u"debugTable6")
         self.debugTable6.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable6.setFont(font10)
+        self.debugTable6.setFont(font9)
         self.debugTable6.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable6.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2637,7 +2621,7 @@ class Ui_MainWindow(object):
         self.debugGroup5 = QGroupBox(self.debuggingPage)
         self.debugGroup5.setObjectName(u"debugGroup5")
         self.debugGroup5.setGeometry(QRect(120, 550, 278, 253))
-        self.debugGroup5.setFont(font8)
+        self.debugGroup5.setFont(font7)
         self.debugGroup5.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -2660,7 +2644,7 @@ class Ui_MainWindow(object):
         self.debugTable5.setHorizontalHeaderItem(1, __qtablewidgetitem34)
         self.debugTable5.setObjectName(u"debugTable5")
         self.debugTable5.setGeometry(QRect(18, 51, 241, 183))
-        self.debugTable5.setFont(font10)
+        self.debugTable5.setFont(font9)
         self.debugTable5.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.debugTable5.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -2696,7 +2680,7 @@ class Ui_MainWindow(object):
         self.rightStopLED.setObjectName(u"rightStopLED")
         self.rightStopLED.setEnabled(False)
         self.rightStopLED.setGeometry(QRect(562, 385, 25, 30))
-        self.rightStopLED.setFont(font5)
+        self.rightStopLED.setFont(font4)
         self.rightStopLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2720,7 +2704,7 @@ class Ui_MainWindow(object):
         self.rightSafetyLED.setObjectName(u"rightSafetyLED")
         self.rightSafetyLED.setEnabled(False)
         self.rightSafetyLED.setGeometry(QRect(562, 505, 25, 30))
-        self.rightSafetyLED.setFont(font5)
+        self.rightSafetyLED.setFont(font4)
         self.rightSafetyLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2742,7 +2726,7 @@ class Ui_MainWindow(object):
         self.callDownLabel = QLabel(self.keyWiringPage)
         self.callDownLabel.setObjectName(u"callDownLabel")
         self.callDownLabel.setGeometry(QRect(172, 275, 82, 35))
-        self.callDownLabel.setFont(font8)
+        self.callDownLabel.setFont(font7)
         self.callDownLabel.setStyleSheet(u"color: black;")
         self.callDownLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leftFootrestLED = QRadioButton(self.keyWiringPage)
@@ -2750,7 +2734,7 @@ class Ui_MainWindow(object):
         self.leftFootrestLED.setObjectName(u"leftFootrestLED")
         self.leftFootrestLED.setEnabled(False)
         self.leftFootrestLED.setGeometry(QRect(239, 565, 25, 30))
-        self.leftFootrestLED.setFont(font5)
+        self.leftFootrestLED.setFont(font4)
         self.leftFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2774,7 +2758,7 @@ class Ui_MainWindow(object):
         self.leftSkateLED.setObjectName(u"leftSkateLED")
         self.leftSkateLED.setEnabled(False)
         self.leftSkateLED.setGeometry(QRect(239, 445, 25, 30))
-        self.leftSkateLED.setFont(font5)
+        self.leftSkateLED.setFont(font4)
         self.leftSkateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2798,7 +2782,7 @@ class Ui_MainWindow(object):
         self.leftSafetyLED.setObjectName(u"leftSafetyLED")
         self.leftSafetyLED.setEnabled(False)
         self.leftSafetyLED.setGeometry(QRect(239, 505, 25, 30))
-        self.leftSafetyLED.setFont(font5)
+        self.leftSafetyLED.setFont(font4)
         self.leftSafetyLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2820,14 +2804,14 @@ class Ui_MainWindow(object):
         self.handing4Label = QLabel(self.keyWiringPage)
         self.handing4Label.setObjectName(u"handing4Label")
         self.handing4Label.setGeometry(QRect(462, 211, 83, 35))
-        self.handing4Label.setFont(font8)
+        self.handing4Label.setFont(font7)
         self.handing4Label.setStyleSheet(u"color: black;\n"
 "background: transparent;")
         self.handing4Label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leftSkateLabel = QLabel(self.keyWiringPage)
         self.leftSkateLabel.setObjectName(u"leftSkateLabel")
         self.leftSkateLabel.setGeometry(QRect(137, 443, 82, 35))
-        self.leftSkateLabel.setFont(font8)
+        self.leftSkateLabel.setFont(font7)
         self.leftSkateLabel.setStyleSheet(u"color: black;")
         self.leftSkateLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.osgReturnLED = QRadioButton(self.keyWiringPage)
@@ -2835,7 +2819,7 @@ class Ui_MainWindow(object):
         self.osgReturnLED.setObjectName(u"osgReturnLED")
         self.osgReturnLED.setEnabled(False)
         self.osgReturnLED.setGeometry(QRect(82, 96, 25, 30))
-        self.osgReturnLED.setFont(font5)
+        self.osgReturnLED.setFont(font4)
         self.osgReturnLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2857,7 +2841,7 @@ class Ui_MainWindow(object):
         self.osgReturnLabel = QLabel(self.keyWiringPage)
         self.osgReturnLabel.setObjectName(u"osgReturnLabel")
         self.osgReturnLabel.setGeometry(QRect(53, 59, 82, 35))
-        self.osgReturnLabel.setFont(font8)
+        self.osgReturnLabel.setFont(font7)
         self.osgReturnLabel.setStyleSheet(u"color: black;")
         self.osgReturnLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.callUpLED = QRadioButton(self.keyWiringPage)
@@ -2865,7 +2849,7 @@ class Ui_MainWindow(object):
         self.callUpLED.setObjectName(u"callUpLED")
         self.callUpLED.setEnabled(False)
         self.callUpLED.setGeometry(QRect(201, 181, 25, 30))
-        self.callUpLED.setFont(font5)
+        self.callUpLED.setFont(font4)
         self.callUpLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2889,7 +2873,7 @@ class Ui_MainWindow(object):
         self.handing2LED.setObjectName(u"handing2LED")
         self.handing2LED.setEnabled(False)
         self.handing2LED.setGeometry(QRect(562, 182, 25, 30))
-        self.handing2LED.setFont(font5)
+        self.handing2LED.setFont(font4)
         self.handing2LED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2911,13 +2895,13 @@ class Ui_MainWindow(object):
         self.bistableReturnLabel = QLabel(self.keyWiringPage)
         self.bistableReturnLabel.setObjectName(u"bistableReturnLabel")
         self.bistableReturnLabel.setGeometry(QRect(371, 56, 82, 35))
-        self.bistableReturnLabel.setFont(font8)
+        self.bistableReturnLabel.setFont(font7)
         self.bistableReturnLabel.setStyleSheet(u"color: black;")
         self.bistableReturnLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.ultimateLabel = QLabel(self.keyWiringPage)
         self.ultimateLabel.setObjectName(u"ultimateLabel")
         self.ultimateLabel.setGeometry(QRect(691, 75, 71, 16))
-        self.ultimateLabel.setFont(font8)
+        self.ultimateLabel.setFont(font7)
         self.ultimateLabel.setStyleSheet(u"color: black;")
         self.ultimateLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bottomFootrestLED = QRadioButton(self.keyWiringPage)
@@ -2925,7 +2909,7 @@ class Ui_MainWindow(object):
         self.bottomFootrestLED.setObjectName(u"bottomFootrestLED")
         self.bottomFootrestLED.setEnabled(False)
         self.bottomFootrestLED.setGeometry(QRect(297, 240, 25, 30))
-        self.bottomFootrestLED.setFont(font5)
+        self.bottomFootrestLED.setFont(font4)
         self.bottomFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2949,7 +2933,7 @@ class Ui_MainWindow(object):
         self.rightFootrestLED.setObjectName(u"rightFootrestLED")
         self.rightFootrestLED.setEnabled(False)
         self.rightFootrestLED.setGeometry(QRect(562, 565, 25, 30))
-        self.rightFootrestLED.setFont(font5)
+        self.rightFootrestLED.setFont(font4)
         self.rightFootrestLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2973,7 +2957,7 @@ class Ui_MainWindow(object):
         self.ultimateLED.setObjectName(u"ultimateLED")
         self.ultimateLED.setEnabled(False)
         self.ultimateLED.setGeometry(QRect(712, 96, 25, 30))
-        self.ultimateLED.setFont(font5)
+        self.ultimateLED.setFont(font4)
         self.ultimateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -2996,37 +2980,37 @@ class Ui_MainWindow(object):
         self.relayCoilMonitorLabel = QLabel(self.keyWiringPage)
         self.relayCoilMonitorLabel.setObjectName(u"relayCoilMonitorLabel")
         self.relayCoilMonitorLabel.setGeometry(QRect(337, 585, 155, 35))
-        self.relayCoilMonitorLabel.setFont(font8)
+        self.relayCoilMonitorLabel.setFont(font7)
         self.relayCoilMonitorLabel.setStyleSheet(u"color: black;")
         self.relayCoilMonitorLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leftSafetyLabel = QLabel(self.keyWiringPage)
         self.leftSafetyLabel.setObjectName(u"leftSafetyLabel")
         self.leftSafetyLabel.setGeometry(QRect(134, 502, 87, 35))
-        self.leftSafetyLabel.setFont(font8)
+        self.leftSafetyLabel.setFont(font7)
         self.leftSafetyLabel.setStyleSheet(u"color: black;")
         self.leftSafetyLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.callUpLabel = QLabel(self.keyWiringPage)
         self.callUpLabel.setObjectName(u"callUpLabel")
         self.callUpLabel.setGeometry(QRect(172, 145, 82, 35))
-        self.callUpLabel.setFont(font8)
+        self.callUpLabel.setFont(font7)
         self.callUpLabel.setStyleSheet(u"color: black;")
         self.callUpLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.rightSafetyLabel = QLabel(self.keyWiringPage)
         self.rightSafetyLabel.setObjectName(u"rightSafetyLabel")
         self.rightSafetyLabel.setGeometry(QRect(597, 502, 99, 35))
-        self.rightSafetyLabel.setFont(font8)
+        self.rightSafetyLabel.setFont(font7)
         self.rightSafetyLabel.setStyleSheet(u"color: black;")
         self.rightSafetyLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.swivelOverrideLabel = QLabel(self.keyWiringPage)
         self.swivelOverrideLabel.setObjectName(u"swivelOverrideLabel")
         self.swivelOverrideLabel.setGeometry(QRect(211, 56, 82, 35))
-        self.swivelOverrideLabel.setFont(font8)
+        self.swivelOverrideLabel.setFont(font7)
         self.swivelOverrideLabel.setStyleSheet(u"color: black;")
         self.swivelOverrideLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leftFootrestLabel = QLabel(self.keyWiringPage)
         self.leftFootrestLabel.setObjectName(u"leftFootrestLabel")
         self.leftFootrestLabel.setGeometry(QRect(122, 562, 103, 35))
-        self.leftFootrestLabel.setFont(font8)
+        self.leftFootrestLabel.setFont(font7)
         self.leftFootrestLabel.setStyleSheet(u"color: black;")
         self.leftFootrestLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bistableReturnLED = QRadioButton(self.keyWiringPage)
@@ -3034,7 +3018,7 @@ class Ui_MainWindow(object):
         self.bistableReturnLED.setObjectName(u"bistableReturnLED")
         self.bistableReturnLED.setEnabled(False)
         self.bistableReturnLED.setGeometry(QRect(399, 96, 25, 30))
-        self.bistableReturnLED.setFont(font5)
+        self.bistableReturnLED.setFont(font4)
         self.bistableReturnLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3059,7 +3043,7 @@ class Ui_MainWindow(object):
         self.handing4LED.setObjectName(u"handing4LED")
         self.handing4LED.setEnabled(False)
         self.handing4LED.setGeometry(QRect(492, 239, 25, 30))
-        self.handing4LED.setFont(font5)
+        self.handing4LED.setFont(font4)
         self.handing4LED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3081,7 +3065,7 @@ class Ui_MainWindow(object):
         self.bistableFeedLabel = QLabel(self.keyWiringPage)
         self.bistableFeedLabel.setObjectName(u"bistableFeedLabel")
         self.bistableFeedLabel.setGeometry(QRect(530, 56, 82, 35))
-        self.bistableFeedLabel.setFont(font8)
+        self.bistableFeedLabel.setFont(font7)
         self.bistableFeedLabel.setStyleSheet(u"color: black;")
         self.bistableFeedLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.rightSkateLED = QRadioButton(self.keyWiringPage)
@@ -3089,7 +3073,7 @@ class Ui_MainWindow(object):
         self.rightSkateLED.setObjectName(u"rightSkateLED")
         self.rightSkateLED.setEnabled(False)
         self.rightSkateLED.setGeometry(QRect(562, 445, 25, 30))
-        self.rightSkateLED.setFont(font5)
+        self.rightSkateLED.setFont(font4)
         self.rightSkateLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3111,7 +3095,7 @@ class Ui_MainWindow(object):
         self.rightStopLabel = QLabel(self.keyWiringPage)
         self.rightStopLabel.setObjectName(u"rightStopLabel")
         self.rightStopLabel.setGeometry(QRect(594, 383, 90, 35))
-        self.rightStopLabel.setFont(font8)
+        self.rightStopLabel.setFont(font7)
         self.rightStopLabel.setStyleSheet(u"color: black;")
         self.rightStopLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bistableFeedLED = QRadioButton(self.keyWiringPage)
@@ -3119,7 +3103,7 @@ class Ui_MainWindow(object):
         self.bistableFeedLED.setObjectName(u"bistableFeedLED")
         self.bistableFeedLED.setEnabled(False)
         self.bistableFeedLED.setGeometry(QRect(558, 96, 25, 30))
-        self.bistableFeedLED.setFont(font5)
+        self.bistableFeedLED.setFont(font4)
         self.bistableFeedLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3142,7 +3126,7 @@ class Ui_MainWindow(object):
         self.handing2Label = QLabel(self.keyWiringPage)
         self.handing2Label.setObjectName(u"handing2Label")
         self.handing2Label.setGeometry(QRect(462, 155, 87, 35))
-        self.handing2Label.setFont(font8)
+        self.handing2Label.setFont(font7)
         self.handing2Label.setStyleSheet(u"color: black;\n"
 "background: transparent;")
         self.handing2Label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -3151,7 +3135,7 @@ class Ui_MainWindow(object):
         self.callDownLED.setObjectName(u"callDownLED")
         self.callDownLED.setEnabled(False)
         self.callDownLED.setGeometry(QRect(201, 240, 25, 30))
-        self.callDownLED.setFont(font5)
+        self.callDownLED.setFont(font4)
         self.callDownLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3175,7 +3159,7 @@ class Ui_MainWindow(object):
         self.leftStopLED.setObjectName(u"leftStopLED")
         self.leftStopLED.setEnabled(False)
         self.leftStopLED.setGeometry(QRect(239, 385, 25, 30))
-        self.leftStopLED.setFont(font5)
+        self.leftStopLED.setFont(font4)
         self.leftStopLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3197,25 +3181,25 @@ class Ui_MainWindow(object):
         self.leftStopLabel = QLabel(self.keyWiringPage)
         self.leftStopLabel.setObjectName(u"leftStopLabel")
         self.leftStopLabel.setGeometry(QRect(138, 383, 82, 35))
-        self.leftStopLabel.setFont(font8)
+        self.leftStopLabel.setFont(font7)
         self.leftStopLabel.setStyleSheet(u"color: black;")
         self.leftStopLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.bottomFootrestLabel = QLabel(self.keyWiringPage)
         self.bottomFootrestLabel.setObjectName(u"bottomFootrestLabel")
         self.bottomFootrestLabel.setGeometry(QRect(268, 276, 82, 35))
-        self.bottomFootrestLabel.setFont(font8)
+        self.bottomFootrestLabel.setFont(font7)
         self.bottomFootrestLabel.setStyleSheet(u"color: black;")
         self.bottomFootrestLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.rightSkateLabel = QLabel(self.keyWiringPage)
         self.rightSkateLabel.setObjectName(u"rightSkateLabel")
         self.rightSkateLabel.setGeometry(QRect(598, 443, 91, 35))
-        self.rightSkateLabel.setFont(font8)
+        self.rightSkateLabel.setFont(font7)
         self.rightSkateLabel.setStyleSheet(u"color: black;")
         self.rightSkateLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.rightFootrestLabel = QLabel(self.keyWiringPage)
         self.rightFootrestLabel.setObjectName(u"rightFootrestLabel")
         self.rightFootrestLabel.setGeometry(QRect(595, 562, 115, 35))
-        self.rightFootrestLabel.setFont(font8)
+        self.rightFootrestLabel.setFont(font7)
         self.rightFootrestLabel.setStyleSheet(u"color: black;")
         self.rightFootrestLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.relayCoilMonitorLED = QRadioButton(self.keyWiringPage)
@@ -3223,7 +3207,7 @@ class Ui_MainWindow(object):
         self.relayCoilMonitorLED.setObjectName(u"relayCoilMonitorLED")
         self.relayCoilMonitorLED.setEnabled(False)
         self.relayCoilMonitorLED.setGeometry(QRect(402, 623, 25, 30))
-        self.relayCoilMonitorLED.setFont(font5)
+        self.relayCoilMonitorLED.setFont(font4)
         self.relayCoilMonitorLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3247,7 +3231,7 @@ class Ui_MainWindow(object):
         self.swivelOverrideLED.setObjectName(u"swivelOverrideLED")
         self.swivelOverrideLED.setEnabled(False)
         self.swivelOverrideLED.setGeometry(QRect(239, 96, 25, 30))
-        self.swivelOverrideLED.setFont(font5)
+        self.swivelOverrideLED.setFont(font4)
         self.swivelOverrideLED.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3270,7 +3254,7 @@ class Ui_MainWindow(object):
         self.handingLink4 = QRadioButton(self.keyWiringPage)
         self.handingLink4.setObjectName(u"handingLink4")
         self.handingLink4.setGeometry(QRect(417, 244, 16, 22))
-        self.handingLink4.setFont(font5)
+        self.handingLink4.setFont(font4)
         self.handingLink4.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3311,7 +3295,7 @@ class Ui_MainWindow(object):
         self.topLine_9 = QFrame(self.keyWiringPage)
         self.topLine_9.setObjectName(u"topLine_9")
         self.topLine_9.setGeometry(QRect(143, 194, 237, 2))
-        self.topLine_9.setFont(font4)
+        self.topLine_9.setFont(font3)
         self.topLine_9.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3323,7 +3307,7 @@ class Ui_MainWindow(object):
         self.topLine_15 = QFrame(self.keyWiringPage)
         self.topLine_15.setObjectName(u"topLine_15")
         self.topLine_15.setGeometry(QRect(251, 636, 323, 2))
-        self.topLine_15.setFont(font4)
+        self.topLine_15.setFont(font3)
         self.topLine_15.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3335,7 +3319,7 @@ class Ui_MainWindow(object):
         self.topLine_12 = QFrame(self.keyWiringPage)
         self.topLine_12.setObjectName(u"topLine_12")
         self.topLine_12.setGeometry(QRect(380, 284, 44, 2))
-        self.topLine_12.setFont(font4)
+        self.topLine_12.setFont(font3)
         self.topLine_12.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3358,7 +3342,7 @@ class Ui_MainWindow(object):
         self.topLine_8 = QFrame(self.keyWiringPage)
         self.topLine_8.setObjectName(u"topLine_8")
         self.topLine_8.setGeometry(QRect(94, 223, 49, 2))
-        self.topLine_8.setFont(font4)
+        self.topLine_8.setFont(font3)
         self.topLine_8.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3381,7 +3365,7 @@ class Ui_MainWindow(object):
         self.handingLinkLabel3 = QLabel(self.keyWiringPage)
         self.handingLinkLabel3.setObjectName(u"handingLinkLabel3")
         self.handingLinkLabel3.setGeometry(QRect(434, 217, 16, 16))
-        self.handingLinkLabel3.setFont(font8)
+        self.handingLinkLabel3.setFont(font7)
         self.handingLinkLabel3.setStyleSheet(u"color: black;")
         self.handingLinkLabel3.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.line_9 = QFrame(self.keyWiringPage)
@@ -3398,13 +3382,13 @@ class Ui_MainWindow(object):
         self.handingLinkLabel2 = QLabel(self.keyWiringPage)
         self.handingLinkLabel2.setObjectName(u"handingLinkLabel2")
         self.handingLinkLabel2.setGeometry(QRect(435, 186, 16, 16))
-        self.handingLinkLabel2.setFont(font8)
+        self.handingLinkLabel2.setFont(font7)
         self.handingLinkLabel2.setStyleSheet(u"color: black;")
         self.handingLinkLabel2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLink3 = QRadioButton(self.keyWiringPage)
         self.handingLink3.setObjectName(u"handingLink3")
         self.handingLink3.setGeometry(QRect(417, 214, 16, 22))
-        self.handingLink3.setFont(font5)
+        self.handingLink3.setFont(font4)
         self.handingLink3.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3434,19 +3418,19 @@ class Ui_MainWindow(object):
         self.handingLinkLabel5 = QLabel(self.keyWiringPage)
         self.handingLinkLabel5.setObjectName(u"handingLinkLabel5")
         self.handingLinkLabel5.setGeometry(QRect(435, 277, 16, 16))
-        self.handingLinkLabel5.setFont(font8)
+        self.handingLinkLabel5.setFont(font7)
         self.handingLinkLabel5.setStyleSheet(u"color: black;")
         self.handingLinkLabel5.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLinkLabel4 = QLabel(self.keyWiringPage)
         self.handingLinkLabel4.setObjectName(u"handingLinkLabel4")
         self.handingLinkLabel4.setGeometry(QRect(435, 247, 16, 16))
-        self.handingLinkLabel4.setFont(font8)
+        self.handingLinkLabel4.setFont(font7)
         self.handingLinkLabel4.setStyleSheet(u"color: black;")
         self.handingLinkLabel4.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.topLine_13 = QFrame(self.keyWiringPage)
         self.topLine_13.setObjectName(u"topLine_13")
         self.topLine_13.setGeometry(QRect(424, 196, 149, 2))
-        self.topLine_13.setFont(font4)
+        self.topLine_13.setFont(font3)
         self.topLine_13.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3458,7 +3442,7 @@ class Ui_MainWindow(object):
         self.topLine_14 = QFrame(self.keyWiringPage)
         self.topLine_14.setObjectName(u"topLine_14")
         self.topLine_14.setGeometry(QRect(424, 252, 71, 2))
-        self.topLine_14.setFont(font4)
+        self.topLine_14.setFont(font3)
         self.topLine_14.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3470,7 +3454,7 @@ class Ui_MainWindow(object):
         self.handingLink5 = QRadioButton(self.keyWiringPage)
         self.handingLink5.setObjectName(u"handingLink5")
         self.handingLink5.setGeometry(QRect(417, 274, 16, 22))
-        self.handingLink5.setFont(font5)
+        self.handingLink5.setFont(font4)
         self.handingLink5.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3496,7 +3480,7 @@ class Ui_MainWindow(object):
         self.topLine_10 = QFrame(self.keyWiringPage)
         self.topLine_10.setObjectName(u"topLine_10")
         self.topLine_10.setGeometry(QRect(142, 253, 239, 2))
-        self.topLine_10.setFont(font4)
+        self.topLine_10.setFont(font3)
         self.topLine_10.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3508,13 +3492,13 @@ class Ui_MainWindow(object):
         self.handingLinkLabel1 = QLabel(self.keyWiringPage)
         self.handingLinkLabel1.setObjectName(u"handingLinkLabel1")
         self.handingLinkLabel1.setGeometry(QRect(435, 161, 16, 16))
-        self.handingLinkLabel1.setFont(font8)
+        self.handingLinkLabel1.setFont(font7)
         self.handingLinkLabel1.setStyleSheet(u"color: black;")
         self.handingLinkLabel1.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.topLine_7 = QFrame(self.keyWiringPage)
         self.topLine_7.setObjectName(u"topLine_7")
         self.topLine_7.setGeometry(QRect(92, 109, 633, 2))
-        self.topLine_7.setFont(font4)
+        self.topLine_7.setFont(font3)
         self.topLine_7.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3548,7 +3532,7 @@ class Ui_MainWindow(object):
         self.topLine_16 = QFrame(self.keyWiringPage)
         self.topLine_16.setObjectName(u"topLine_16")
         self.topLine_16.setGeometry(QRect(250, 350, 255, 2))
-        self.topLine_16.setFont(font4)
+        self.topLine_16.setFont(font3)
         self.topLine_16.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3560,7 +3544,7 @@ class Ui_MainWindow(object):
         self.handingLink1 = QRadioButton(self.keyWiringPage)
         self.handingLink1.setObjectName(u"handingLink1")
         self.handingLink1.setGeometry(QRect(417, 158, 16, 22))
-        self.handingLink1.setFont(font5)
+        self.handingLink1.setFont(font4)
         self.handingLink1.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3579,7 +3563,7 @@ class Ui_MainWindow(object):
         self.handingLink4_2 = QRadioButton(self.keyWiringPage)
         self.handingLink4_2.setObjectName(u"handingLink4_2")
         self.handingLink4_2.setGeometry(QRect(417, 242, 16, 22))
-        self.handingLink4_2.setFont(font5)
+        self.handingLink4_2.setFont(font4)
         self.handingLink4_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3598,19 +3582,19 @@ class Ui_MainWindow(object):
         self.handingLinkLabel3_2 = QLabel(self.keyWiringPage)
         self.handingLinkLabel3_2.setObjectName(u"handingLinkLabel3_2")
         self.handingLinkLabel3_2.setGeometry(QRect(435, 217, 16, 16))
-        self.handingLinkLabel3_2.setFont(font8)
+        self.handingLinkLabel3_2.setFont(font7)
         self.handingLinkLabel3_2.setStyleSheet(u"color: black;")
         self.handingLinkLabel3_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLinkLabel2_2 = QLabel(self.keyWiringPage)
         self.handingLinkLabel2_2.setObjectName(u"handingLinkLabel2_2")
         self.handingLinkLabel2_2.setGeometry(QRect(435, 189, 16, 16))
-        self.handingLinkLabel2_2.setFont(font8)
+        self.handingLinkLabel2_2.setFont(font7)
         self.handingLinkLabel2_2.setStyleSheet(u"color: black;")
         self.handingLinkLabel2_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLink3_2 = QRadioButton(self.keyWiringPage)
         self.handingLink3_2.setObjectName(u"handingLink3_2")
         self.handingLink3_2.setGeometry(QRect(417, 214, 16, 22))
-        self.handingLink3_2.setFont(font5)
+        self.handingLink3_2.setFont(font4)
         self.handingLink3_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3629,19 +3613,19 @@ class Ui_MainWindow(object):
         self.handingLinkLabel5_2 = QLabel(self.keyWiringPage)
         self.handingLinkLabel5_2.setObjectName(u"handingLinkLabel5_2")
         self.handingLinkLabel5_2.setGeometry(QRect(435, 273, 16, 16))
-        self.handingLinkLabel5_2.setFont(font8)
+        self.handingLinkLabel5_2.setFont(font7)
         self.handingLinkLabel5_2.setStyleSheet(u"color: black;")
         self.handingLinkLabel5_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLinkLabel4_2 = QLabel(self.keyWiringPage)
         self.handingLinkLabel4_2.setObjectName(u"handingLinkLabel4_2")
         self.handingLinkLabel4_2.setGeometry(QRect(435, 245, 16, 16))
-        self.handingLinkLabel4_2.setFont(font8)
+        self.handingLinkLabel4_2.setFont(font7)
         self.handingLinkLabel4_2.setStyleSheet(u"color: black;")
         self.handingLinkLabel4_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.handingLink5_2 = QRadioButton(self.keyWiringPage)
         self.handingLink5_2.setObjectName(u"handingLink5_2")
         self.handingLink5_2.setGeometry(QRect(417, 270, 16, 22))
-        self.handingLink5_2.setFont(font5)
+        self.handingLink5_2.setFont(font4)
         self.handingLink5_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3660,7 +3644,7 @@ class Ui_MainWindow(object):
         self.handingLink2_2 = QRadioButton(self.keyWiringPage)
         self.handingLink2_2.setObjectName(u"handingLink2_2")
         self.handingLink2_2.setGeometry(QRect(417, 186, 16, 22))
-        self.handingLink2_2.setFont(font5)
+        self.handingLink2_2.setFont(font4)
         self.handingLink2_2.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3701,7 +3685,7 @@ class Ui_MainWindow(object):
         self.handingLinkJoin = QRadioButton(self.keyWiringPage)
         self.handingLinkJoin.setObjectName(u"handingLinkJoin")
         self.handingLinkJoin.setGeometry(QRect(374, 184, 16, 22))
-        self.handingLinkJoin.setFont(font5)
+        self.handingLinkJoin.setFont(font4)
         self.handingLinkJoin.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3719,7 +3703,7 @@ class Ui_MainWindow(object):
         self.topLine_17 = QFrame(self.keyWiringPage)
         self.topLine_17.setObjectName(u"topLine_17")
         self.topLine_17.setGeometry(QRect(380, 168, 44, 2))
-        self.topLine_17.setFont(font4)
+        self.topLine_17.setFont(font3)
         self.topLine_17.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -3731,10 +3715,10 @@ class Ui_MainWindow(object):
         self.textEdit = QTextEdit(self.keyWiringPage)
         self.textEdit.setObjectName(u"textEdit")
         self.textEdit.setGeometry(QRect(600, 157, 202, 66))
-        font14 = QFont()
-        font14.setPointSize(10)
-        font14.setItalic(True)
-        self.textEdit.setFont(font14)
+        font13 = QFont()
+        font13.setPointSize(10)
+        font13.setItalic(True)
+        self.textEdit.setFont(font13)
         self.textEdit.setStyleSheet(u"background: transparent;\n"
 "border: none;\n"
 "color: black;")
@@ -3822,7 +3806,7 @@ class Ui_MainWindow(object):
         self.railMapBox = QGroupBox(self.railMappingPage)
         self.railMapBox.setObjectName(u"railMapBox")
         self.railMapBox.setGeometry(QRect(16, 15, 787, 793))
-        self.railMapBox.setFont(font8)
+        self.railMapBox.setFont(font7)
         self.railMapBox.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -3847,7 +3831,7 @@ class Ui_MainWindow(object):
         self.mapPointsTable.setHorizontalHeaderItem(2, __qtablewidgetitem37)
         self.mapPointsTable.setObjectName(u"mapPointsTable")
         self.mapPointsTable.setGeometry(QRect(19, 50, 270, 209))
-        self.mapPointsTable.setFont(font10)
+        self.mapPointsTable.setFont(font9)
         self.mapPointsTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mapPointsTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mapPointsTable.setStyleSheet(u"QTableWidget {\n"
@@ -3877,7 +3861,7 @@ class Ui_MainWindow(object):
         self.mainMapModeGroup = QGroupBox(self.railMapBox)
         self.mainMapModeGroup.setObjectName(u"mainMapModeGroup")
         self.mainMapModeGroup.setGeometry(QRect(578, 190, 191, 587))
-        self.mainMapModeGroup.setFont(font8)
+        self.mainMapModeGroup.setFont(font7)
         self.mainMapModeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -3895,7 +3879,7 @@ class Ui_MainWindow(object):
         self.modeRemoteDButton.setObjectName(u"modeRemoteDButton")
         self.modeRemoteDButton.setEnabled(True)
         self.modeRemoteDButton.setGeometry(QRect(33, 380, 134, 22))
-        self.modeRemoteDButton.setFont(font5)
+        self.modeRemoteDButton.setFont(font4)
         self.modeRemoteDButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3917,7 +3901,7 @@ class Ui_MainWindow(object):
         self.modePartialUnfoldButton = QRadioButton(self.mainMapModeGroup)
         self.modePartialUnfoldButton.setObjectName(u"modePartialUnfoldButton")
         self.modePartialUnfoldButton.setGeometry(QRect(33, 222, 126, 22))
-        self.modePartialUnfoldButton.setFont(font5)
+        self.modePartialUnfoldButton.setFont(font4)
         self.modePartialUnfoldButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3939,7 +3923,7 @@ class Ui_MainWindow(object):
         self.modeHalfSpeedButton = QRadioButton(self.mainMapModeGroup)
         self.modeHalfSpeedButton.setObjectName(u"modeHalfSpeedButton")
         self.modeHalfSpeedButton.setGeometry(QRect(33, 246, 128, 22))
-        self.modeHalfSpeedButton.setFont(font5)
+        self.modeHalfSpeedButton.setFont(font4)
         self.modeHalfSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3961,7 +3945,7 @@ class Ui_MainWindow(object):
         self.modeRemoteBButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteBButton.setObjectName(u"modeRemoteBButton")
         self.modeRemoteBButton.setGeometry(QRect(33, 331, 128, 22))
-        self.modeRemoteBButton.setFont(font5)
+        self.modeRemoteBButton.setFont(font4)
         self.modeRemoteBButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -3983,7 +3967,7 @@ class Ui_MainWindow(object):
         self.modeRemoteCButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteCButton.setObjectName(u"modeRemoteCButton")
         self.modeRemoteCButton.setGeometry(QRect(33, 356, 134, 22))
-        self.modeRemoteCButton.setFont(font5)
+        self.modeRemoteCButton.setFont(font4)
         self.modeRemoteCButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4005,7 +3989,7 @@ class Ui_MainWindow(object):
         self.modeSwivelRightButton = QRadioButton(self.mainMapModeGroup)
         self.modeSwivelRightButton.setObjectName(u"modeSwivelRightButton")
         self.modeSwivelRightButton.setGeometry(QRect(33, 182, 134, 22))
-        self.modeSwivelRightButton.setFont(font5)
+        self.modeSwivelRightButton.setFont(font4)
         self.modeSwivelRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4027,7 +4011,7 @@ class Ui_MainWindow(object):
         self.modeRemoteAButton = QRadioButton(self.mainMapModeGroup)
         self.modeRemoteAButton.setObjectName(u"modeRemoteAButton")
         self.modeRemoteAButton.setGeometry(QRect(33, 307, 126, 22))
-        self.modeRemoteAButton.setFont(font5)
+        self.modeRemoteAButton.setFont(font4)
         self.modeRemoteAButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4049,7 +4033,7 @@ class Ui_MainWindow(object):
         self.modeUnpackButton = QRadioButton(self.mainMapModeGroup)
         self.modeUnpackButton.setObjectName(u"modeUnpackButton")
         self.modeUnpackButton.setGeometry(QRect(33, 133, 119, 22))
-        self.modeUnpackButton.setFont(font5)
+        self.modeUnpackButton.setFont(font4)
         self.modeUnpackButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4071,7 +4055,7 @@ class Ui_MainWindow(object):
         self.modeFullSwivelButton = QRadioButton(self.mainMapModeGroup)
         self.modeFullSwivelButton.setObjectName(u"modeFullSwivelButton")
         self.modeFullSwivelButton.setGeometry(QRect(33, 271, 134, 22))
-        self.modeFullSwivelButton.setFont(font5)
+        self.modeFullSwivelButton.setFont(font4)
         self.modeFullSwivelButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4093,7 +4077,7 @@ class Ui_MainWindow(object):
         self.modeParkingPointButton = QRadioButton(self.mainMapModeGroup)
         self.modeParkingPointButton.setObjectName(u"modeParkingPointButton")
         self.modeParkingPointButton.setGeometry(QRect(33, 93, 78, 22))
-        self.modeParkingPointButton.setFont(font5)
+        self.modeParkingPointButton.setFont(font4)
         self.modeParkingPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4115,7 +4099,7 @@ class Ui_MainWindow(object):
         self.modeSwivelLeftButton = QRadioButton(self.mainMapModeGroup)
         self.modeSwivelLeftButton.setObjectName(u"modeSwivelLeftButton")
         self.modeSwivelLeftButton.setGeometry(QRect(33, 157, 128, 22))
-        self.modeSwivelLeftButton.setFont(font5)
+        self.modeSwivelLeftButton.setFont(font4)
         self.modeSwivelLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4137,7 +4121,7 @@ class Ui_MainWindow(object):
         self.modeBoardingPointButton = QRadioButton(self.mainMapModeGroup)
         self.modeBoardingPointButton.setObjectName(u"modeBoardingPointButton")
         self.modeBoardingPointButton.setGeometry(QRect(33, 69, 78, 22))
-        self.modeBoardingPointButton.setFont(font5)
+        self.modeBoardingPointButton.setFont(font4)
         self.modeBoardingPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4159,7 +4143,7 @@ class Ui_MainWindow(object):
         self.topLine_18 = QFrame(self.mainMapModeGroup)
         self.topLine_18.setObjectName(u"topLine_18")
         self.topLine_18.setGeometry(QRect(23, 124, 145, 2))
-        self.topLine_18.setFont(font4)
+        self.topLine_18.setFont(font3)
         self.topLine_18.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -4171,7 +4155,7 @@ class Ui_MainWindow(object):
         self.topLine_19 = QFrame(self.mainMapModeGroup)
         self.topLine_19.setObjectName(u"topLine_19")
         self.topLine_19.setGeometry(QRect(23, 212, 145, 2))
-        self.topLine_19.setFont(font4)
+        self.topLine_19.setFont(font3)
         self.topLine_19.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -4183,7 +4167,7 @@ class Ui_MainWindow(object):
         self.topLine_20 = QFrame(self.mainMapModeGroup)
         self.topLine_20.setObjectName(u"topLine_20")
         self.topLine_20.setGeometry(QRect(23, 300, 145, 2))
-        self.topLine_20.setFont(font4)
+        self.topLine_20.setFont(font3)
         self.topLine_20.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -4216,7 +4200,7 @@ class Ui_MainWindow(object):
         self.modeEnabledButton = QRadioButton(self.mainMapModeGroup)
         self.modeEnabledButton.setObjectName(u"modeEnabledButton")
         self.modeEnabledButton.setGeometry(QRect(33, 46, 70, 20))
-        self.modeEnabledButton.setFont(font5)
+        self.modeEnabledButton.setFont(font4)
         self.modeEnabledButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4289,7 +4273,7 @@ class Ui_MainWindow(object):
         self.mainCurrentPointGroup = QGroupBox(self.railMapBox)
         self.mainCurrentPointGroup.setObjectName(u"mainCurrentPointGroup")
         self.mainCurrentPointGroup.setGeometry(QRect(19, 639, 543, 138))
-        self.mainCurrentPointGroup.setFont(font8)
+        self.mainCurrentPointGroup.setFont(font7)
         self.mainCurrentPointGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -4307,7 +4291,7 @@ class Ui_MainWindow(object):
         self.leftStopButton.setObjectName(u"leftStopButton")
         self.leftStopButton.setEnabled(False)
         self.leftStopButton.setGeometry(QRect(17, 39, 78, 22))
-        self.leftStopButton.setFont(font5)
+        self.leftStopButton.setFont(font4)
         self.leftStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4330,7 +4314,7 @@ class Ui_MainWindow(object):
         self.middleStopButton.setObjectName(u"middleStopButton")
         self.middleStopButton.setEnabled(False)
         self.middleStopButton.setGeometry(QRect(17, 60, 91, 22))
-        self.middleStopButton.setFont(font5)
+        self.middleStopButton.setFont(font4)
         self.middleStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4353,7 +4337,7 @@ class Ui_MainWindow(object):
         self.rightStopButton.setObjectName(u"rightStopButton")
         self.rightStopButton.setEnabled(False)
         self.rightStopButton.setGeometry(QRect(17, 80, 78, 22))
-        self.rightStopButton.setFont(font5)
+        self.rightStopButton.setFont(font4)
         self.rightStopButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4376,7 +4360,7 @@ class Ui_MainWindow(object):
         self.parkPointButton.setObjectName(u"parkPointButton")
         self.parkPointButton.setEnabled(False)
         self.parkPointButton.setGeometry(QRect(17, 100, 91, 22))
-        self.parkPointButton.setFont(font5)
+        self.parkPointButton.setFont(font4)
         self.parkPointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4399,7 +4383,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldLeftButton.setObjectName(u"partialUnfoldLeftButton")
         self.partialUnfoldLeftButton.setEnabled(False)
         self.partialUnfoldLeftButton.setGeometry(QRect(187, 80, 136, 22))
-        self.partialUnfoldLeftButton.setFont(font5)
+        self.partialUnfoldLeftButton.setFont(font4)
         self.partialUnfoldLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4422,7 +4406,7 @@ class Ui_MainWindow(object):
         self.halfSpeedButton.setObjectName(u"halfSpeedButton")
         self.halfSpeedButton.setEnabled(False)
         self.halfSpeedButton.setGeometry(QRect(187, 39, 113, 22))
-        self.halfSpeedButton.setFont(font5)
+        self.halfSpeedButton.setFont(font4)
         self.halfSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4445,7 +4429,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldRightButton.setObjectName(u"partialUnfoldRightButton")
         self.partialUnfoldRightButton.setEnabled(False)
         self.partialUnfoldRightButton.setGeometry(QRect(187, 100, 142, 22))
-        self.partialUnfoldRightButton.setFont(font5)
+        self.partialUnfoldRightButton.setFont(font4)
         self.partialUnfoldRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4468,7 +4452,7 @@ class Ui_MainWindow(object):
         self.partialUnfoldZoneButton.setObjectName(u"partialUnfoldZoneButton")
         self.partialUnfoldZoneButton.setEnabled(False)
         self.partialUnfoldZoneButton.setGeometry(QRect(187, 60, 132, 22))
-        self.partialUnfoldZoneButton.setFont(font5)
+        self.partialUnfoldZoneButton.setFont(font4)
         self.partialUnfoldZoneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4491,7 +4475,7 @@ class Ui_MainWindow(object):
         self.swivelFullAngleButton.setObjectName(u"swivelFullAngleButton")
         self.swivelFullAngleButton.setEnabled(False)
         self.swivelFullAngleButton.setGeometry(QRect(397, 80, 123, 22))
-        self.swivelFullAngleButton.setFont(font5)
+        self.swivelFullAngleButton.setFont(font4)
         self.swivelFullAngleButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4514,7 +4498,7 @@ class Ui_MainWindow(object):
         self.swivelLeftButton.setObjectName(u"swivelLeftButton")
         self.swivelLeftButton.setEnabled(False)
         self.swivelLeftButton.setGeometry(QRect(397, 39, 130, 22))
-        self.swivelLeftButton.setFont(font5)
+        self.swivelLeftButton.setFont(font4)
         self.swivelLeftButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4537,7 +4521,7 @@ class Ui_MainWindow(object):
         self.unpackArrivalButton.setObjectName(u"unpackArrivalButton")
         self.unpackArrivalButton.setEnabled(False)
         self.unpackArrivalButton.setGeometry(QRect(397, 100, 125, 22))
-        self.unpackArrivalButton.setFont(font5)
+        self.unpackArrivalButton.setFont(font4)
         self.unpackArrivalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4560,7 +4544,7 @@ class Ui_MainWindow(object):
         self.swivelRightButton.setObjectName(u"swivelRightButton")
         self.swivelRightButton.setEnabled(False)
         self.swivelRightButton.setGeometry(QRect(397, 60, 135, 22))
-        self.swivelRightButton.setFont(font5)
+        self.swivelRightButton.setFont(font4)
         self.swivelRightButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -4582,7 +4566,7 @@ class Ui_MainWindow(object):
         self.mainCalibrationGroup = QGroupBox(self.railMapBox)
         self.mainCalibrationGroup.setObjectName(u"mainCalibrationGroup")
         self.mainCalibrationGroup.setGeometry(QRect(578, 50, 191, 123))
-        self.mainCalibrationGroup.setFont(font8)
+        self.mainCalibrationGroup.setFont(font7)
         self.mainCalibrationGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -4599,7 +4583,7 @@ class Ui_MainWindow(object):
         self.autoMainCalButton = QRadioButton(self.mainCalibrationGroup)
         self.autoMainCalButton.setObjectName(u"autoMainCalButton")
         self.autoMainCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoMainCalButton.setFont(font5)
+        self.autoMainCalButton.setFont(font4)
         self.autoMainCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -4621,7 +4605,7 @@ class Ui_MainWindow(object):
         self.manualMainCalButton = QRadioButton(self.mainCalibrationGroup)
         self.manualMainCalButton.setObjectName(u"manualMainCalButton")
         self.manualMainCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualMainCalButton.setFont(font5)
+        self.manualMainCalButton.setFont(font4)
         self.manualMainCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -4764,7 +4748,7 @@ class Ui_MainWindow(object):
         self.mapDataTable.setHorizontalHeaderItem(1, __qtablewidgetitem39)
         self.mapDataTable.setObjectName(u"mapDataTable")
         self.mapDataTable.setGeometry(QRect(305, 50, 257, 147))
-        self.mapDataTable.setFont(font10)
+        self.mapDataTable.setFont(font9)
         self.mapDataTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mapDataTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -4834,7 +4818,7 @@ class Ui_MainWindow(object):
         self.mainPointGroup_2 = QGroupBox(self.railMapBox)
         self.mainPointGroup_2.setObjectName(u"mainPointGroup_2")
         self.mainPointGroup_2.setGeometry(QRect(19, 272, 271, 212))
-        self.mainPointGroup_2.setFont(font8)
+        self.mainPointGroup_2.setFont(font7)
         self.mainPointGroup_2.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -4957,7 +4941,7 @@ class Ui_MainWindow(object):
         self.confirmWipeMapButton.setObjectName(u"confirmWipeMapButton")
         self.confirmWipeMapButton.setEnabled(True)
         self.confirmWipeMapButton.setGeometry(QRect(81, 157, 69, 22))
-        self.confirmWipeMapButton.setFont(font5)
+        self.confirmWipeMapButton.setFont(font4)
         self.confirmWipeMapButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5001,7 +4985,7 @@ class Ui_MainWindow(object):
         self.confirmDeletePointButton.setObjectName(u"confirmDeletePointButton")
         self.confirmDeletePointButton.setEnabled(True)
         self.confirmDeletePointButton.setGeometry(QRect(81, 107, 69, 22))
-        self.confirmDeletePointButton.setFont(font5)
+        self.confirmDeletePointButton.setFont(font4)
         self.confirmDeletePointButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5065,7 +5049,7 @@ class Ui_MainWindow(object):
         self.mainPointGroup = QGroupBox(self.railMapBox)
         self.mainPointGroup.setObjectName(u"mainPointGroup")
         self.mainPointGroup.setGeometry(QRect(19, 497, 271, 129))
-        self.mainPointGroup.setFont(font8)
+        self.mainPointGroup.setFont(font7)
         self.mainPointGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5177,7 +5161,7 @@ class Ui_MainWindow(object):
         self.specifyPositionButton.setObjectName(u"specifyPositionButton")
         self.specifyPositionButton.setEnabled(True)
         self.specifyPositionButton.setGeometry(QRect(19, 92, 109, 23))
-        self.specifyPositionButton.setFont(font5)
+        self.specifyPositionButton.setFont(font4)
         self.specifyPositionButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5205,7 +5189,7 @@ class Ui_MainWindow(object):
         self.mainLocatingGroup = QGroupBox(self.railMapBox)
         self.mainLocatingGroup.setObjectName(u"mainLocatingGroup")
         self.mainLocatingGroup.setGeometry(QRect(305, 246, 257, 238))
-        self.mainLocatingGroup.setFont(font8)
+        self.mainLocatingGroup.setFont(font7)
         self.mainLocatingGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5226,7 +5210,7 @@ class Ui_MainWindow(object):
         self.findLeftPosButton.setObjectName(u"findLeftPosButton")
         self.findLeftPosButton.setEnabled(True)
         self.findLeftPosButton.setGeometry(QRect(15, 200, 69, 22))
-        self.findLeftPosButton.setFont(font5)
+        self.findLeftPosButton.setFont(font4)
         self.findLeftPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5250,7 +5234,7 @@ class Ui_MainWindow(object):
         self.findBothPosButton.setObjectName(u"findBothPosButton")
         self.findBothPosButton.setEnabled(True)
         self.findBothPosButton.setGeometry(QRect(105, 200, 69, 22))
-        self.findBothPosButton.setFont(font5)
+        self.findBothPosButton.setFont(font4)
         self.findBothPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5274,7 +5258,7 @@ class Ui_MainWindow(object):
         self.findRightPosButton.setObjectName(u"findRightPosButton")
         self.findRightPosButton.setEnabled(True)
         self.findRightPosButton.setGeometry(QRect(196, 200, 54, 22))
-        self.findRightPosButton.setFont(font5)
+        self.findRightPosButton.setFont(font4)
         self.findRightPosButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background: transparent;\n"
@@ -5467,7 +5451,7 @@ class Ui_MainWindow(object):
         self.sysVersionGroup = QGroupBox(self.systemPage)
         self.sysVersionGroup.setObjectName(u"sysVersionGroup")
         self.sysVersionGroup.setGeometry(QRect(17, 16, 278, 215))
-        self.sysVersionGroup.setFont(font8)
+        self.sysVersionGroup.setFont(font7)
         self.sysVersionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5511,7 +5495,7 @@ class Ui_MainWindow(object):
         self.sysVerTable.setHorizontalHeaderItem(1, __qtablewidgetitem41)
         self.sysVerTable.setObjectName(u"sysVerTable")
         self.sysVerTable.setGeometry(QRect(18, 51, 241, 147))
-        self.sysVerTable.setFont(font10)
+        self.sysVerTable.setFont(font9)
         self.sysVerTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.sysVerTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5539,7 +5523,7 @@ class Ui_MainWindow(object):
         self.timeGroup = QGroupBox(self.systemPage)
         self.timeGroup.setObjectName(u"timeGroup")
         self.timeGroup.setGeometry(QRect(313, 16, 278, 178))
-        self.timeGroup.setFont(font8)
+        self.timeGroup.setFont(font7)
         self.timeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5583,7 +5567,7 @@ class Ui_MainWindow(object):
         self.timeTable.setHorizontalHeaderItem(1, __qtablewidgetitem43)
         self.timeTable.setObjectName(u"timeTable")
         self.timeTable.setGeometry(QRect(18, 51, 242, 75))
-        self.timeTable.setFont(font10)
+        self.timeTable.setFont(font9)
         self.timeTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.timeTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5614,7 +5598,7 @@ class Ui_MainWindow(object):
         self.chairDrivePositionGroup = QGroupBox(self.chairFoldPage)
         self.chairDrivePositionGroup.setObjectName(u"chairDrivePositionGroup")
         self.chairDrivePositionGroup.setGeometry(QRect(564, 16, 238, 197))
-        self.chairDrivePositionGroup.setFont(font8)
+        self.chairDrivePositionGroup.setFont(font7)
         self.chairDrivePositionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5637,7 +5621,7 @@ class Ui_MainWindow(object):
         self.chairDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem45)
         self.chairDrivePositionTable.setObjectName(u"chairDrivePositionTable")
         self.chairDrivePositionTable.setGeometry(QRect(17, 50, 203, 129))
-        self.chairDrivePositionTable.setFont(font10)
+        self.chairDrivePositionTable.setFont(font9)
         self.chairDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -5687,7 +5671,7 @@ class Ui_MainWindow(object):
         self.chairDriveControlGroup = QGroupBox(self.chairFoldPage)
         self.chairDriveControlGroup.setObjectName(u"chairDriveControlGroup")
         self.chairDriveControlGroup.setGeometry(QRect(16, 16, 532, 521))
-        self.chairDriveControlGroup.setFont(font8)
+        self.chairDriveControlGroup.setFont(font7)
         self.chairDriveControlGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -5731,7 +5715,7 @@ class Ui_MainWindow(object):
         self.chairPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem48)
         self.chairPIDPosTable.setObjectName(u"chairPIDPosTable")
         self.chairPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.chairPIDPosTable.setFont(font10)
+        self.chairPIDPosTable.setFont(font9)
         self.chairPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.chairPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.chairPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -5768,7 +5752,7 @@ class Ui_MainWindow(object):
         self.chairPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem51)
         self.chairPIDSpeedTable.setObjectName(u"chairPIDSpeedTable")
         self.chairPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.chairPIDSpeedTable.setFont(font10)
+        self.chairPIDSpeedTable.setFont(font9)
         self.chairPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.chairPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.chairPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -5797,7 +5781,7 @@ class Ui_MainWindow(object):
         self.enableChairSpeedButton = QRadioButton(self.chairDriveControlGroup)
         self.enableChairSpeedButton.setObjectName(u"enableChairSpeedButton")
         self.enableChairSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableChairSpeedButton.setFont(font5)
+        self.enableChairSpeedButton.setFont(font4)
         self.enableChairSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -5882,7 +5866,7 @@ class Ui_MainWindow(object):
         self.topLine_3 = QFrame(self.chairDriveControlGroup)
         self.topLine_3.setObjectName(u"topLine_3")
         self.topLine_3.setGeometry(QRect(277, 322, 237, 2))
-        self.topLine_3.setFont(font4)
+        self.topLine_3.setFont(font3)
         self.topLine_3.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -5897,7 +5881,7 @@ class Ui_MainWindow(object):
         self.chairPlotModeButtonGroup.addButton(self.autoChairPlotButton)
         self.autoChairPlotButton.setObjectName(u"autoChairPlotButton")
         self.autoChairPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoChairPlotButton.setFont(font5)
+        self.autoChairPlotButton.setFont(font4)
         self.autoChairPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -5920,7 +5904,7 @@ class Ui_MainWindow(object):
         self.chairPlotModeButtonGroup.addButton(self.manualChairPlotButton)
         self.manualChairPlotButton.setObjectName(u"manualChairPlotButton")
         self.manualChairPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualChairPlotButton.setFont(font5)
+        self.manualChairPlotButton.setFont(font4)
         self.manualChairPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -5971,7 +5955,7 @@ class Ui_MainWindow(object):
         self.chairDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem54)
         self.chairDriveControlTable.setObjectName(u"chairDriveControlTable")
         self.chairDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.chairDriveControlTable.setFont(font10)
+        self.chairDriveControlTable.setFont(font9)
         self.chairDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6020,7 +6004,7 @@ class Ui_MainWindow(object):
         self.chairFolder = QLineEdit(self.chairDriveControlGroup)
         self.chairFolder.setObjectName(u"chairFolder")
         self.chairFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.chairFolder.setFont(font10)
+        self.chairFolder.setFont(font9)
         self.chairFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -6077,7 +6061,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairFoldTuneButton)
         self.chairFoldTuneButton.setObjectName(u"chairFoldTuneButton")
         self.chairFoldTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.chairFoldTuneButton.setFont(font5)
+        self.chairFoldTuneButton.setFont(font4)
         self.chairFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6100,7 +6084,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairPartFoldTuneButton)
         self.chairPartFoldTuneButton.setObjectName(u"chairPartFoldTuneButton")
         self.chairPartFoldTuneButton.setGeometry(QRect(356, 20, 73, 22))
-        self.chairPartFoldTuneButton.setFont(font5)
+        self.chairPartFoldTuneButton.setFont(font4)
         self.chairPartFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6123,7 +6107,7 @@ class Ui_MainWindow(object):
         self.chairTuneButtonGroup.addButton(self.chairUnfoldTuneButton)
         self.chairUnfoldTuneButton.setObjectName(u"chairUnfoldTuneButton")
         self.chairUnfoldTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.chairUnfoldTuneButton.setFont(font5)
+        self.chairUnfoldTuneButton.setFont(font4)
         self.chairUnfoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6218,7 +6202,7 @@ class Ui_MainWindow(object):
         self.chairHBridgeGroup = QGroupBox(self.chairFoldPage)
         self.chairHBridgeGroup.setObjectName(u"chairHBridgeGroup")
         self.chairHBridgeGroup.setGeometry(QRect(564, 390, 238, 233))
-        self.chairHBridgeGroup.setFont(font8)
+        self.chairHBridgeGroup.setFont(font7)
         self.chairHBridgeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -6289,7 +6273,7 @@ class Ui_MainWindow(object):
         self.chairLeftBridgeText = QLineEdit(self.chairHBridgeGroup)
         self.chairLeftBridgeText.setObjectName(u"chairLeftBridgeText")
         self.chairLeftBridgeText.setGeometry(QRect(61, 117, 44, 22))
-        self.chairLeftBridgeText.setFont(font7)
+        self.chairLeftBridgeText.setFont(font6)
         self.chairLeftBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -6298,7 +6282,7 @@ class Ui_MainWindow(object):
         self.chairRightBridgeText = QLineEdit(self.chairHBridgeGroup)
         self.chairRightBridgeText.setObjectName(u"chairRightBridgeText")
         self.chairRightBridgeText.setGeometry(QRect(130, 117, 43, 22))
-        self.chairRightBridgeText.setFont(font7)
+        self.chairRightBridgeText.setFont(font6)
         self.chairRightBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -6308,7 +6292,7 @@ class Ui_MainWindow(object):
         self.chairHoldRightDutyButton = QRadioButton(self.chairHBridgeGroup)
         self.chairHoldRightDutyButton.setObjectName(u"chairHoldRightDutyButton")
         self.chairHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.chairHoldRightDutyButton.setFont(font5)
+        self.chairHoldRightDutyButton.setFont(font4)
         self.chairHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6330,7 +6314,7 @@ class Ui_MainWindow(object):
         self.chairHoldLeftDutyButton = QRadioButton(self.chairHBridgeGroup)
         self.chairHoldLeftDutyButton.setObjectName(u"chairHoldLeftDutyButton")
         self.chairHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.chairHoldLeftDutyButton.setFont(font5)
+        self.chairHoldLeftDutyButton.setFont(font4)
         self.chairHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6384,7 +6368,7 @@ class Ui_MainWindow(object):
         self.enableChairBridgeButton = QRadioButton(self.chairHBridgeGroup)
         self.enableChairBridgeButton.setObjectName(u"enableChairBridgeButton")
         self.enableChairBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableChairBridgeButton.setFont(font5)
+        self.enableChairBridgeButton.setFont(font4)
         self.enableChairBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6406,7 +6390,7 @@ class Ui_MainWindow(object):
         self.chairStateMachineGroup = QGroupBox(self.chairFoldPage)
         self.chairStateMachineGroup.setObjectName(u"chairStateMachineGroup")
         self.chairStateMachineGroup.setGeometry(QRect(564, 230, 238, 144))
-        self.chairStateMachineGroup.setFont(font8)
+        self.chairStateMachineGroup.setFont(font7)
         self.chairStateMachineGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -6429,7 +6413,7 @@ class Ui_MainWindow(object):
         self.chairStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem56)
         self.chairStateMachineTable.setObjectName(u"chairStateMachineTable")
         self.chairStateMachineTable.setGeometry(QRect(17, 50, 203, 75))
-        self.chairStateMachineTable.setFont(font10)
+        self.chairStateMachineTable.setFont(font9)
         self.chairStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.chairStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6458,7 +6442,7 @@ class Ui_MainWindow(object):
         self.chairCalibrationGroup = QGroupBox(self.chairFoldPage)
         self.chairCalibrationGroup.setObjectName(u"chairCalibrationGroup")
         self.chairCalibrationGroup.setGeometry(QRect(16, 552, 191, 123))
-        self.chairCalibrationGroup.setFont(font8)
+        self.chairCalibrationGroup.setFont(font7)
         self.chairCalibrationGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -6475,7 +6459,7 @@ class Ui_MainWindow(object):
         self.autoChairCalButton = QRadioButton(self.chairCalibrationGroup)
         self.autoChairCalButton.setObjectName(u"autoChairCalButton")
         self.autoChairCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoChairCalButton.setFont(font5)
+        self.autoChairCalButton.setFont(font4)
         self.autoChairCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6497,7 +6481,7 @@ class Ui_MainWindow(object):
         self.manualChairCalButton = QRadioButton(self.chairCalibrationGroup)
         self.manualChairCalButton.setObjectName(u"manualChairCalButton")
         self.manualChairCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualChairCalButton.setFont(font5)
+        self.manualChairCalButton.setFont(font4)
         self.manualChairCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6585,7 +6569,7 @@ class Ui_MainWindow(object):
         self.footrestDriveControlGroup = QGroupBox(self.footrestPage)
         self.footrestDriveControlGroup.setObjectName(u"footrestDriveControlGroup")
         self.footrestDriveControlGroup.setGeometry(QRect(16, 16, 532, 521))
-        self.footrestDriveControlGroup.setFont(font8)
+        self.footrestDriveControlGroup.setFont(font7)
         self.footrestDriveControlGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -6610,7 +6594,7 @@ class Ui_MainWindow(object):
         self.footrestDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem59)
         self.footrestDriveControlTable.setObjectName(u"footrestDriveControlTable")
         self.footrestDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.footrestDriveControlTable.setFont(font10)
+        self.footrestDriveControlTable.setFont(font9)
         self.footrestDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -6655,7 +6639,7 @@ class Ui_MainWindow(object):
         self.footrestPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem62)
         self.footrestPIDPosTable.setObjectName(u"footrestPIDPosTable")
         self.footrestPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.footrestPIDPosTable.setFont(font10)
+        self.footrestPIDPosTable.setFont(font9)
         self.footrestPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.footrestPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.footrestPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -6692,7 +6676,7 @@ class Ui_MainWindow(object):
         self.footrestPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem65)
         self.footrestPIDSpeedTable.setObjectName(u"footrestPIDSpeedTable")
         self.footrestPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.footrestPIDSpeedTable.setFont(font10)
+        self.footrestPIDSpeedTable.setFont(font9)
         self.footrestPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.footrestPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.footrestPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -6721,7 +6705,7 @@ class Ui_MainWindow(object):
         self.enableFootrestSpeedButton = QRadioButton(self.footrestDriveControlGroup)
         self.enableFootrestSpeedButton.setObjectName(u"enableFootrestSpeedButton")
         self.enableFootrestSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableFootrestSpeedButton.setFont(font5)
+        self.enableFootrestSpeedButton.setFont(font4)
         self.enableFootrestSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6806,7 +6790,7 @@ class Ui_MainWindow(object):
         self.topLine_4 = QFrame(self.footrestDriveControlGroup)
         self.topLine_4.setObjectName(u"topLine_4")
         self.topLine_4.setGeometry(QRect(277, 322, 237, 2))
-        self.topLine_4.setFont(font4)
+        self.topLine_4.setFont(font3)
         self.topLine_4.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -6821,7 +6805,7 @@ class Ui_MainWindow(object):
         self.footrestPlotModeButtonGroup.addButton(self.autoFootrestPlotButton)
         self.autoFootrestPlotButton.setObjectName(u"autoFootrestPlotButton")
         self.autoFootrestPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoFootrestPlotButton.setFont(font5)
+        self.autoFootrestPlotButton.setFont(font4)
         self.autoFootrestPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6844,7 +6828,7 @@ class Ui_MainWindow(object):
         self.footrestPlotModeButtonGroup.addButton(self.manualFootrestPlotButton)
         self.manualFootrestPlotButton.setObjectName(u"manualFootrestPlotButton")
         self.manualFootrestPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualFootrestPlotButton.setFont(font5)
+        self.manualFootrestPlotButton.setFont(font4)
         self.manualFootrestPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6908,7 +6892,7 @@ class Ui_MainWindow(object):
         self.footrestFolder = QLineEdit(self.footrestDriveControlGroup)
         self.footrestFolder.setObjectName(u"footrestFolder")
         self.footrestFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.footrestFolder.setFont(font10)
+        self.footrestFolder.setFont(font9)
         self.footrestFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -6965,7 +6949,7 @@ class Ui_MainWindow(object):
         self.footrestTuneButtonGroup.addButton(self.footrestFoldTuneButton)
         self.footrestFoldTuneButton.setObjectName(u"footrestFoldTuneButton")
         self.footrestFoldTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.footrestFoldTuneButton.setFont(font5)
+        self.footrestFoldTuneButton.setFont(font4)
         self.footrestFoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -6988,7 +6972,7 @@ class Ui_MainWindow(object):
         self.footrestTuneButtonGroup.addButton(self.footrestUnfoldTuneButton)
         self.footrestUnfoldTuneButton.setObjectName(u"footrestUnfoldTuneButton")
         self.footrestUnfoldTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.footrestUnfoldTuneButton.setFont(font5)
+        self.footrestUnfoldTuneButton.setFont(font4)
         self.footrestUnfoldTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7058,7 +7042,7 @@ class Ui_MainWindow(object):
         self.footrestDrivePositionGroup = QGroupBox(self.footrestPage)
         self.footrestDrivePositionGroup.setObjectName(u"footrestDrivePositionGroup")
         self.footrestDrivePositionGroup.setGeometry(QRect(564, 16, 238, 180))
-        self.footrestDrivePositionGroup.setFont(font8)
+        self.footrestDrivePositionGroup.setFont(font7)
         self.footrestDrivePositionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7081,7 +7065,7 @@ class Ui_MainWindow(object):
         self.footrestDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem67)
         self.footrestDrivePositionTable.setObjectName(u"footrestDrivePositionTable")
         self.footrestDrivePositionTable.setGeometry(QRect(17, 50, 203, 111))
-        self.footrestDrivePositionTable.setFont(font10)
+        self.footrestDrivePositionTable.setFont(font9)
         self.footrestDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7131,7 +7115,7 @@ class Ui_MainWindow(object):
         self.footrestHBridgeGroup = QGroupBox(self.footrestPage)
         self.footrestHBridgeGroup.setObjectName(u"footrestHBridgeGroup")
         self.footrestHBridgeGroup.setGeometry(QRect(564, 372, 238, 233))
-        self.footrestHBridgeGroup.setFont(font8)
+        self.footrestHBridgeGroup.setFont(font7)
         self.footrestHBridgeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7202,7 +7186,7 @@ class Ui_MainWindow(object):
         self.footrestLeftBridgeText = QLineEdit(self.footrestHBridgeGroup)
         self.footrestLeftBridgeText.setObjectName(u"footrestLeftBridgeText")
         self.footrestLeftBridgeText.setGeometry(QRect(61, 117, 44, 22))
-        self.footrestLeftBridgeText.setFont(font7)
+        self.footrestLeftBridgeText.setFont(font6)
         self.footrestLeftBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -7211,7 +7195,7 @@ class Ui_MainWindow(object):
         self.footrestRightBridgeText = QLineEdit(self.footrestHBridgeGroup)
         self.footrestRightBridgeText.setObjectName(u"footrestRightBridgeText")
         self.footrestRightBridgeText.setGeometry(QRect(130, 117, 43, 22))
-        self.footrestRightBridgeText.setFont(font7)
+        self.footrestRightBridgeText.setFont(font6)
         self.footrestRightBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -7221,7 +7205,7 @@ class Ui_MainWindow(object):
         self.footrestHoldRightDutyButton = QRadioButton(self.footrestHBridgeGroup)
         self.footrestHoldRightDutyButton.setObjectName(u"footrestHoldRightDutyButton")
         self.footrestHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.footrestHoldRightDutyButton.setFont(font5)
+        self.footrestHoldRightDutyButton.setFont(font4)
         self.footrestHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7243,7 +7227,7 @@ class Ui_MainWindow(object):
         self.footrestHoldLeftDutyButton = QRadioButton(self.footrestHBridgeGroup)
         self.footrestHoldLeftDutyButton.setObjectName(u"footrestHoldLeftDutyButton")
         self.footrestHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.footrestHoldLeftDutyButton.setFont(font5)
+        self.footrestHoldLeftDutyButton.setFont(font4)
         self.footrestHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7297,7 +7281,7 @@ class Ui_MainWindow(object):
         self.enableFootrestBridgeButton = QRadioButton(self.footrestHBridgeGroup)
         self.enableFootrestBridgeButton.setObjectName(u"enableFootrestBridgeButton")
         self.enableFootrestBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableFootrestBridgeButton.setFont(font5)
+        self.enableFootrestBridgeButton.setFont(font4)
         self.enableFootrestBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7319,7 +7303,7 @@ class Ui_MainWindow(object):
         self.footrestStateMachineGroup = QGroupBox(self.footrestPage)
         self.footrestStateMachineGroup.setObjectName(u"footrestStateMachineGroup")
         self.footrestStateMachineGroup.setGeometry(QRect(564, 212, 238, 140))
-        self.footrestStateMachineGroup.setFont(font8)
+        self.footrestStateMachineGroup.setFont(font7)
         self.footrestStateMachineGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7342,7 +7326,7 @@ class Ui_MainWindow(object):
         self.footrestStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem69)
         self.footrestStateMachineTable.setObjectName(u"footrestStateMachineTable")
         self.footrestStateMachineTable.setGeometry(QRect(17, 50, 203, 74))
-        self.footrestStateMachineTable.setFont(font10)
+        self.footrestStateMachineTable.setFont(font9)
         self.footrestStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.footrestStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7371,7 +7355,7 @@ class Ui_MainWindow(object):
         self.footrestCalibrationGroup = QGroupBox(self.footrestPage)
         self.footrestCalibrationGroup.setObjectName(u"footrestCalibrationGroup")
         self.footrestCalibrationGroup.setGeometry(QRect(16, 552, 191, 123))
-        self.footrestCalibrationGroup.setFont(font8)
+        self.footrestCalibrationGroup.setFont(font7)
         self.footrestCalibrationGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7388,7 +7372,7 @@ class Ui_MainWindow(object):
         self.autoFootrestCalButton = QRadioButton(self.footrestCalibrationGroup)
         self.autoFootrestCalButton.setObjectName(u"autoFootrestCalButton")
         self.autoFootrestCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoFootrestCalButton.setFont(font5)
+        self.autoFootrestCalButton.setFont(font4)
         self.autoFootrestCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7410,7 +7394,7 @@ class Ui_MainWindow(object):
         self.manualFootrestCalButton = QRadioButton(self.footrestCalibrationGroup)
         self.manualFootrestCalButton.setObjectName(u"manualFootrestCalButton")
         self.manualFootrestCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualFootrestCalButton.setFont(font5)
+        self.manualFootrestCalButton.setFont(font4)
         self.manualFootrestCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7498,7 +7482,7 @@ class Ui_MainWindow(object):
         self.mainStateMachineGroup = QGroupBox(self.mainDrivePage)
         self.mainStateMachineGroup.setObjectName(u"mainStateMachineGroup")
         self.mainStateMachineGroup.setGeometry(QRect(564, 142, 238, 142))
-        self.mainStateMachineGroup.setFont(font8)
+        self.mainStateMachineGroup.setFont(font7)
         self.mainStateMachineGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7521,7 +7505,7 @@ class Ui_MainWindow(object):
         self.mainStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem71)
         self.mainStateMachineTable.setObjectName(u"mainStateMachineTable")
         self.mainStateMachineTable.setGeometry(QRect(17, 50, 203, 74))
-        self.mainStateMachineTable.setFont(font10)
+        self.mainStateMachineTable.setFont(font9)
         self.mainStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7550,7 +7534,7 @@ class Ui_MainWindow(object):
         self.mainHBridgeGroup = QGroupBox(self.mainDrivePage)
         self.mainHBridgeGroup.setObjectName(u"mainHBridgeGroup")
         self.mainHBridgeGroup.setGeometry(QRect(564, 303, 238, 233))
-        self.mainHBridgeGroup.setFont(font8)
+        self.mainHBridgeGroup.setFont(font7)
         self.mainHBridgeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7621,7 +7605,7 @@ class Ui_MainWindow(object):
         self.mainLeftBridgeText = QLineEdit(self.mainHBridgeGroup)
         self.mainLeftBridgeText.setObjectName(u"mainLeftBridgeText")
         self.mainLeftBridgeText.setGeometry(QRect(61, 117, 44, 22))
-        self.mainLeftBridgeText.setFont(font7)
+        self.mainLeftBridgeText.setFont(font6)
         self.mainLeftBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -7630,7 +7614,7 @@ class Ui_MainWindow(object):
         self.mainRightBridgeText = QLineEdit(self.mainHBridgeGroup)
         self.mainRightBridgeText.setObjectName(u"mainRightBridgeText")
         self.mainRightBridgeText.setGeometry(QRect(130, 117, 43, 22))
-        self.mainRightBridgeText.setFont(font7)
+        self.mainRightBridgeText.setFont(font6)
         self.mainRightBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -7640,7 +7624,7 @@ class Ui_MainWindow(object):
         self.mainHoldRightDutyButton = QRadioButton(self.mainHBridgeGroup)
         self.mainHoldRightDutyButton.setObjectName(u"mainHoldRightDutyButton")
         self.mainHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.mainHoldRightDutyButton.setFont(font5)
+        self.mainHoldRightDutyButton.setFont(font4)
         self.mainHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7662,7 +7646,7 @@ class Ui_MainWindow(object):
         self.mainHoldLeftDutyButton = QRadioButton(self.mainHBridgeGroup)
         self.mainHoldLeftDutyButton.setObjectName(u"mainHoldLeftDutyButton")
         self.mainHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.mainHoldLeftDutyButton.setFont(font5)
+        self.mainHoldLeftDutyButton.setFont(font4)
         self.mainHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7716,7 +7700,7 @@ class Ui_MainWindow(object):
         self.enableMainBridgeButton = QRadioButton(self.mainHBridgeGroup)
         self.enableMainBridgeButton.setObjectName(u"enableMainBridgeButton")
         self.enableMainBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableMainBridgeButton.setFont(font5)
+        self.enableMainBridgeButton.setFont(font4)
         self.enableMainBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7738,7 +7722,7 @@ class Ui_MainWindow(object):
         self.mainDriveControlGroup = QGroupBox(self.mainDrivePage)
         self.mainDriveControlGroup.setObjectName(u"mainDriveControlGroup")
         self.mainDriveControlGroup.setGeometry(QRect(16, 16, 532, 521))
-        self.mainDriveControlGroup.setFont(font8)
+        self.mainDriveControlGroup.setFont(font7)
         self.mainDriveControlGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -7763,7 +7747,7 @@ class Ui_MainWindow(object):
         self.mainDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem74)
         self.mainDriveControlTable.setObjectName(u"mainDriveControlTable")
         self.mainDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.mainDriveControlTable.setFont(font10)
+        self.mainDriveControlTable.setFont(font9)
         self.mainDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -7808,7 +7792,7 @@ class Ui_MainWindow(object):
         self.mainPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem77)
         self.mainPIDPosTable.setObjectName(u"mainPIDPosTable")
         self.mainPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.mainPIDPosTable.setFont(font10)
+        self.mainPIDPosTable.setFont(font9)
         self.mainPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mainPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.mainPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -7845,7 +7829,7 @@ class Ui_MainWindow(object):
         self.mainPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem80)
         self.mainPIDSpeedTable.setObjectName(u"mainPIDSpeedTable")
         self.mainPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.mainPIDSpeedTable.setFont(font10)
+        self.mainPIDSpeedTable.setFont(font9)
         self.mainPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.mainPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.mainPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -7874,7 +7858,7 @@ class Ui_MainWindow(object):
         self.enableMainSpeedButton = QRadioButton(self.mainDriveControlGroup)
         self.enableMainSpeedButton.setObjectName(u"enableMainSpeedButton")
         self.enableMainSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableMainSpeedButton.setFont(font5)
+        self.enableMainSpeedButton.setFont(font4)
         self.enableMainSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7959,7 +7943,7 @@ class Ui_MainWindow(object):
         self.topLine_11 = QFrame(self.mainDriveControlGroup)
         self.topLine_11.setObjectName(u"topLine_11")
         self.topLine_11.setGeometry(QRect(277, 322, 237, 2))
-        self.topLine_11.setFont(font4)
+        self.topLine_11.setFont(font3)
         self.topLine_11.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -7974,7 +7958,7 @@ class Ui_MainWindow(object):
         self.mainPlotModeButtonGroup.addButton(self.autoMainPlotButton)
         self.autoMainPlotButton.setObjectName(u"autoMainPlotButton")
         self.autoMainPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoMainPlotButton.setFont(font5)
+        self.autoMainPlotButton.setFont(font4)
         self.autoMainPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -7997,7 +7981,7 @@ class Ui_MainWindow(object):
         self.mainPlotModeButtonGroup.addButton(self.manualMainPlotButton)
         self.manualMainPlotButton.setObjectName(u"manualMainPlotButton")
         self.manualMainPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualMainPlotButton.setFont(font5)
+        self.manualMainPlotButton.setFont(font4)
         self.manualMainPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8082,7 +8066,7 @@ class Ui_MainWindow(object):
         self.mainFolder = QLineEdit(self.mainDriveControlGroup)
         self.mainFolder.setObjectName(u"mainFolder")
         self.mainFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.mainFolder.setFont(font10)
+        self.mainFolder.setFont(font9)
         self.mainFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -8163,7 +8147,7 @@ class Ui_MainWindow(object):
         self.mainDrivePositionGroup = QGroupBox(self.mainDrivePage)
         self.mainDrivePositionGroup.setObjectName(u"mainDrivePositionGroup")
         self.mainDrivePositionGroup.setGeometry(QRect(564, 16, 238, 109))
-        self.mainDrivePositionGroup.setFont(font8)
+        self.mainDrivePositionGroup.setFont(font7)
         self.mainDrivePositionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -8186,7 +8170,7 @@ class Ui_MainWindow(object):
         self.mainDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem82)
         self.mainDrivePositionTable.setObjectName(u"mainDrivePositionTable")
         self.mainDrivePositionTable.setGeometry(QRect(17, 50, 203, 39))
-        self.mainDrivePositionTable.setFont(font10)
+        self.mainDrivePositionTable.setFont(font9)
         self.mainDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.mainDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8239,7 +8223,7 @@ class Ui_MainWindow(object):
         self.swivelDrivePositionGroup = QGroupBox(self.swivelPage)
         self.swivelDrivePositionGroup.setObjectName(u"swivelDrivePositionGroup")
         self.swivelDrivePositionGroup.setGeometry(QRect(564, 16, 238, 199))
-        self.swivelDrivePositionGroup.setFont(font8)
+        self.swivelDrivePositionGroup.setFont(font7)
         self.swivelDrivePositionGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -8262,7 +8246,7 @@ class Ui_MainWindow(object):
         self.swivelDrivePositionTable.setHorizontalHeaderItem(1, __qtablewidgetitem84)
         self.swivelDrivePositionTable.setObjectName(u"swivelDrivePositionTable")
         self.swivelDrivePositionTable.setGeometry(QRect(17, 50, 203, 129))
-        self.swivelDrivePositionTable.setFont(font10)
+        self.swivelDrivePositionTable.setFont(font9)
         self.swivelDrivePositionTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelDrivePositionTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8312,7 +8296,7 @@ class Ui_MainWindow(object):
         self.swivelCalibrationGroup = QGroupBox(self.swivelPage)
         self.swivelCalibrationGroup.setObjectName(u"swivelCalibrationGroup")
         self.swivelCalibrationGroup.setGeometry(QRect(16, 552, 191, 123))
-        self.swivelCalibrationGroup.setFont(font8)
+        self.swivelCalibrationGroup.setFont(font7)
         self.swivelCalibrationGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -8329,7 +8313,7 @@ class Ui_MainWindow(object):
         self.autoSwivelCalButton = QRadioButton(self.swivelCalibrationGroup)
         self.autoSwivelCalButton.setObjectName(u"autoSwivelCalButton")
         self.autoSwivelCalButton.setGeometry(QRect(29, 90, 63, 22))
-        self.autoSwivelCalButton.setFont(font5)
+        self.autoSwivelCalButton.setFont(font4)
         self.autoSwivelCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8351,7 +8335,7 @@ class Ui_MainWindow(object):
         self.manualSwivelCalButton = QRadioButton(self.swivelCalibrationGroup)
         self.manualSwivelCalButton.setObjectName(u"manualSwivelCalButton")
         self.manualSwivelCalButton.setGeometry(QRect(99, 90, 72, 22))
-        self.manualSwivelCalButton.setFont(font5)
+        self.manualSwivelCalButton.setFont(font4)
         self.manualSwivelCalButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8436,7 +8420,7 @@ class Ui_MainWindow(object):
         self.swivelDriveControlGroup = QGroupBox(self.swivelPage)
         self.swivelDriveControlGroup.setObjectName(u"swivelDriveControlGroup")
         self.swivelDriveControlGroup.setGeometry(QRect(16, 16, 532, 521))
-        self.swivelDriveControlGroup.setFont(font8)
+        self.swivelDriveControlGroup.setFont(font7)
         self.swivelDriveControlGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -8461,7 +8445,7 @@ class Ui_MainWindow(object):
         self.swivelDriveControlTable.setHorizontalHeaderItem(2, __qtablewidgetitem87)
         self.swivelDriveControlTable.setObjectName(u"swivelDriveControlTable")
         self.swivelDriveControlTable.setGeometry(QRect(17, 50, 246, 407))
-        self.swivelDriveControlTable.setFont(font10)
+        self.swivelDriveControlTable.setFont(font9)
         self.swivelDriveControlTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelDriveControlTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -8506,7 +8490,7 @@ class Ui_MainWindow(object):
         self.swivelPIDPosTable.setHorizontalHeaderItem(2, __qtablewidgetitem90)
         self.swivelPIDPosTable.setObjectName(u"swivelPIDPosTable")
         self.swivelPIDPosTable.setGeometry(QRect(277, 50, 238, 97))
-        self.swivelPIDPosTable.setFont(font10)
+        self.swivelPIDPosTable.setFont(font9)
         self.swivelPIDPosTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.swivelPIDPosTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.swivelPIDPosTable.setStyleSheet(u"QTableWidget {\n"
@@ -8543,7 +8527,7 @@ class Ui_MainWindow(object):
         self.swivelPIDSpeedTable.setHorizontalHeaderItem(2, __qtablewidgetitem93)
         self.swivelPIDSpeedTable.setObjectName(u"swivelPIDSpeedTable")
         self.swivelPIDSpeedTable.setGeometry(QRect(277, 190, 238, 82))
-        self.swivelPIDSpeedTable.setFont(font10)
+        self.swivelPIDSpeedTable.setFont(font9)
         self.swivelPIDSpeedTable.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.PointingHandCursor))
         self.swivelPIDSpeedTable.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
         self.swivelPIDSpeedTable.setStyleSheet(u"QTableWidget {\n"
@@ -8572,7 +8556,7 @@ class Ui_MainWindow(object):
         self.enableSwivelSpeedButton = QRadioButton(self.swivelDriveControlGroup)
         self.enableSwivelSpeedButton.setObjectName(u"enableSwivelSpeedButton")
         self.enableSwivelSpeedButton.setGeometry(QRect(330, 160, 144, 22))
-        self.enableSwivelSpeedButton.setFont(font5)
+        self.enableSwivelSpeedButton.setFont(font4)
         self.enableSwivelSpeedButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8657,7 +8641,7 @@ class Ui_MainWindow(object):
         self.topLine_6 = QFrame(self.swivelDriveControlGroup)
         self.topLine_6.setObjectName(u"topLine_6")
         self.topLine_6.setGeometry(QRect(277, 322, 237, 2))
-        self.topLine_6.setFont(font4)
+        self.topLine_6.setFont(font3)
         self.topLine_6.setStyleSheet(u"QFrame {\n"
 "    background-color: #000000; /* Solid black line */\n"
 "    max-height: 2px;          /* Restrict height to 1px */\n"
@@ -8672,7 +8656,7 @@ class Ui_MainWindow(object):
         self.swivelPlotModeButtonGroup.addButton(self.autoSwivelPlotButton)
         self.autoSwivelPlotButton.setObjectName(u"autoSwivelPlotButton")
         self.autoSwivelPlotButton.setGeometry(QRect(19, 463, 63, 22))
-        self.autoSwivelPlotButton.setFont(font5)
+        self.autoSwivelPlotButton.setFont(font4)
         self.autoSwivelPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8695,7 +8679,7 @@ class Ui_MainWindow(object):
         self.swivelPlotModeButtonGroup.addButton(self.manualSwivelPlotButton)
         self.manualSwivelPlotButton.setObjectName(u"manualSwivelPlotButton")
         self.manualSwivelPlotButton.setGeometry(QRect(19, 488, 72, 22))
-        self.manualSwivelPlotButton.setFont(font5)
+        self.manualSwivelPlotButton.setFont(font4)
         self.manualSwivelPlotButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8780,7 +8764,7 @@ class Ui_MainWindow(object):
         self.swivelFolder = QLineEdit(self.swivelDriveControlGroup)
         self.swivelFolder.setObjectName(u"swivelFolder")
         self.swivelFolder.setGeometry(QRect(278, 337, 236, 22))
-        self.swivelFolder.setFont(font10)
+        self.swivelFolder.setFont(font9)
         self.swivelFolder.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -8816,7 +8800,7 @@ class Ui_MainWindow(object):
         self.swivelTuneButtonGroup.addButton(self.swivelLeftTuneButton)
         self.swivelLeftTuneButton.setObjectName(u"swivelLeftTuneButton")
         self.swivelLeftTuneButton.setGeometry(QRect(300, 20, 50, 22))
-        self.swivelLeftTuneButton.setFont(font5)
+        self.swivelLeftTuneButton.setFont(font4)
         self.swivelLeftTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8839,7 +8823,7 @@ class Ui_MainWindow(object):
         self.swivelTuneButtonGroup.addButton(self.swivelRightTuneButton)
         self.swivelRightTuneButton.setObjectName(u"swivelRightTuneButton")
         self.swivelRightTuneButton.setGeometry(QRect(434, 20, 58, 22))
-        self.swivelRightTuneButton.setFont(font5)
+        self.swivelRightTuneButton.setFont(font4)
         self.swivelRightTuneButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -8909,7 +8893,7 @@ class Ui_MainWindow(object):
         self.swivelHBridgeGroup = QGroupBox(self.swivelPage)
         self.swivelHBridgeGroup.setObjectName(u"swivelHBridgeGroup")
         self.swivelHBridgeGroup.setGeometry(QRect(564, 390, 238, 233))
-        self.swivelHBridgeGroup.setFont(font8)
+        self.swivelHBridgeGroup.setFont(font7)
         self.swivelHBridgeGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -8980,7 +8964,7 @@ class Ui_MainWindow(object):
         self.swivelLeftBridgeText = QLineEdit(self.swivelHBridgeGroup)
         self.swivelLeftBridgeText.setObjectName(u"swivelLeftBridgeText")
         self.swivelLeftBridgeText.setGeometry(QRect(61, 117, 44, 22))
-        self.swivelLeftBridgeText.setFont(font7)
+        self.swivelLeftBridgeText.setFont(font6)
         self.swivelLeftBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -8989,7 +8973,7 @@ class Ui_MainWindow(object):
         self.swivelRightBridgeText = QLineEdit(self.swivelHBridgeGroup)
         self.swivelRightBridgeText.setObjectName(u"swivelRightBridgeText")
         self.swivelRightBridgeText.setGeometry(QRect(130, 117, 43, 22))
-        self.swivelRightBridgeText.setFont(font7)
+        self.swivelRightBridgeText.setFont(font6)
         self.swivelRightBridgeText.setStyleSheet(u"QLineEdit{\n"
 "	background-color: transparent;\n"
 "	color: black;\n"
@@ -8999,7 +8983,7 @@ class Ui_MainWindow(object):
         self.swivelHoldRightDutyButton = QRadioButton(self.swivelHBridgeGroup)
         self.swivelHoldRightDutyButton.setObjectName(u"swivelHoldRightDutyButton")
         self.swivelHoldRightDutyButton.setGeometry(QRect(174, 17, 51, 22))
-        self.swivelHoldRightDutyButton.setFont(font5)
+        self.swivelHoldRightDutyButton.setFont(font4)
         self.swivelHoldRightDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9021,7 +9005,7 @@ class Ui_MainWindow(object):
         self.swivelHoldLeftDutyButton = QRadioButton(self.swivelHBridgeGroup)
         self.swivelHoldLeftDutyButton.setObjectName(u"swivelHoldLeftDutyButton")
         self.swivelHoldLeftDutyButton.setGeometry(QRect(18, 17, 51, 22))
-        self.swivelHoldLeftDutyButton.setFont(font5)
+        self.swivelHoldLeftDutyButton.setFont(font4)
         self.swivelHoldLeftDutyButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9075,7 +9059,7 @@ class Ui_MainWindow(object):
         self.enableSwivelBridgeButton = QRadioButton(self.swivelHBridgeGroup)
         self.enableSwivelBridgeButton.setObjectName(u"enableSwivelBridgeButton")
         self.enableSwivelBridgeButton.setGeometry(QRect(90, 205, 60, 22))
-        self.enableSwivelBridgeButton.setFont(font5)
+        self.enableSwivelBridgeButton.setFont(font4)
         self.enableSwivelBridgeButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "	background-color: transparent;\n"
@@ -9097,7 +9081,7 @@ class Ui_MainWindow(object):
         self.swivelStateMachineGroup = QGroupBox(self.swivelPage)
         self.swivelStateMachineGroup.setObjectName(u"swivelStateMachineGroup")
         self.swivelStateMachineGroup.setGeometry(QRect(564, 230, 238, 144))
-        self.swivelStateMachineGroup.setFont(font8)
+        self.swivelStateMachineGroup.setFont(font7)
         self.swivelStateMachineGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -9120,7 +9104,7 @@ class Ui_MainWindow(object):
         self.swivelStateMachineTable.setHorizontalHeaderItem(1, __qtablewidgetitem95)
         self.swivelStateMachineTable.setObjectName(u"swivelStateMachineTable")
         self.swivelStateMachineTable.setGeometry(QRect(17, 50, 203, 75))
-        self.swivelStateMachineTable.setFont(font10)
+        self.swivelStateMachineTable.setFont(font9)
         self.swivelStateMachineTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.swivelStateMachineTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9152,7 +9136,7 @@ class Ui_MainWindow(object):
         self.enableX06MessagesButton = QRadioButton(self.x06Page)
         self.enableX06MessagesButton.setObjectName(u"enableX06MessagesButton")
         self.enableX06MessagesButton.setGeometry(QRect(14, 13, 139, 22))
-        self.enableX06MessagesButton.setFont(font5)
+        self.enableX06MessagesButton.setFont(font4)
         self.enableX06MessagesButton.setStyleSheet(u"QRadioButton {\n"
 "    color: #000000; /* Text color */\n"
 "}\n"
@@ -9174,7 +9158,7 @@ class Ui_MainWindow(object):
         self.consoleTab = QTabWidget(self.centralwidget)
         self.consoleTab.setObjectName(u"consoleTab")
         self.consoleTab.setGeometry(QRect(1219, 11, 636, 986))
-        self.consoleTab.setFont(font6)
+        self.consoleTab.setFont(font5)
         self.consoleTab.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.consoleTab.setStyleSheet(u"QTabWidget::pane {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9252,7 +9236,7 @@ class Ui_MainWindow(object):
         self.primaryConsoleLog = QTextBrowser(self.primaryTab)
         self.primaryConsoleLog.setObjectName(u"primaryConsoleLog")
         self.primaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.primaryConsoleLog.setFont(font11)
+        self.primaryConsoleLog.setFont(font10)
         self.primaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.primaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9396,7 +9380,7 @@ class Ui_MainWindow(object):
         self.secondaryConsoleLog = QTextBrowser(self.secondaryTab)
         self.secondaryConsoleLog.setObjectName(u"secondaryConsoleLog")
         self.secondaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.secondaryConsoleLog.setFont(font11)
+        self.secondaryConsoleLog.setFont(font10)
         self.secondaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.secondaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9498,7 +9482,7 @@ class Ui_MainWindow(object):
         self.tertiaryConsoleLog = QTextBrowser(self.tertiaryTab)
         self.tertiaryConsoleLog.setObjectName(u"tertiaryConsoleLog")
         self.tertiaryConsoleLog.setGeometry(QRect(16, 15, 600, 924))
-        self.tertiaryConsoleLog.setFont(font11)
+        self.tertiaryConsoleLog.setFont(font10)
         self.tertiaryConsoleLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
         self.tertiaryConsoleLog.setStyleSheet(u"QTextBrowser {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
@@ -9648,10 +9632,10 @@ class Ui_MainWindow(object):
         self.hexDisplayGroup = QGroupBox(self.sysFrame)
         self.hexDisplayGroup.setObjectName(u"hexDisplayGroup")
         self.hexDisplayGroup.setGeometry(QRect(553, 12, 256, 96))
-        font15 = QFont()
-        font15.setPointSize(10)
-        font15.setBold(True)
-        self.hexDisplayGroup.setFont(font15)
+        font14 = QFont()
+        font14.setPointSize(10)
+        font14.setBold(True)
+        self.hexDisplayGroup.setFont(font14)
         self.hexDisplayGroup.setStyleSheet(u"QGroupBox {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 5px; /* Rounded corners for the border */\n"
@@ -9733,9 +9717,9 @@ class Ui_MainWindow(object):
         self.decimalPoint = QLabel(self.hexDisplayGroup)
         self.decimalPoint.setObjectName(u"decimalPoint")
         self.decimalPoint.setGeometry(QRect(142, 10, 16, 69))
-        font16 = QFont()
-        font16.setPointSize(60)
-        self.decimalPoint.setFont(font16)
+        font15 = QFont()
+        font15.setPointSize(60)
+        self.decimalPoint.setFont(font15)
         self.decimalPoint.setStyleSheet(u"QLabel {\n"
 "	background: transparent;\n"
 "	border: none;\n"
@@ -9744,7 +9728,7 @@ class Ui_MainWindow(object):
         self.eCodeLineEdit = QLineEdit(self.sysFrame)
         self.eCodeLineEdit.setObjectName(u"eCodeLineEdit")
         self.eCodeLineEdit.setGeometry(QRect(553, 117, 256, 22))
-        self.eCodeLineEdit.setFont(font10)
+        self.eCodeLineEdit.setFont(font9)
         self.eCodeLineEdit.setStyleSheet(u"QLineEdit{\n"
 "	background-color: #FFE200;\n"
 "	border: 1px solid black;\n"
@@ -9761,7 +9745,7 @@ class Ui_MainWindow(object):
         self.miscTable.setHorizontalHeaderItem(1, __qtablewidgetitem97)
         self.miscTable.setObjectName(u"miscTable")
         self.miscTable.setGeometry(QRect(15, 14, 241, 94))
-        self.miscTable.setFont(font10)
+        self.miscTable.setFont(font9)
         self.miscTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.miscTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9789,7 +9773,7 @@ class Ui_MainWindow(object):
         self.opModeBox = QComboBox(self.sysFrame)
         self.opModeBox.setObjectName(u"opModeBox")
         self.opModeBox.setGeometry(QRect(15, 117, 152, 21))
-        self.opModeBox.setFont(font10)
+        self.opModeBox.setFont(font9)
         self.opModeBox.setStyleSheet(u"QComboBox{\n"
 "    color: #000000; /* Text color */\n"
 "    background-color: #FFFFFF; /* Background color */\n"
@@ -9816,7 +9800,7 @@ class Ui_MainWindow(object):
         self.setOpModeButton = QPushButton(self.sysFrame)
         self.setOpModeButton.setObjectName(u"setOpModeButton")
         self.setOpModeButton.setGeometry(QRect(178, 117, 78, 21))
-        self.setOpModeButton.setFont(font7)
+        self.setOpModeButton.setFont(font6)
         self.setOpModeButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000; /* Text color */\n"
 "    border: 2px solid #000000; /* Border color */\n"
@@ -9838,7 +9822,7 @@ class Ui_MainWindow(object):
         self.clearFaultButton = QPushButton(self.sysFrame)
         self.clearFaultButton.setObjectName(u"clearFaultButton")
         self.clearFaultButton.setGeometry(QRect(335, 100, 54, 26))
-        self.clearFaultButton.setFont(font3)
+        self.clearFaultButton.setFont(font2)
         self.clearFaultButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -9866,7 +9850,7 @@ class Ui_MainWindow(object):
         self.assertTable.setHorizontalHeaderItem(1, __qtablewidgetitem99)
         self.assertTable.setObjectName(u"assertTable")
         self.assertTable.setGeometry(QRect(270, 14, 241, 74))
-        self.assertTable.setFont(font10)
+        self.assertTable.setFont(font9)
         self.assertTable.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.assertTable.setStyleSheet(u"QTableWidget {\n"
 "    border: 2px solid black;\n"
@@ -9894,7 +9878,7 @@ class Ui_MainWindow(object):
         self.clearAssertButton = QPushButton(self.sysFrame)
         self.clearAssertButton.setObjectName(u"clearAssertButton")
         self.clearAssertButton.setGeometry(QRect(394, 100, 54, 26))
-        self.clearAssertButton.setFont(font3)
+        self.clearAssertButton.setFont(font2)
         self.clearAssertButton.setStyleSheet(u"QPushButton {\n"
 "    color: #000000;\n"
 "    border: 2px solid #000000;\n"
@@ -9933,7 +9917,6 @@ class Ui_MainWindow(object):
         self.configurationPageButton.setText(QCoreApplication.translate("MainWindow", u"Config", None))
         self.railMappingPageButton.setText(QCoreApplication.translate("MainWindow", u"Rail \n"
 " Map", None))
-        self.metricsVersionText.setText(QCoreApplication.translate("MainWindow", u"VX.X.X", None))
         self.carriageLeftCallButton.setText(QCoreApplication.translate("MainWindow", u"Carriage\n"
 "Left", None))
         self.footrestUnfoldCallButton.setText(QCoreApplication.translate("MainWindow", u"Footrest\n"

@@ -24,7 +24,7 @@ class UIAuthentication:
         self.main_window.ui.authenticateButton.toggled.connect(self.handleAuthenticateButton)
 
         # Set the desired initial authentication state.
-        self.auth_required = False
+        self.auth_required = True
         self.authenticated = False
 
         # Update the authentication button state but do not call the handler.
@@ -135,7 +135,7 @@ class UIAuthentication:
                 self.main_window.ui_console.logPrimaryConsole(f"{CSS.START_STYLE}color: {Colours.GARNET.name()};{CSS.START_STYLE_END}{datetime.now().strftime('%H:%M:%S.%f')[:-3]} - Auth Value: {auth_val}{CSS.END_STYLE}")
                 auth_calc = self.calcAuth(auth_val)
                 self.main_window.ui_console.logPrimaryConsole(f"{CSS.START_STYLE}color: {Colours.GARNET.name()};{CSS.START_STYLE_END}{datetime.now().strftime('%H:%M:%S.%f')[:-3]} - Auth Calc: {auth_calc}{CSS.END_STYLE}")
-                if self.main_window.ui_comms.sendMessage(MessageID.AUTHENTICATE, "Q", [auth_calc], SrcDest.SRC_DEST_ECU1, MsgMode.SET):
+                if self.main_window.ui_comms.sendMessage(MessageID.AUTHENTICATE, "Q", [auth_calc], SrcDest.SRC_DEST_X04, MsgMode.SET):
                     status_msg = "Sending authentication"
 
         self.main_window.ui_console.logPrimaryConsole(f"{CSS.START_STYLE}color: {Colours.GARNET.name()};{CSS.START_STYLE_END}{datetime.now().strftime('%H:%M:%S.%f')[:-3]} - {status_msg}{CSS.END_STYLE}")
@@ -145,7 +145,7 @@ class UIAuthentication:
         """
         Sends a handshake in an attempt to authenticate with the device.
         """
-        if self.main_window.ui_comms.sendMessage(MessageID.HANDSHAKE, "BBB", [SrcDest.SRC_DEST_PC.value, 1, 0], SrcDest.SRC_DEST_ECU1, MsgMode.SET):
+        if self.main_window.ui_comms.sendMessage(MessageID.HANDSHAKE, "BBB", [SrcDest.SRC_DEST_PC.value, 1, 0], SrcDest.SRC_DEST_X04, MsgMode.SET):
             status_msg = "Sending handshake"
         else:
             status_msg = "Unable to send handshake"

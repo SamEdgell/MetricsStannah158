@@ -233,40 +233,6 @@ QPushButton:pressed {
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <widget class="QLineEdit" name="metricsVersionText">
-      <property name="geometry">
-       <rect>
-        <x>5</x>
-        <y>61</y>
-        <width>50</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit{
-	background-color: transparent;
-	border: none;
-	border-radius: 3px;
-	color: black;
-}</string>
-      </property>
-      <property name="text">
-       <string>VX.X.X</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
     </widget>
     <widget class="QFrame" name="callFrame">
      <property name="geometry">
@@ -19301,19 +19267,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
+  <buttongroup name="swivelTuneButtonGroup"/>
+  <buttongroup name="chairPlotModeButtonGroup"/>
+  <buttongroup name="chairTuneButtonGroup"/>
+  <buttongroup name="rmmLocatingButtonGroup"/>
   <buttongroup name="footrestPlotModeButtonGroup"/>
+  <buttongroup name="footrestTuneButtonGroup"/>
+  <buttongroup name="swivelPlotModeButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="chairTuneButtonGroup"/>
   <buttongroup name="mainPlotModeButtonGroup"/>
-  <buttongroup name="rmmLocatingButtonGroup"/>
-  <buttongroup name="swivelPlotModeButtonGroup"/>
-  <buttongroup name="chairPlotModeButtonGroup"/>
-  <buttongroup name="footrestTuneButtonGroup"/>
-  <buttongroup name="autoManualCommsButtonGroup"/>
-  <buttongroup name="swivelTuneButtonGroup"/>
  </buttongroups>
 </ui>

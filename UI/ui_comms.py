@@ -167,13 +167,13 @@ class UIComms:
             match msg_id:
                 case MessageID.HEARTBEAT:
                     self.main_window.ui_panel.heartbeatReceived()
-                case MessageID.METRICS_EVENT:
+                case MessageID.METRIC_EVENT:
                     processMetrics(self, msgBytes)
-                case MessageID.ADC_STATUS:
+                case MessageID.METRIC_ADC_STATUS:
                     self.main_window.ui_adc.updateADCTable(msgBytes)
-                case MessageID.GPIO_INPUTS_STATUS:
+                case MessageID.METRIC_GPIO_INPUT_STATUS:
                     self.main_window.ui_gpio.updateInputTable(msgBytes)
-                case MessageID.GPIO_OUTPUTS_STATUS:
+                case MessageID.METRIC_GPIO_OUTPUT_STATUS:
                     self.main_window.ui_gpio.updateOutputTable(msgBytes)
                 case _:
                     print(f"Unhandled message ID: 0x{msg_id.value:X}")

@@ -167,7 +167,7 @@ class UIPanel:
         """
         Sends a heartbeat message to the connected device.
         """
-        self.main_window.ui_comms.sendMessage(MessageID.HEARTBEAT, "", [], SrcDest.SRC_DEST_ECU1, MsgMode.REQ)
+        self.main_window.ui_comms.sendMessage(MessageID.HEARTBEAT, "", [], SrcDest.SRC_DEST_X04, MsgMode.REQ)
 
 
     def startHeartbeatTimer(self):
