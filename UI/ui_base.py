@@ -51,10 +51,14 @@ class UIBase(QMainWindow):
 
         # These components do not need to be initialised unless requested by the user.
         self.ui_colour_creator = None
+        self.ui_config = None
+        self.ui_key_wiring = None
+        self.ui_rail_map = None
+        self.ui_system = None
         self.ui_x06 = None
 
         # Load compulsory components separately.
-        self.num_components = 7
+        self.num_components = 7 # Total number of components to be initialised.
         self.initComponentSet1()
         self.initComponentSet2()
 
@@ -82,13 +86,11 @@ class UIBase(QMainWindow):
         from UI.ui_adc import UIADC
         from UI.ui_athentication import UIAuthentication
         from UI.ui_console import UIConsole
-        from UI.ui_comms import UIComms
         from UI.ui_gpio import UIGPIO
         from UI.ui_panel import UIPanel
 
         # UIConsole must be initialised before UIComms.
         components = [UIADC, UIAuthentication, UIConsole, UIGPIO, UIPanel, UIComms] # UIComms is purposely placed at the end here.
-        # Allocate 100% of progress to this set.
         self.loadComponents(components)
 
 
@@ -96,9 +98,9 @@ class UIBase(QMainWindow):
         """
         Second set of components to be initialised after GUI loads.
         """
-        from UI.ui_config import UIConfig
+        from UI.ui_misc import UIMisc
 
-        components = [UIConfig]
+        components = [UIMisc]
         self.loadComponents(components)
 
 

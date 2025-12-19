@@ -10,8 +10,12 @@ from PySide6.QtWidgets import QVBoxLayout
 from Enums.enum_calls_demands import CallType, DiagnosticCall
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_colour_creator import UIColourCreator
+from UI.ui_config import UIConfig
 from UI.ui_custom_widgets import ScalableLabel
+from UI.ui_key_wiring import UIKeyWiring
+from UI.ui_rail_map import UIRailMap
 from UI.ui_styling import Colours, Styles
+from UI.ui_system import UISystem
 from UI.ui_x06 import UIX06
 from Utilities.utils import resource_path
 
@@ -136,7 +140,6 @@ class UIPanel:
         """
         Changes the current stacked widget to the colour palette page.
         """
-        # As the colour creator component is not compulsory initialised, create one if it doesn't exist.
         if self.main_window.ui_colour_creator is None:
             self.main_window.ui_colour_creator = UIColourCreator(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(1)
@@ -147,6 +150,8 @@ class UIPanel:
         """
         Changes the current stacked widget to the configuration page.
         """
+        if self.main_window.ui_config is None:
+            self.main_window.ui_config = UIConfig(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(2)
         self.updateButtons()
 
@@ -155,6 +160,8 @@ class UIPanel:
         """
         Changes the current stacked widget to the key wiring page.
         """
+        if self.main_window.ui_key_wiring is None:
+            self.main_window.ui_key_wiring = UIKeyWiring(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(3)
         self.updateButtons()
 
@@ -163,6 +170,8 @@ class UIPanel:
         """
         Changes the current stacked widget to the rail mapping page.
         """
+        if self.main_window.ui_rail_map is None:
+            self.main_window.ui_rail_map = UIRailMap(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(4)
         self.updateButtons()
 
@@ -171,6 +180,8 @@ class UIPanel:
         """
         Changes the current stacked widget to the system page.
         """
+        if self.main_window.ui_system is None:
+            self.main_window.ui_system = UISystem(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(5)
         self.updateButtons()
 
