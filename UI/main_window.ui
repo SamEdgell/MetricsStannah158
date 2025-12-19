@@ -18109,27 +18109,17 @@ QHeaderView::section {
      </property>
      <property name="styleSheet">
       <string notr="true">QComboBox{
-    color: #000000; /* Text color */
-    background-color: #FFFFFF; /* Background color */
-    border: 1px solid black; /* Thin black solid border */
-    border-radius: 5px; /* Optional: rounded corners */
-    padding: 5px; /* Adds space around the text */
-    padding-top: 3px; /* Adjusts the padding at the top */
-    padding-bottom: 3px; /* Adjusts the padding at the bottom */
-    line-height: 20px; /* Ensures proper vertical alignment of text */
+color: #000000; /* Text colour */
+background: #FFFFFF; /* Background colour */
+border: 1px solid black; /* Border colour */
+border-radius: 5px; /* Rounded corners */
 }
-
-QComboBox QAbstractItemView {
-	color: #000000; /* Text color for drop-down items */
-	background-color: #FFFFFF; /* Background color for drop-down items */
-}
-
 QComboBox::drop-down{
-	border: 0px;
+width: 0px; /* Hides the drop-down arrow */
+border: none; /* No border for the drop-down */
 }
-
 QComboBox::down-arrow{
-	image: none;
+image: none; /* Hides the down arrow */
 }</string>
      </property>
     </widget>
@@ -18353,18 +18343,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="rmmLocatingButtonGroup"/>
-  <buttongroup name="chairTuneButtonGroup"/>
-  <buttongroup name="mainPlotModeButtonGroup"/>
+  <buttongroup name="footrestTuneButtonGroup"/>
   <buttongroup name="swivelTuneButtonGroup"/>
+  <buttongroup name="mainPlotModeButtonGroup"/>
+  <buttongroup name="chairTuneButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="chairPlotModeButtonGroup"/>
-  <buttongroup name="footrestTuneButtonGroup"/>
   <buttongroup name="swivelPlotModeButtonGroup"/>
+  <buttongroup name="rmmLocatingButtonGroup"/>
   <buttongroup name="footrestPlotModeButtonGroup"/>
+  <buttongroup name="chairPlotModeButtonGroup"/>
  </buttongroups>
 </ui>
