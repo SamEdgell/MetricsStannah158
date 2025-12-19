@@ -10,7 +10,6 @@ from PySide6.QtWidgets import QVBoxLayout
 from Enums.enum_calls_demands import CallType, DiagnosticCall
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_colour_creator import UIColourCreator
-from UI.ui_config import UIConfig
 from UI.ui_custom_widgets import ScalableLabel
 from UI.ui_key_wiring import UIKeyWiring
 from UI.ui_rail_map import UIRailMap
@@ -150,8 +149,6 @@ class UIPanel:
         """
         Changes the current stacked widget to the configuration page.
         """
-        if self.main_window.ui_config is None:
-            self.main_window.ui_config = UIConfig(self.main_window)
         self.main_window.ui.stackedWidget.setCurrentIndex(2)
         self.updateButtons()
 

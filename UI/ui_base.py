@@ -58,7 +58,7 @@ class UIBase(QMainWindow):
         self.ui_x06 = None
 
         # Load compulsory components separately.
-        self.num_components = 7 # Total number of components to be initialised.
+        self.num_components = 8 # Total number of components to be initialised.
         self.initComponentSet1()
         self.initComponentSet2()
 
@@ -98,9 +98,10 @@ class UIBase(QMainWindow):
         """
         Second set of components to be initialised after GUI loads.
         """
+        from UI.ui_config import UIConfig
         from UI.ui_misc import UIMisc
 
-        components = [UIMisc]
+        components = [UIConfig, UIMisc]
         self.loadComponents(components)
 
 
