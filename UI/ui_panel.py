@@ -11,7 +11,7 @@ from Enums.enum_calls_demands import CallType, DiagnosticCall
 from Enums.enum_msg import MessageID, MsgMode, SrcDest
 from UI.ui_colour_creator import UIColourCreator
 from UI.ui_custom_widgets import ScalableLabel
-from UI.ui_styling import Styles
+from UI.ui_styling import Colours, Styles
 from UI.ui_x06 import UIX06
 from Utilities.utils import resource_path
 
@@ -291,26 +291,26 @@ class UIPanel:
         self.flash_call_button_timer.stop()
         if self.repeating_call:
             # Stop repeating call.
-            self.main_window.ui.repeatCallButton.setStyleSheet("""
-                                                            QPushButton {
-                                                                color: #000000;             /* Text color */
-                                                                border: 2px solid #000000;  /* Border color */
-                                                                border-radius: 5px;         /* Rounded corners */
-                                                                background-color: #A6FFA7;  /* Green background */
-                                                            }
+            self.main_window.ui.repeatCallButton.setStyleSheet(f"""
+                                                            QPushButton {{
+                                                                color: {Colours.BLACK.name()};                  /* Text color */
+                                                                border: 2px solid {Colours.BLACK.name()};       /* Border color */
+                                                                border-radius: 5px;                             /* Rounded corners */
+                                                                background-color: {Colours.PALE_GREEN.name()};  /* Green background */
+                                                            }}
                                                             """)
             self.main_window.ui.repeatCallButton.setText("Click to repeat a call")
             self.repeating_call = False
             self.call_to_repeat = None
         else:
             # Start repeating call.
-            self.main_window.ui.repeatCallButton.setStyleSheet("""
-                                                                QPushButton {
-                                                                    color: #000000;             /* Text color */
-                                                                    border: 2px solid #000000;  /* Border color */
-                                                                    border-radius: 5px;         /* Rounded corners */
-                                                                    background-color: #FFA2A7;  /* Red background */
-                                                                }
+            self.main_window.ui.repeatCallButton.setStyleSheet(f"""
+                                                                QPushButton {{
+                                                                    color: {Colours.BLACK.name()};                  /* Text color */
+                                                                    border: 2px solid {Colours.BLACK.name()};       /* Border color */
+                                                                    border-radius: 5px;                             /* Rounded corners */
+                                                                    background-color: {Colours.LIGHT_PINK.name()};  /* Red background */
+                                                                }}
                                                                 """)
             self.main_window.ui.repeatCallButton.setText("Select a call to repeat")
             self.repeating_call = True
@@ -338,6 +338,7 @@ class UIPanel:
         """
         Test button 1 action.
         """
+        self.main_window.ui_misc.updateECodeChanged(bytes(0x5E))
         self.main_window.ui_console.logDebugConsole("Test button 1 pressed")
 
 
@@ -416,7 +417,7 @@ class UIPanel:
 
 
     def toggleHeartbeatLED(self):
-        """"
+        """
         Toggles the heartbeat LED in the GUI.
         """
         if self.main_window.ui_comms.serial_port_handler.serial_handler is None: # This may need to be more robust and use hasattr checks.

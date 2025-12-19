@@ -20,6 +20,7 @@ class Colours:
     GARNET                  = QColor("#C70000")
     GOLD                    = QColor("#FFD700")
     GOLDEN_YELLOW           = QColor("#FFC12E")
+    ICTERINE                = QColor("#F6FF68")
     KELLY_GREEN             = QColor("#2CEB6C")
     LAVENDER                = QColor("#E09EF2")
     LIGHT_GREY              = QColor("#BABABA")
