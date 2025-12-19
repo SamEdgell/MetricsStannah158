@@ -2090,7 +2090,7 @@ QRadioButton::indicator:checked {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="ADCIOPage">
      <widget class="QGroupBox" name="ADCBox">

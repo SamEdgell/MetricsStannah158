@@ -9501,7 +9501,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.commsTab.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
         self.consoleTab.setCurrentIndex(0)
 
 
