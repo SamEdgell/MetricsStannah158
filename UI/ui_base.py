@@ -54,7 +54,9 @@ class UIBase(QMainWindow):
         self.ui_x06 = None
 
         # Load compulsory components separately.
+        self.num_components = 7
         self.initComponentSet1()
+        self.initComponentSet2()
 
 
     def gatherVersion(self):
@@ -87,20 +89,29 @@ class UIBase(QMainWindow):
         # UIConsole must be initialised before UIComms.
         components = [UIADC, UIAuthentication, UIConsole, UIGPIO, UIPanel, UIComms] # UIComms is purposely placed at the end here.
         # Allocate 100% of progress to this set.
-        self.loadComponents(components, (100 / len(components)))
+        self.loadComponents(components)
 
 
-    def loadComponents(self, components, progress):
+    def initComponentSet2(self):
+        """
+        Second set of components to be initialised after GUI loads.
+        """
+        from UI.ui_config import UIConfig
+
+        components = [UIConfig]
+        self.loadComponents(components)
+
+
+    def loadComponents(self, components):
         """
         Helper function to set up the components and update the splash screen progress.
 
         Args:
             components: List of components to load.
-            progress:   Progress percentage to allocate to this set.
         """
         for component in components:
             # Update the splash screen before loading component.
-            self.splash_progress += progress
+            self.splash_progress += (100 / self.num_components)
             self.splash_screen.set_progress(int(self.splash_progress), f"Loading {component.__name__}...")
             QApplication.instance().processEvents() # Forces the Qt event loop to process any pending GUI events immediately.
 
