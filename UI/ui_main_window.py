@@ -2040,6 +2040,11 @@ class Ui_MainWindow(object):
 "    border-right: 1px solid black;\n"
 "    border-bottom: 2px solid black;\n"
 "	color: black;\n"
+"	font-weight: normal;\n"
+"}\n"
+"\n"
+"QHeaderView::section:last{\n"
+"	border-right: none;\n"
 "}")
         self.configTable.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.configTable.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
@@ -9506,7 +9511,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.commsTab.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         self.consoleTab.setCurrentIndex(0)
 
 

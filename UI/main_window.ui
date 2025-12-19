@@ -2090,7 +2090,7 @@ QRadioButton::indicator:checked {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="ADCIOPage">
      <widget class="QGroupBox" name="ADCBox">
@@ -3689,6 +3689,11 @@ QHeaderView::section {
     border-right: 1px solid black;
     border-bottom: 2px solid black;
 	color: black;
+	font-weight: normal;
+}
+
+QHeaderView::section:last{
+	border-right: none;
 }</string>
        </property>
        <property name="verticalScrollBarPolicy">
@@ -18348,18 +18353,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="chairPlotModeButtonGroup"/>
   <buttongroup name="rmmLocatingButtonGroup"/>
-  <buttongroup name="footrestTuneButtonGroup"/>
   <buttongroup name="chairTuneButtonGroup"/>
+  <buttongroup name="mainPlotModeButtonGroup"/>
+  <buttongroup name="swivelTuneButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="swivelTuneButtonGroup"/>
+  <buttongroup name="chairPlotModeButtonGroup"/>
+  <buttongroup name="footrestTuneButtonGroup"/>
   <buttongroup name="swivelPlotModeButtonGroup"/>
   <buttongroup name="footrestPlotModeButtonGroup"/>
-  <buttongroup name="mainPlotModeButtonGroup"/>
  </buttongroups>
 </ui>
