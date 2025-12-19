@@ -2676,7 +2676,7 @@ QPushButton:pressed {
      <zorder>inputsBox</zorder>
     </widget>
     <widget class="QWidget" name="colourPalettePage">
-     <widget class="QTextEdit" name="testColourLog">
+     <widget class="QTextEdit" name="colourPaletteLog">
       <property name="geometry">
        <rect>
         <x>17</x>
@@ -18343,18 +18343,18 @@ Assert</string>
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="footrestTuneButtonGroup"/>
   <buttongroup name="swivelTuneButtonGroup"/>
+  <buttongroup name="footrestTuneButtonGroup"/>
+  <buttongroup name="chairPlotModeButtonGroup"/>
+  <buttongroup name="swivelPlotModeButtonGroup"/>
+  <buttongroup name="rmmLocatingButtonGroup"/>
   <buttongroup name="mainPlotModeButtonGroup"/>
+  <buttongroup name="footrestPlotModeButtonGroup"/>
   <buttongroup name="chairTuneButtonGroup"/>
   <buttongroup name="keyWiringButtonGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
-  <buttongroup name="swivelPlotModeButtonGroup"/>
-  <buttongroup name="rmmLocatingButtonGroup"/>
-  <buttongroup name="footrestPlotModeButtonGroup"/>
-  <buttongroup name="chairPlotModeButtonGroup"/>
  </buttongroups>
 </ui>

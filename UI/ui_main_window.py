@@ -1457,15 +1457,15 @@ class Ui_MainWindow(object):
         self.inputsBox.raise_()
         self.colourPalettePage = QWidget()
         self.colourPalettePage.setObjectName(u"colourPalettePage")
-        self.testColourLog = QTextEdit(self.colourPalettePage)
-        self.testColourLog.setObjectName(u"testColourLog")
-        self.testColourLog.setGeometry(QRect(17, 15, 784, 299))
+        self.colourPaletteLog = QTextEdit(self.colourPalettePage)
+        self.colourPaletteLog.setObjectName(u"colourPaletteLog")
+        self.colourPaletteLog.setGeometry(QRect(17, 15, 784, 299))
         font9 = QFont()
         font9.setFamilies([u"Consolas"])
         font9.setPointSize(8)
-        self.testColourLog.setFont(font9)
-        self.testColourLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
-        self.testColourLog.setStyleSheet(u"QTextEdit {\n"
+        self.colourPaletteLog.setFont(font9)
+        self.colourPaletteLog.viewport().setProperty(u"cursor", QCursor(Qt.CursorShape.ArrowCursor))
+        self.colourPaletteLog.setStyleSheet(u"QTextEdit {\n"
 "    border: 2px solid black; /* Border for the group box */\n"
 "    border-radius: 1px; /* Smallest rounded corners for the border */\n"
 "    background-color: #E6E2BE; /* Yellowish-beige background color */\n"
@@ -1513,7 +1513,7 @@ class Ui_MainWindow(object):
 "    background: none; /* No background for the add-page and sub-page */\n"
 "    border: none; /* Remove any border */\n"
 "}")
-        self.testColourLog.setReadOnly(True)
+        self.colourPaletteLog.setReadOnly(True)
         self.fgColourBox = QGroupBox(self.colourPalettePage)
         self.fgColourBox.setObjectName(u"fgColourBox")
         self.fgColourBox.setGeometry(QRect(60, 337, 164, 248))
@@ -9623,7 +9623,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Alter", None));
         self.resetOutputsButton.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.alterOutputsButton.setText(QCoreApplication.translate("MainWindow", u"Alter", None))
-        self.testColourLog.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.colourPaletteLog.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
