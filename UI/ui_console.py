@@ -88,10 +88,10 @@ class UIConsole:
         """
         if self.main_window.ui.consoleTab.currentIndex() == 0:
             console = self.main_window.ui.primaryConsoleLog
-            log_type = "ECU1"
+            log_type = "X04"
         elif self.main_window.ui.consoleTab.currentIndex() == 1:
             console = self.main_window.ui.secondaryConsoleLog
-            log_type = "ECU2"
+            log_type = "X01"
         else:
             console = self.main_window.ui.tertiaryConsoleLog
             log_type = "DEBUG"
