@@ -212,7 +212,8 @@ class UISystem:
         """
         Handles new system version data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.

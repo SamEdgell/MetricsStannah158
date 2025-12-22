@@ -197,7 +197,8 @@ class UIConfig:
         """
         Updates the config table with the record values.
 
-        @param msg: config payload.
+        Args:
+            msg: config payload.
         """
         # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
         if MsgMode(msg[5]) == MsgMode.GET_ACK:
@@ -296,7 +297,8 @@ class UIConfig:
         """
         Updates text box that erasing of SD card was successful.
 
-        @param msg: SD card payload.
+        Args:
+            msg: SD card payload.
         """
         # Check for mode type. Note, this is the 5th element as it's not unpacked yet.
         if MsgMode(msg[5]) == MsgMode.REQ_ACK:
@@ -323,7 +325,8 @@ class UIConfig:
         """
         Sets the state of ATE mode.
 
-        @param isATE: True if in ATE mode, false otherwise.
+        Args:
+            isATE: True if ATE mode, false otherwise
         """
         self.ATEMode = isATE
 
@@ -332,6 +335,7 @@ class UIConfig:
         """
         Get the state of ATE mode.
 
-        @return: True if ATE mode, false otherwise
+        Returns:
+            True if ATE mode, false otherwise
         """
         return self.ATEMode

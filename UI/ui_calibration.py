@@ -37,7 +37,8 @@ class UICalibration:
         """
         Starts the calibration process for the specified component.
 
-        @param drive: The component to calibrate.
+        Args:
+            drive: The component to calibrate.
         """
         data = self.driveData.get(drive)
         if data:
@@ -48,7 +49,8 @@ class UICalibration:
         """
         Accepts the calibration process for the specified component.
 
-        @param drive: The component to accept calibration for.
+        Args:
+            drive: The component to accept calibration for.
         """
         data = self.driveData.get(drive)
         if data:
@@ -59,7 +61,8 @@ class UICalibration:
         """
         Rejects the calibration process for the specified component.
 
-        @param drive: The component to reject calibration for.
+        Args:
+            drive: The component to reject calibration for.
         """
         data = self.driveData.get(drive)
         if data:
@@ -70,8 +73,9 @@ class UICalibration:
         """
         Selects auto calibration for the specified component.
 
-        @param drive: The component to select auto calibration for.
-        @param checked: The toggled signal.
+        Args:
+            drive: The component to select auto calibration for.
+            checked: The toggled signal.
         """
         if checked:
             getattr(self.main_window.ui, f"accept{drive}CalButton").setEnabled(False)
@@ -82,8 +86,9 @@ class UICalibration:
         """
         Selects manual calibration for the specified component.
 
-        @param drive: The component to select manual calibration for.
-        @param checked: The toggled signal.
+        Args:
+            drive: The component to select manual calibration for.
+            checked: The toggled signal.
         """
         if checked:
             getattr(self.main_window.ui, f"accept{drive}CalButton").setEnabled(True)

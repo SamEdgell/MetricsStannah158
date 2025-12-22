@@ -54,8 +54,9 @@ class UIHBridge():
         """
         User has changed the min/max values of the slider. Update the slider min/max values accordingly.
 
-        @param prefix: Prefix of the slider to update.
-        @param is_max: True if the user is changing the max value, False if the user is changing the min value.
+        Args:
+            prefix: Prefix of the slider to update.
+            is_max: True if the user is changing the max value, False if the user is changing the min value.
         """
         if prefix == "Chair":
             left_slider = self.main_window.ui.chairLeftBridgeDuty
@@ -98,9 +99,10 @@ class UIHBridge():
         """
         Transmits message to update the drive duty
 
-        @param drive: The chosen drive.
-        @param dir: Which side of the bridge to drive.
-        @param duty: The new duty.
+        Args:
+            drive: The chosen drive.
+            dir: Which side of the bridge to drive.
+            duty: The new duty.
         """
         enableButton = getattr(self.main_window.ui, f"enable{drive.capitalize()}BridgeButton")
         if drive == "chair":

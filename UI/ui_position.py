@@ -165,7 +165,8 @@ class UIDrivePosition:
     """
     Sends the request to enable/disable high speed position data for the selected drive.
 
-    @param drive: The drive to enable/disable position data for.
+    Args:
+        drive: The drive to request high speed position data for.
     """
     def requestHSPosition(self, drive):
         if drive == "Chair":
@@ -190,7 +191,8 @@ class UIDrivePosition:
     """
     Handles new drive position data for a specific drive.
 
-    @param msg: The message to unpack.
+    Args:
+        msg: The message to unpack.
     """
     def updateDrivePositionTable(self, msg):
         try:
@@ -235,7 +237,8 @@ class UIDrivePosition:
     """
     Updates the last field in the drive position table. This is done here because it comes from another message.
 
-    @param msg: The message to unpack.
+    Args:
+        msg: The message to unpack.
     """
     def updateDrivePositionCalcPosition(self, msg):
         try:

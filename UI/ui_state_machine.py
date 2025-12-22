@@ -161,7 +161,8 @@ class UIDriveStateMachine:
         """
         Handles new drive state data for a specific drive.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
@@ -203,7 +204,8 @@ class UIDriveStateMachine:
         """
         Updates the last field in the drive state table. This is done here because it comes from another message.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.

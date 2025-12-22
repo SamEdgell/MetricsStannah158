@@ -483,7 +483,8 @@ class UIPID:
         """
         Sends the request to enable/disable logging for the selected drive. Updates the UI to reflect the change providing the port is connected.
 
-        @param drive: The drive to enable/disable logging for.
+        Args:
+            drive: The drive to enable/disable logging for.
         """
         try:
             drive_lower_case = drive.lower() # Convert text to lower case
@@ -517,7 +518,8 @@ class UIPID:
         """
         Handles new drive control data for a specific drive.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
@@ -565,7 +567,8 @@ class UIPID:
         """
         Selects the folder for the PID data for the selected drive. If the folder does not exist, it will be created.
 
-        @param drive: The drive to select the tuning folder for.
+        Args:
+            drive: The drive to select the folder for.
         """
         drive_lower_case = drive.lower() # Convert to lower case
         default_folder = f"PIDLogs/{drive}"
@@ -627,8 +630,9 @@ class UIPID:
         Switches between auto or manual plot mode. The plot button is disabled in auto mode.
         When manual mode has been selected, if a folder is not chosen, the button will remain disabled, else it will be enabled.
 
-        @param drive: The drive to handle the plot mode for.
-        @param auto: True if in auto mode, False if in manual mode.
+        Args:
+            drive: The drive to handle the plot mode for.
+            auto: True if in auto mode, False if in manual mode.
         """
         button = getattr(self.main_window.ui, f"plot{drive}Button")
 
@@ -708,7 +712,8 @@ class UIPID:
         """
         Plots the data for the selected drive. A folder must have been selected for this button to activate.
 
-        @param drive: The drive to plot the data for.
+        Args:
+            drive: The drive to plot the data for.
         """
         drive_lower_case = drive.lower() # Convert to lower case
         manual_drive_plot = getattr(self, f"manual{drive}Plot")
@@ -806,7 +811,8 @@ class UIPID:
         """
         Opens the most recent plotted file for the selected drive.
 
-        @param drive: The drive to open the plotted file for.
+        Args:
+            drive: The drive to open the plot for.
         """
         drive_current_log_file = getattr(self, f"{drive.lower()}CurrentLogFile", None)
         drive_plotting_state = getattr(self.main_window.ui, f"{drive.lower()}PlottingState", None)
@@ -887,8 +893,9 @@ class UIPID:
         """
         Writes PID data to CSV file for specified drive.
 
-        @param drive: The drive to write the data for. (Must be lower case)
-        @param data: The data to write to the CSV file.
+        Args:
+            drive: The drive to write the data for. (Must be lower case)
+            data: The data to write to the CSV file.
         """
         drive_capitalised = drive.capitalize()
         drive_logger = getattr(self, f"{drive}Logger", None)
@@ -917,7 +924,8 @@ class UIPID:
         """
         Closes the CSV file for the specified drive.
 
-        @param drive: The drive to close the CSV file for. (must be lower case)
+        Args:
+            drive: The drive to close the CSV file for. (must be lower case)
         """
         drive_capitalised = drive.capitalize()
         drive_logger = getattr(self, f"{drive}Logger", None)
@@ -942,8 +950,9 @@ class UIPID:
         """
         Updates the text of the high speed logging line edit for the selected drive.
 
-        @param drive: The drive to set the logging state for.
-        @param state: The state to set the line edit to. True for enabled, False for disabled.
+        Args:
+            drive: The drive to set the logging state for.
+            state: The state to set the line edit to. True for enabled, False for disabled.
         """
         logging_state = getattr(self.main_window.ui, f"{drive}HSState")
 
@@ -970,8 +979,9 @@ class UIPID:
         """
         Updates the text of the plotting line edit for the selected drive.
 
-        @param drive: The drive to set the plotting state for.
-        @param state: The state to set the line edit to. True for enabled, False for disabled.
+        Args:
+            drive: The drive to set the plotting state for.
+            state: The state to set the line edit to. True for enabled, False for disabled.
         """
         plot_state = getattr(self.main_window.ui, f"{drive}LoggingState")
 
@@ -1002,7 +1012,8 @@ class UIPID:
         """
         Radio button has changed for tuning direction data. Request new tuning parameters for the new direction.
 
-        @param drive: The drive to request the tuning data for.
+        Args:
+            drive: The drive to request the tuning data for.
         """
         if drive == "Chair":
             self.requestTuningData("Chair")
@@ -1020,7 +1031,8 @@ class UIPID:
         """
         Handles new tuning data for a specific drive.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -1074,7 +1086,8 @@ class UIPID:
         """
         Requests the tuning data for the selected drive and direction based on the radio buttons.
 
-        @param drive: The drive to request the tuning data for.
+        Args:
+            drive: The drive to request the tuning data for.
         """
         try:
             if drive == "Chair":
@@ -1125,7 +1138,8 @@ class UIPID:
         """
         Copies the current tuning data to the alter column for easier tuning.
 
-        @param drive: The drive to copy the tuning data for.
+        Args:
+            drive: The drive to copy the tuning data for.
         """
         drive_lower_case = drive.lower()
         pos_table = getattr(self.main_window.ui, f"{drive_lower_case}PIDPosTable")
@@ -1144,7 +1158,8 @@ class UIPID:
         """
         Clears the current altered data in the tuning table.
 
-        @param drive: The drive to clear the altered data for.
+        Args:
+            drive: The drive to clear the altered data for.
         """
         drive_lower_case = drive.lower()
         pos_table = getattr(self.main_window.ui, f"{drive_lower_case}PIDPosTable")
@@ -1163,7 +1178,8 @@ class UIPID:
         """
         Alters the tuning data for the selected drive.
 
-        @param drive: The drive to alter the tuning data for.
+        Args:
+            drive: The drive to alter the tuning data for.
         """
         try:
             if drive == "Chair":

@@ -35,7 +35,8 @@ class UIX06:
         """
         Starts or stops sending requests for ADC X06 data.
 
-        @param start: To start timer or stop it.
+        Args:
+            start: To start timer or stop it.
         """
         if start:
             self.getADCStatus = QTimer()
@@ -50,7 +51,8 @@ class UIX06:
         """
         Starts or stops sending requests for GPIO X06 data.
 
-        @param start: To start timer or stop it.
+        Args:
+            start: To start timer or stop it.
         """
         if start:
             self.getInputStatus = QTimer()

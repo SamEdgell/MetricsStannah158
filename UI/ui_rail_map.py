@@ -379,7 +379,8 @@ class UIRailMap:
         """
         Handles rail map positions based on the reported data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
         if MsgMode(msg[5]) == MsgMode.GET_ACK:
@@ -435,7 +436,8 @@ class UIRailMap:
         """
         Updates the map operational mode.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -488,7 +490,8 @@ class UIRailMap:
         """
         Updates the map point table with the data.
 
-        @param msg: The message to unpack
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -633,7 +636,8 @@ class UIRailMap:
         """
         Adds a new point to the map with the given type.
 
-        @param pointType: The type of point to add.
+        Args:
+            pointType: The type of point to add.
         """
         if self.main_window.ui.specifyPositionButton.isChecked():
             try:
@@ -662,7 +666,8 @@ class UIRailMap:
         """
         Finds the next point in the chosen direction.
 
-        @param pointType: The type of point to find.
+        Args:
+            pointType: The type of point to find.
         """
         if pointType == "Boarding":
             pointID = 0
@@ -700,7 +705,8 @@ class UIRailMap:
         """
         Handles the RMM response from a request sent.
 
-        @param msg: The response message.
+        Args:
+            msg: The message to unpack.
         """
         # Get the message ID.
         match(MessageID(msg[0])):

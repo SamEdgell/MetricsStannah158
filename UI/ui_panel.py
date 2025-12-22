@@ -283,8 +283,9 @@ class UIPanel:
         """
         Sends a call request of a specific ID and type.
 
-        @param call_ID: Message ID for the call (software or diagnostic)
-        @param call: Diag call type.
+        Args:
+            call_ID: Message ID for the call (software or diagnostic)
+            call: Diag call type.
         """
         # Repeat call if selected.
         if self.repeating_call:
@@ -301,9 +302,9 @@ class UIPanel:
         """
         Converts call type to a string for the repeat call button.
 
-        @param call_type: Diagnostic or software call.
-        @param call: Call type.
-        @return: String representation of call type.
+        Args:
+            call_type: Diagnostic or software call.
+            call: Call type.
         """
         if MessageID.CALL_REQUEST == call_type:
             if CallType.doesValueExist(call.value):

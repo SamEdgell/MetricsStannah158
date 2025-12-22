@@ -166,7 +166,8 @@ class UIMisc:
         """
         Resizes the default table size (in UI file) to the total number of rows. Moves the bottom frame and the buttons (if exists) to positions based on the new table size.
 
-        @param table: The table to resize.
+        Args:
+            table: The table to resize.
         """
         table_row_count = table.rowCount()
         table_row_height = table.rowHeight(0)
@@ -225,7 +226,8 @@ class UIMisc:
         """
         Handles new system state data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -246,7 +248,8 @@ class UIMisc:
         """
         Handles new system configuration data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -265,7 +268,8 @@ class UIMisc:
         """
         Handles new system op mode data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not get ack. Note, this is the 5th element as it's not unpacked yet.
@@ -286,7 +290,8 @@ class UIMisc:
         """
         Handles new E-code changed data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         if 0:
             # This is purely for displaying values on the hex display.
@@ -331,7 +336,8 @@ class UIMisc:
         """
         Handles the assert data.
 
-        @param msg: The message to unpack.
+        Args:
+            msg: The message to unpack.
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.

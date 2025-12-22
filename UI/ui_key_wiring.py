@@ -21,7 +21,8 @@ class UIKeyWiring:
         """
         Updates the key wiring diagram LEDs that are input monitoring points
 
-        @param msg: The message to unpack
+        Args:
+            msg: The message to unpack
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
@@ -90,7 +91,8 @@ class UIKeyWiring:
         """
         Updates the key wiring diagram LEDs that are outputs
 
-        @param msg: The message to unpack
+        Args:
+            msg: The message to unpack
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
@@ -141,7 +143,8 @@ class UIKeyWiring:
         """
         Updates the key wiring diagram LEDs that are ADC
 
-        @param msg: The message to unpack
+        Args:
+            msg: The message to unpack
         """
         try:
             # Ignore any messages where the mode is not out. Note, this is the 5th element as it's not unpacked yet.
