@@ -241,13 +241,13 @@ class UIPanel:
             from UI.ui_hbridge import UIHBridge
             self.main_window.ui_hbridge = UIHBridge(self.main_window)
 
-        if self.main_window.ui_position is None:
+        if self.main_window.ui_drive_position is None:
             from UI.ui_position import UIDrivePosition
-            self.main_window.ui_position = UIDrivePosition(self.main_window)
+            self.main_window.ui_drive_position = UIDrivePosition(self.main_window)
 
-        if self.main_window.ui_state_machine is None:
+        if self.main_window.ui_drive_state_machine is None:
             from UI.ui_state_machine import UIDriveStateMachine
-            self.main_window.ui_state_machine = UIDriveStateMachine(self.main_window)
+            self.main_window.ui_drive_state_machine = UIDriveStateMachine(self.main_window)
 
 
     def updateButtons(self):
