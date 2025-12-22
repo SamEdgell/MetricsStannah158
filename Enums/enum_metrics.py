@@ -34,11 +34,14 @@ class MetricSubcodes(EnumUtils, Enum):
     METRIC_TASK_SETUP_COMPLETE              = 0x0036
     METRIC_COMPONENT_FAULT                  = 0x0037
     METRIC_OPERATIONAL_MODE                 = 0x0038
+    METRIC_HANDING_LINK_UNKNOWN             = 0x0039
 
     METRIC_SD_CARD_PRESENT                  = 0x003A
     METRIC_SD_CARD_NOT_PRESENT              = 0x003B
     METRIC_SD_CARD_MOUNT_OK                 = 0x003C
     METRIC_SD_CARD_MOUNT_FAILED             = 0x003D
+
+    METRIC_RMU_STATE_CHANGE                 = 0x003E
 
     METRIC_DRIVE_STATE                      = 0x0040
     METRIC_DRIVE_PROFILER_SPEED_CHG         = 0x0042

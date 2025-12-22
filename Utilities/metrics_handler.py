@@ -13,6 +13,7 @@ from Enums.enum_errors import ErrorType
 from Enums.enum_gpio import InputsX04, InputsX01, LogicState, OutputsX04, OutputsX01
 from Enums.enum_metrics import MetricSubcodes
 from Enums.enum_msg import MsgMode, SrcDest
+from Enums.enum_rmu import RMUStates
 from Enums.enum_system import OperationalMode, SystemState, UpDirection
 from Enums.enum_uuid import UUID
 from UI.ui_styling import Colours, CSS
@@ -113,11 +114,14 @@ METRIC_SUBCODE_MAPPER = {
     MetricSubcodes.METRIC_TASK_SETUP_COMPLETE:              [MessageStyleCode.DEFAULT,                  "Tasks Setup Complete"],
     MetricSubcodes.METRIC_COMPONENT_FAULT:                  [MessageStyleCode.COMPONENT_FAULT,          "Faulted: [{UUID1}] [{0:ECodes}] [{3:SUBCODE}]"],
     MetricSubcodes.METRIC_OPERATIONAL_MODE:                 [MessageStyleCode.DEFAULT,                  "Operational Mode Changed: {0:OperationalMode}"],
+    MetricSubcodes.METRIC_HANDING_LINK_UNKNOWN:             [MessageStyleCode.ERROR,                    "Handling Link Unknown"],
 
     MetricSubcodes.METRIC_SD_CARD_PRESENT:                  [MessageStyleCode.DEFAULT,                  "SD Card Present"],
     MetricSubcodes.METRIC_SD_CARD_NOT_PRESENT:              [MessageStyleCode.ERROR,                    "SD Card Not Present"],
     MetricSubcodes.METRIC_SD_CARD_MOUNT_OK:                 [MessageStyleCode.DEFAULT,                  "SD Card Mounted"],
     MetricSubcodes.METRIC_SD_CARD_MOUNT_FAILED:             [MessageStyleCode.ERROR,                    "SD Card Not Mounted"],
+
+    MetricSubcodes.METRIC_RMU_STATE_CHANGE:                 [MessageStyleCode.WARNING,                  "RMU State Changed: {0:RMUStates}"],
 
     MetricSubcodes.METRIC_DRIVE_STATE:                      [MessageStyleCode.DRIVE_STATE_CHANGE,       "{UUID}: {0:DriveState}"],
     MetricSubcodes.METRIC_DRIVE_PROFILER_SPEED_CHG:         [MessageStyleCode.DEFAULT,                  "Drive Profiler Speed Changed."],
@@ -639,6 +643,12 @@ def formatPlaceholders(subcode_member_string, header, payload):
 
                             # Format the data to two decimal places.
                             styled_placeholder = f"{data:.2f}"
+                        else:
+                            styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
+
+                    elif format == 'RMUStates':
+                        if RMUStates.doesValueExist(data):
+                            styled_placeholder = f"{RMUStates(data).name}"
                         else:
                             styled_placeholder = styleString(PLACEHOLDER_STYLE[PlaceholderStyleCode.ERROR], 1, f"Placeholder {placeholder} Error: {data}")
 
