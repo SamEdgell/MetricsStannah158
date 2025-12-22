@@ -167,14 +167,81 @@ class UIComms:
             match msg_id:
                 case MessageID.HEARTBEAT:
                     self.main_window.ui_panel.heartbeatReceived()
+                case MessageID.SYSTEM_STATE:
+                    self.main_window.ui_misc.updateSystemState(msgBytes)
+                case MessageID.SYSTEM_VERSION:
+                    self.main_window.ui_system.updateSystemVersion(msgBytes)
+                case MessageID.SYSTEM_CONFIGURATION:
+                    self.main_window.ui_misc.updateSystemConfiguration(msgBytes)
+                case MessageID.RTC_TIME:
+                    self.main_window.ui_system.updateECUTime(msgBytes)
+                case MessageID.RMM_REPORT:
+                    if self.main_window.ui_rail_map:
+                        self.main_window.ui_rail_map.updateRMMMap(msgBytes)
+                case MessageID.RMM_MAP_MODE:
+                    if self.main_window.ui_rail_map:
+                        self.main_window.ui_rail_map.updateRMMMapMode(msgBytes)
+                case ( MessageID.RMM_DELETE_ALL |
+                       MessageID.RMM_UPDATE_POINT |
+                       MessageID.RMM_NEW_POINT |
+                       MessageID.RMM_DELETE_POINT |
+                       MessageID.RMM_SAVE_MAP |
+                       MessageID.RMM_NEW_POINT_AT_POS |
+                       MessageID.RMM_POSITION_QUERY ):
+                    if self.main_window.ui_rail_map:
+                        self.main_window.ui_rail_map.handleRMMResponseMessage(msgBytes)
+                case MessageID.RMM_POSITION_REPORT:
+                    if self.main_window.ui_rail_map:
+                        self.main_window.ui_rail_map.updateRailMapCurrentPoint(msgBytes)
+                case MessageID.SYSTEM_OP_MODE:
+                    self.main_window.ui_misc.updateSystemOpMode(msgBytes)
+                case MessageID.CALL_REQUEST:
+                    # Message ack is sent when requesting drive to move via the panel, ignore this message.
+                    return
+                case MessageID.E_CODE_CHANGED:
+                    self.main_window.ui_misc.updateECodeChanged(msgBytes)
+                case MessageID.GPIO_OUTPUT_STATUS:
+                    self.main_window.ui_gpio.updateOutputTable(msgBytes)
+                case MessageID.GPIO_INPUT_STATUS:
+                    self.main_window.ui_gpio.updateInputTable(msgBytes)
+                case MessageID.ADC_STATUS:
+                    self.main_window.ui_adc.updateADCTable(msgBytes)
                 case MessageID.METRIC_EVENT:
                     processMetrics(self, msgBytes)
                 case MessageID.METRIC_ADC_STATUS:
                     self.main_window.ui_adc.updateADCTable(msgBytes)
+                    if self.main_window.ui_key_wiring:
+                        self.main_window.ui_key_wiring.updateKeyWiringOutputADC(msgBytes)
                 case MessageID.METRIC_GPIO_INPUT_STATUS:
                     self.main_window.ui_gpio.updateInputTable(msgBytes)
+                    if self.main_window.ui_key_wiring:
+                        self.main_window.ui_key_wiring.updateKeyWiringInputLEDs(msgBytes)
                 case MessageID.METRIC_GPIO_OUTPUT_STATUS:
                     self.main_window.ui_gpio.updateOutputTable(msgBytes)
+                    if self.main_window.ui_key_wiring:
+                        self.main_window.ui_key_wiring.updateKeyWiringOutputLEDs(msgBytes)
+                case MessageID.METRIC_AUTOMATION_DATA:
+                    if self.main_window.ui_drive_position:
+                        self.main_window.ui_drive_position.updateDrivePositionCalcPosition(msgBytes)
+                    if self.main_window.ui_drive_state_machine:
+                        self.main_window.ui_drive_state_machine.updateDriveStateDemand(msgBytes)
+                case MessageID.STORED_CONFIGURATION:
+                    self.main_window.ui_config.updateConfig(msgBytes)
+                case MessageID.GENERIC_DRIVE_TUNING_DATA:
+                    self.main_window.ui_pid.updateTuningTable(msgBytes)
+                case MessageID.GENERIC_DRIVE_STATE_MACHINE_DATA:
+                    if self.main_window.ui_drive_state_machine:
+                        self.main_window.ui_drive_state_machine.updateDriveStateTable(msgBytes)
+                case MessageID.GENERIC_DRIVE_POSITION_HS_DATA:
+                    if self.main_window.ui_drive_position:
+                        self.main_window.ui_drive_position.updateDrivePositionTable(msgBytes)
+                case MessageID.GENERIC_DRIVE_CONTROL_HS_DATA:
+                    self.main_window.ui_pid.updateDriveControlTable(msgBytes)
+                case MessageID.HS_LOGGING_ENABLE:
+                    # Message ack is sent when HS enabled, ignore this message.
+                    return
+                case MessageID.RESET_STORED_DATA:
+                    self.main_window.ui_config.updateSDCardErase(msgBytes)
                 case _:
                     print(f"Unhandled message ID: 0x{msg_id.value:X}")
 
