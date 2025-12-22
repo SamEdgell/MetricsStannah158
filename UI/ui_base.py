@@ -54,9 +54,9 @@ class UIBase(QMainWindow):
         self.ui_colour_creator = None
         self.ui_hbridge = None
         self.ui_key_wiring = None
-        self.ui_position = None
+        self.ui_drive_position = None
         self.ui_rail_map = None
-        self.ui_state_machine = None
+        self.ui_drive_state_machine = None
         self.ui_system = None
         self.ui_x06 = None
 
