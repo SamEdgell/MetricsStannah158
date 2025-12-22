@@ -62,6 +62,7 @@ class UIBase(QMainWindow):
 
         # Load compulsory components required before GUI displays.
         self.initCompulsoryComponents()
+        self.initLargeComponents()
 
 
     def gatherVersion(self):
@@ -97,6 +98,23 @@ class UIBase(QMainWindow):
         self.loadComponents(components)
 
 
+    def loadLargeComponents(self):
+        """
+        Loads the large components that take time to set up, this is purposely done before the GUI loads to prevent delays later on.
+        (Which are more obvious to the user visually when the GUI is displaying).
+        """
+        from UI.ui_pid import UIPID
+
+        components = [UIPID]
+
+        self.splash_screen.set_progress(int(self.splash_progress), f"Finalising UI, please wait...")
+
+        for component in components:
+            attr_name = f"ui_{component.__name__[2:].lower()}"
+            instance = component(self)
+            setattr(self, attr_name, instance)
+
+
     def loadComponents(self, components):
         """
         Helper function to set up the components and update the splash screen progress.
@@ -107,7 +125,7 @@ class UIBase(QMainWindow):
         """
         for component in components:
             # Update the splash screen before loading component.
-            self.splash_progress += (100 / len(components))
+            self.splash_progress += (100 / len(components)) - 1 # Minus 1 here as when we are at 99%, the large components are initialised.
             self.splash_screen.set_progress(int(self.splash_progress), f"Loading {component.__name__}...")
             QApplication.instance().processEvents() # Forces the Qt event loop to process any pending GUI events immediately.
 
