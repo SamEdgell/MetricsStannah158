@@ -50,17 +50,18 @@ class UIBase(QMainWindow):
         self.setFixedSize(self.width(), self.height())
 
         # These components do not need to be initialised unless requested by the user.
+        self.ui_calibration = None
         self.ui_colour_creator = None
-        self.ui_config = None
+        self.ui_hbridge = None
         self.ui_key_wiring = None
+        self.ui_position = None
         self.ui_rail_map = None
+        self.ui_state_machine = None
         self.ui_system = None
         self.ui_x06 = None
 
-        # Load compulsory components separately.
-        self.num_components = 8 # Total number of components to be initialised.
-        self.initComponentSet1()
-        self.initComponentSet2()
+        # Load compulsory components required before GUI displays.
+        self.initCompulsoryComponents()
 
 
     def gatherVersion(self):
@@ -79,42 +80,34 @@ class UIBase(QMainWindow):
         return "Unknown Version"
 
 
-    def initComponentSet1(self):
+    def initCompulsoryComponents(self):
         """
-        First set of components to be initialised after GUI loads.
+        Compulsory components to be initialised before the GUI is displayed.
         """
         from UI.ui_adc import UIADC
         from UI.ui_athentication import UIAuthentication
+        from UI.ui_config import UIConfig
         from UI.ui_console import UIConsole
         from UI.ui_gpio import UIGPIO
+        from UI.ui_misc import UIMisc
         from UI.ui_panel import UIPanel
 
         # UIConsole must be initialised before UIComms.
-        components = [UIADC, UIAuthentication, UIConsole, UIGPIO, UIPanel, UIComms] # UIComms is purposely placed at the end here.
-        self.loadComponents(components)
-
-
-    def initComponentSet2(self):
-        """
-        Second set of components to be initialised after GUI loads.
-        """
-        from UI.ui_config import UIConfig
-        from UI.ui_misc import UIMisc
-
-        components = [UIConfig, UIMisc]
+        components = [UIADC, UIAuthentication, UIConfig, UIConsole, UIGPIO, UIMisc, UIPanel, UIComms] # UIComms is purposely placed at the end here.
         self.loadComponents(components)
 
 
     def loadComponents(self, components):
         """
         Helper function to set up the components and update the splash screen progress.
+        Components loaded here are intended to be loaded during initialisation, not once the GUI is shown.
 
         Args:
             components: List of components to load.
         """
         for component in components:
             # Update the splash screen before loading component.
-            self.splash_progress += (100 / self.num_components)
+            self.splash_progress += (100 / len(components))
             self.splash_screen.set_progress(int(self.splash_progress), f"Loading {component.__name__}...")
             QApplication.instance().processEvents() # Forces the Qt event loop to process any pending GUI events immediately.
 
@@ -128,3 +121,17 @@ class UIBase(QMainWindow):
 
             # Small delay between loading each component so the splash screen progress is visible to the user.
             time.sleep(0.2)
+
+
+    def initLargeComponents(self):
+        """
+        Once the GUI is displayed, initialise the slower components that take time to set up.
+        """
+        from UI.ui_pid import UIPID
+
+        components = [UIPID]
+
+        for component in components:
+            attr_name = f"ui_{component.__name__[2:].lower()}"
+            instance = component(self)
+            setattr(self, attr_name, instance)

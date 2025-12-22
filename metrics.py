@@ -5,6 +5,7 @@ import qasync
 import sys
 
 # Third party imports.
+from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QApplication
 
 # Local application imports.
@@ -36,6 +37,23 @@ class MainProgram(UIBase):
         self.main_task = None # Reference to the main async task manager for later cancellation and cleanup.
         self.running_event = asyncio.Event() # Event flag to control the running state of async tasks.
         self.running_event.set() # Set the event to indicate tasks should run.
+        self.large_components_initialised = False # Flag to track if large components have been initialised yet.
+
+
+    def showEvent(self, event):
+        """
+        Overrides the showEvent to perform actions when the main window is shown.
+
+        Args:
+            event:  The show event.
+        """
+        super().showEvent(event)
+
+        # Initialise large UI components now that the main window is visible.
+        if not self.large_components_initialised:
+            # Use a single-shot timer to defer the loading until after the GUI has been drawn.
+            QTimer.singleShot(500, self.initLargeComponents)
+            self.large_components_initialised = True
 
 
     async def manageTasks(self):

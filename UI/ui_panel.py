@@ -197,6 +197,7 @@ class UIPanel:
         """
         Changes the current stacked widget to the chair fold page.
         """
+        self.initDriveComponents()
         self.main_window.ui.stackedWidget.setCurrentIndex(7)
         self.updateButtons()
 
@@ -205,6 +206,7 @@ class UIPanel:
         """
         Changes the current stacked widget to the footrest page.
         """
+        self.initDriveComponents()
         self.main_window.ui.stackedWidget.setCurrentIndex(8)
         self.updateButtons()
 
@@ -213,6 +215,7 @@ class UIPanel:
         """
         Changes the current stacked widget to the main drive page.
         """
+        self.initDriveComponents()
         self.main_window.ui.stackedWidget.setCurrentIndex(9)
         self.updateButtons()
 
@@ -221,8 +224,30 @@ class UIPanel:
         """
         Changes the current stacked widget to the swivel page.
         """
+        self.initDriveComponents()
         self.main_window.ui.stackedWidget.setCurrentIndex(10)
         self.updateButtons()
+
+
+    def initDriveComponents(self):
+        """
+        Initialises components for the drive pages if they are not already initialised.
+        """
+        if self.main_window.ui_calibration is None:
+            from UI.ui_calibration import UICalibration
+            self.main_window.ui_calibration = UICalibration(self.main_window)
+
+        if self.main_window.ui_hbridge is None:
+            from UI.ui_hbridge import UIHBridge
+            self.main_window.ui_hbridge = UIHBridge(self.main_window)
+
+        if self.main_window.ui_position is None:
+            from UI.ui_position import UIDrivePosition
+            self.main_window.ui_position = UIDrivePosition(self.main_window)
+
+        if self.main_window.ui_state_machine is None:
+            from UI.ui_state_machine import UIDriveStateMachine
+            self.main_window.ui_state_machine = UIDriveStateMachine(self.main_window)
 
 
     def updateButtons(self):

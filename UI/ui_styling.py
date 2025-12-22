@@ -33,6 +33,7 @@ class Colours:
     PERIWINKLE              = QColor("#C3D4FF")
     ROYAL_BLUE              = QColor("#0033A0")
     WHITE                   = QColor("#FFFFFF")
+    WHITE_SMOKE             = QColor("#F6F6F6")
     YELLOW                  = QColor("#FFFF00")
 
 
